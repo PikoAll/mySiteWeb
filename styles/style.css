@@ -1,0 +1,388 @@
+/* Generale */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #0d0f12;
+    color: white;
+    line-height: 1.6;
+}
+
+/* Header */
+header img.banner {
+    width: 100%;
+    max-height: 200px;
+    object-fit: cover;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: center;
+    background-color: #12151a;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #00bfff;
+    text-decoration: none;
+    font-size: 1.2rem;
+}
+
+nav ul li a:hover {
+    color: white;
+}
+
+/* Navbar - Modalità desktop */
+#navbar {
+    display: flex; /* Mantieni la navbar visibile su desktop */
+    justify-content: center;
+    background-color: #12151a;
+    padding: 10px 0;
+}
+
+/* Stile per il pulsante hamburger */
+.hamburger {
+    display: block;
+    font-size: 1.5rem;
+    color: blue;
+    position: fixed; /* Rimane sempre sopra */
+    top: 20px;
+    right: 20px;
+    z-index: 1000; /* Assicurati che stia sopra l'overlay */
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+/* Navbar nascosta in modalità mobile */
+#navbar {
+    display: flex;
+    justify-content: center;
+}
+
+#navbar ul {
+    flex-direction: row; /* Righe in desktop */
+}
+/* Nascondi l'icona hamburger in modalità desktop */
+@media screen and (min-width: 769px) {
+    .hamburger {
+        display: none; /* Nasconde l'icona hamburger */
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .hamburger {
+        display: block; /* Mostra il pulsante in modalità mobile */
+        font-size: 1.5rem;
+        color: blue; /* Cambia il colore dell'icona */
+        position: fixed; 
+        cursor: pointer;
+        transition: color 0.3s ease; /* Aggiungi una transizione per l'effetto hover */
+    }
+
+    #navbar {
+        display: none; /* Nascondi la navbar di default */
+        flex-direction: column; /* Trasforma la navbar in verticale */
+        background-color: #12151a;
+        position: fixed; 
+        top: 60px;
+        right: 0;
+        width: 100%;
+        z-index: 999; /* Assicurati che sia sopra l'overlay */
+        transition: transform 0.3s ease, opacity 0.3s ease; /* Opzionale */
+    }
+
+    #navbar.active {
+        display: flex; /* Mostra la navbar quando attiva */
+    }
+
+    #navbar ul {
+        flex-direction: column;
+        margin: 0;
+        padding: 0;
+    }
+
+    #navbar ul li {
+        margin: 0;
+        text-align: center;
+        padding: 15px 0;
+    }
+}
+
+/* Overlay */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Sfondo semi-trasparente */
+    backdrop-filter: blur(8px); /* Sfocatura */
+    z-index: 998; /* Posiziona l'overlay sotto il menu */
+    display: none; /* Nascondi di default */
+    transition: opacity 0.3s ease; /* Transizione per un effetto più fluido */
+}
+
+.overlay.active {
+    display: block;
+    opacity: 1;
+}
+
+/* Main */
+main {
+    padding: 20px;
+    text-align: center;
+}
+
+main img.logo {
+    width: 100px;
+    margin: 20px auto;
+    display: block;
+    border: 2px solid #00bfff;
+    border-radius: 10px;
+}
+
+/* Sezioni */
+main section {
+    margin-bottom: 60px;
+}
+
+.intro-container {
+    text-align: center;
+    padding: 40px 20px;
+    background-color: #12151a;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.intro-container img.logo {
+    width: 120px;
+    margin-bottom: 20px;
+    border: 3px solid #00bfff;
+    border-radius: 50%;
+    transition: transform 0.3s ease;
+}
+
+.intro-container img.logo:hover {
+    transform: scale(1.1);
+}
+
+.intro-container h1 {
+    font-size: 2.5rem;
+    color: #00bfff;
+    margin-bottom: 20px;
+}
+
+.intro-container p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+}
+
+.why-pikobit {
+    text-align: center;
+    padding: 40px 20px;
+    background-color: #0d0f12;
+    color: white;
+    margin: 20px 0;
+}
+
+.why-pikobit h2 {
+    font-size: 2rem;
+    color: #00bfff;
+    margin-bottom: 20px;
+}
+
+.why-pikobit h2::after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 3px;
+    background-color: #00bfff;
+    margin: 10px auto;
+}
+
+.why-pikobit ul {
+    list-style: none;
+    padding: 0;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.why-pikobit ul li {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    padding: 10px;
+    background-color: #12151a;
+    border: 1px solid #00bfff;
+    border-radius: 5px;
+    text-align: left;
+}
+
+.why-pikobit ul li:hover {
+    background-color: #1a1c21;
+    border: 2px solid #00bfff;
+    transform: scale(1.05);
+    transition: all 0.3s ease;
+}
+
+.progress {
+    text-align: center;
+    padding: 40px 20px;
+    background-color: #12151a;
+    color: white;
+}
+
+.progress h2 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    color: #00bfff;
+}
+
+.progress-bar {
+    width: 80%;
+    height: 20px;
+    background-color: #333;
+    margin: 0 auto;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid #00bfff;
+}
+
+.progress-bar {
+    background: linear-gradient(90deg, #333, #444);
+}
+
+.progress-fill {
+    height: 100%;
+    background-color: #00bfff;
+    border-radius: 10px 0 0 10px;
+    width: 0; /* Larghezza iniziale */
+    animation: fillAnimation 2s ease-out forwards;
+}
+
+@keyframes fillAnimation {
+    to {
+        width: 30%;
+    }
+}
+
+.goals ul {
+    list-style: disc;
+    margin: 20px auto;
+    padding: 0;
+    max-width: 800px;
+    text-align: left;
+}
+
+.goals ul li {
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+}
+
+.call-to-action ul {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+}
+
+.call-to-action ul li {
+    margin: 10px 0;
+}
+
+.call-to-action ul li a {
+    color: #00bfff;
+    text-decoration: none;
+    font-size: 1.2rem;
+}
+
+.call-to-action ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 15px;
+    background-color: #1a1c21;
+    color: white;
+}
+
+footer .social-icons {
+    margin-top: 10px;
+}
+
+footer .social-icons a {
+    margin: 0 10px;
+    font-size: 30px;
+    color: white;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+footer .social-icons img {
+    width: 30px;
+    height: 30px;
+    filter: grayscale(100%);
+    transition: filter 0.3s ease, transform 0.3s ease;
+}
+
+footer .social-icons a:hover {
+    color: #00bfff;
+    transform: scale(1.1);
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+    }
+
+    header img.banner {
+        max-height: 150px;
+    }
+
+    main img.logo {
+        width: 80px;
+    }
+}
+
+
+strong {
+    color: #00bfff; /* Cambia il colore */
+    font-weight: bold;
+    text-shadow: 0 1px 3px rgba(0, 191, 255, 0.5); /* Aggiunge un'ombra leggera */
+}
+
+
+/* Pulsante "Torna su" */
+#scrollToTop {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: none; /* Nascondilo di default */
+    width: 50px;
+    height: 50px;
+    background-color: #00bfff;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    font-size: 24px;
+    z-index: 1001; /* Sopra tutto */
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+#scrollToTop:hover {
+    background-color: white;
+    color: #00bfff;
+    transform: scale(1.1); /* Ingrandisci al passaggio del mouse */
+}
+
+#scrollToTop.show {
+    display: block; /* Mostralo quando necessario */
+}
