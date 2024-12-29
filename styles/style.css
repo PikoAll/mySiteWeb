@@ -79,7 +79,7 @@ nav ul li a:hover {
     .hamburger {
         display: block; /* Mostra il pulsante in modalità mobile */
         font-size: 1.5rem;
-        color: blue; /* Cambia il colore dell'icona */
+        color: orangered; /* Cambia il colore dell'icona */
         position: fixed; 
         cursor: pointer;
         transition: color 0.3s ease; /* Aggiungi una transizione per l'effetto hover */
