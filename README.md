@@ -229,11 +229,11 @@ Durante il progetto, abbiamo definito una lista di priorità:
 Con questa guida completa, sarai in grado di replicare tutto il lavoro eseguito, configurando autonomamente un dominio, una VPS, un sito web e implementando ottimizzazioni per SEO e performance.
 
 
+---
+---
 
 
-Certamente, puoi continuare ad aggiungere ulteriori pagine al tuo progetto! Ogni volta che aggiungi un file HTML o una nuova pagina al tuo sito, ci sono alcuni passaggi da seguire per assicurarti che tutto funzioni correttamente e che la nuova pagina venga indicizzata da Google.
-
-### **Passaggi da seguire quando aggiungi una nuova pagina HTML:**
+# **Passaggi da seguire quando aggiungi una nuova pagina HTML:**
 
 #### **1. Creazione della nuova pagina**
 1. **Crea il file HTML nella directory del tuo progetto**, ad esempio:
