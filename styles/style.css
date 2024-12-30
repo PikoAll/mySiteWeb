@@ -11,6 +11,16 @@ body {
     color: orange;
 }
 
+.cta-link-blue {
+    color: #00bfff;
+    text-decoration: none;
+    /* Per rimuovere la sottolineatura */
+    font-weight: bold;
+    /* Per dare maggiore evidenza */
+    transition: color 0.3s ease;
+    /* Per un effetto di transizione */
+}
+
 /* Header */
 header img.banner {
     width: 100%;
