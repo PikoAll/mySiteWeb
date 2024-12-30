@@ -38,3 +38,27 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
+
+// PER IL SOTTO MENU SERVIZI
+document.addEventListener("DOMContentLoaded", function () {
+    const dropdownToggle = document.getElementById("dropdown-toggle");
+    const dropdownMenu = document.querySelector(".dropdown-menu");
+
+    dropdownToggle.addEventListener("click", function (event) {
+        event.preventDefault(); // Impedisce il comportamento predefinito del link
+        // Verifica se il menu è visibile e alterna lo stile 'display'
+        if (dropdownMenu.style.display === "block") {
+            dropdownMenu.style.display = "none";
+        } else {
+            dropdownMenu.style.display = "block";
+        }
+    });
+
+    // Chiudi il menu cliccando fuori dal dropdown
+    document.addEventListener("click", function (event) {
+        if (!dropdownToggle.contains(event.target) && !dropdownMenu.contains(event.target)) {
+            dropdownMenu.style.display = "none";
+        }
+    });
+});
+

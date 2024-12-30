@@ -7,6 +7,9 @@ body {
     color: white;
     line-height: 1.6;
 }
+.mission-vision-title {
+    color: orange;
+}
 
 /* Header */
 header img.banner {
@@ -394,3 +397,83 @@ strong {
 }
 
 #scrollToTop.show {display: block;/* Mostralo quando necessario */}
+
+/*per pulsavte servizi nella navbar -----------*/
+.nav-links {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Dropdown container */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* Menu nascosto inizialmente */
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 50%; /* Centrare rispetto al contenitore */
+    transform: translateX(-50%); /* Centrare orizzontalmente */
+    background-color: #12151a; /* Colore di sfondo */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Ombra */
+    border-radius: 8px; /* Angoli arrotondati */
+    list-style: none;
+    padding: 10px 0; /* Spaziatura verticale interna */
+    z-index: 1000;
+    width: 250px; /* Larghezza fissa */
+    text-align: center; /* Centrare il testo */
+}
+
+/* Voci del menu */
+.dropdown-menu li {
+    margin: 0;
+}
+
+.dropdown-menu li a {
+    text-decoration: none;
+    color: #ccc;
+    padding: 10px 20px;
+    display: block;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    font-size: 1rem; /* Dimensione leggibile */
+    border-radius: 4px; /* Per un effetto di pulsanti */
+}
+
+.dropdown-menu li a:hover {
+    background-color: orangered; /* Cambia colore al passaggio del mouse */
+    color: white;
+}
+
+/* Mostra il menu al passaggio del mouse */
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+/* Per il click toggle (opzionale, già supportato nello script JS) */
+.dropdown-menu.active {
+    display: block;
+}
+
+/* Aggiunta per margini e spaziature */
+.dropdown-menu li + li {
+    margin-top: 5px; /* Distanza tra gli elementi del menu */
+}
+
+@media (max-width: 768px) {
+    .dropdown-menu li a {
+        color: orangered;
+    }
+
+    .dropdown-menu li a:hover {
+        background-color: #12151a;
+        color: white;
+    }
+}
+
+/*FINE per pulsavte servizi nella navbar -----------*/
