@@ -75,6 +75,17 @@ nav ul li a:hover {
     }
 }
 
+.cta-link {
+    color: orange;
+    text-decoration: none; /* Per rimuovere la sottolineatura */
+    font-weight: bold; /* Per dare maggiore evidenza */
+    transition: color 0.3s ease; /* Per un effetto di transizione */
+}
+
+.cta-link:hover {
+    color:orangered; /* Cambia il colore al passaggio del mouse */
+}
+
 @media screen and (max-width: 768px) {
     .hamburger {
         display: block; /* Mostra il pulsante in modalità mobile */
