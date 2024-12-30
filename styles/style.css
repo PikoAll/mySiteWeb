@@ -24,9 +24,7 @@ nav ul {
     background-color: #12151a;
 }
 
-nav ul li {
-    margin: 0 15px;
-}
+nav ul li {margin: 0 15px;}
 
 nav ul li a {
     color: #00bfff;
@@ -34,13 +32,12 @@ nav ul li a {
     font-size: 1.2rem;
 }
 
-nav ul li a:hover {
-    color: white;
-}
+nav ul li a:hover {color: white;}
 
 /* Navbar - Modalità desktop */
 #navbar {
-    display: flex; /* Mantieni la navbar visibile su desktop */
+    display: flex;
+    /* Mantieni la navbar visibile su desktop */
     justify-content: center;
     background-color: #12151a;
     padding: 10px 0;
@@ -51,10 +48,12 @@ nav ul li a:hover {
     display: block;
     font-size: 1.5rem;
     color: blue;
-    position: fixed; /* Rimane sempre sopra */
+    position: fixed;
+    /* Rimane sempre sopra */
     top: 20px;
     right: 20px;
-    z-index: 1000; /* Assicurati che stia sopra l'overlay */
+    z-index: 1000;
+    /* Assicurati che stia sopra l'overlay */
     cursor: pointer;
     transition: color 0.3s ease;
 }
@@ -65,52 +64,55 @@ nav ul li a:hover {
     justify-content: center;
 }
 
-#navbar ul {
-    flex-direction: row; /* Righe in desktop */
-}
+#navbar ul {flex-direction: row;}
+
 /* Nascondi l'icona hamburger in modalità desktop */
 @media screen and (min-width: 769px) {
-    .hamburger {
-        display: none; /* Nasconde l'icona hamburger */
-    }
+    .hamburger {display: none;/* Nasconde l'icona hamburger */}
 }
 
 .cta-link {
     color: orange;
-    text-decoration: none; /* Per rimuovere la sottolineatura */
-    font-weight: bold; /* Per dare maggiore evidenza */
-    transition: color 0.3s ease; /* Per un effetto di transizione */
+    text-decoration: none;
+    /* Per rimuovere la sottolineatura */
+    font-weight: bold;
+    /* Per dare maggiore evidenza */
+    transition: color 0.3s ease;
+    /* Per un effetto di transizione */
 }
 
-.cta-link:hover {
-    color:orangered; /* Cambia il colore al passaggio del mouse */
-}
+.cta-link:hover {color: orangered;/* Cambia il colore al passaggio del mouse */}
 
 @media screen and (max-width: 768px) {
     .hamburger {
-        display: block; /* Mostra il pulsante in modalità mobile */
+        display: block;
+        /* Mostra il pulsante in modalità mobile */
         font-size: 1.5rem;
-        color: orangered; /* Cambia il colore dell'icona */
-        position: fixed; 
+        color: orangered;
+        /* Cambia il colore dell'icona */
+        position: fixed;
         cursor: pointer;
-        transition: color 0.3s ease; /* Aggiungi una transizione per l'effetto hover */
+        transition: color 0.3s ease;
+        /* Aggiungi una transizione per l'effetto hover */
     }
 
     #navbar {
-        display: none; /* Nascondi la navbar di default */
-        flex-direction: column; /* Trasforma la navbar in verticale */
+        display: none;
+        /* Nascondi la navbar di default */
+        flex-direction: column;
+        /* Trasforma la navbar in verticale */
         background-color: #12151a;
-        position: fixed; 
+        position: fixed;
         top: 60px;
         right: 0;
         width: 100%;
-        z-index: 999; /* Assicurati che sia sopra l'overlay */
-        transition: transform 0.3s ease, opacity 0.3s ease; /* Opzionale */
+        z-index: 999;
+        /* Assicurati che sia sopra l'overlay */
+        transition: transform 0.3s ease, opacity 0.3s ease;
+        /* Opzionale */
     }
 
-    #navbar.active {
-        display: flex; /* Mostra la navbar quando attiva */
-    }
+    #navbar.active {display: flex;/* Mostra la navbar quando attiva */}
 
     #navbar ul {
         flex-direction: column;
@@ -132,11 +134,16 @@ nav ul li a:hover {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.5); /* Sfondo semi-trasparente */
-    backdrop-filter: blur(8px); /* Sfocatura */
-    z-index: 998; /* Posiziona l'overlay sotto il menu */
-    display: none; /* Nascondi di default */
-    transition: opacity 0.3s ease; /* Transizione per un effetto più fluido */
+    background: rgba(0, 0, 0, 0.5);
+    /* Sfondo semi-trasparente */
+    backdrop-filter: blur(8px);
+    /* Sfocatura */
+    z-index: 998;
+    /* Posiziona l'overlay sotto il menu */
+    display: none;
+    /* Nascondi di default */
+    transition: opacity 0.3s ease;
+    /* Transizione per un effetto più fluido */
 }
 
 .overlay.active {
@@ -159,9 +166,7 @@ main img.logo {
 }
 
 /* Sezioni */
-main section {
-    margin-bottom: 60px;
-}
+main section {margin-bottom: 60px;}
 
 .intro-container {
     text-align: center;
@@ -264,15 +269,14 @@ main section {
     border: 1px solid #00bfff;
 }
 
-.progress-bar {
-    background: linear-gradient(90deg, #333, #444);
-}
+.progress-bar {background: linear-gradient(90deg, #333, #444);}
 
 .progress-fill {
     height: 100%;
     background-color: #00bfff;
     border-radius: 10px 0 0 10px;
-    width: 0; /* Larghezza iniziale */
+    width: 0;
+    /* Larghezza iniziale */
     animation: fillAnimation 2s ease-out forwards;
 }
 
@@ -323,9 +327,7 @@ footer {
     color: white;
 }
 
-footer .social-icons {
-    margin-top: 10px;
-}
+footer .social-icons {margin-top: 10px;}
 
 footer .social-icons a {
     margin: 0 10px;
@@ -348,24 +350,18 @@ footer .social-icons a:hover {
 
 /* Responsive */
 @media screen and (max-width: 768px) {
-    nav ul {
-        flex-direction: column;
-    }
-
-    header img.banner {
-        max-height: 150px;
-    }
-
-    main img.logo {
-        width: 80px;
-    }
+    nav ul {flex-direction: column;}
+    header img.banner {max-height: 150px;}
+    main img.logo {width: 80px;}
 }
 
 
 strong {
-    color: #00bfff; /* Cambia il colore */
+    color: #00bfff;
+    /* Cambia il colore */
     font-weight: bold;
-    text-shadow: 0 1px 3px rgba(0, 191, 255, 0.5); /* Aggiunge un'ombra leggera */
+    text-shadow: 0 1px 3px rgba(0, 191, 255, 0.5);
+    /* Aggiunge un'ombra leggera */
 }
 
 
@@ -374,7 +370,8 @@ strong {
     position: fixed;
     bottom: 20px;
     right: 20px;
-    display: none; /* Nascondilo di default */
+    display: none;
+    /* Nascondilo di default */
     width: 50px;
     height: 50px;
     background-color: #00bfff;
@@ -384,16 +381,16 @@ strong {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     cursor: pointer;
     font-size: 24px;
-    z-index: 1001; /* Sopra tutto */
+    z-index: 1001;
+    /* Sopra tutto */
     transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
 #scrollToTop:hover {
     background-color: white;
     color: #00bfff;
-    transform: scale(1.1); /* Ingrandisci al passaggio del mouse */
+    transform: scale(1.1);
+    /* Ingrandisci al passaggio del mouse */
 }
 
-#scrollToTop.show {
-    display: block; /* Mostralo quando necessario */
-}
+#scrollToTop.show {display: block;/* Mostralo quando necessario */}
