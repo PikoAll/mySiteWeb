@@ -321,5 +321,88 @@ Con questa guida completa, sarai in grado di replicare tutto il lavoro eseguito,
 
 ---
 
-Se hai bisogno di supporto per un passaggio specifico, sono qui per aiutarti! 😊
+---
 
+---
+# Per verificare che tutte le pagine del tuo sito siano state indicizzate da Google, puoi seguire i passaggi qui sotto. Utilizzeremo **Google Search Console** e altri strumenti per un controllo completo.
+
+---
+
+### **1. Verifica con Google Search Console**
+1. Accedi a [Google Search Console](https://search.google.com/search-console/).
+2. Seleziona il tuo dominio (es. `pikobit.it`).
+3. Vai alla sezione **Indicizzazione > Pagine**:
+   - Qui vedrai un elenco delle pagine indicizzate e di quelle escluse.
+   - Controlla che tutte le pagine che hai creato siano elencate nella categoria **Pagine indicizzate**.
+
+4. **Controlla le pagine escluse**:
+   - Se una pagina non è indicizzata, verrà mostrata sotto "Escluse".
+   - Clicca sulla pagina per vedere il motivo dell'esclusione (es. blocco da `robots.txt` o nessun link in ingresso).
+
+---
+
+### **2. Usa il comando "site:" su Google**
+1. Apri Google e cerca:
+   ```
+   site:tuodominio.it
+   ```
+   - Questo mostrerà tutte le pagine del tuo sito che sono attualmente indicizzate da Google.
+   - Controlla se ci sono pagine mancanti rispetto a quelle che hai creato.
+
+2. Se una pagina non appare:
+   - Verifica che sia collegata da altre pagine del sito (link interni).
+   - Controlla che sia inclusa nella tua sitemap (`sitemap.xml`).
+   - Richiedi manualmente l'indicizzazione con **Google Search Console**.
+
+---
+
+### **3. Controlla il file `sitemap.xml`**
+1. Assicurati che tutte le pagine del tuo sito siano incluse nella sitemap:
+   - Accedi alla tua sitemap (es. `https://tuodominio.it/sitemap.xml`) e verifica che tutte le pagine siano elencate.
+   - Esempio:
+     ```xml
+     <url>
+         <loc>https://tuodominio.it/pagina1.html</loc>
+         <lastmod>2024-12-30</lastmod>
+         <priority>0.8</priority>
+     </url>
+     <url>
+         <loc>https://tuodominio.it/pagina2.html</loc>
+         <lastmod>2024-12-30</lastmod>
+         <priority>0.8</priority>
+     </url>
+     ```
+2. Vai su **Google Search Console > Sitemap** e assicurati che la tua sitemap sia stata caricata e analizzata correttamente.
+
+---
+
+### **4. Test delle singole pagine**
+Per assicurarti che ogni pagina sia indicizzata:
+1. Vai su **Google Search Console > Controllo URL**.
+2. Inserisci l'URL completo della pagina che vuoi verificare (es. `https://tuodominio.it/nuovapagina.html`).
+3. Google ti mostrerà lo stato:
+   - **Indicizzata**: La pagina è già nel motore di ricerca.
+   - **Non indicizzata**: Clicca su **Richiedi indicizzazione**.
+
+---
+
+### **5. Monitoraggio continuo**
+- **Google Search Console** ti offre un monitoraggio in tempo reale. Puoi controllare regolarmente la sezione **Indicizzazione > Pagine** per aggiornamenti.
+- Assicurati di correggere eventuali errori segnalati da Google, come:
+  - Problemi con la sitemap.
+  - Errori `404` (pagina non trovata).
+  - Blocco tramite `robots.txt`.
+
+---
+
+### **6. Cosa fare se una pagina non viene indicizzata**
+- **Controlla la connessione interna**:
+  - Ogni pagina dovrebbe avere link in ingresso da altre pagine del tuo sito.
+- **Richiedi indicizzazione manuale**:
+  - Usa **Controllo URL** su Google Search Console per ogni pagina.
+- **Assicurati che non sia bloccata**:
+  - Controlla che la pagina non sia esclusa nel file `robots.txt`.
+
+---
+
+Se segui questi passaggi, avrai una visione completa di tutte le pagine indicizzate del tuo sito e potrai intervenire in caso di problemi. Fammi sapere se trovi difficoltà! 😊
