@@ -3,25 +3,33 @@ document.addEventListener('DOMContentLoaded', () => {
     const hamburger = document.getElementById('hamburger-menu');
     const navbar = document.getElementById('navbar');
     const overlay = document.getElementById('overlay');
+    // Gestione click sull'hamburger
     hamburger.addEventListener('click', () => {
         navbar.classList.toggle('active');
         overlay.classList.toggle('active');
     });
+
+    // Chiudi il menu quando si clicca sull'overlay
     overlay.addEventListener('click', () => {
         navbar.classList.remove('active');
         overlay.classList.remove('active');
     });
 
-    // Listener popstate
+    // Listener popstate per chiudere il menu quando si torna indietro
     window.addEventListener('popstate', () => {
-        console.log('Navigazione indietro rilevata.');
         if (navbar.classList.contains('active') || overlay.classList.contains('active')) {
+            console.log('Chiudo il menu aperto al ritorno indietro.');
             navbar.classList.remove('active');
             overlay.classList.remove('active');
         }
-        location.reload();
     });
 
+    // Aggiungi uno stato alla cronologia quando il menu viene aperto
+    hamburger.addEventListener('click', () => {
+        if (!navbar.classList.contains('active')) {
+            history.pushState({ menu: 'opened' }, ''); // Aggiungi stato alla cronologia
+        }
+    });
     // Codice scrollToTop
     const scrollToTopButton = document.getElementById('scrollToTop');
     window.addEventListener('scroll', () => {
