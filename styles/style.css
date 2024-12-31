@@ -487,3 +487,95 @@ strong {
 }
 
 /*FINE per pulsavte servizi nella navbar -----------*/
+
+/*PER LA PAGINA resource -----------*/
+
+.articles-section {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Tre colonne */
+    gap: 20px; /* Spazio uniforme tra i riquadri */
+    padding: 0 20px; /* Riduzione del padding */
+    justify-content: center; /* Centrare orizzontalmente */
+    align-items: start; /* Allineamento verticale */
+    max-width: 1200px; /* Imposta una larghezza massima */
+    margin: 0 auto; /* Centrare rispetto alla pagina */
+}
+
+.article-box {
+    width: 100%;
+    max-width: 300px;
+    height: 225px; /* Altezza fissa per uniformare i box */
+    background-color: #12151a;
+    border: 2px solid #00bfff;
+    border-radius: 10px;
+    padding: 20px;
+    color: white;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+     /* Gestione del testo */
+     overflow: hidden; /* Previene l'overflow */
+     text-overflow: ellipsis; /* Aggiunge i "..." se il testo è troppo lungo */
+     white-space: normal; /* Permette al testo di andare a capo */
+     word-wrap: break-word; /* Spezza le parole lunghe */
+     line-height: 1.5; /* Aggiunge spazio tra le righe */
+}
+
+.article-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+}
+
+
+
+.article-box h3 {
+    color: #00bfff;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+
+.article-box p {
+    display: -webkit-box; /* Imposta il contenitore come box flessibile */
+    -webkit-line-clamp: 3; /* Numero massimo di righe */
+    -webkit-box-orient: vertical; /* Orienta le righe verticalmente */
+    overflow: hidden; /* Nasconde il testo in eccesso */
+    text-overflow: ellipsis; /* Aggiunge i puntini finali */
+}
+
+
+
+.article-box a {
+    color: orange;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.article-box a:hover {
+    text-decoration: underline;
+}
+
+
+/*per smartphon*/
+/* Per dispositivi mobili */
+@media screen and (max-width: 768px) {
+    .articles-section {
+        display: flex; /* Cambia da grid a flex */
+        flex-direction: column; /* Rende i riquadri verticali */
+        gap: 20px; /* Spazio uniforme tra i riquadri */
+        padding: 0 10px; /* Riduce il padding */
+        align-items: center; /* Centra i riquadri */
+    }
+
+    .article-box {
+        width: 100%; /* Adatta alla larghezza dello schermo */
+        max-width: 350px; /* Imposta una larghezza massima */
+        margin-bottom: 20px; /* Spazio tra i riquadri */
+    }
+}
+
+
+
+
+/*FINE LA PAGINA resource -----------*/
+
