@@ -4,7 +4,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const navbar = document.getElementById('navbar'); // Elemento che rappresenta il menu
     const overlay = document.getElementById('overlay'); // Overlay per il menu
 
-    console.log('Script loaded. DOM fully loaded and parsed.');
 
     // Gestione click sull'hamburger menu
     hamburger.addEventListener('click', () => {
@@ -22,19 +21,30 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Chiudi il menu quando si torna indietro nel browser
     window.addEventListener('popstate', () => {
-        console.log('Popstate event detected. Checking menu state.');
         // Controlla se il menu è aperto e chiudilo se necessario
         if (navbar.classList.contains('active') || overlay.classList.contains('active')) {
             navbar.classList.remove('active');
             overlay.classList.remove('active');
-        } 
+        }
     });
 
-     // Forza il refresh della pagina quando si torna indietro nel browser
-     window.addEventListener('popstate', () => {
-        console.log('Popstate event detected. Forcing page reload.');
-        location.reload(); // Forza il refresh della pagina
+
+
+    // Aggiungi uno stato alla cronologia quando la pagina viene caricata
+    history.pushState({ page: 'current' }, '', window.location.href);
+
+    // Rileva il ritorno indietro e ricarica la pagina
+    window.addEventListener('popstate', () => {
+        console.log('Navigazione indietro rilevata. Forzo il refresh.');
+        location.reload();
     });
+
+    // Controlla se la pagina è stata caricata tramite navigazione nella cronologia
+    if (performance.navigation.type === performance.navigation.TYPE_BACK_FORWARD) {
+        console.log('Rilevata navigazione indietro/avanti. Ricarico la pagina.');
+        location.reload();
+    }
+
 
     // Resetta navbar e overlay all'avvio della pagina (per sicurezza)
     if (navbar.classList.contains('active') || overlay.classList.contains('active')) {
