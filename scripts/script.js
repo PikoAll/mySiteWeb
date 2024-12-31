@@ -1,103 +1,60 @@
-// NAVBAR HAMBURGER
 document.addEventListener('DOMContentLoaded', () => {
-    const hamburger = document.getElementById('hamburger-menu'); // Bottone per aprire il menu
-    const navbar = document.getElementById('navbar'); // Elemento che rappresenta il menu
-    const overlay = document.getElementById('overlay'); // Overlay per il menu
-
-
-    // Gestione click sull'hamburger menu
+    // Codice hamburger menu
+    const hamburger = document.getElementById('hamburger-menu');
+    const navbar = document.getElementById('navbar');
+    const overlay = document.getElementById('overlay');
     hamburger.addEventListener('click', () => {
-        // Aggiungi/rimuovi la classe 'active' per mostrare/nascondere il menu e l'overlay
         navbar.classList.toggle('active');
         overlay.classList.toggle('active');
     });
-
-    // Chiudi il menu se si clicca sull'overlay
     overlay.addEventListener('click', () => {
-        // Rimuovi la classe 'active' per nascondere il menu e l'overlay
         navbar.classList.remove('active');
         overlay.classList.remove('active');
     });
 
-    // Chiudi il menu quando si torna indietro nel browser
+    // Listener popstate
     window.addEventListener('popstate', () => {
-        // Controlla se il menu è aperto e chiudilo se necessario
+        console.log('Navigazione indietro rilevata.');
         if (navbar.classList.contains('active') || overlay.classList.contains('active')) {
             navbar.classList.remove('active');
             overlay.classList.remove('active');
         }
-    });
-
-
-
-    // Aggiungi uno stato alla cronologia quando la pagina viene caricata
-    history.pushState({ page: 'current' }, '', window.location.href);
-
-    // Rileva il ritorno indietro e ricarica la pagina
-    window.addEventListener('popstate', () => {
-        console.log('Navigazione indietro rilevata. Forzo il refresh.');
         location.reload();
     });
 
-    // Controlla se la pagina è stata caricata tramite navigazione nella cronologia
-    if (performance.navigation.type === performance.navigation.TYPE_BACK_FORWARD) {
-        console.log('Rilevata navigazione indietro/avanti. Ricarico la pagina.');
-        location.reload();
-    }
-
-
-    // Resetta navbar e overlay all'avvio della pagina (per sicurezza)
-    if (navbar.classList.contains('active') || overlay.classList.contains('active')) {
-        navbar.classList.remove('active');
-        overlay.classList.remove('active');
-    }
-});
-
-// PULSANTE PER SALIRE SOPRA
-document.addEventListener('DOMContentLoaded', () => {
-    const scrollToTopButton = document.getElementById('scrollToTop'); // Bottone per tornare in cima alla pagina
-
-    // Mostra o nasconde il pulsante in base allo scroll
+    // Codice scrollToTop
+    const scrollToTopButton = document.getElementById('scrollToTop');
     window.addEventListener('scroll', () => {
         if (window.scrollY > 300) {
-            // Aggiunge la classe 'show' per mostrare il pulsante
             scrollToTopButton.classList.add('show');
         } else {
-            // Rimuove la classe 'show' per nascondere il pulsante
             scrollToTopButton.classList.remove('show');
         }
     });
-
-    // Funzione per tornare in alto
     scrollToTopButton.addEventListener('click', () => {
-        // Scorri verso l'alto con un'animazione fluida
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth',
-        });
+        window.scrollTo({ top: 0, behavior: 'smooth' });
     });
-});
 
-// PER IL SOTTO MENU SERVIZI
-document.addEventListener('DOMContentLoaded', () => {
-    const dropdownToggle = document.getElementById('dropdown-toggle'); // Bottone per aprire il dropdown
-    const dropdownMenu = document.querySelector('.dropdown-menu'); // Contenuto del dropdown
-
-    // Gestione click sul bottone per mostrare/nascondere il dropdown
+    // Codice dropdown menu
+    const dropdownToggle = document.getElementById('dropdown-toggle');
+    const dropdownMenu = document.querySelector('.dropdown-menu');
     dropdownToggle.addEventListener('click', (event) => {
-        event.preventDefault(); // Impedisce il comportamento predefinito del link
-        // Verifica se il menu è visibile e alterna lo stile 'display'
+        event.preventDefault();
         if (dropdownMenu.style.display === 'block') {
             dropdownMenu.style.display = 'none';
         } else {
             dropdownMenu.style.display = 'block';
         }
     });
-
-    // Chiudi il menu cliccando fuori dal dropdown
     document.addEventListener('click', (event) => {
         if (!dropdownToggle.contains(event.target) && !dropdownMenu.contains(event.target)) {
-            dropdownMenu.style.display = 'none'; // Nasconde il dropdown
+            dropdownMenu.style.display = 'none';
         }
     });
+
+    // Resetta navbar e overlay all'avvio della pagina
+    if (navbar.classList.contains('active') || overlay.classList.contains('active')) {
+        navbar.classList.remove('active');
+        overlay.classList.remove('active');
+    }
 });
