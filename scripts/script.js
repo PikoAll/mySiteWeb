@@ -4,24 +4,39 @@ document.addEventListener('DOMContentLoaded', () => {
     const navbar = document.getElementById('navbar');
     const overlay = document.getElementById('overlay');
 
+    console.log('Script loaded. DOM fully loaded and parsed.');
+
     hamburger.addEventListener('click', () => {
         navbar.classList.toggle('active'); // Mostra/nascondi il menu
         overlay.classList.toggle('active'); // Mostra/nascondi l'overlay
+        console.log('Hamburger menu clicked. Navbar active:', navbar.classList.contains('active'));
     });
 
     // Chiudi il menu se si clicca sull'overlay
     overlay.addEventListener('click', () => {
         navbar.classList.remove('active');
         overlay.classList.remove('active');
+        console.log('Overlay clicked. Navbar and overlay deactivated.');
     });
 
     // Chiudi il menu quando si torna indietro
     window.addEventListener('popstate', () => {
+        console.log('Popstate event detected.');
         if (navbar.classList.contains('active')) {
             navbar.classList.remove('active');
             overlay.classList.remove('active');
+            console.log('Navbar and overlay state reset due to popstate.');
+        } else {
+            console.log('Navbar is already closed.');
         }
     });
+
+    // Reset navbar e overlay all'avvio della pagina (facoltativo, per sicurezza)
+    if (navbar.classList.contains('active') || overlay.classList.contains('active')) {
+        navbar.classList.remove('active');
+        overlay.classList.remove('active');
+        console.log('Navbar and overlay reset on page load.');
+    }
 });
 
 
