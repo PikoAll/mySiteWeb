@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     console.log('Script loaded. DOM fully loaded and parsed.');
 
+    // Gestione click sull'hamburger menu
     hamburger.addEventListener('click', () => {
         navbar.classList.toggle('active'); // Mostra/nascondi il menu
         overlay.classList.toggle('active'); // Mostra/nascondi l'overlay
@@ -22,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Chiudi il menu quando si torna indietro
     window.addEventListener('popstate', () => {
         console.log('Popstate event detected.');
-        if (navbar.classList.contains('active')) {
+        if (navbar.classList.contains('active') || overlay.classList.contains('active')) {
             navbar.classList.remove('active');
             overlay.classList.remove('active');
             console.log('Navbar and overlay state reset due to popstate.');
@@ -31,7 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Reset navbar e overlay all'avvio della pagina (facoltativo, per sicurezza)
+    // Reset navbar e overlay all'avvio della pagina (per sicurezza)
     if (navbar.classList.contains('active') || overlay.classList.contains('active')) {
         navbar.classList.remove('active');
         overlay.classList.remove('active');
@@ -39,8 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-
-//PULSANTE PER SALIRE SOPRA
+// PULSANTE PER SALIRE SOPRA
 document.addEventListener('DOMContentLoaded', () => {
     const scrollToTopButton = document.getElementById('scrollToTop');
 
@@ -63,25 +63,26 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // PER IL SOTTO MENU SERVIZI
-document.addEventListener("DOMContentLoaded", function () {
-    const dropdownToggle = document.getElementById("dropdown-toggle");
-    const dropdownMenu = document.querySelector(".dropdown-menu");
+document.addEventListener('DOMContentLoaded', () => {
+    const dropdownToggle = document.getElementById('dropdown-toggle');
+    const dropdownMenu = document.querySelector('.dropdown-menu');
 
-    dropdownToggle.addEventListener("click", function (event) {
+    dropdownToggle.addEventListener('click', (event) => {
         event.preventDefault(); // Impedisce il comportamento predefinito del link
         // Verifica se il menu è visibile e alterna lo stile 'display'
-        if (dropdownMenu.style.display === "block") {
-            dropdownMenu.style.display = "none";
+        if (dropdownMenu.style.display === 'block') {
+            dropdownMenu.style.display = 'none';
         } else {
-            dropdownMenu.style.display = "block";
+            dropdownMenu.style.display = 'block';
         }
+        console.log('Dropdown menu toggled. Visible:', dropdownMenu.style.display === 'block');
     });
 
     // Chiudi il menu cliccando fuori dal dropdown
-    document.addEventListener("click", function (event) {
+    document.addEventListener('click', (event) => {
         if (!dropdownToggle.contains(event.target) && !dropdownMenu.contains(event.target)) {
-            dropdownMenu.style.display = "none";
+            dropdownMenu.style.display = 'none';
+            console.log('Clicked outside dropdown. Dropdown menu closed.');
         }
     });
 });
-
