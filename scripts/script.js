@@ -1,4 +1,4 @@
-//NAVBAR HAMBURGHER
+// NAVBAR HAMBURGHER
 document.addEventListener('DOMContentLoaded', () => {
     const hamburger = document.getElementById('hamburger-menu');
     const navbar = document.getElementById('navbar');
@@ -13,6 +13,14 @@ document.addEventListener('DOMContentLoaded', () => {
     overlay.addEventListener('click', () => {
         navbar.classList.remove('active');
         overlay.classList.remove('active');
+    });
+
+    // Chiudi il menu quando si torna indietro
+    window.addEventListener('popstate', () => {
+        if (navbar.classList.contains('active')) {
+            navbar.classList.remove('active');
+            overlay.classList.remove('active');
+        }
     });
 });
 
