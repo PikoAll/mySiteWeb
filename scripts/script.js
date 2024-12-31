@@ -11,7 +11,6 @@ document.addEventListener('DOMContentLoaded', () => {
         // Aggiungi/rimuovi la classe 'active' per mostrare/nascondere il menu e l'overlay
         navbar.classList.toggle('active');
         overlay.classList.toggle('active');
-        console.log('Hamburger menu clicked. Navbar active:', navbar.classList.contains('active'));
     });
 
     // Chiudi il menu se si clicca sull'overlay
@@ -19,7 +18,6 @@ document.addEventListener('DOMContentLoaded', () => {
         // Rimuovi la classe 'active' per nascondere il menu e l'overlay
         navbar.classList.remove('active');
         overlay.classList.remove('active');
-        console.log('Overlay clicked. Navbar and overlay deactivated.');
     });
 
     // Chiudi il menu quando si torna indietro nel browser
@@ -29,17 +27,19 @@ document.addEventListener('DOMContentLoaded', () => {
         if (navbar.classList.contains('active') || overlay.classList.contains('active')) {
             navbar.classList.remove('active');
             overlay.classList.remove('active');
-            console.log('Navbar and overlay state reset due to popstate.');
-        } else {
-            console.log('Navbar is already closed.');
-        }
+        } 
+    });
+
+     // Forza il refresh della pagina quando si torna indietro nel browser
+     window.addEventListener('popstate', () => {
+        console.log('Popstate event detected. Forcing page reload.');
+        location.reload(); // Forza il refresh della pagina
     });
 
     // Resetta navbar e overlay all'avvio della pagina (per sicurezza)
     if (navbar.classList.contains('active') || overlay.classList.contains('active')) {
         navbar.classList.remove('active');
         overlay.classList.remove('active');
-        console.log('Navbar and overlay reset on page load.');
     }
 });
 
@@ -65,7 +65,6 @@ document.addEventListener('DOMContentLoaded', () => {
             top: 0,
             behavior: 'smooth',
         });
-        console.log('Scroll to top button clicked.');
     });
 });
 
@@ -83,14 +82,12 @@ document.addEventListener('DOMContentLoaded', () => {
         } else {
             dropdownMenu.style.display = 'block';
         }
-        console.log('Dropdown menu toggled. Visible:', dropdownMenu.style.display === 'block');
     });
 
     // Chiudi il menu cliccando fuori dal dropdown
     document.addEventListener('click', (event) => {
         if (!dropdownToggle.contains(event.target) && !dropdownMenu.contains(event.target)) {
             dropdownMenu.style.display = 'none'; // Nasconde il dropdown
-            console.log('Clicked outside dropdown. Dropdown menu closed.');
         }
     });
 });
