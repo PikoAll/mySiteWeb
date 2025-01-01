@@ -176,6 +176,20 @@ main img.logo {
     display: block;
     border: 2px solid #00bfff;
     border-radius: 10px;
+    transform: scale(0);  /* Inizia in scala ridotta */
+    animation: grow 1s ease-out forwards;
+}
+
+/* Keyframes per l'animazione di crescita */
+@keyframes grow {
+    0% {
+        transform: scale(0);  /* Inizia con dimensione 0 */
+        opacity: 0;  /* Completamente trasparente */
+    }
+    100% {
+        transform: scale(1);  /* Cresce alla dimensione originale */
+        opacity: 1;  /* Completamente visibile */
+    }
 }
 
 /* Sezioni */
