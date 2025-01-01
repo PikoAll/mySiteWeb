@@ -6,7 +6,7 @@ import re
 html_directory = "./"  # Cambia il percorso se necessario
 
 # Nuova versione da aggiungere
-new_version = "4.0.0.0"  # Aggiorna la versione qui
+new_version = "4.0.0.1"  # Aggiorna la versione qui
 
 # Funzione per aggiornare CSS e JS
 def update_version_in_html(file_path, new_version):
