@@ -74,6 +74,13 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!dropdownToggle.contains(event.target) && !dropdownMenu.contains(event.target)) {
             dropdownMenu.style.display = 'none';
             console.log("EVENTO: Click fuori dal dropdown, chiuso");
+             // Verifica se il menu è aperto
+        if (navbar.classList.contains('active') || overlay.classList.contains('active')) {
+            console.log("EVENTO: Menu aperto, chiudo simulando clic sull'hamburger");
+
+            // Simula un clic sull'hamburger
+            hamburger.click();
+        }
         }
     });
 
