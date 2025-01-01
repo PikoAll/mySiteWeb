@@ -3,10 +3,16 @@ document.addEventListener('DOMContentLoaded', () => {
     const hamburger = document.getElementById('hamburger-menu');
     const navbar = document.getElementById('navbar');
     const overlay = document.getElementById('overlay');
+
     // Gestione click sull'hamburger
     hamburger.addEventListener('click', () => {
-        navbar.classList.toggle('active');
+        const isActive = navbar.classList.toggle('active');
         overlay.classList.toggle('active');
+
+        // Aggiungi uno stato alla cronologia solo se il menu è aperto
+        if (isActive) {
+            history.pushState({ menu: 'opened' }, ''); // Aggiungi stato alla cronologia
+        }
     });
 
     // Chiudi il menu quando si clicca sull'overlay
@@ -16,20 +22,18 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Listener popstate per chiudere il menu quando si torna indietro
-    window.addEventListener('popstate', () => {
-        if (navbar.classList.contains('active') || overlay.classList.contains('active')) {
-            console.log('Chiudo il menu aperto al ritorno indietro.');
+    window.addEventListener('popstate', (event) => {
+        if (event.state && event.state.menu === 'opened') {
+            // Lascialo aperto se lo stato è "opened"
+            navbar.classList.add('active');
+            overlay.classList.add('active');
+        } else {
+            // Chiudi il menu se lo stato non è "opened"
             navbar.classList.remove('active');
             overlay.classList.remove('active');
         }
     });
 
-    // Aggiungi uno stato alla cronologia quando il menu viene aperto
-    hamburger.addEventListener('click', () => {
-        if (!navbar.classList.contains('active')) {
-            history.pushState({ menu: 'opened' }, ''); // Aggiungi stato alla cronologia
-        }
-    });
     // Codice scrollToTop
     const scrollToTopButton = document.getElementById('scrollToTop');
     window.addEventListener('scroll', () => {

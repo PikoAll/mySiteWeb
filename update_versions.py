@@ -1,5 +1,5 @@
 #questo script serve per aggiornare i file statici come js e css ogni volta aumentare la versione per ogni modifica di questi file menzionati 
-#basta andare sul terminale e lanciare il seguennte comando 
+#basta andare sul terminale e lanciare il seguennte comando python3 update_versions.py
 import os
 import re
 
@@ -7,7 +7,7 @@ import re
 html_directory = "./"  # Cambia il percorso se necessario
 
 # Nuova versione da aggiungere
-new_version = "3.0.0.5"  # Aggiorna la versione qui
+new_version = "3.0.0.6"  # Aggiorna la versione qui
 
 # Funzione per aggiornare CSS e JS
 def update_version_in_html(file_path, new_version):
