@@ -10,16 +10,27 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Gestione click sul pulsante hamburger
     hamburger.addEventListener('click', (event) => {
-        event.stopPropagation(); // Evita conflitti con altri listener
+        event.stopPropagation();
         navbar.classList.toggle('active');
         overlay.classList.toggle('active');
         console.log("EVENTO: Click sul pulsante hamburger");
-
+    
         if (navbar.classList.contains('active')) {
-            history.pushState({ menu: 'opened' }, '');
-            console.log("EVENTO: Aggiunto stato alla cronologia");
+            history.replaceState({ menu: 'opened' }, ''); // Modifica lo stato corrente
+            console.log("EVENTO: Stato aggiornato nella cronologia");
         }
     });
+    
+    window.addEventListener('popstate', (event) => {
+        if (event.state && event.state.menu === 'opened') {
+            console.log("EVENTO: popstate, chiudo menu");
+            navbar.classList.remove('active');
+            overlay.classList.remove('active');
+        } else {
+            console.log("EVENTO: popstate, navigazione normale");
+        }
+    });
+    
 
     // Gestione click sull'overlay per chiudere il menu
     overlay.addEventListener('click', () => {
@@ -28,17 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
         console.log("EVENTO: Click sull'overlay");
     });
 
-    // Listener per il tasto "indietro" (popstate)
-    window.addEventListener('popstate', () => {
-        if (navbar.classList.contains('active') || overlay.classList.contains('active')) {
-            console.log("EVENTO: popstate, chiudo menu");
-            navbar.classList.remove('active');
-            overlay.classList.remove('active');
-        } else {
-            console.log("EVENTO: popstate, nessun menu aperto");
-        }
-    });
-
+   
     // Gestione scroll per mostrare o nascondere il bottone "Torna su"
     window.addEventListener('scroll', () => {
         if (window.scrollY > 300) {
