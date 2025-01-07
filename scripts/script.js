@@ -74,13 +74,13 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!dropdownToggle.contains(event.target) && !dropdownMenu.contains(event.target)) {
             dropdownMenu.style.display = 'none';
             console.log("EVENTO: Click fuori dal dropdown, chiuso");
-             // Verifica se il menu è aperto
-        if (navbar.classList.contains('active') || overlay.classList.contains('active')) {
-            console.log("EVENTO: Menu aperto, chiudo simulando clic sull'hamburger");
+            // Verifica se il menu è aperto
+            if (navbar.classList.contains('active') || overlay.classList.contains('active')) {
+                console.log("EVENTO: Menu aperto, chiudo simulando clic sull'hamburger");
 
-            // Simula un clic sull'hamburger
-            hamburger.click();
-        }
+                // Simula un clic sull'hamburger
+                hamburger.click();
+            }
         }
     });
 
@@ -90,4 +90,37 @@ document.addEventListener('DOMContentLoaded', () => {
         overlay.classList.remove('active');
         console.log("INIZIALIZZAZIONE: Reset navbar e overlay all'avvio");
     }
+
+
+
+    /*DISPENSE FOTOPER PAGINA CREATIVE SERVICES*/
+    const slide = document.querySelector('.carousel-slide');
+    const images = document.querySelectorAll('.carousel-slide img');
+    let currentIndex = 0;
+
+    // Calcola la larghezza dell'immagine dinamicamente
+    const updateWidth = () => images[0].clientWidth;
+
+    // Funzione per scorrere automaticamente
+    const autoScroll = () => {
+        currentIndex++;
+        if (currentIndex >= images.length) {
+            currentIndex = 0; // Torna alla prima immagine
+        }
+        slide.style.transform = `translateX(${-updateWidth() * currentIndex}px)`;
+    };
+
+    // Scorrimento automatico ogni 3 secondi
+    setInterval(autoScroll, 3000);
+
+    // Aggiorna larghezza immagine su resize
+    window.addEventListener('resize', () => {
+        slide.style.transition = 'none'; // Disabilita transizione durante il resize
+        slide.style.transform = `translateX(${-updateWidth() * currentIndex}px)`;
+        setTimeout(() => {
+            slide.style.transition = 'transform 0.5s ease-in-out'; // Riabilita la transizione
+        });
+    });
+
+    /*FINE DISPENE FOTO PER PAGINA CREATIVE SERVICES*/
 });

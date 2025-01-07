@@ -7,6 +7,7 @@ body {
     color: white;
     line-height: 1.6;
 }
+
 .mission-vision-title {
     color: orange;
 }
@@ -26,7 +27,8 @@ header img.banner {
     width: 100%;
     max-height: 200px;
     object-fit: cover;
-    transform: scale(0);  /* Inizia in scala ridotta */
+    transform: scale(0);
+    /* Inizia in scala ridotta */
     animation: grow 1s ease-out forwards;
 }
 
@@ -39,7 +41,9 @@ nav ul {
     background-color: #12151a;
 }
 
-nav ul li {margin: 0 15px;}
+nav ul li {
+    margin: 0 15px;
+}
 
 nav ul li a {
     color: #00bfff;
@@ -47,7 +51,9 @@ nav ul li a {
     font-size: 1.2rem;
 }
 
-nav ul li a:hover {color: white;}
+nav ul li a:hover {
+    color: white;
+}
 
 /* Navbar - Modalità desktop */
 #navbar {
@@ -79,11 +85,16 @@ nav ul li a:hover {color: white;}
     justify-content: center;
 }
 
-#navbar ul {flex-direction: row;}
+#navbar ul {
+    flex-direction: row;
+}
 
 /* Nascondi l'icona hamburger in modalità desktop */
 @media screen and (min-width: 769px) {
-    .hamburger {display: none;/* Nasconde l'icona hamburger */}
+    .hamburger {
+        display: none;
+        /* Nasconde l'icona hamburger */
+    }
 }
 
 .cta-link {
@@ -96,7 +107,10 @@ nav ul li a:hover {color: white;}
     /* Per un effetto di transizione */
 }
 
-.cta-link:hover {color: orangered;/* Cambia il colore al passaggio del mouse */}
+.cta-link:hover {
+    color: orangered;
+    /* Cambia il colore al passaggio del mouse */
+}
 
 @media screen and (max-width: 768px) {
     .hamburger {
@@ -127,7 +141,10 @@ nav ul li a:hover {color: white;}
         /* Opzionale */
     }
 
-    #navbar.active {display: flex;/* Mostra la navbar quando attiva */}
+    #navbar.active {
+        display: flex;
+        /* Mostra la navbar quando attiva */
+    }
 
     #navbar ul {
         flex-direction: column;
@@ -178,24 +195,32 @@ main img.logo {
     display: block;
     border: 2px solid #00bfff;
     border-radius: 10px;
-    transform: scale(0);  /* Inizia in scala ridotta */
+    transform: scale(0);
+    /* Inizia in scala ridotta */
     animation: grow 1s ease-out forwards;
 }
 
 /* Keyframes per l'animazione di crescita */
 @keyframes grow {
     0% {
-        transform: scale(0);  /* Inizia con dimensione 0 */
-        opacity: 0;  /* Completamente trasparente */
+        transform: scale(0);
+        /* Inizia con dimensione 0 */
+        opacity: 0;
+        /* Completamente trasparente */
     }
+
     100% {
-        transform: scale(1);  /* Cresce alla dimensione originale */
-        opacity: 1;  /* Completamente visibile */
+        transform: scale(1);
+        /* Cresce alla dimensione originale */
+        opacity: 1;
+        /* Completamente visibile */
     }
 }
 
 /* Sezioni */
-main section {margin-bottom: 60px;}
+main section {
+    margin-bottom: 60px;
+}
 
 .intro-container {
     text-align: center;
@@ -298,7 +323,9 @@ main section {margin-bottom: 60px;}
     border: 1px solid #00bfff;
 }
 
-.progress-bar {background: linear-gradient(90deg, #333, #444);}
+.progress-bar {
+    background: linear-gradient(90deg, #333, #444);
+}
 
 .progress-fill {
     height: 100%;
@@ -356,7 +383,9 @@ footer {
     color: white;
 }
 
-footer .social-icons {margin-top: 10px;}
+footer .social-icons {
+    margin-top: 10px;
+}
 
 footer .social-icons a {
     margin: 0 10px;
@@ -379,9 +408,17 @@ footer .social-icons a:hover {
 
 /* Responsive */
 @media screen and (max-width: 768px) {
-    nav ul {flex-direction: column;}
-    header img.banner {max-height: 150px;}
-    main img.logo {width: 80px;}
+    nav ul {
+        flex-direction: column;
+    }
+
+    header img.banner {
+        max-height: 150px;
+    }
+
+    main img.logo {
+        width: 80px;
+    }
 }
 
 
@@ -422,7 +459,10 @@ strong {
     /* Ingrandisci al passaggio del mouse */
 }
 
-#scrollToTop.show {display: block;/* Mostralo quando necessario */}
+#scrollToTop.show {
+    display: block;
+    /* Mostralo quando necessario */
+}
 
 /*per pulsavte servizi nella navbar -----------*/
 .nav-links {
@@ -444,16 +484,24 @@ strong {
     display: none;
     position: absolute;
     top: 100%;
-    left: 50%; /* Centrare rispetto al contenitore */
-    transform: translateX(-50%); /* Centrare orizzontalmente */
-    background-color: #12151a; /* Colore di sfondo */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Ombra */
-    border-radius: 8px; /* Angoli arrotondati */
+    left: 50%;
+    /* Centrare rispetto al contenitore */
+    transform: translateX(-50%);
+    /* Centrare orizzontalmente */
+    background-color: #12151a;
+    /* Colore di sfondo */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    /* Ombra */
+    border-radius: 8px;
+    /* Angoli arrotondati */
     list-style: none;
-    padding: 10px 0; /* Spaziatura verticale interna */
+    padding: 10px 0;
+    /* Spaziatura verticale interna */
     z-index: 1000;
-    width: 250px; /* Larghezza fissa */
-    text-align: center; /* Centrare il testo */
+    width: 250px;
+    /* Larghezza fissa */
+    text-align: center;
+    /* Centrare il testo */
 }
 
 /* Voci del menu */
@@ -467,12 +515,15 @@ strong {
     padding: 10px 20px;
     display: block;
     transition: background-color 0.3s ease, color 0.3s ease;
-    font-size: 1rem; /* Dimensione leggibile */
-    border-radius: 4px; /* Per un effetto di pulsanti */
+    font-size: 1rem;
+    /* Dimensione leggibile */
+    border-radius: 4px;
+    /* Per un effetto di pulsanti */
 }
 
 .dropdown-menu li a:hover {
-    background-color: orangered; /* Cambia colore al passaggio del mouse */
+    background-color: orangered;
+    /* Cambia colore al passaggio del mouse */
     color: white;
 }
 
@@ -487,8 +538,9 @@ strong {
 }
 
 /* Aggiunta per margini e spaziature */
-.dropdown-menu li + li {
-    margin-top: 5px; /* Distanza tra gli elementi del menu */
+.dropdown-menu li+li {
+    margin-top: 5px;
+    /* Distanza tra gli elementi del menu */
 }
 
 @media (max-width: 768px) {
@@ -508,19 +560,27 @@ strong {
 
 .articles-section {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Tre colonne */
-    gap: 20px; /* Spazio uniforme tra i riquadri */
-    padding: 0 20px; /* Riduzione del padding */
-    justify-content: center; /* Centrare orizzontalmente */
-    align-items: start; /* Allineamento verticale */
-    max-width: 1200px; /* Imposta una larghezza massima */
-    margin: 0 auto; /* Centrare rispetto alla pagina */
+    grid-template-columns: repeat(3, 1fr);
+    /* Tre colonne */
+    gap: 20px;
+    /* Spazio uniforme tra i riquadri */
+    padding: 0 20px;
+    /* Riduzione del padding */
+    justify-content: center;
+    /* Centrare orizzontalmente */
+    align-items: start;
+    /* Allineamento verticale */
+    max-width: 1200px;
+    /* Imposta una larghezza massima */
+    margin: 0 auto;
+    /* Centrare rispetto alla pagina */
 }
 
 .article-box {
     width: 100%;
     max-width: 300px;
-    height: 225px; /* Altezza fissa per uniformare i box */
+    height: 225px;
+    /* Altezza fissa per uniformare i box */
     background-color: #12151a;
     border: 2px solid #00bfff;
     border-radius: 10px;
@@ -529,12 +589,17 @@ strong {
     text-align: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-     /* Gestione del testo */
-     overflow: hidden; /* Previene l'overflow */
-     text-overflow: ellipsis; /* Aggiunge i "..." se il testo è troppo lungo */
-     white-space: normal; /* Permette al testo di andare a capo */
-     word-wrap: break-word; /* Spezza le parole lunghe */
-     line-height: 1.5; /* Aggiunge spazio tra le righe */
+    /* Gestione del testo */
+    overflow: hidden;
+    /* Previene l'overflow */
+    text-overflow: ellipsis;
+    /* Aggiunge i "..." se il testo è troppo lungo */
+    white-space: normal;
+    /* Permette al testo di andare a capo */
+    word-wrap: break-word;
+    /* Spezza le parole lunghe */
+    line-height: 1.5;
+    /* Aggiunge spazio tra le righe */
 }
 
 .article-box:hover {
@@ -552,11 +617,16 @@ strong {
 
 
 .article-box p {
-    display: -webkit-box; /* Imposta il contenitore come box flessibile */
-    -webkit-line-clamp: 3; /* Numero massimo di righe */
-    -webkit-box-orient: vertical; /* Orienta le righe verticalmente */
-    overflow: hidden; /* Nasconde il testo in eccesso */
-    text-overflow: ellipsis; /* Aggiunge i puntini finali */
+    display: -webkit-box;
+    /* Imposta il contenitore come box flessibile */
+    -webkit-line-clamp: 3;
+    /* Numero massimo di righe */
+    -webkit-box-orient: vertical;
+    /* Orienta le righe verticalmente */
+    overflow: hidden;
+    /* Nasconde il testo in eccesso */
+    text-overflow: ellipsis;
+    /* Aggiunge i puntini finali */
 }
 
 
@@ -576,17 +646,25 @@ strong {
 /* Per dispositivi mobili */
 @media screen and (max-width: 768px) {
     .articles-section {
-        display: flex; /* Cambia da grid a flex */
-        flex-direction: column; /* Rende i riquadri verticali */
-        gap: 20px; /* Spazio uniforme tra i riquadri */
-        padding: 0 10px; /* Riduce il padding */
-        align-items: center; /* Centra i riquadri */
+        display: flex;
+        /* Cambia da grid a flex */
+        flex-direction: column;
+        /* Rende i riquadri verticali */
+        gap: 20px;
+        /* Spazio uniforme tra i riquadri */
+        padding: 0 10px;
+        /* Riduce il padding */
+        align-items: center;
+        /* Centra i riquadri */
     }
 
     .article-box {
-        width: 100%; /* Adatta alla larghezza dello schermo */
-        max-width: 350px; /* Imposta una larghezza massima */
-        margin-bottom: 20px; /* Spazio tra i riquadri */
+        width: 100%;
+        /* Adatta alla larghezza dello schermo */
+        max-width: 350px;
+        /* Imposta una larghezza massima */
+        margin-bottom: 20px;
+        /* Spazio tra i riquadri */
     }
 }
 
@@ -595,3 +673,52 @@ strong {
 
 /*FINE LA PAGINA resource -----------*/
 
+
+/*DISPENSE FOTOPER PAGINA CREATIVE SERVICES*/
+/* Contenitore del carousel */
+.carousel-container {
+    width: 100%;
+    max-width: 600px;
+    overflow: hidden;
+    margin: 20px auto;
+    position: relative;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+}
+
+.carousel-slide {
+    display: flex;
+    transition: transform 0.5s ease-in-out; /* Aggiunge la transizione fluida */
+    width: 100%; /* Assicurati che il contenitore si adatti */
+}
+
+.carousel-slide img {
+    width: 100%; /* L'immagine occupa tutto lo spazio disponibile */
+    flex-shrink: 0; /* Evita che le immagini si ridimensionino */
+    max-width: 600px;
+    height: auto;
+    object-fit: cover;
+}
+section {
+    padding: 20px 0; /* Riduci il padding verticale */
+}
+
+.carousel-slide img:hover {
+    transform: scale(1.05); /* Effetto zoom leggero */
+    transition: transform 0.3s ease-in-out;
+}
+
+
+@media (max-width: 768px) {
+    .carousel-btn {
+        padding: 8px;
+        font-size: 16px;
+    }
+
+    .carousel-container {
+        border: none; /* Rimuove il bordo per un design più pulito su mobile */
+    }
+}
+
+
+/*FINE DISPENE FOTO PER PAGINA CREATIVE SERVICES*/
