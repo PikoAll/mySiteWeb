@@ -1,120 +1,160 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="it">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contattaci - PikoBit | Richiedi Progetti e Soluzioni Personalizzate</title>
-    <meta name="description"
-        content="Contattaci su PikoBit per sviluppare applicazioni web, software gestionali o progetti personalizzati. Richiedi un preventivo gratuito o assistenza personalizzata.">
-    <meta name="keywords"
-        content="contatti PikoBit, sviluppo software personalizzato, creare applicazioni web, assistenza personalizzata, progetti su misura, coding, tutorial programmazione">
-    <meta name="author" content="PikoBit">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Contattaci - PikoBit | Richiedi Progetti e Soluzioni Personalizzate
+    </title>
+    <meta
+      name="description"
+      content="Contattaci su PikoBit per sviluppare applicazioni web, software gestionali o progetti personalizzati. Richiedi un preventivo gratuito o assistenza personalizzata."
+    />
+    <meta
+      name="keywords"
+      content="contatti PikoBit, sviluppo software personalizzato, creare applicazioni web, assistenza personalizzata, progetti su misura, coding, tutorial programmazione"
+    />
+    <meta name="author" content="PikoBit" />
 
     <!-- Tag canonical -->
-    <link rel="canonical" href="https://pikobit.it/contact.html">
+    <link rel="canonical" href="https://pikobit.it/contact.html" />
 
-    <link rel="stylesheet" href="./styles/style.css?v=4.0.0.8">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-    <link rel="icon" href="./images/logo.webp" type="image/png">
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:title"
+      content="Contattaci - PikoBit | Richiedi Progetti e Soluzioni Personalizzate"
+    />
+    <meta
+      property="og:description"
+      content="Contattaci su PikoBit per sviluppare applicazioni web, software gestionali o progetti personalizzati. Richiedi un preventivo gratuito."
+    />
+    <meta property="og:image" content="https://pikobit.it/images/banner.webp" />
+    <meta property="og:url" content="https://pikobit.it/contact.html" />
 
+    <link rel="stylesheet" href="./styles/style.css?v=4.0.0.8" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" href="./images/logo.webp" type="image/png" />
 
     <script src="/scripts/script.js?v=4.0.0.8"></script>
 
     <!-- Dati strutturati -->
     <script type="application/ld+json">
-        {
-          "@context": "https://schema.org",
-          "@type": "ContactPage",
-          "contactPoint": {
-            "@type": "ContactPoint",
-            "telephone": "+39-351-889-1903",
-            "email": "piko.bit00@gmail.com",
-            "contactType": "customer support",
-            "availableLanguage": ["Italian", "English"]
-          }
+      {
+        "@context": "https://schema.org",
+        "@type": "ContactPage",
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "telephone": "+39-351-889-1903",
+          "email": "piko.bit.00@gmail.com",
+          "contactType": "customer support",
+          "availableLanguage": ["Italian", "English"]
         }
-        </script>
-
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-TVGN1XBX7H"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-
-        gtag('config', 'G-TVGN1XBX7H');
+      }
     </script>
 
-</head>
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-TVGN1XBX7H"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
 
-<body>
+      gtag("config", "G-TVGN1XBX7H");
+    </script>
+  </head>
+
+  <body>
     <header>
-        <img src="./images/banner.webp" alt="Pikobit Banner" class="banner">
-        <div class="hamburger" id="hamburger-menu">
-            <i class="fas fa-bars"></i>
-        </div>
-        <div class="overlay" id="overlay"></div>
-        <nav id="navbar">
-            <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
+      <img src="./images/banner.webp" alt="Pikobit Banner" class="banner" />
+      <div class="hamburger" id="hamburger-menu">
+        <i class="fas fa-bars"></i>
+      </div>
+      <div class="overlay" id="overlay"></div>
+      <nav id="navbar">
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
 
-                <li class="dropdown">
-                    <a href="#" id="dropdown-toggle">Servizi ▼</a>
-                    <ul class="dropdown-menu">
-                        <li><a href="websites.html">Siti web personalizzati</a></li>
-                        <li><a href="modern-apps.html">Applicazioni moderne</a></li>
-                        <li><a href="custom-software.html">Software gestionali su misura</a></li>
-                        <li><a href="creative-services.html">Servizi Creativi e Soluzioni Complete</a></li>
-                        <li><a href="lessons.html">Lezioni e tutorial</a></li>
-                    </ul>
-                </li>
-
-                <li><a href="ideas.html">Idee Innovative</a></li>
-                <li><a href="about.html">Chi Sono</a></li>
-                <li><a href="resources.html">Risorse</a></li>
-                <li><a href="contact.html">Contatti</a></li>
+          <li class="dropdown">
+            <a href="#" id="dropdown-toggle">Servizi ▼</a>
+            <ul class="dropdown-menu">
+              <li><a href="websites.html">Siti web personalizzati</a></li>
+              <li><a href="modern-apps.html">Applicazioni moderne</a></li>
+              <li>
+                <a href="custom-software.html">Software gestionali su misura</a>
+              </li>
+              <li>
+                <a href="creative-services.html"
+                  >Servizi Creativi e Soluzioni Complete</a
+                >
+              </li>
+              <li><a href="lessons.html">Lezioni e tutorial</a></li>
             </ul>
-        </nav>
+          </li>
+
+          <li><a href="ideas.html">Idee Innovative</a></li>
+          <li><a href="about.html">Chi Sono</a></li>
+          <li><a href="resources.html">Risorse</a></li>
+          <li><a href="contact.html">Contatti</a></li>
+        </ul>
+      </nav>
     </header>
     <main class="main-contact">
+      <section class="intro">
+        <div class="intro-container">
+          <img
+            src="./images/logo.webp"
+            alt="Logo Pikobit - Tutorial e Progetti di Programmazione"
+            class="logo"
+          />
+          <h1>Contattami</h1>
+          <p>
+            Hai bisogno di un <strong>sito web</strong>, un'<strong
+              >applicazione</strong
+            >
+            o un <strong>software gestionale su misura</strong> per la tua
+            attività? Oppure vuoi <strong>video corsi</strong> o
+            <strong>lezioni personalizzate di programmazione</strong>? Non
+            esitare a metterti in contatto con me! Ti risponderò al più presto.
+          </p>
+        </div>
+      </section>
 
-        <section class="intro">
-            <div class="intro-container">
-                <img src="./images/logo.webp" alt="Logo Pikobit - Tutorial e Progetti di Programmazione" class="logo">
-                <h1>Contattami</h1>
-                <p>
-                    Sei interessato a <strong>video corsi</strong>, <strong>lezioni personalizzate di
-                        programmazione</strong>
-                    o desideri sviluppare un <strong>software su misura</strong> per le tue esigenze aziendali o
-                    personali?
-                    Non esitare a metterti in contatto con me! Ti risponderò al più presto.
-                </p>
-            </div>
-        </section>
-
-        <section class="contact-details">
-            <h2>Informazioni di contatto</h2>
-            <p><strong>Email:</strong> <a href="mailto:info@pikobit.com" class="cta-link">piko.bit00@gmail.com</a></p>
-            <p><strong>Telefono:</strong> +39 351 889 1903</p>
-        </section>
+      <section class="contact-details">
+        <h2>Informazioni di contatto</h2>
+        <p>
+          <strong>Email:</strong>
+          <a href="mailto:piko.bit.00@gmail.com" class="cta-link"
+            >piko.bit.00@gmail.com</a
+          >
+        </p>
+        <p><strong>Telefono:</strong> +39 351 889 1903</p>
+      </section>
     </main>
     <footer>
-        <p>&copy; 2024 Pikobit. Tutti i diritti riservati. | Ancora in fase di sviluppo.</p>
-        <p>"Pikobit: Il tuo punto di partenza per creare, imparare e ispirare."</p>
-        <div class="social-icons">
-            <a href="https://www.youtube.com/@pikobit01" target="_blank"><i class="fab fa-youtube"></i></a>
-            <a href="#" tabindex="-1" aria-disabled="true"><i class="fab fa-instagram"></i></a>
-            <a href="#" tabindex="-1" aria-disabled="true"><i class="fab fa-facebook"></i></a>
-            <a href="#" class="disabled-link" tabindex="-1" aria-disabled="true" target="_blank"><i
-                    class="fab fa-linkedin"></i></a>
-            <a href="#" class="disabled-link" tabindex="-1" aria-disabled="true" target="_blank"><i
-                    class="fab fa-github"></i></a>
-        </div>
+      <p>&copy; 2026 Pikobit. Tutti i diritti riservati.</p>
+      <p>
+        "Pikobit: Il tuo punto di partenza per creare, imparare e ispirare."
+      </p>
+      <div class="social-icons">
+        <a href="https://www.youtube.com/@pikobit01" target="_blank"
+          ><i class="fab fa-youtube"></i
+        ></a>
+      </div>
     </footer>
 
     <button id="scrollToTop" title="Torna su">&#8679;</button>
-</body>
-
+  </body>
 </html>
