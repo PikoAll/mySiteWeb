@@ -1,191 +1,255 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="it">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PikoBit - Tutorial, Progetti e Soluzioni Software Personalizzate</title>
-    <meta name="description"
-        content="PikoBit: tutorial di programmazione e servizi personalizzati. Impara a creare applicazioni web o contattaci per sviluppare il tuo software su misura.">
-    <meta name="keywords"
-        content="tutorial programmazione, sviluppo software personalizzato, creare applicazioni web, lezioni coding, progetti su misura, PiKoBit">
-    <meta name="author" content="Pikobit">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pikobit - Software su Misura, Siti Web e App per Aziende</title>
+    <meta
+      name="description"
+      content="Pikobit: sviluppo software su misura, siti web e applicazioni moderne per aziende e professionisti. Software Engineer Senior specializzato in Java/Spring. Contattami per un preventivo."
+    />
+    <meta
+      name="keywords"
+      content="sviluppo software personalizzato, siti web aziendali, software gestionale su misura, applicazioni web, Java Spring developer, PiKoBit"
+    />
+    <meta name="author" content="Pikobit" />
 
     <!-- Tag canonical -->
-    <link rel="canonical" href="https://pikobit.it/index.html">
+    <link rel="canonical" href="https://pikobit.it/index.html" />
 
-    <link rel="stylesheet" href="./styles/style.css?v=4.0.0.8">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-    <link rel="icon" href="./images/logo.webp" type="image/png">
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:title"
+      content="Pikobit - Software su Misura, Siti Web e App per Aziende"
+    />
+    <meta
+      property="og:description"
+      content="Software Engineer Senior specializzato in Java/Spring: sviluppo siti web, applicazioni e gestionali su misura per aziende e professionisti."
+    />
+    <meta property="og:image" content="https://pikobit.it/images/banner.webp" />
+    <meta property="og:url" content="https://pikobit.it/index.html" />
+
+    <link rel="stylesheet" href="./styles/style.css?v=4.0.0.8" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" href="./images/logo.webp" type="image/png" />
 
     <script src="/scripts/script.js?v=4.0.0.8"></script>
 
     <!-- Dati strutturati -->
     <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "WebSite",
-      "name": "Pikobit",
-      "url": "https://www.pikobit.com",
-      "description": "Impara a programmare con Pikobit: tutorial, progetti software e lezioni di coding personalizzate.",
-      "creator": {
-        "@type": "Person",
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
         "name": "Pikobit",
-        "sameAs": [
-          "https://www.youtube.com/@pikobit01",
-          "https://instagram.com/pikobit"
-        ]
+        "url": "https://pikobit.it",
+        "description": "Sviluppo software su misura, siti web e applicazioni moderne per aziende e professionisti.",
+        "creator": {
+          "@type": "Person",
+          "name": "Giuseppe",
+          "jobTitle": "Software Engineer / Consulente Tecnologico",
+          "sameAs": ["https://www.youtube.com/@pikobit01"]
+        }
       }
-    }
+    </script>
+
+    <!-- Dati strutturati: profilo professionale -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "ProfessionalService",
+        "name": "Pikobit",
+        "url": "https://pikobit.it",
+        "image": "https://pikobit.it/images/logo.webp",
+        "description": "Sviluppo di siti web, applicazioni e software gestionali su misura per aziende e professionisti.",
+        "telephone": "+39-351-889-1903",
+        "email": "piko.bit.00@gmail.com",
+        "areaServed": "IT"
+      }
     </script>
 
     <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-TVGN1XBX7H"></script>
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-TVGN1XBX7H"
+    ></script>
     <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
 
-        gtag('config', 'G-TVGN1XBX7H');
+      gtag("config", "G-TVGN1XBX7H");
     </script>
+  </head>
 
-</head>
-
-<body>
+  <body>
     <header>
-        <img src="./images/banner.webp" alt="Pikobit Banner" class="banner">
-        <div class="hamburger" id="hamburger-menu">
-            <i class="fas fa-bars"></i>
-        </div>
-        <div class="overlay" id="overlay"></div>
-        <nav id="navbar">
-            <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
+      <img src="./images/banner.webp" alt="Pikobit Banner" class="banner" />
+      <div class="hamburger" id="hamburger-menu">
+        <i class="fas fa-bars"></i>
+      </div>
+      <div class="overlay" id="overlay"></div>
+      <nav id="navbar">
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
 
-                <li class="dropdown">
-                    <a href="#" id="dropdown-toggle">Servizi ▼</a>
-                    <ul class="dropdown-menu">
-                        <li><a href="websites.html">Siti web personalizzati</a></li>
-                        <li><a href="modern-apps.html">Applicazioni moderne</a></li>
-                        <li><a href="custom-software.html">Software gestionali su misura</a></li>
-                        <li><a href="creative-services.html">Servizi Creativi e Soluzioni Complete</a></li>
-                        <li><a href="lessons.html">Lezioni e tutorial</a></li>
-                    </ul>
-                </li>
-
-                <li><a href="ideas.html">Idee Innovative</a></li>
-                <li><a href="about.html">Chi Sono</a></li>
-                <li><a href="resources.html">Risorse</a></li>
-                <li><a href="contact.html">Contatti</a></li>
+          <li class="dropdown">
+            <a href="#" id="dropdown-toggle">Servizi ▼</a>
+            <ul class="dropdown-menu">
+              <li><a href="websites.html">Siti web personalizzati</a></li>
+              <li><a href="modern-apps.html">Applicazioni moderne</a></li>
+              <li>
+                <a href="custom-software.html">Software gestionali su misura</a>
+              </li>
+              <li>
+                <a href="creative-services.html"
+                  >Servizi Creativi e Soluzioni Complete</a
+                >
+              </li>
+              <li><a href="lessons.html">Lezioni e tutorial</a></li>
             </ul>
-        </nav>
+          </li>
+
+          <li><a href="ideas.html">Idee Innovative</a></li>
+          <li><a href="about.html">Chi Sono</a></li>
+          <li><a href="resources.html">Risorse</a></li>
+          <li><a href="contact.html">Contatti</a></li>
+        </ul>
+      </nav>
     </header>
 
     <main>
-        <section class="intro">
-            <div class="intro-container">
-                <img src="./images/logo.webp" alt="Logo Pikobit - Tutorial e Progetti di Programmazione" class="logo">
-                <h1>Benvenuti su Pikobit</h1>
-                <p>
-                    Pikobit è il tuo punto di riferimento per la tecnologia, il codice e la creatività. Sono un
-                    programmatore
-                    esperto, laureato in informatica, e voglio condividere le mie conoscenze e la mia passione con
-                    chiunque voglia
-                    imparare a programmare o creare soluzioni personalizzate per il proprio business.
-                </p>
-            </div>
-        </section>
+      <section class="intro">
+        <div class="intro-container">
+          <img
+            src="./images/logo.webp"
+            alt="Logo Pikobit - Tutorial e Progetti di Programmazione"
+            class="logo"
+          />
+          <p class="tagline">Programmatore e Consulente Tecnologico</p>
+          <h1>Software su misura per la tua attività</h1>
+          <p>
+            Sono un Software Engineer Senior specializzato in Java/Spring:
+            sviluppo siti web, applicazioni e gestionali su misura per aziende e
+            professionisti. Se hai un progetto da realizzare, parliamone.
+          </p>
+        </div>
+      </section>
 
-        <section class="goals">
-            <h2>I Servizi di Pikobit</h2>
-            <ul>
-                <li><a href="websites.html" class="cta-link-blue"><strong>Siti web personalizzati</strong></a>:
-                    Progettati per rappresentare
-                    la tua attività online.</li>
-                <li><a href="modern-apps.html" class="cta-link-blue"><strong>Applicazioni moderne</strong></a>:
-                    Ottimizzate per migliorare la tua produttività.</li>
-                <li><a href="custom-software.html" class="cta-link-blue"><strong>Software gestionali su
-                            misura</strong></a>: Perfetti per le tue esigenze aziendali.</li>
-                <li><a href="lessons.html" class="cta-link-blue"><strong>Lezioni e tutorial</strong></a>: Per
-                    imparare a programmare e sviluppare progetti reali.</li>
-                <li><strong>Bigliettini da Visita con QR Code:</strong> Collega il mondo fisico al digitale, aumentando
-                    le interazioni con il tuo sito web.</li>
-            </ul>
-            <p><strong>Hai un'idea o un progetto? <a href="contact.html" class="cta-link">Contattami subito</a> per una
-                    consulenza gratuita!</strong></p>
-        </section>
+      <section class="goals">
+        <h2>I Servizi di Pikobit</h2>
+        <ul>
+          <li>
+            <a href="websites.html" class="cta-link-blue"
+              ><strong>Siti web personalizzati</strong></a
+            >: Progettati per rappresentare la tua attività online.
+          </li>
+          <li>
+            <a href="modern-apps.html" class="cta-link-blue"
+              ><strong>Applicazioni moderne</strong></a
+            >: Ottimizzate per migliorare la tua produttività.
+          </li>
+          <li>
+            <a href="custom-software.html" class="cta-link-blue"
+              ><strong>Software gestionali su misura</strong></a
+            >: Perfetti per le tue esigenze aziendali.
+          </li>
+          <li>
+            <a href="lessons.html" class="cta-link-blue"
+              ><strong>Lezioni e tutorial</strong></a
+            >: Per imparare a programmare e sviluppare progetti reali.
+          </li>
+          <li>
+            <strong>Bigliettini da Visita con QR Code:</strong> Collega il mondo
+            fisico al digitale, aumentando le interazioni con il tuo sito web.
+          </li>
+        </ul>
+        <p>
+          <strong
+            >Hai un'idea o un progetto?
+            <a href="contact.html" class="cta-link">Contattami subito</a> per
+            una consulenza gratuita!</strong
+          >
+        </p>
+      </section>
 
-        <section class="goals">
-            <h2>Cosa troverai su Pikobit</h2>
-            <ul>
-                <li>Tutorial su YouTube per imparare a programmare da zero.</li>
-                <li>Video e guide per creare progetti complessi, come applicazioni web e gestionali personalizzati.</li>
-                <li>Consigli e recensioni su libri e strumenti per la programmazione.</li>
-                <li>La possibilità di <strong>collaborare con me</strong> per sviluppare software su misura o per
-                    lezioni personalizzate.</li>
-            </ul>
-        </section>
+      <section class="why-pikobit">
+        <h2>Perché scegliere Pikobit?</h2>
+        <ul>
+          <li>
+            Anni di esperienza nello sviluppo software, laureato in informatica,
+            con progetti che vanno dai siti aziendali ai gestionali complessi.
+          </li>
+          <li>
+            Soluzioni su misura, pensate per le esigenze reali della tua
+            attività, non template preconfezionati.
+          </li>
+          <li>
+            Supporto diretto e continuo, dalla progettazione al rilascio e
+            oltre.
+          </li>
+          <li>
+            Se preferisci imparare tu stesso, propongo anche lezioni e percorsi
+            di programmazione personalizzati.
+          </li>
+        </ul>
+        <p>
+          <strong
+            >Non aspettare!
+            <a href="contact.html" class="cta-link">Scrivimi ora</a> e
+            realizziamo insieme il tuo progetto.</strong
+          >
+        </p>
+      </section>
 
-        <section class="why-pikobit">
-            <h2>Perché scegliere Pikobit?</h2>
-            <ul>
-                <li>Imparerai a programmare in modo semplice e pratico.</li>
-                <li>Riceverai soluzioni su misura per le tue esigenze professionali.</li>
-                <li>Potrai contare su un supporto dedicato e professionale per i tuoi progetti.</li>
-                <li>Secondo <a
-                        href="https://www.mckinsey.com/industries/technology-media-and-telecom/our-insights/why-digital-strategies-fail"
-                        class="cta-link">uno
-                        studio di McKinsey</a>, le soluzioni digitali possono incrementare l'efficienza del 30% nelle
-                    aziende
-                    che adottano strategie innovative.</li>
-            </ul>
-            <p><strong>Non aspettare! <a href="contact.html" class="cta-link">Scrivimi ora</a> e realizziamo insieme il
-                    tuo progetto.</strong></p>
-        </section>
+      <section class="goals">
+        <h2>Cosa troverai su Pikobit</h2>
+        <ul>
+          <li>
+            Video e guide per creare progetti complessi, come applicazioni web e
+            gestionali personalizzati.
+          </li>
+          <li>Tutorial su YouTube per imparare a programmare da zero.</li>
+          <li>
+            Consigli e recensioni su libri e strumenti per la programmazione.
+          </li>
+          <li>
+            La possibilità di <strong>collaborare con me</strong> per sviluppare
+            software su misura o per lezioni personalizzate.
+          </li>
+        </ul>
+      </section>
 
-        <section class="call-to-action">
-            <h2>Unisciti alla community di Pikobit!</h2>
-            <p>Seguimi sui social per accedere a contenuti esclusivi e rimanere aggiornato sui miei progetti:</p>
-            <ul>
-                <li><a href="https://www.youtube.com/@pikobit01">YouTube</a></li>
-                <li><a href="#">Instagram (in arrivo)</a></li>
-            </ul>
-        </section>
-
-        <section class="development-status">
-            <h2>In fase di sviluppo</h2>
-            <h3>Barra di avanzamento del progetto</h3>
-            <p>
-                Pikobit è un progetto in continua evoluzione. Sto lavorando per arricchire il sito con contenuti di
-                valore e
-                perfezionare i canali social. Seguimi per scoprire i nuovi aggiornamenti!
-            </p>
-            <div class="progress">
-                <h3>Stato del progetto</h3>
-                <div class="progress-bar">
-                    <div class="progress-fill"></div>
-                </div>
-                <p>55% completato. Resta sintonizzato per i prossimi aggiornamenti!</p>
-            </div>
-        </section>
+      <section class="call-to-action">
+        <h2>Seguimi</h2>
+        <p>Per contenuti tecnici e aggiornamenti sui miei progetti:</p>
+        <ul>
+          <li><a href="https://www.youtube.com/@pikobit01">YouTube</a></li>
+        </ul>
+      </section>
     </main>
 
     <footer>
-        <p>&copy; 2024 Pikobit. Tutti i diritti riservati. | Ancora in fase di sviluppo.</p>
-        <p>"Pikobit: Il tuo punto di partenza per creare, imparare e ispirare."</p>
-        <div class="social-icons">
-            <a href="https://www.youtube.com/@pikobit01" target="_blank"><i class="fab fa-youtube"></i></a>
-            <a href="#" tabindex="-1" aria-disabled="true"><i class="fab fa-instagram"></i></a>
-            <a href="#" tabindex="-1" aria-disabled="true"><i class="fab fa-facebook"></i></a>
-            <a href="#" class="disabled-link" tabindex="-1" aria-disabled="true" target="_blank"><i
-                    class="fab fa-linkedin"></i></a>
-            <a href="#" class="disabled-link" tabindex="-1" aria-disabled="true" target="_blank"><i
-                    class="fab fa-github"></i></a>
-        </div>
+      <p>&copy; 2026 Pikobit. Tutti i diritti riservati.</p>
+      <p>
+        "Pikobit: Il tuo punto di partenza per creare, imparare e ispirare."
+      </p>
+      <div class="social-icons">
+        <a href="https://www.youtube.com/@pikobit01" target="_blank"
+          ><i class="fab fa-youtube"></i
+        ></a>
+      </div>
     </footer>
 
     <button id="scrollToTop" title="Torna su">&#8679;</button>
-</body>
-
+  </body>
 </html>
