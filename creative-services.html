@@ -1,163 +1,216 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="it">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>PikoBit - Servizi Creativi e Soluzioni Complete</title>
-    <meta name="description"
-        content="Offriamo servizi di creazione siti web, bigliettini da visita con QR code, design di loghi e ottimizzazione SEO. Scopri come possiamo aiutarti a migliorare il tuo business!">
-    <meta name="keywords"
-        content="creazione siti web, bigliettini da visita, design loghi, ottimizzazione SEO, soluzioni creative, Pikobit">
-    <meta name="author" content="Pikobit">
+    <meta
+      name="description"
+      content="Offriamo servizi di creazione siti web, bigliettini da visita con QR code, design di loghi e ottimizzazione SEO. Scopri come possiamo aiutarti a migliorare il tuo business!"
+    />
+    <meta
+      name="keywords"
+      content="creazione siti web, bigliettini da visita, design loghi, ottimizzazione SEO, soluzioni creative, Pikobit"
+    />
+    <meta name="author" content="Pikobit" />
 
     <!-- Tag canonical -->
-    <link rel="canonical" href="https://pikobit.it/creative-services.html">
+    <link rel="canonical" href="https://pikobit.it/creative-services.html" />
 
-    <link rel="stylesheet" href="./styles/style.css?v=4.0.0.8">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-    <link rel="icon" href="./images/logo.webp" type="image/png">
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:title"
+      content="PikoBit - Servizi Creativi e Soluzioni Complete"
+    />
+    <meta
+      property="og:description"
+      content="Creazione siti web, bigliettini da visita con QR code, design di loghi e ottimizzazione SEO per il tuo business."
+    />
+    <meta property="og:image" content="https://pikobit.it/images/banner.webp" />
+    <meta
+      property="og:url"
+      content="https://pikobit.it/creative-services.html"
+    />
+
+    <link rel="stylesheet" href="./styles/style.css?v=4.0.0.8" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" href="./images/logo.webp" type="image/png" />
 
     <script src="/scripts/script.js?v=4.0.0.8"></script>
 
     <!-- Dati strutturati -->
     <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Service",
-      "name": "Servizi Creativi Pikobit",
-      "url": "https://pikobit.it/servizi.html",
-      "description": "Servizi di creazione siti web, design loghi, bigliettini da visita con QR code e ottimizzazione SEO.",
-      "provider": {
-        "@type": "Person",
-        "name": "Pikobit",
-        "sameAs": [
-          "https://www.youtube.com/@pikobit01",
-          "https://instagram.com/pikobit"
-        ]
+      {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "name": "Servizi Creativi Pikobit",
+        "url": "https://pikobit.it/creative-services.html",
+        "description": "Servizi di creazione siti web, design loghi, bigliettini da visita con QR code e ottimizzazione SEO.",
+        "provider": {
+          "@type": "Person",
+          "name": "Pikobit",
+          "sameAs": ["https://www.youtube.com/@pikobit01"]
+        }
       }
-    }
     </script>
 
     <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-TVGN1XBX7H"></script>
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-TVGN1XBX7H"
+    ></script>
     <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
 
-        gtag('config', 'G-TVGN1XBX7H');
+      gtag("config", "G-TVGN1XBX7H");
     </script>
+  </head>
 
-</head>
-
-<body>
+  <body>
     <header>
-        <img src="./images/banner.webp" alt="Pikobit Banner" class="banner">
-        <div class="hamburger" id="hamburger-menu">
-            <i class="fas fa-bars"></i>
-        </div>
-        <div class="overlay" id="overlay"></div>
-        <nav id="navbar">
-            <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
+      <img src="./images/banner.webp" alt="Pikobit Banner" class="banner" />
+      <div class="hamburger" id="hamburger-menu">
+        <i class="fas fa-bars"></i>
+      </div>
+      <div class="overlay" id="overlay"></div>
+      <nav id="navbar">
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
 
-                <li class="dropdown">
-                    <a href="#" id="dropdown-toggle">Servizi ▼</a>
-                    <ul class="dropdown-menu">
-                        <li><a href="websites.html">Siti web personalizzati</a></li>
-                        <li><a href="modern-apps.html">Applicazioni moderne</a></li>
-                        <li><a href="custom-software.html">Software gestionali su misura</a></li>
-                        <li><a href="creative-services.html">Servizi Creativi e Soluzioni Complete</a></li>
-                        <li><a href="lessons.html">Lezioni e tutorial</a></li>
-                    </ul>
-                </li>
-
-                <li><a href="ideas.html">Idee Innovative</a></li>
-                <li><a href="about.html">Chi Sono</a></li>
-                <li><a href="resources.html">Risorse</a></li>
-                <li><a href="contact.html">Contatti</a></li>
+          <li class="dropdown">
+            <a href="#" id="dropdown-toggle">Servizi ▼</a>
+            <ul class="dropdown-menu">
+              <li><a href="websites.html">Siti web personalizzati</a></li>
+              <li><a href="modern-apps.html">Applicazioni moderne</a></li>
+              <li>
+                <a href="custom-software.html">Software gestionali su misura</a>
+              </li>
+              <li>
+                <a href="creative-services.html"
+                  >Servizi Creativi e Soluzioni Complete</a
+                >
+              </li>
+              <li><a href="lessons.html">Lezioni e tutorial</a></li>
             </ul>
-        </nav>
+          </li>
+
+          <li><a href="ideas.html">Idee Innovative</a></li>
+          <li><a href="about.html">Chi Sono</a></li>
+          <li><a href="resources.html">Risorse</a></li>
+          <li><a href="contact.html">Contatti</a></li>
+        </ul>
+      </nav>
     </header>
 
     <main>
-        <section class="intro">
-            <div class="intro-container">
-                <img src="./images/logo.webp" alt="Logo Pikobit - Tutorial e Progetti di Programmazione" class="logo">
-                <h1>Servizi Creativi e Soluzioni Complete</h1>
-                <p>
-                    Scopri come Pikobit può trasformare le tue idee in realtà. Offriamo una vasta gamma di servizi per
-                    il tuo
-                    business, dalla creazione di siti web professionali alla progettazione di materiali di marketing
-                    personalizzati.
-                </p>
+      <section class="intro">
+        <div class="intro-container">
+          <img
+            src="./images/logo.webp"
+            alt="Logo Pikobit - Tutorial e Progetti di Programmazione"
+            class="logo"
+          />
+          <h1>Servizi Creativi e Soluzioni Complete</h1>
+          <p>
+            Scopri come Pikobit può trasformare le tue idee in realtà. Offriamo
+            una vasta gamma di servizi per il tuo business, dalla creazione di
+            siti web professionali alla progettazione di materiali di marketing
+            personalizzati.
+          </p>
+        </div>
+      </section>
+
+      <section class="why-pikobit">
+        <h2>I Nostri Servizi</h2>
+        <ul>
+          <li>
+            <strong>Creazione di Siti Web:</strong> Design moderni, SEO-friendly
+            e ottimizzati per dispositivi mobili.
+          </li>
+          <li>
+            <strong>Bigliettini da Visita con QR Code:</strong> Collega il mondo
+            fisico al digitale, aumentando le interazioni con il tuo sito web.
+          </li>
+          <li>
+            <strong>Design di Loghi:</strong> Loghi personalizzati per
+            un'identità visiva unica e riconoscibile.
+          </li>
+          <li>
+            <strong>Ottimizzazione SEO:</strong> Migliora il posizionamento del
+            tuo sito sui motori di ricerca.
+          </li>
+          <li>
+            <strong>Materiali Pubblicitari:</strong> Brochure, volantini e tutto
+            ciò che serve per promuovere il tuo brand.
+          </li>
+        </ul>
+      </section>
+
+      <section class="cta">
+        <div class="intro-container">
+          <h2 class="mission-vision-title">
+            Bigliettini da Visita con QR Code
+          </h2>
+          <p>
+            I bigliettini da visita sono il tuo strumento di connessione nel
+            mondo reale. Con il nostro design personalizzato e l'integrazione di
+            QR code, puoi portare i tuoi clienti direttamente sul tuo sito web o
+            su una pagina dedicata. Aumenta le interazioni e migliora la tua
+            visibilità online!
+          </p>
+
+          <div class="carousel-container">
+            <div class="carousel-slide">
+              <img
+                src="./images/bigliettino1.webp"
+                alt="Bigliettino da Visita 1"
+              />
+              <img
+                src="./images/bigliettino2.webp"
+                alt="Bigliettino da Visita 2"
+              />
             </div>
-        </section>
+          </div>
+        </div>
+      </section>
 
-        <section class="why-pikobit">
-            <h2>I Nostri Servizi</h2>
-            <ul>
-                <li><strong>Creazione di Siti Web:</strong> Design moderni, SEO-friendly e ottimizzati per dispositivi
-                    mobili.</li>
-                <li><strong>Bigliettini da Visita con QR Code:</strong> Collega il mondo fisico al digitale, aumentando
-                    le interazioni con il tuo sito web.</li>
-                <li><strong>Design di Loghi:</strong> Loghi personalizzati per un'identità visiva unica e riconoscibile.
-                </li>
-                <li><strong>Ottimizzazione SEO:</strong> Migliora il posizionamento del tuo sito sui motori di ricerca.
-                </li>
-                <li><strong>Materiali Pubblicitari:</strong> Brochure, volantini e tutto ciò che serve per promuovere il
-                    tuo brand.</li>
-            </ul>
-        </section>
-
-        <section class="cta">
-            <div class="intro-container">
-                <h2 class="mission-vision-title">Bigliettini da Visita con QR Code</h2>
-                <p>
-                    I bigliettini da visita sono il tuo strumento di connessione nel mondo reale. Con il nostro design
-                    personalizzato e l'integrazione di QR code, puoi portare i tuoi clienti direttamente sul tuo sito
-                    web o su una pagina dedicata. Aumenta le interazioni e migliora la tua visibilità online!
-                </p>
-
-                <div class="carousel-container">
-                    <div class="carousel-slide">
-                        <img src="./images/bigliettino1.webp" alt="Bigliettino da Visita 1">
-                        <img src="./images/bigliettino2.webp" alt="Bigliettino da Visita 2">
-                    </div>
-                </div>
-
-            </div>
-        </section>
-
-
-        <section class="cta">
-            <div class="intro-container">
-                <h2>Pronto a Iniziare?</h2>
-                <p>Contattami oggi per una consulenza gratuita e scopri come posso aiutarti a realizzare le tue idee e
-                    raggiungere i tuoi obiettivi.</p>
-                <a href="contact.html" class="cta-link">Richiedi una consulenza gratuita</a>
-
-            </div>
-        </section>
+      <section class="cta">
+        <div class="intro-container">
+          <h2>Pronto a Iniziare?</h2>
+          <p>
+            Contattami oggi per una consulenza gratuita e scopri come posso
+            aiutarti a realizzare le tue idee e raggiungere i tuoi obiettivi.
+          </p>
+          <a href="contact.html" class="cta-link"
+            >Richiedi una consulenza gratuita</a
+          >
+        </div>
+      </section>
     </main>
 
     <footer>
-        <p>&copy; 2024 Pikobit. Tutti i diritti riservati. | Ancora in fase di sviluppo.</p>
-        <p>"Pikobit: Il tuo punto di partenza per creare, imparare e ispirare."</p>
-        <div class="social-icons">
-            <a href="https://www.youtube.com/@pikobit01" target="_blank"><i class="fab fa-youtube"></i></a>
-            <a href="#" tabindex="-1" aria-disabled="true"><i class="fab fa-instagram"></i></a>
-            <a href="#" tabindex="-1" aria-disabled="true"><i class="fab fa-facebook"></i></a>
-            <a href="#" class="disabled-link" tabindex="-1" aria-disabled="true" target="_blank"><i
-                    class="fab fa-linkedin"></i></a>
-            <a href="#" class="disabled-link" tabindex="-1" aria-disabled="true" target="_blank"><i
-                    class="fab fa-github"></i></a>
-        </div>
+      <p>&copy; 2026 Pikobit. Tutti i diritti riservati.</p>
+      <p>
+        "Pikobit: Il tuo punto di partenza per creare, imparare e ispirare."
+      </p>
+      <div class="social-icons">
+        <a href="https://www.youtube.com/@pikobit01" target="_blank"
+          ><i class="fab fa-youtube"></i
+        ></a>
+      </div>
     </footer>
-
     <button id="scrollToTop" title="Torna su">&#8679;</button>
-</body>
-
+  </body>
 </html>

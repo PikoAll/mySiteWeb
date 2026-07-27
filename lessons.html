@@ -1,154 +1,212 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="it">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Lezioni e Tutorial - PikoBit</title>
-    <meta name="description"
-        content="Offri lezioni personalizzate e tutorial di programmazione per tutti i livelli, da principiante ad avanzato. Scopri come migliorare le tue competenze con Pikobit.">
-    <meta name="keywords"
-        content="lezioni programmazione, tutorial coding, creazione siti web, sviluppo software, ripetizioni universitarie, lezioni online">
-    <meta name="author" content="PikoBit">
+    <meta
+      name="description"
+      content="Offri lezioni personalizzate e tutorial di programmazione per tutti i livelli, da principiante ad avanzato. Scopri come migliorare le tue competenze con Pikobit."
+    />
+    <meta
+      name="keywords"
+      content="lezioni programmazione, tutorial coding, creazione siti web, sviluppo software, ripetizioni universitarie, lezioni online"
+    />
+    <meta name="author" content="PikoBit" />
 
     <!-- Tag canonical -->
-    <link rel="canonical" href="https://pikobit.it/lessons.html">
+    <link rel="canonical" href="https://pikobit.it/lessons.html" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Lezioni e Tutorial - PikoBit" />
+    <meta
+      property="og:description"
+      content="Lezioni personalizzate e tutorial di programmazione per tutti i livelli, da principiante ad avanzato."
+    />
+    <meta property="og:image" content="https://pikobit.it/images/banner.webp" />
+    <meta property="og:url" content="https://pikobit.it/lessons.html" />
 
     <!-- Collegamenti CSS -->
-    <link rel="stylesheet" href="./styles/style.css?v=4.0.0.8">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-    <link rel="icon" href="./images/logo.webp" type="image/png">
+    <link rel="stylesheet" href="./styles/style.css?v=4.0.0.8" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" href="./images/logo.webp" type="image/png" />
 
     <script src="/scripts/script.js?v=4.0.0.8"></script>
 
     <!-- Dati strutturati -->
     <script type="application/ld+json">
-        {
-          "@context": "https://schema.org",
-          "@type": "WebPage",
-          "name": "Lezioni e Tutorial - Pikobit",
-          "description": "Offri lezioni personalizzate e tutorial di programmazione per tutti i livelli, da principiante ad avanzato. Scopri come migliorare le tue competenze con Pikobit.",
-          "author": {
-            "@type": "Person",
-            "name": "Pikobit",
-            "sameAs": [
-              "https://www.youtube.com/@pikobit01",
-              "https://instagram.com/pikobit",
-              "https://www.superprof.it/laureato-informatica-lezioni-programmazione-web-per-creazione-sito-web-javascript-nodejs-html-css-python-flask.html" 
-            ]
-          }
+      {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "Lezioni e Tutorial - Pikobit",
+        "description": "Offri lezioni personalizzate e tutorial di programmazione per tutti i livelli, da principiante ad avanzato. Scopri come migliorare le tue competenze con Pikobit.",
+        "author": {
+          "@type": "Person",
+          "name": "Pikobit",
+          "sameAs": [
+            "https://www.youtube.com/@pikobit01",
+            "https://www.superprof.it/laureato-informatica-lezioni-programmazione-web-per-creazione-sito-web-javascript-nodejs-html-css-python-flask.html"
+          ]
         }
+      }
     </script>
 
     <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-TVGN1XBX7H"></script>
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-TVGN1XBX7H"
+    ></script>
     <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
 
-        gtag('config', 'G-TVGN1XBX7H');
+      gtag("config", "G-TVGN1XBX7H");
     </script>
-</head>
+  </head>
 
-
-<body>
+  <body>
     <header>
-        <img src="./images/banner.webp" alt="Pikobit Banner" class="banner">
-        <div class="hamburger" id="hamburger-menu">
-            <i class="fas fa-bars"></i>
-        </div>
-        <div class="overlay" id="overlay"></div>
-        <nav id="navbar">
-            <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                
-                <li class="dropdown">
-                    <a href="#" id="dropdown-toggle">Servizi ▼</a>
-                    <ul class="dropdown-menu">
-                        <li><a href="websites.html">Siti web personalizzati</a></li>
-                        <li><a href="modern-apps.html">Applicazioni moderne</a></li>
-                        <li><a href="custom-software.html">Software gestionali su misura</a></li>
-                        <li><a href="creative-services.html">Servizi Creativi e Soluzioni Complete</a></li>
-                        <li><a href="lessons.html">Lezioni e tutorial</a></li>
-                    </ul>
-                </li>
+      <img src="./images/banner.webp" alt="Pikobit Banner" class="banner" />
+      <div class="hamburger" id="hamburger-menu">
+        <i class="fas fa-bars"></i>
+      </div>
+      <div class="overlay" id="overlay"></div>
+      <nav id="navbar">
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
 
-                <li><a href="ideas.html">Idee Innovative</a></li>
-                <li><a href="about.html">Chi Sono</a></li>
-                <li><a href="resources.html">Risorse</a></li>
-                <li><a href="contact.html">Contatti</a></li>
+          <li class="dropdown">
+            <a href="#" id="dropdown-toggle">Servizi ▼</a>
+            <ul class="dropdown-menu">
+              <li><a href="websites.html">Siti web personalizzati</a></li>
+              <li><a href="modern-apps.html">Applicazioni moderne</a></li>
+              <li>
+                <a href="custom-software.html">Software gestionali su misura</a>
+              </li>
+              <li>
+                <a href="creative-services.html"
+                  >Servizi Creativi e Soluzioni Complete</a
+                >
+              </li>
+              <li><a href="lessons.html">Lezioni e tutorial</a></li>
             </ul>
-        </nav>
+          </li>
+
+          <li><a href="ideas.html">Idee Innovative</a></li>
+          <li><a href="about.html">Chi Sono</a></li>
+          <li><a href="resources.html">Risorse</a></li>
+          <li><a href="contact.html">Contatti</a></li>
+        </ul>
+      </nav>
     </header>
 
     <main class="main-contact">
+      <section class="intro">
+        <div class="intro-container">
+          <img
+            src="./images/logo.webp"
+            alt="Logo Pikobit - Tutorial e Progetti di Programmazione"
+            class="logo"
+          />
+          <h1>Impara a Programmare con Pikobit</h1>
+          <h3 class="highlighted-text">
+            "Un futuro brillante inizia con le giuste competenze"
+          </h3>
+          <p>
+            Con Pikobit, offro lezioni personalizzate e tutorial per tutti i
+            livelli, da principiante ad avanzato. Scopri come migliorare le tue
+            competenze in programmazione con il mio supporto.
+          </p>
+        </div>
+      </section>
 
-        <section class="intro">
-            <div class="intro-container">
-                <img src="./images/logo.webp" alt="Logo Pikobit - Tutorial e Progetti di Programmazione" class="logo">
-                <h1>Impara a Programmare con Pikobit</h1>
-                <h3 class="highlighted-text">"Un futuro brillante inizia con le giuste competenze"</h3>
-                <p>
-                    Con Pikobit, offro lezioni personalizzate e tutorial per tutti i livelli, da principiante ad
-                    avanzato. Scopri come migliorare le tue competenze in programmazione con il mio supporto.
-                </p>
-            </div>
-        </section>
+      <section class="goals">
+        <h2>Argomenti Offerti</h2>
+        <ul>
+          <li>
+            <strong>Fondamenti di programmazione:</strong> Impara i concetti
+            base del coding per costruire solide fondamenta.
+          </li>
+          <li>
+            <strong>Creazione di siti web:</strong> Dalla struttura HTML al
+            design responsive, padroneggia la creazione di siti.
+          </li>
+          <li>
+            <strong>Sviluppo di applicazioni e software:</strong> Crea progetti
+            reali con linguaggi moderni e framework avanzati.
+          </li>
+          <li>
+            <strong>Ripetizioni universitarie:</strong> Supporto per studenti
+            universitari su esami di programmazione e progetti.
+          </li>
+        </ul>
+      </section>
 
-        <section class="goals">
-            <h2>Argomenti Offerti</h2>
-            <ul>
-                <li><strong>Fondamenti di programmazione:</strong> Impara i concetti base del coding per costruire
-                    solide fondamenta.</li>
-                <li><strong>Creazione di siti web:</strong> Dalla struttura HTML al design responsive, padroneggia la
-                    creazione di siti.</li>
-                <li><strong>Sviluppo di applicazioni e software:</strong> Crea progetti reali con linguaggi moderni e
-                    framework avanzati.</li>
-                <li><strong>Ripetizioni universitarie:</strong> Supporto per studenti universitari su esami di
-                    programmazione e progetti.</li>
-            </ul>
-        </section>
+      <section class="cta">
+        <div class="intro-container">
+          <h2>Lezioni Personalizzate su Misura</h2>
+          <p>
+            Ogni lezione è adattata alle tue esigenze. Che tu voglia imparare da
+            zero o approfondire argomenti avanzati, posso aiutarti a raggiungere
+            i tuoi obiettivi.
+          </p>
+          <p>
+            Consulta le recensioni degli studenti che hanno già lavorato con me
+            su
+            <a
+              href="https://www.superprof.it/laureato-informatica-lezioni-programmazione-web-per-creazione-sito-web-javascript-nodejs-html-css-python-flask.html"
+              class="cta-link"
+              target="_blank"
+              >Superprof</a
+            >.
+          </p>
+          <a href="contact.html" class="cta-link"
+            >Organizza la tua lezione oggi stesso</a
+          >
+        </div>
+      </section>
 
-        <section class="cta">
-            <div class="intro-container">
-                <h2>Lezioni Personalizzate su Misura</h2>
-                <p>Ogni lezione è adattata alle tue esigenze. Che tu voglia imparare da zero o approfondire argomenti
-                    avanzati, posso aiutarti a raggiungere i tuoi obiettivi.</p>
-                <p>Consulta le recensioni degli studenti che hanno già lavorato con me su <a
-                        href="https://www.superprof.it/laureato-informatica-lezioni-programmazione-web-per-creazione-sito-web-javascript-nodejs-html-css-python-flask.html"
-                        class="cta-link" target="_blank">Superprof</a>.</p>
-                <a href="contact.html" class="cta-link">Organizza la tua lezione oggi stesso</a>
-            </div>
-        </section>
-
-        <section class="testimonials">
-            <h2 class="mission-vision-title">Cosa dicono i miei studenti</h2>
-            <p><em>"Grazie a Pikobit ho superato il mio esame di programmazione con ottimi voti!"</em> - Studente
-                universitario</p>
-            <p><em>"Le lezioni sono state chiare e ben strutturate. Ora mi sento sicuro nel creare i miei
-                    progetti."</em> - Principiante</p>
-        </section>
-
+      <section class="testimonials">
+        <h2 class="mission-vision-title">Cosa dicono i miei studenti</h2>
+        <p>
+          <em
+            >"Grazie a Pikobit ho superato il mio esame di programmazione con
+            ottimi voti!"</em
+          >
+          - Studente universitario
+        </p>
+        <p>
+          <em
+            >"Le lezioni sono state chiare e ben strutturate. Ora mi sento
+            sicuro nel creare i miei progetti."</em
+          >
+          - Principiante
+        </p>
+      </section>
     </main>
 
-
-
     <footer>
-        <p>&copy; 2024 Pikobit. Tutti i diritti riservati. | Ancora in fase di sviluppo.</p>
-        <p>"Pikobit: Il tuo punto di partenza per creare, imparare e ispirare."</p>
-        <div class="social-icons">
-            <a href="https://www.youtube.com/@pikobit01" target="_blank"><i class="fab fa-youtube"></i></a>
-            <a href="#" tabindex="-1" aria-disabled="true"><i class="fab fa-instagram"></i></a>
-            <a href="#" tabindex="-1" aria-disabled="true"><i class="fab fa-facebook"></i></a>
-            <a href="#" class="disabled-link" tabindex="-1" aria-disabled="true" target="_blank"><i
-                    class="fab fa-linkedin"></i></a>
-            <a href="#" class="disabled-link" tabindex="-1" aria-disabled="true" target="_blank"><i
-                    class="fab fa-github"></i></a>
-        </div>
+      <p>&copy; 2026 Pikobit. Tutti i diritti riservati.</p>
+      <p>
+        "Pikobit: Il tuo punto di partenza per creare, imparare e ispirare."
+      </p>
+      <div class="social-icons">
+        <a href="https://www.youtube.com/@pikobit01" target="_blank"
+          ><i class="fab fa-youtube"></i
+        ></a>
+      </div>
     </footer>
     <button id="scrollToTop" title="Torna su">&#8679;</button>
-</body>
-
+  </body>
 </html>

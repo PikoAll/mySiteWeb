@@ -1,185 +1,261 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="it">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Siti Web Personalizzati - PikoBit</title>
-    <meta name="description"
-        content="Progettazione di siti web personalizzati per rappresentare la tua attività online con design professionale e ottimizzazione SEO.">
-    <meta name="keywords" content="siti web personalizzati, design responsive, ottimizzazione SEO, siti vetrina, CMS">
-    <meta name="author" content="PikoBit">
+    <meta
+      name="description"
+      content="Progettazione di siti web personalizzati per rappresentare la tua attività online con design professionale e ottimizzazione SEO."
+    />
+    <meta
+      name="keywords"
+      content="siti web personalizzati, design responsive, ottimizzazione SEO, siti vetrina, CMS"
+    />
+    <meta name="author" content="PikoBit" />
 
     <!-- Tag canonical -->
-    <link rel="canonical" href="https://pikobit.it/websites.html">
+    <link rel="canonical" href="https://pikobit.it/websites.html" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Siti Web Personalizzati - PikoBit" />
+    <meta
+      property="og:description"
+      content="Progettazione di siti web personalizzati per rappresentare la tua attività online con design professionale e ottimizzazione SEO."
+    />
+    <meta property="og:image" content="https://pikobit.it/images/banner.webp" />
+    <meta property="og:url" content="https://pikobit.it/websites.html" />
 
     <!-- Collegamenti CSS -->
-    <link rel="stylesheet" href="./styles/style.css?v=4.0.0.8">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-    <link rel="icon" href="./images/logo.webp" type="image/png">
+    <link rel="stylesheet" href="./styles/style.css?v=4.0.0.8" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" href="./images/logo.webp" type="image/png" />
 
     <script src="/scripts/script.js?v=4.0.0.8"></script>
 
     <!-- Dati strutturati -->
     <script type="application/ld+json">
-        {
-          "@context": "https://schema.org",
-          "@type": "WebPage",
-          "name": "Siti Web Personalizzati - Pikobit",
-          "description": "Progettazione di siti web personalizzati per rappresentare la tua attività online con design professionale e ottimizzazione SEO.",
-          "author": {
-            "@type": "Person",
-            "name": "Pikobit",
-            "sameAs": [
-              "https://www.youtube.com/@pikobit01",
-              "https://instagram.com/pikobit"
-            ]
-          }
+      {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "Siti Web Personalizzati - Pikobit",
+        "description": "Progettazione di siti web personalizzati per rappresentare la tua attività online con design professionale e ottimizzazione SEO.",
+        "author": {
+          "@type": "Person",
+          "name": "Pikobit",
+          "sameAs": ["https://www.youtube.com/@pikobit01"]
         }
+      }
     </script>
 
     <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-TVGN1XBX7H"></script>
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-TVGN1XBX7H"
+    ></script>
     <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
 
-        gtag('config', 'G-TVGN1XBX7H');
+      gtag("config", "G-TVGN1XBX7H");
     </script>
-</head>
+  </head>
 
-
-<body>
+  <body>
     <header>
-        <img src="./images/banner.webp" alt="Pikobit Banner" class="banner">
-        <div class="hamburger" id="hamburger-menu">
-            <i class="fas fa-bars"></i>
-        </div>
-        <div class="overlay" id="overlay"></div>
-        <nav id="navbar">
-            <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
+      <img src="./images/banner.webp" alt="Pikobit Banner" class="banner" />
+      <div class="hamburger" id="hamburger-menu">
+        <i class="fas fa-bars"></i>
+      </div>
+      <div class="overlay" id="overlay"></div>
+      <nav id="navbar">
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
 
-                <li class="dropdown">
-                    <a href="#" id="dropdown-toggle">Servizi ▼</a>
-                    <ul class="dropdown-menu">
-                        <li><a href="websites.html">Siti web personalizzati</a></li>
-                        <li><a href="modern-apps.html">Applicazioni moderne</a></li>
-                        <li><a href="custom-software.html">Software gestionali su misura</a></li>
-                        <li><a href="creative-services.html">Servizi Creativi e Soluzioni Complete</a></li>
-                        <li><a href="lessons.html">Lezioni e tutorial</a></li>
-                    </ul>
-                </li>
-
-                <li><a href="ideas.html">Idee Innovative</a></li>
-                <li><a href="about.html">Chi Sono</a></li>
-                <li><a href="resources.html">Risorse</a></li>
-                <li><a href="contact.html">Contatti</a></li>
+          <li class="dropdown">
+            <a href="#" id="dropdown-toggle">Servizi ▼</a>
+            <ul class="dropdown-menu">
+              <li><a href="websites.html">Siti web personalizzati</a></li>
+              <li><a href="modern-apps.html">Applicazioni moderne</a></li>
+              <li>
+                <a href="custom-software.html">Software gestionali su misura</a>
+              </li>
+              <li>
+                <a href="creative-services.html"
+                  >Servizi Creativi e Soluzioni Complete</a
+                >
+              </li>
+              <li><a href="lessons.html">Lezioni e tutorial</a></li>
             </ul>
-        </nav>
+          </li>
+
+          <li><a href="ideas.html">Idee Innovative</a></li>
+          <li><a href="about.html">Chi Sono</a></li>
+          <li><a href="resources.html">Risorse</a></li>
+          <li><a href="contact.html">Contatti</a></li>
+        </ul>
+      </nav>
     </header>
 
     <main class="main-contact">
+      <section class="intro">
+        <div class="intro-container">
+          <img
+            src="./images/logo.webp"
+            alt="Logo Pikobit - Tutorial e Progetti di Programmazione"
+            class="logo"
+          />
+          <h1>Siti Web Personalizzati</h1>
+          <p>
+            Un sito web ben progettato è essenziale per rappresentare al meglio
+            la tua attività online. Con Pikobit, puoi ottenere un sito su misura
+            che combini design accattivante, funzionalità e ottimizzazione per i
+            motori di ricerca.
+          </p>
+        </div>
+      </section>
 
-        <section class="intro">
-            <div class="intro-container">
-                <img src="./images/logo.webp" alt="Logo Pikobit - Tutorial e Progetti di Programmazione" class="logo">
-                <h1>Siti Web Personalizzati</h1>
-                <p>Un sito web ben progettato è essenziale per rappresentare al meglio la tua attività online. Con
-                    Pikobit,
-                    puoi ottenere un sito su misura che combini design accattivante, funzionalità e ottimizzazione per i
-                    motori di ricerca.</p>
-            </div>
-        </section>
+      <section class="goals">
+        <h2>Servizi Offerti</h2>
+        <ul>
+          <li>
+            <strong>Siti vetrina:</strong> Ideali per presentare la tua attività
+            e i tuoi servizi in modo professionale.
+          </li>
+          <li>
+            <strong>Design responsive:</strong> Progettati per essere perfetti
+            su dispositivi desktop, tablet e smartphone.
+          </li>
+          <li>
+            <strong>Ottimizzazione SEO:</strong> Migliora la visibilità sui
+            motori di ricerca per raggiungere più clienti.
+          </li>
+          <li>
+            <strong>Sicurezza dei dati:</strong> Implementiamo le migliori
+            pratiche per proteggere il sito e i dati degli utenti con
+            certificati SSL e sistemi di backup.
+          </li>
+          <li>
+            <strong>Velocità ottimizzata:</strong> Garantiamo che il sito sia
+            rapido e performante, per offrire un'esperienza di navigazione
+            fluida e migliorare il ranking sui motori di ricerca.
+          </li>
+          <li>
+            <strong>Design personalizzato:</strong> Ogni sito è unico e
+            progettato per riflettere l'identità del tuo brand, con grafiche
+            originali e un layout accattivante.
+          </li>
+          <li>
+            <strong>Compatibilità multilingua:</strong> Creiamo siti web in
+            grado di supportare più lingue, per raggiungere un pubblico
+            internazionale.
+          </li>
+        </ul>
+      </section>
 
-        <section class="goals">
-            <h2>Servizi Offerti</h2>
-            <ul>
-                <li><strong>Siti vetrina:</strong> Ideali per presentare la tua attività e i tuoi servizi in modo
-                    professionale.</li>
-                <li><strong>Design responsive:</strong> Progettati per essere perfetti su dispositivi desktop,
-                    tablet e smartphone.</li>
-                <li><strong>Ottimizzazione SEO:</strong> Migliora la visibilità sui motori di ricerca per
-                    raggiungere più clienti.</li>
-                <li><strong>Sicurezza dei dati:</strong> Implementiamo le migliori pratiche per proteggere il sito e
-                    i dati degli utenti con certificati SSL e sistemi di backup.</li>
-                <li><strong>Velocità ottimizzata:</strong> Garantiamo che il sito sia rapido e performante, per
-                    offrire un'esperienza di navigazione fluida e migliorare il ranking sui motori di ricerca.</li>
-                <li><strong>Design personalizzato:</strong> Ogni sito è unico e progettato per riflettere l'identità
-                    del tuo brand, con grafiche originali e un layout accattivante.</li>
-                <li><strong>Compatibilità multilingua:</strong> Creiamo siti web in grado di supportare più lingue,
-                    per raggiungere un pubblico internazionale.</li>
-            </ul>
-        </section>
+      <section class="why-pikobit">
+        <h2>Caratteristiche principali</h2>
+        <ul>
+          <li>
+            <strong>Velocità di caricamento:</strong> Siti ottimizzati per
+            garantire tempi di caricamento rapidi.
+          </li>
+          <li>
+            <strong>Compatibilità cross-browser:</strong> Garantiamo che il sito
+            funzioni correttamente su tutti i browser principali.
+          </li>
+          <li>
+            <strong>Integrazioni personalizzate:</strong> Collega il sito a
+            servizi come Google Analytics o social media.
+          </li>
+          <li>
+            <strong>Supporto continuo:</strong> Offriamo assistenza tecnica per
+            mantenere il tuo sito sempre aggiornato e sicuro.
+          </li>
+        </ul>
+      </section>
 
-        <section class="why-pikobit">
-            <h2>Caratteristiche principali</h2>
-            <ul>
-                <li><strong>Velocità di caricamento:</strong> Siti ottimizzati per garantire tempi di caricamento
-                    rapidi.</li>
-                <li><strong>Compatibilità cross-browser:</strong> Garantiamo che il sito funzioni correttamente su tutti
-                    i browser principali.</li>
-                <li><strong>Integrazioni personalizzate:</strong> Collega il sito a servizi come Google Analytics o
-                    social media.</li>
-                <li><strong>Supporto continuo:</strong> Offriamo assistenza tecnica per mantenere il tuo sito sempre
-                    aggiornato e sicuro.</li>
-            </ul>
-        </section>
+      <section class="goals">
+        <h2 class="mission-vision-title">Il nostro processo</h2>
+        <ul>
+          <li>
+            <strong>Consulenza iniziale:</strong> Discutiamo le tue esigenze e
+            gli obiettivi del progetto.
+          </li>
+          <li>
+            <strong>Progettazione:</strong> Creiamo un design su misura che
+            rappresenti il tuo brand.
+          </li>
+          <li>
+            <strong>Sviluppo:</strong> Costruiamo il sito con tecnologie moderne
+            e ottimizzate.
+          </li>
+          <li>
+            <strong>Test e lancio:</strong> Garantiamo che il sito sia perfetto
+            prima di pubblicarlo.
+          </li>
+          <li>
+            <strong>Assistenza post-lancio:</strong> Forniamo supporto continuo
+            per aggiornamenti e miglioramenti.
+          </li>
+        </ul>
+      </section>
 
-        <section class="goals">
-            <h2 class="mission-vision-title">Il nostro processo</h2>
-            <ul>
-                <li><strong>Consulenza iniziale:</strong> Discutiamo le tue esigenze e gli obiettivi del progetto.</li>
-                <li><strong>Progettazione:</strong> Creiamo un design su misura che rappresenti il tuo brand.</li>
-                <li><strong>Sviluppo:</strong> Costruiamo il sito con tecnologie moderne e ottimizzate.</li>
-                <li><strong>Test e lancio:</strong> Garantiamo che il sito sia perfetto prima di pubblicarlo.</li>
-                <li><strong>Assistenza post-lancio:</strong> Forniamo supporto continuo per aggiornamenti e
-                    miglioramenti.</li>
-            </ul>
-        </section>
+      <section class="why-pikobit">
+        <h3 class="cta-link-blue">Scopri le nostre Idee Innovative</h3>
+        <ul>
+          <li>
+            Vuoi digitalizzare il tuo business o esplorare soluzioni creative
+            per migliorare la produttività? Dai un'occhiata alle
+            <a href="ideas.html" class="cta-link">Idee Innovative</a> che
+            abbiamo pensato per i nostri clienti!
+          </li>
+        </ul>
+      </section>
 
-        <section class="why-pikobit">
-            <h3 class="cta-link-blue">Scopri le nostre Idee Innovative</h3>
-            <ul>
-                <li>Vuoi digitalizzare il tuo business o esplorare soluzioni creative per migliorare la produttività?
-                    Dai un'occhiata alle
-                    <a href="ideas.html" class="cta-link">Idee Innovative</a> che abbiamo pensato per i nostri
-                    clienti!
-                </li>
-            </ul>
-        </section>
+      <section class="call-to-action">
+        <div class="intro-container">
+          <h2>Vuoi un sito web personalizzato?</h2>
+          <p>
+            Contattami oggi stesso per discutere del tuo progetto e ricevere una
+            consulenza gratuita.
+          </p>
+          <a href="contact.html" class="cta-link">Contattami Ora</a>
+        </div>
+      </section>
 
-        <section class="call-to-action">
-            <div class="intro-container">
-                <h2>Vuoi un sito web personalizzato?</h2>
-                <p>Contattami oggi stesso per discutere del tuo progetto e ricevere una consulenza gratuita.</p>
-                <a href="contact.html" class="cta-link">Contattami Ora</a>
-            </div>
-        </section>
-
-        <section class="call-to-action">
-            <h2>Portfolio (In Arrivo)</h2>
-            <p>Sto lavorando a progetti entusiasmanti. Presto aggiungerò esempi di siti web realizzati per i miei
-                clienti!</p>
-        </section>
+      <section class="call-to-action">
+        <h2>Portfolio</h2>
+        <p>
+          Raccolgo qui a breve esempi di siti realizzati per i miei clienti. Nel
+          frattempo, contattami per parlare del tuo progetto: ti mostro
+          volentieri lavori simili già completati.
+        </p>
+      </section>
     </main>
 
     <footer>
-        <p>&copy; 2024 Pikobit. Tutti i diritti riservati. | Ancora in fase di sviluppo.</p>
-        <p>"Pikobit: Il tuo punto di partenza per creare, imparare e ispirare."</p>
-        <div class="social-icons">
-            <a href="https://www.youtube.com/@pikobit01" target="_blank"><i class="fab fa-youtube"></i></a>
-            <a href="#" tabindex="-1" aria-disabled="true"><i class="fab fa-instagram"></i></a>
-            <a href="#" tabindex="-1" aria-disabled="true"><i class="fab fa-facebook"></i></a>
-            <a href="#" class="disabled-link" tabindex="-1" aria-disabled="true" target="_blank"><i
-                    class="fab fa-linkedin"></i></a>
-            <a href="#" class="disabled-link" tabindex="-1" aria-disabled="true" target="_blank"><i
-                    class="fab fa-github"></i></a>
-        </div>
+      <p>&copy; 2026 Pikobit. Tutti i diritti riservati.</p>
+      <p>
+        "Pikobit: Il tuo punto di partenza per creare, imparare e ispirare."
+      </p>
+      <div class="social-icons">
+        <a href="https://www.youtube.com/@pikobit01" target="_blank"
+          ><i class="fab fa-youtube"></i
+        ></a>
+      </div>
     </footer>
     <button id="scrollToTop" title="Torna su">&#8679;</button>
-</body>
-
+  </body>
 </html>
