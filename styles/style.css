@@ -1,557 +1,548 @@
+:root {
+  --color-bg: #0d0f12;
+  --color-bg-panel: #12151a;
+  --color-accent: #00bfff;
+  --color-cta: orange;
+  --color-cta-hover: orangered;
+}
+
 /* Generale */
 body {
-    font-family: 'Poppins', sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #0d0f12;
-    color: white;
-    line-height: 1.6;
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: var(--color-bg);
+  color: white;
+  line-height: 1.6;
 }
 
 .mission-vision-title {
-    color: orange;
+  color: var(--color-cta);
 }
 
 .cta-link-blue {
-    color: #00bfff;
-    text-decoration: none;
-    /* Per rimuovere la sottolineatura */
-    font-weight: bold;
-    /* Per dare maggiore evidenza */
-    transition: color 0.3s ease;
-    /* Per un effetto di transizione */
+  color: var(--color-accent);
+  text-decoration: none;
+  /* Per rimuovere la sottolineatura */
+  font-weight: bold;
+  /* Per dare maggiore evidenza */
+  transition: color 0.3s ease;
+  /* Per un effetto di transizione */
 }
 
 /* Header */
 header img.banner {
-    width: 100%;
-    max-height: 200px;
-    object-fit: cover;
-    transform: scale(0);
-    /* Inizia in scala ridotta */
-    animation: grow 1s ease-out forwards;
+  width: 100%;
+  max-height: 200px;
+  object-fit: cover;
+  transform: scale(0);
+  /* Inizia in scala ridotta */
+  animation: grow 1s ease-out forwards;
 }
 
 nav ul {
-    list-style: none;
-    margin: 0;
-    padding: 10px 20px;
-    display: flex;
-    justify-content: center;
-    background-color: #12151a;
+  list-style: none;
+  margin: 0;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: center;
+  background-color: var(--color-bg-panel);
 }
 
 nav ul li {
-    margin: 0 15px;
+  margin: 0 15px;
 }
 
 nav ul li a {
-    color: #00bfff;
-    text-decoration: none;
-    font-size: 1.2rem;
+  color: var(--color-accent);
+  text-decoration: none;
+  font-size: 1.2rem;
 }
 
 nav ul li a:hover {
-    color: white;
+  color: white;
 }
 
 /* Navbar - Modalità desktop */
 #navbar {
-    display: flex;
-    /* Mantieni la navbar visibile su desktop */
-    justify-content: center;
-    background-color: #12151a;
-    padding: 10px 0;
+  display: flex;
+  /* Mantieni la navbar visibile su desktop */
+  justify-content: center;
+  background-color: var(--color-bg-panel);
+  padding: 10px 0;
+}
+
+#navbar ul {
+  flex-direction: row;
 }
 
 /* Stile per il pulsante hamburger */
 .hamburger {
-    display: block;
-    font-size: 1.5rem;
-    color: blue;
-    position: fixed;
-    /* Rimane sempre sopra */
-    top: 20px;
-    right: 20px;
-    z-index: 1000;
-    /* Assicurati che stia sopra l'overlay */
-    cursor: pointer;
-    transition: color 0.3s ease;
-}
-
-/* Navbar nascosta in modalità mobile */
-#navbar {
-    display: flex;
-    justify-content: center;
-}
-
-#navbar ul {
-    flex-direction: row;
+  display: block;
+  font-size: 1.5rem;
+  color: blue;
+  position: fixed;
+  /* Rimane sempre sopra */
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+  /* Assicurati che stia sopra l'overlay */
+  cursor: pointer;
+  transition: color 0.3s ease;
 }
 
 /* Nascondi l'icona hamburger in modalità desktop */
 @media screen and (min-width: 769px) {
-    .hamburger {
-        display: none;
-        /* Nasconde l'icona hamburger */
-    }
+  .hamburger {
+    display: none;
+    /* Nasconde l'icona hamburger */
+  }
 }
 
 .cta-link {
-    color: orange;
-    text-decoration: none;
-    /* Per rimuovere la sottolineatura */
-    font-weight: bold;
-    /* Per dare maggiore evidenza */
-    transition: color 0.3s ease;
-    /* Per un effetto di transizione */
+  color: var(--color-cta);
+  text-decoration: none;
+  /* Per rimuovere la sottolineatura */
+  font-weight: bold;
+  /* Per dare maggiore evidenza */
+  transition: color 0.3s ease;
+  /* Per un effetto di transizione */
 }
 
 .cta-link:hover {
-    color: orangered;
-    /* Cambia il colore al passaggio del mouse */
+  color: var(--color-cta-hover);
+  /* Cambia il colore al passaggio del mouse */
 }
 
 @media screen and (max-width: 768px) {
-    .hamburger {
-        display: block;
-        /* Mostra il pulsante in modalità mobile */
-        font-size: 1.5rem;
-        color: orangered;
-        /* Cambia il colore dell'icona */
-        position: fixed;
-        cursor: pointer;
-        transition: color 0.3s ease;
-        /* Aggiungi una transizione per l'effetto hover */
-    }
+  .hamburger {
+    display: block;
+    /* Mostra il pulsante in modalità mobile */
+    font-size: 1.5rem;
+    color: var(--color-cta-hover);
+    /* Cambia il colore dell'icona */
+    position: fixed;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    /* Aggiungi una transizione per l'effetto hover */
+  }
 
-    #navbar {
-        display: none;
-        /* Nascondi la navbar di default */
-        flex-direction: column;
-        /* Trasforma la navbar in verticale */
-        background-color: #12151a;
-        position: fixed;
-        top: 60px;
-        right: 0;
-        width: 100%;
-        z-index: 999;
-        /* Assicurati che sia sopra l'overlay */
-        transition: transform 0.3s ease, opacity 0.3s ease;
-        /* Opzionale */
-    }
+  #navbar {
+    display: none;
+    /* Nascondi la navbar di default */
+    flex-direction: column;
+    /* Trasforma la navbar in verticale */
+    background-color: var(--color-bg-panel);
+    position: fixed;
+    top: 60px;
+    right: 0;
+    width: 100%;
+    z-index: 999;
+    /* Assicurati che sia sopra l'overlay */
+    transition:
+      transform 0.3s ease,
+      opacity 0.3s ease;
+    /* Opzionale */
+  }
 
-    #navbar.active {
-        display: flex;
-        /* Mostra la navbar quando attiva */
-    }
+  #navbar.active {
+    display: flex;
+    /* Mostra la navbar quando attiva */
+  }
 
-    #navbar ul {
-        flex-direction: column;
-        margin: 0;
-        padding: 0;
-    }
+  #navbar ul {
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+  }
 
-    #navbar ul li {
-        margin: 0;
-        text-align: center;
-        padding: 15px 0;
-    }
+  #navbar ul li {
+    margin: 0;
+    text-align: center;
+    padding: 15px 0;
+  }
 }
 
 /* Overlay */
 .overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5);
-    /* Sfondo semi-trasparente */
-    backdrop-filter: blur(8px);
-    /* Sfocatura */
-    z-index: 998;
-    /* Posiziona l'overlay sotto il menu */
-    display: none;
-    /* Nascondi di default */
-    transition: opacity 0.3s ease;
-    /* Transizione per un effetto più fluido */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  /* Sfondo semi-trasparente */
+  backdrop-filter: blur(8px);
+  /* Sfocatura */
+  z-index: 998;
+  /* Posiziona l'overlay sotto il menu */
+  display: none;
+  /* Nascondi di default */
+  transition: opacity 0.3s ease;
+  /* Transizione per un effetto più fluido */
 }
 
 .overlay.active {
-    display: block;
-    opacity: 1;
+  display: block;
+  opacity: 1;
 }
 
 /* Main */
 main {
-    padding: 20px;
-    text-align: center;
+  padding: 20px;
+  text-align: center;
 }
 
 main img.logo {
-    width: 100px;
-    margin: 20px auto;
-    display: block;
-    border: 2px solid #00bfff;
-    border-radius: 10px;
-    transform: scale(0);
-    /* Inizia in scala ridotta */
-    animation: grow 1s ease-out forwards;
+  width: 100px;
+  margin: 20px auto;
+  display: block;
+  border: 2px solid var(--color-accent);
+  border-radius: 10px;
+  transform: scale(0);
+  /* Inizia in scala ridotta */
+  animation: grow 1s ease-out forwards;
 }
 
 /* Keyframes per l'animazione di crescita */
 @keyframes grow {
-    0% {
-        transform: scale(0);
-        /* Inizia con dimensione 0 */
-        opacity: 0;
-        /* Completamente trasparente */
-    }
+  0% {
+    transform: scale(0);
+    /* Inizia con dimensione 0 */
+    opacity: 0;
+    /* Completamente trasparente */
+  }
 
-    100% {
-        transform: scale(1);
-        /* Cresce alla dimensione originale */
-        opacity: 1;
-        /* Completamente visibile */
-    }
+  100% {
+    transform: scale(1);
+    /* Cresce alla dimensione originale */
+    opacity: 1;
+    /* Completamente visibile */
+  }
 }
 
 /* Sezioni */
 main section {
-    margin-bottom: 60px;
+  margin-bottom: 60px;
 }
 
 .intro-container {
-    text-align: center;
-    padding: 40px 20px;
-    background-color: #12151a;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  position: relative;
+  text-align: center;
+  padding: 40px 20px;
+  background-color: var(--color-bg-panel);
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+}
+
+.intro-container::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background-image: url("../images/filigrana.webp");
+  background-size: cover;
+  background-position: center;
+  filter: grayscale(1);
+  opacity: 0.08;
 }
 
 .intro-container img.logo {
-    width: 120px;
-    margin-bottom: 20px;
-    border: 3px solid #00bfff;
-    border-radius: 50%;
-    transition: transform 0.3s ease;
+  width: 120px;
+  margin-bottom: 20px;
+  border: 3px solid var(--color-accent);
+  border-radius: 50%;
+  transition: transform 0.3s ease;
 }
 
 .intro-container img.logo:hover {
-    transform: scale(1.1);
+  transform: scale(1.1);
+}
+
+.intro-container .tagline {
+  color: var(--color-accent);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin: 0 0 5px;
 }
 
 .intro-container h1 {
-    font-size: 2.5rem;
-    color: #00bfff;
-    margin-bottom: 20px;
+  font-size: 2.5rem;
+  color: var(--color-accent);
+  margin-bottom: 20px;
 }
 
 .intro-container p {
-    font-size: 1.2rem;
-    line-height: 1.8;
+  font-size: 1.2rem;
+  line-height: 1.8;
 }
 
 .why-pikobit {
-    text-align: center;
-    padding: 40px 20px;
-    background-color: #0d0f12;
-    color: white;
-    margin: 20px 0;
+  text-align: center;
+  padding: 40px 20px;
+  background-color: var(--color-bg);
+  color: white;
+  margin: 20px 0;
 }
 
 .why-pikobit h2 {
-    font-size: 2rem;
-    color: #00bfff;
-    margin-bottom: 20px;
+  font-size: 2rem;
+  color: var(--color-accent);
+  margin-bottom: 20px;
 }
 
 .why-pikobit h2::after {
-    content: '';
-    display: block;
-    width: 50px;
-    height: 3px;
-    background-color: #00bfff;
-    margin: 10px auto;
+  content: "";
+  display: block;
+  width: 50px;
+  height: 3px;
+  background-color: var(--color-accent);
+  margin: 10px auto;
 }
 
 .why-pikobit ul {
-    list-style: none;
-    padding: 0;
-    max-width: 800px;
-    margin: 0 auto;
+  list-style: none;
+  padding: 0;
+  max-width: 800px;
+  margin: 0 auto;
 }
 
 .why-pikobit ul li {
-    font-size: 1.2rem;
-    margin-bottom: 15px;
-    padding: 10px;
-    background-color: #12151a;
-    border: 1px solid #00bfff;
-    border-radius: 5px;
-    text-align: left;
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+  padding: 10px;
+  background-color: var(--color-bg-panel);
+  border: 1px solid var(--color-accent);
+  border-radius: 5px;
+  text-align: left;
 }
 
 .why-pikobit ul li:hover {
-    background-color: #1a1c21;
-    border: 2px solid #00bfff;
-    transform: scale(1.05);
-    transition: all 0.3s ease;
-}
-
-.progress {
-    text-align: center;
-    padding: 40px 20px;
-    background-color: #12151a;
-    color: white;
-}
-
-.progress h2 {
-    font-size: 1.8rem;
-    margin-bottom: 10px;
-    color: #00bfff;
-}
-
-.progress-bar {
-    width: 80%;
-    height: 20px;
-    background-color: #333;
-    margin: 0 auto;
-    border-radius: 10px;
-    overflow: hidden;
-    border: 1px solid #00bfff;
-}
-
-.progress-bar {
-    background: linear-gradient(90deg, #333, #444);
-}
-
-.progress-fill {
-    height: 100%;
-    background-color: #00bfff;
-    border-radius: 10px 0 0 10px;
-    width: 0;
-    /* Larghezza iniziale */
-    animation: fillAnimation 2s ease-out forwards;
-}
-
-@keyframes fillAnimation {
-    to {
-        width: 55%;
-    }
+  background-color: #1a1c21;
+  border: 2px solid var(--color-accent);
+  transform: scale(1.05);
+  transition: all 0.3s ease;
 }
 
 .goals ul {
-    list-style: disc;
-    margin: 20px auto;
-    padding: 0;
-    max-width: 800px;
-    text-align: left;
+  list-style: disc;
+  margin: 20px auto;
+  padding: 0;
+  max-width: 800px;
+  text-align: left;
 }
 
 .goals ul li {
-    margin-bottom: 10px;
-    font-size: 1.1rem;
+  margin-bottom: 10px;
+  font-size: 1.1rem;
 }
 
 .call-to-action ul {
-    list-style: none;
-    padding: 0;
-    margin: 20px 0;
+  list-style: none;
+  padding: 0;
+  margin: 20px 0;
 }
 
 .call-to-action ul li {
-    margin: 10px 0;
+  margin: 10px 0;
 }
 
 .call-to-action ul li a {
-    color: #00bfff;
-    text-decoration: none;
-    font-size: 1.2rem;
+  color: var(--color-accent);
+  text-decoration: none;
+  font-size: 1.2rem;
 }
 
 .call-to-action ul li a:hover {
-    text-decoration: underline;
+  text-decoration: underline;
 }
 
 /* Footer */
 footer {
-    text-align: center;
-    padding: 15px;
-    background-color: #1a1c21;
-    color: white;
+  text-align: center;
+  padding: 15px;
+  background-color: #1a1c21;
+  color: white;
 }
 
 footer .social-icons {
-    margin-top: 10px;
+  margin-top: 10px;
 }
 
 footer .social-icons a {
-    margin: 0 10px;
-    font-size: 30px;
-    color: white;
-    transition: transform 0.3s ease, color 0.3s ease;
+  margin: 0 10px;
+  font-size: 30px;
+  color: white;
+  transition:
+    transform 0.3s ease,
+    color 0.3s ease;
 }
 
 footer .social-icons img {
-    width: 30px;
-    height: 30px;
-    filter: grayscale(100%);
-    transition: filter 0.3s ease, transform 0.3s ease;
+  width: 30px;
+  height: 30px;
+  filter: grayscale(100%);
+  transition:
+    filter 0.3s ease,
+    transform 0.3s ease;
 }
 
 footer .social-icons a:hover {
-    color: #00bfff;
-    transform: scale(1.1);
+  color: var(--color-accent);
+  transform: scale(1.1);
 }
 
 /* Responsive */
 @media screen and (max-width: 768px) {
-    nav ul {
-        flex-direction: column;
-    }
+  nav ul {
+    flex-direction: column;
+  }
 
-    header img.banner {
-        max-height: 150px;
-    }
+  header img.banner {
+    max-height: 150px;
+  }
 
-    main img.logo {
-        width: 80px;
-    }
+  main img.logo {
+    width: 80px;
+  }
 }
-
 
 strong {
-    color: #00bfff;
-    /* Cambia il colore */
-    font-weight: bold;
-    text-shadow: 0 1px 3px rgba(0, 191, 255, 0.5);
-    /* Aggiunge un'ombra leggera */
+  color: var(--color-accent);
+  /* Cambia il colore */
+  font-weight: bold;
+  text-shadow: 0 1px 3px rgba(0, 191, 255, 0.5);
+  /* Aggiunge un'ombra leggera */
 }
-
 
 /* Pulsante "Torna su" */
 #scrollToTop {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    display: none;
-    /* Nascondilo di default */
-    width: 50px;
-    height: 50px;
-    background-color: #00bfff;
-    color: white;
-    border: none;
-    border-radius: 50%;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    cursor: pointer;
-    font-size: 24px;
-    z-index: 1001;
-    /* Sopra tutto */
-    transition: opacity 0.3s ease, transform 0.3s ease;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: none;
+  /* Nascondilo di default */
+  width: 50px;
+  height: 50px;
+  background-color: var(--color-accent);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  font-size: 24px;
+  z-index: 1001;
+  /* Sopra tutto */
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease;
 }
 
 #scrollToTop:hover {
-    background-color: white;
-    color: #00bfff;
-    transform: scale(1.1);
-    /* Ingrandisci al passaggio del mouse */
+  background-color: white;
+  color: var(--color-accent);
+  transform: scale(1.1);
+  /* Ingrandisci al passaggio del mouse */
 }
 
 #scrollToTop.show {
-    display: block;
-    /* Mostralo quando necessario */
+  display: block;
+  /* Mostralo quando necessario */
 }
 
 /*per pulsavte servizi nella navbar -----------*/
 .nav-links {
-    display: flex;
-    justify-content: center;
-    list-style: none;
-    padding: 0;
-    margin: 0;
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
 /* Dropdown container */
 .dropdown {
-    position: relative;
-    display: inline-block;
+  position: relative;
+  display: inline-block;
 }
 
 /* Menu nascosto inizialmente */
 .dropdown-menu {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 50%;
-    /* Centrare rispetto al contenitore */
-    transform: translateX(-50%);
-    /* Centrare orizzontalmente */
-    background-color: #12151a;
-    /* Colore di sfondo */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    /* Ombra */
-    border-radius: 8px;
-    /* Angoli arrotondati */
-    list-style: none;
-    padding: 10px 0;
-    /* Spaziatura verticale interna */
-    z-index: 1000;
-    width: 250px;
-    /* Larghezza fissa */
-    text-align: center;
-    /* Centrare il testo */
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  /* Centrare rispetto al contenitore */
+  transform: translateX(-50%);
+  /* Centrare orizzontalmente */
+  background-color: var(--color-bg-panel);
+  /* Colore di sfondo */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  /* Ombra */
+  border-radius: 8px;
+  /* Angoli arrotondati */
+  list-style: none;
+  padding: 10px 0;
+  /* Spaziatura verticale interna */
+  z-index: 1000;
+  width: 250px;
+  /* Larghezza fissa */
+  text-align: center;
+  /* Centrare il testo */
 }
 
 /* Voci del menu */
 .dropdown-menu li {
-    margin: 0;
+  margin: 0;
 }
 
 .dropdown-menu li a {
-    text-decoration: none;
-    color: #ccc;
-    padding: 10px 20px;
-    display: block;
-    transition: background-color 0.3s ease, color 0.3s ease;
-    font-size: 1rem;
-    /* Dimensione leggibile */
-    border-radius: 4px;
-    /* Per un effetto di pulsanti */
+  text-decoration: none;
+  color: #ccc;
+  padding: 10px 20px;
+  display: block;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+  font-size: 1rem;
+  /* Dimensione leggibile */
+  border-radius: 4px;
+  /* Per un effetto di pulsanti */
 }
 
 .dropdown-menu li a:hover {
-    background-color: orangered;
-    /* Cambia colore al passaggio del mouse */
-    color: white;
+  background-color: var(--color-cta-hover);
+  /* Cambia colore al passaggio del mouse */
+  color: white;
 }
 
 /* Mostra il menu al passaggio del mouse */
 .dropdown:hover .dropdown-menu {
-    display: block;
+  display: block;
 }
 
 /* Per il click toggle (opzionale, già supportato nello script JS) */
 .dropdown-menu.active {
-    display: block;
+  display: block;
 }
 
 /* Aggiunta per margini e spaziature */
-.dropdown-menu li+li {
-    margin-top: 5px;
-    /* Distanza tra gli elementi del menu */
+.dropdown-menu li + li {
+  margin-top: 5px;
+  /* Distanza tra gli elementi del menu */
 }
 
 @media (max-width: 768px) {
-    .dropdown-menu li a {
-        color: orangered;
-    }
+  .dropdown-menu li a {
+    color: var(--color-cta-hover);
+  }
 
-    .dropdown-menu li a:hover {
-        background-color: #12151a;
-        color: white;
-    }
+  .dropdown-menu li a:hover {
+    background-color: var(--color-bg-panel);
+    color: white;
+  }
 }
 
 /*FINE per pulsavte servizi nella navbar -----------*/
@@ -559,166 +550,156 @@ strong {
 /*PER LA PAGINA resource -----------*/
 
 .articles-section {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    /* Tre colonne */
-    gap: 20px;
-    /* Spazio uniforme tra i riquadri */
-    padding: 0 20px;
-    /* Riduzione del padding */
-    justify-content: center;
-    /* Centrare orizzontalmente */
-    align-items: start;
-    /* Allineamento verticale */
-    max-width: 1200px;
-    /* Imposta una larghezza massima */
-    margin: 0 auto;
-    /* Centrare rispetto alla pagina */
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  /* Tre colonne */
+  gap: 20px;
+  /* Spazio uniforme tra i riquadri */
+  padding: 0 20px;
+  /* Riduzione del padding */
+  justify-content: center;
+  /* Centrare orizzontalmente */
+  align-items: start;
+  /* Allineamento verticale */
+  max-width: 1200px;
+  /* Imposta una larghezza massima */
+  margin: 0 auto;
+  /* Centrare rispetto alla pagina */
 }
 
 .article-box {
-    width: 100%;
-    max-width: 300px;
-    height: 225px;
-    /* Altezza fissa per uniformare i box */
-    background-color: #12151a;
-    border: 2px solid #00bfff;
-    border-radius: 10px;
-    padding: 20px;
-    color: white;
-    text-align: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    /* Gestione del testo */
-    overflow: hidden;
-    /* Previene l'overflow */
-    text-overflow: ellipsis;
-    /* Aggiunge i "..." se il testo è troppo lungo */
-    white-space: normal;
-    /* Permette al testo di andare a capo */
-    word-wrap: break-word;
-    /* Spezza le parole lunghe */
-    line-height: 1.5;
-    /* Aggiunge spazio tra le righe */
+  width: 100%;
+  max-width: 300px;
+  height: 225px;
+  /* Altezza fissa per uniformare i box */
+  background-color: var(--color-bg-panel);
+  border: 2px solid var(--color-accent);
+  border-radius: 10px;
+  padding: 20px;
+  color: white;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+  /* Gestione del testo */
+  overflow: hidden;
+  /* Previene l'overflow */
+  text-overflow: ellipsis;
+  /* Aggiunge i "..." se il testo è troppo lungo */
+  white-space: normal;
+  /* Permette al testo di andare a capo */
+  word-wrap: break-word;
+  /* Spezza le parole lunghe */
+  line-height: 1.5;
+  /* Aggiunge spazio tra le righe */
 }
 
 .article-box:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
 }
-
-
 
 .article-box h3 {
-    color: #00bfff;
-    font-size: 1.2rem;
-    margin-bottom: 10px;
+  color: var(--color-accent);
+  font-size: 1.2rem;
+  margin-bottom: 10px;
 }
-
 
 .article-box p {
-    display: -webkit-box;
-    /* Imposta il contenitore come box flessibile */
-    -webkit-line-clamp: 3;
-    /* Numero massimo di righe */
-    -webkit-box-orient: vertical;
-    /* Orienta le righe verticalmente */
-    overflow: hidden;
-    /* Nasconde il testo in eccesso */
-    text-overflow: ellipsis;
-    /* Aggiunge i puntini finali */
+  display: -webkit-box;
+  /* Imposta il contenitore come box flessibile */
+  -webkit-line-clamp: 3;
+  /* Numero massimo di righe */
+  -webkit-box-orient: vertical;
+  /* Orienta le righe verticalmente */
+  overflow: hidden;
+  /* Nasconde il testo in eccesso */
+  text-overflow: ellipsis;
+  /* Aggiunge i puntini finali */
 }
 
-
-
 .article-box a {
-    color: orange;
-    text-decoration: none;
-    font-weight: bold;
+  color: var(--color-cta);
+  text-decoration: none;
+  font-weight: bold;
 }
 
 .article-box a:hover {
-    text-decoration: underline;
+  text-decoration: underline;
 }
-
 
 /*per smartphon*/
 /* Per dispositivi mobili */
 @media screen and (max-width: 768px) {
-    .articles-section {
-        display: flex;
-        /* Cambia da grid a flex */
-        flex-direction: column;
-        /* Rende i riquadri verticali */
-        gap: 20px;
-        /* Spazio uniforme tra i riquadri */
-        padding: 0 10px;
-        /* Riduce il padding */
-        align-items: center;
-        /* Centra i riquadri */
-    }
+  .articles-section {
+    display: flex;
+    /* Cambia da grid a flex */
+    flex-direction: column;
+    /* Rende i riquadri verticali */
+    gap: 20px;
+    /* Spazio uniforme tra i riquadri */
+    padding: 0 10px;
+    /* Riduce il padding */
+    align-items: center;
+    /* Centra i riquadri */
+  }
 
-    .article-box {
-        width: 100%;
-        /* Adatta alla larghezza dello schermo */
-        max-width: 350px;
-        /* Imposta una larghezza massima */
-        margin-bottom: 20px;
-        /* Spazio tra i riquadri */
-    }
+  .article-box {
+    width: 100%;
+    /* Adatta alla larghezza dello schermo */
+    max-width: 350px;
+    /* Imposta una larghezza massima */
+    margin-bottom: 20px;
+    /* Spazio tra i riquadri */
+  }
 }
 
-
-
-
 /*FINE LA PAGINA resource -----------*/
-
 
 /*DISPENSE FOTOPER PAGINA CREATIVE SERVICES*/
 /* Contenitore del carousel */
 .carousel-container {
-    width: 100%;
-    max-width: 600px;
-    overflow: hidden;
-    margin: 20px auto;
-    position: relative;
-    border: 2px solid #ccc;
-    border-radius: 10px;
+  width: 100%;
+  max-width: 600px;
+  overflow: hidden;
+  margin: 20px auto;
+  position: relative;
+  border: 2px solid #ccc;
+  border-radius: 10px;
 }
 
 .carousel-slide {
-    display: flex;
-    transition: transform 0.5s ease-in-out; /* Aggiunge la transizione fluida */
-    width: 100%; /* Assicurati che il contenitore si adatti */
+  display: flex;
+  transition: transform 0.5s ease-in-out; /* Aggiunge la transizione fluida */
+  width: 100%; /* Assicurati che il contenitore si adatti */
 }
 
 .carousel-slide img {
-    width: 100%; /* L'immagine occupa tutto lo spazio disponibile */
-    flex-shrink: 0; /* Evita che le immagini si ridimensionino */
-    max-width: 600px;
-    height: auto;
-    object-fit: cover;
+  width: 100%; /* L'immagine occupa tutto lo spazio disponibile */
+  flex-shrink: 0; /* Evita che le immagini si ridimensionino */
+  max-width: 600px;
+  height: auto;
+  object-fit: cover;
 }
 section {
-    padding: 20px 0; /* Riduci il padding verticale */
+  padding: 20px 0; /* Riduci il padding verticale */
 }
 
 .carousel-slide img:hover {
-    transform: scale(1.05); /* Effetto zoom leggero */
-    transition: transform 0.3s ease-in-out;
+  transform: scale(1.05); /* Effetto zoom leggero */
+  transition: transform 0.3s ease-in-out;
 }
-
 
 @media (max-width: 768px) {
-    .carousel-btn {
-        padding: 8px;
-        font-size: 16px;
-    }
+  .carousel-btn {
+    padding: 8px;
+    font-size: 16px;
+  }
 
-    .carousel-container {
-        border: none; /* Rimuove il bordo per un design più pulito su mobile */
-    }
+  .carousel-container {
+    border: none; /* Rimuove il bordo per un design più pulito su mobile */
+  }
 }
-
 
 /*FINE DISPENE FOTO PER PAGINA CREATIVE SERVICES*/
