@@ -327,6 +327,16 @@ main section {
   transition: all 0.3s ease;
 }
 
+.article-body {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.article-body p {
+  margin-bottom: 20px;
+}
+
 .goals ul {
   list-style: none;
   margin: 20px auto;

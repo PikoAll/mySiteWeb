@@ -144,76 +144,87 @@
 
       <section class="why-pikobit">
         <h2>PocketBase si fa ancora più comodo</h2>
-        <p>
-          È un backend intero (database, autenticazione, storage file, API in
-          tempo reale) dentro un singolo eseguibile. Detto così sembra poco, ma
-          pensaci: di solito per far partire un progetto ti serve un database a
-          parte (tipo Postgres), un server per l'autenticazione, uno storage per
-          i file, magari un servizio separato per le notifiche in tempo reale.
-          PocketBase mette tutto questo in un unico file scritto in Go, che
-          internamente usa SQLite — cioè un database che vive dentro un file sul
-          disco, niente server da installare e mantenere a parte.
-        </p>
-        <p>
-          La versione in arrivo aggiunge WebSocket nativi (in pratica, il client
-          riceve aggiornamenti istantanei senza dover continuamente "chiedere se
-          c'è qualcosa di nuovo") e code di lavoro schedulabili integrate, utili
-          per compiti che devono girare in background tipo l'invio di email o
-          l'elaborazione di file. Per chi deve tirare su in fretta un gestionale
-          o un MVP senza montare un'infrastruttura pesante, è oro: meno pezzi da
-          gestire, meno cose che si rompono, meno bollette da pagare su tre
-          servizi diversi. Occhio però: va benissimo per progetti piccoli/medi o
-          per validare un'idea in fretta, molto meno per applicazioni enterprise
-          con carichi altissimi — lì servono ancora architetture più robuste.
-        </p>
+        <div class="article-body">
+          <p>
+            È un backend intero (database, autenticazione, storage file, API in
+            tempo reale) dentro un singolo eseguibile. Detto così sembra poco,
+            ma pensaci: di solito per far partire un progetto ti serve un
+            database a parte (tipo Postgres), un server per l'autenticazione,
+            uno storage per i file, magari un servizio separato per le notifiche
+            in tempo reale. PocketBase mette tutto questo in un unico file
+            scritto in Go, che internamente usa SQLite — cioè un database che
+            vive dentro un file sul disco, niente server da installare e
+            mantenere a parte.
+          </p>
+          <p>
+            La versione in arrivo aggiunge WebSocket nativi (in pratica, il
+            client riceve aggiornamenti istantanei senza dover continuamente
+            "chiedere se c'è qualcosa di nuovo") e code di lavoro schedulabili
+            integrate, utili per compiti che devono girare in background tipo
+            l'invio di email o l'elaborazione di file. Per chi deve tirare su in
+            fretta un gestionale o un MVP senza montare un'infrastruttura
+            pesante, è oro: meno pezzi da gestire, meno cose che si rompono,
+            meno bollette da pagare su tre servizi diversi. Occhio però: va
+            benissimo per progetti piccoli/medi o per validare un'idea in
+            fretta, molto meno per applicazioni enterprise con carichi altissimi
+            — lì servono ancora architetture più robuste.
+          </p>
+        </div>
       </section>
 
       <section class="why-pikobit">
         <h2>Visual Studio 2026 ha imparato nuovi trucchi</h2>
-        <p>
-          Uscito il 22 luglio con skill agentiche integrate pensate dai team
-          .NET e Azure. La differenza rispetto al solito autocompletamento stile
-          Copilot è sostanziale: qui non ti suggerisce solo la riga successiva,
-          ma può eseguire compiti multi-step su tua richiesta — per esempio
-          "aggiorna tutti i test dopo che ho cambiato questa interfaccia" oppure
-          "trova e sistema gli errori di build in tutto il progetto". Tu dai il
-          comando, l'agente lavora su più file, tu rivedi il risultato prima di
-          accettarlo (per fortuna, il codice finale lo approvi sempre tu).
-        </p>
-        <p>
-          Le "skill" sono personalizzabili: puoi definirne di tue per compiti
-          che ripeti spesso nel tuo flusso di lavoro. Le parti ripetitive e
-          noiose si accorciano parecchio, restano a te le decisioni che contano
-          davvero.
-        </p>
+        <div class="article-body">
+          <p>
+            Uscito il 22 luglio con skill agentiche integrate pensate dai team
+            .NET e Azure. La differenza rispetto al solito autocompletamento
+            stile Copilot è sostanziale: qui non ti suggerisce solo la riga
+            successiva, ma può eseguire compiti multi-step su tua richiesta —
+            per esempio "aggiorna tutti i test dopo che ho cambiato questa
+            interfaccia" oppure "trova e sistema gli errori di build in tutto il
+            progetto". Tu dai il comando, l'agente lavora su più file, tu rivedi
+            il risultato prima di accettarlo (per fortuna, il codice finale lo
+            approvi sempre tu).
+          </p>
+          <p>
+            Le "skill" sono personalizzabili: puoi definirne di tue per compiti
+            che ripeti spesso nel tuo flusso di lavoro. Le parti ripetitive e
+            noiose si accorciano parecchio, restano a te le decisioni che
+            contano davvero.
+          </p>
+        </div>
       </section>
 
       <section class="why-pikobit">
         <h2>Alibaba apre il suo code reviewer AI</h2>
-        <p>
-          "open-code-review" mescola due approcci diversi: una pipeline
-          deterministica (regole fisse, tipo un linter classico, veloce ed
-          economica) con un agente LLM che capisce il contesto (più lenta ma
-          coglie sfumature che una regola fissa si perde). Insieme beccano cose
-          come NPE (NullPointerException, quando il codice prova ad usare
-          qualcosa che in realtà non esiste), problemi di thread-safety (bug che
-          spuntano solo quando più parti del programma girano insieme e si
-          "pestano i piedi"), XSS (quando qualcuno riesce a infilare codice
-          malevolo dentro una pagina web) e SQL injection (manipolare una query
-          al database passando dati non controllati) — con commenti precisi riga
-          per riga, non un generico "c'è un problema da qualche parte".
-        </p>
-        <p>
-          È compatibile con le API di OpenAI e Anthropic, quindi puoi collegarci
-          il provider AI che preferisci. Per team piccoli senza un senior che fa
-          da guardiano ad ogni pull request, è un secondo paio d'occhi che non
-          si stanca mai e non si offende se gli dici che ha sbagliato.
-        </p>
-        <p>
-          Nessuna rivoluzione epocale questa settimana, ma tre strumenti
-          concreti che fanno risparmiare tempo vero — che poi è quello che
-          conta.
-        </p>
+        <div class="article-body">
+          <p>
+            "open-code-review" mescola due approcci diversi: una pipeline
+            deterministica (regole fisse, tipo un linter classico, veloce ed
+            economica) con un agente LLM che capisce il contesto (più lenta ma
+            coglie sfumature che una regola fissa si perde). Insieme beccano
+            cose come NPE (NullPointerException, quando il codice prova ad usare
+            qualcosa che in realtà non esiste), problemi di thread-safety (bug
+            che spuntano solo quando più parti del programma girano insieme e si
+            "pestano i piedi"), XSS (quando qualcuno riesce a infilare codice
+            malevolo dentro una pagina web) e SQL injection (manipolare una
+            query al database passando dati non controllati) — con commenti
+            precisi riga per riga, non un generico "c'è un problema da qualche
+            parte".
+          </p>
+          <p>
+            È compatibile con le API di OpenAI e Anthropic, quindi puoi
+            collegarci il provider AI che preferisci. Per team piccoli senza un
+            senior che fa da guardiano ad ogni pull request, è un secondo paio
+            d'occhi che non si stanca mai e non si offende se gli dici che ha
+            sbagliato.
+          </p>
+          <p>
+            Nessuna rivoluzione epocale questa settimana, ma tre strumenti
+            concreti che fanno risparmiare tempo vero — che poi è quello che
+            conta.
+          </p>
+        </div>
       </section>
 
       <section class="why-pikobit">
