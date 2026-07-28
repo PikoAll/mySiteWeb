@@ -1,0 +1,294 @@
+<!doctype html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Backend in un file, VS Code che pensa da solo e altre chicche di questa
+      settimana - Blog PikoBit
+    </title>
+    <meta
+      name="description"
+      content="PocketBase, le nuove skill agentiche di Visual Studio 2026 e il code reviewer AI di Alibaba: tre strumenti dev pratici della settimana, spiegati semplice."
+    />
+    <meta
+      name="keywords"
+      content="PocketBase, Visual Studio 2026, Alibaba open-code-review, strumenti sviluppo software, novità dev"
+    />
+    <meta name="author" content="PikoBit" />
+
+    <!-- Tag canonical -->
+    <link
+      rel="canonical"
+      href="https://pikobit.it/blog/2026-07-28-strumenti-dev-della-settimana.html"
+    />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="article" />
+    <meta
+      property="og:title"
+      content="Backend in un file, VS Code che pensa da solo e altre chicche di questa settimana"
+    />
+    <meta
+      property="og:description"
+      content="PocketBase, le nuove skill agentiche di Visual Studio 2026 e il code reviewer AI di Alibaba: tre strumenti dev pratici della settimana, spiegati semplice."
+    />
+    <meta property="og:image" content="https://pikobit.it/images/banner.webp" />
+    <meta
+      property="og:url"
+      content="https://pikobit.it/blog/2026-07-28-strumenti-dev-della-settimana.html"
+    />
+
+    <link rel="stylesheet" href="../styles/style.css?v=4.0.0.8" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" href="../images/logo.webp" type="image/png" />
+
+    <script src="../scripts/script.js?v=4.0.0.8"></script>
+
+    <!-- Dati strutturati -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Backend in un file, VS Code che pensa da solo e altre chicche di questa settimana",
+        "description": "PocketBase, le nuove skill agentiche di Visual Studio 2026 e il code reviewer AI di Alibaba: tre strumenti dev pratici della settimana, spiegati semplice.",
+        "datePublished": "2026-07-28",
+        "author": {
+          "@type": "Person",
+          "name": "PikoBit",
+          "sameAs": ["https://www.youtube.com/@pikobit01"]
+        }
+      }
+    </script>
+
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-TVGN1XBX7H"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-TVGN1XBX7H");
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <img src="../images/banner.webp" alt="Pikobit Banner" class="banner" />
+      <div class="hamburger" id="hamburger-menu">
+        <i class="fas fa-bars"></i>
+      </div>
+      <div class="overlay" id="overlay"></div>
+      <nav id="navbar">
+        <ul class="nav-links">
+          <li><a href="../index.html">Home</a></li>
+
+          <li class="dropdown">
+            <a href="#" id="dropdown-toggle">Servizi ▼</a>
+            <ul class="dropdown-menu">
+              <li><a href="../websites.html">Siti web personalizzati</a></li>
+              <li><a href="../modern-apps.html">Applicazioni moderne</a></li>
+              <li>
+                <a href="../custom-software.html"
+                  >Software gestionali su misura</a
+                >
+              </li>
+              <li>
+                <a href="../creative-services.html"
+                  >Servizi Creativi e Soluzioni Complete</a
+                >
+              </li>
+              <li><a href="../lessons.html">Lezioni e tutorial</a></li>
+            </ul>
+          </li>
+
+          <li><a href="../ideas.html">Idee Innovative</a></li>
+          <li><a href="../about.html">Chi Sono</a></li>
+          <li><a href="../resources.html">Risorse</a></li>
+          <li><a href="../contact.html">Contatti</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section class="intro">
+        <div class="intro-container">
+          <img
+            src="../images/logo.webp"
+            alt="Logo Pikobit - Tutorial e Progetti di Programmazione"
+            class="logo"
+          />
+          <p class="tagline">Strumenti Dev della Settimana</p>
+          <h1>
+            Backend in un file, VS Code che pensa da solo e altre chicche di
+            questa settimana
+          </h1>
+          <p>
+            Tre cose viste questa settimana nel mondo dev che vale la pena
+            conoscere — pratiche, non hype.
+          </p>
+        </div>
+      </section>
+
+      <section class="why-pikobit">
+        <h2>PocketBase si fa ancora più comodo</h2>
+        <p>
+          È un backend intero (database, autenticazione, storage file, API in
+          tempo reale) dentro un singolo eseguibile. Detto così sembra poco, ma
+          pensaci: di solito per far partire un progetto ti serve un database a
+          parte (tipo Postgres), un server per l'autenticazione, uno storage per
+          i file, magari un servizio separato per le notifiche in tempo reale.
+          PocketBase mette tutto questo in un unico file scritto in Go, che
+          internamente usa SQLite — cioè un database che vive dentro un file sul
+          disco, niente server da installare e mantenere a parte.
+        </p>
+        <p>
+          La versione in arrivo aggiunge WebSocket nativi (in pratica, il client
+          riceve aggiornamenti istantanei senza dover continuamente "chiedere se
+          c'è qualcosa di nuovo") e code di lavoro schedulabili integrate, utili
+          per compiti che devono girare in background tipo l'invio di email o
+          l'elaborazione di file. Per chi deve tirare su in fretta un gestionale
+          o un MVP senza montare un'infrastruttura pesante, è oro: meno pezzi da
+          gestire, meno cose che si rompono, meno bollette da pagare su tre
+          servizi diversi. Occhio però: va benissimo per progetti piccoli/medi o
+          per validare un'idea in fretta, molto meno per applicazioni enterprise
+          con carichi altissimi — lì servono ancora architetture più robuste.
+        </p>
+      </section>
+
+      <section class="why-pikobit">
+        <h2>Visual Studio 2026 ha imparato nuovi trucchi</h2>
+        <p>
+          Uscito il 22 luglio con skill agentiche integrate pensate dai team
+          .NET e Azure. La differenza rispetto al solito autocompletamento stile
+          Copilot è sostanziale: qui non ti suggerisce solo la riga successiva,
+          ma può eseguire compiti multi-step su tua richiesta — per esempio
+          "aggiorna tutti i test dopo che ho cambiato questa interfaccia" oppure
+          "trova e sistema gli errori di build in tutto il progetto". Tu dai il
+          comando, l'agente lavora su più file, tu rivedi il risultato prima di
+          accettarlo (per fortuna, il codice finale lo approvi sempre tu).
+        </p>
+        <p>
+          Le "skill" sono personalizzabili: puoi definirne di tue per compiti
+          che ripeti spesso nel tuo flusso di lavoro. Le parti ripetitive e
+          noiose si accorciano parecchio, restano a te le decisioni che contano
+          davvero.
+        </p>
+      </section>
+
+      <section class="why-pikobit">
+        <h2>Alibaba apre il suo code reviewer AI</h2>
+        <p>
+          "open-code-review" mescola due approcci diversi: una pipeline
+          deterministica (regole fisse, tipo un linter classico, veloce ed
+          economica) con un agente LLM che capisce il contesto (più lenta ma
+          coglie sfumature che una regola fissa si perde). Insieme beccano cose
+          come NPE (NullPointerException, quando il codice prova ad usare
+          qualcosa che in realtà non esiste), problemi di thread-safety (bug che
+          spuntano solo quando più parti del programma girano insieme e si
+          "pestano i piedi"), XSS (quando qualcuno riesce a infilare codice
+          malevolo dentro una pagina web) e SQL injection (manipolare una query
+          al database passando dati non controllati) — con commenti precisi riga
+          per riga, non un generico "c'è un problema da qualche parte".
+        </p>
+        <p>
+          È compatibile con le API di OpenAI e Anthropic, quindi puoi collegarci
+          il provider AI che preferisci. Per team piccoli senza un senior che fa
+          da guardiano ad ogni pull request, è un secondo paio d'occhi che non
+          si stanca mai e non si offende se gli dici che ha sbagliato.
+        </p>
+        <p>
+          Nessuna rivoluzione epocale questa settimana, ma tre strumenti
+          concreti che fanno risparmiare tempo vero — che poi è quello che
+          conta.
+        </p>
+      </section>
+
+      <section class="why-pikobit">
+        <h2>Esempi pratici</h2>
+        <ul>
+          <li>
+            <strong>PocketBase</strong> — Se hai un piccolo negozio o un salone
+            e vuoi un'app per gestire le prenotazioni senza aspettare mesi e
+            spendere una fortuna, è lo strumento giusto per buttare giù un
+            prototipo funzionante in pochi giorni. Se invece sei un
+            programmatore e vuoi provare velocemente l'idea per un side project,
+            eviti di perdere ore a configurare database, autenticazione e
+            storage separati — parti e basta.
+          </li>
+          <li>
+            <strong>Visual Studio 2026</strong> — Sei un piccolo imprenditore
+            che assume un freelance per il tuo software gestionale? Il lavoro si
+            completa più in fretta, quindi paghi meno ore. Se sei tu il
+            programmatore, puoi far generare in automatico tutti i test dopo
+            aver modificato una classe, invece di riscriverli a mano uno per
+            uno.
+          </li>
+          <li>
+            <strong>Alibaba open-code-review</strong> — Hai una piccola software
+            house o gestisci un team senza un senior che rivede ogni riga? Puoi
+            fidarti che il codice consegnato passi comunque un controllo di
+            qualità automatico prima di arrivare a te. Da programmatore, lo
+            colleghi alla pipeline CI/CD così ogni pull request viene
+            controllata prima ancora che un collega la guardi.
+          </li>
+        </ul>
+      </section>
+
+      <section class="why-pikobit">
+        <p>
+          <strong>Fonti:</strong>
+          <a
+            href="https://learn.microsoft.com/en-us/visualstudio/releases/2026/release-notes"
+            class="cta-link"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Microsoft Learn</a
+          >
+          ·
+          <a
+            href="https://trendshift.io/weekly"
+            class="cta-link"
+            target="_blank"
+            rel="noopener noreferrer"
+            >PocketBase su Trendshift</a
+          >
+        </p>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2026 Pikobit. Tutti i diritti riservati.</p>
+      <p>
+        "Pikobit: Il tuo punto di partenza per creare, imparare e ispirare."
+      </p>
+      <div class="social-icons">
+        <a
+          href="https://www.youtube.com/@pikobit01"
+          target="_blank"
+          rel="noopener noreferrer"
+          ><i class="fab fa-youtube"></i
+        ></a>
+        <a
+          href="https://www.linkedin.com/in/giuseppe-alaimo-aba40b226"
+          target="_blank"
+          rel="noopener noreferrer"
+          ><i class="fab fa-linkedin"></i
+        ></a>
+      </div>
+    </footer>
+    <button id="scrollToTop" title="Torna su">&#8679;</button>
+  </body>
+</html>
