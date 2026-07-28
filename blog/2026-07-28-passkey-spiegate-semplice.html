@@ -1,0 +1,258 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>
+Passkey spiegate semplice: è davvero la fine delle password? - Blog
+PikoBit
+</title>
+<meta
+name="description"
+content="Le passkey stanno sostituendo le password su sempre più siti. Come 
+funzionano davvero, perché sono più sicure e cosa cambia per chi sviluppa 
+un sistema di login."
+/>
+<meta
+name="keywords"
+content="passkey, WebAuthn, FIDO2, autenticazione senza password, sicurezza 
+login"
+/>
+<meta name="author" content="PikoBit" />
+
+<!-- Tag canonical -->
+<link
+rel="canonical"
+href="
+https://www.google.com/url?q=https://pikobit.it/blog/2026-07-28-passkey-spiegate-semplice.html&source=gmail&ust=1785361355876000&sa=E
+"
+/>
+
+<!-- Open Graph -->
+<meta property="og:type" content="article" />
+<meta
+property="og:title"
+content="Passkey spiegate semplice: è davvero la fine delle password?"
+/>
+<meta
+property="og:description"
+content="Le passkey stanno sostituendo le password su sempre più siti. Come 
+funzionano davvero, perché sono più sicure e cosa cambia per chi sviluppa 
+un sistema di login."
+/>
+<meta property="og:image" content="
+https://www.google.com/url?q=https://pikobit.it/images/banner.webp&source=gmail&ust=1785361355876000&sa=E" 
+/>
+<meta
+property="og:url"
+content="
+https://www.google.com/url?q=https://pikobit.it/blog/2026-07-28-passkey-spiegate-semplice.html&source=gmail&ust=1785361355876000&sa=E
+"
+/>
+
+<link rel="stylesheet" href="../styles/style.css?v=4.0.0.8" />
+<link
+href="
+https://www.google.com/url?q=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css&source=gmail&ust=1785361355876000&sa=E
+"
+rel="stylesheet"
+/>
+<link
+href="
+https://www.google.com/url?q=https://fonts.googleapis.com/css2?family%3DPoppins:wght@400;600%26display%3Dswap&source=gmail&ust=1785361355876000&sa=E
+"
+rel="stylesheet"
+/>
+<link rel="icon" href="../images/logo.webp" type="image/png" />
+
+<script src="../scripts/script.js?v=4.0.0.8"></script>
+
+<!-- Dati strutturati -->
+<script type="application/ld+json">
+{
+"@context": "
+https://www.google.com/url?q=https://schema.org&source=gmail&ust=1785361355876000&sa=E
+",
+"@type": "BlogPosting",
+"headline": "Passkey spiegate semplice: è davvero la fine delle password?",
+"description": "Le passkey stanno sostituendo le password su sempre più 
+siti. Come funzionano davvero, perché sono più sicure e cosa cambia per chi 
+sviluppa un sistema di login.",
+"datePublished": "2026-07-28",
+"author": {
+"@type": "Person",
+"name": "PikoBit",
+"sameAs": ["
+https://www.google.com/url?q=https://www.youtube.com/@pikobit01&source=gmail&ust=1785361355876000&sa=E
+"]
+}
+}
+</script>
+
+<!-- Google tag (gtag.js) -->
+<script
+async
+src="
+https://www.google.com/url?q=https://www.googletagmanager.com/gtag/js?id%3DG-TVGN1XBX7H&source=gmail&ust=1785361355876000&sa=E
+"
+></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag() {
+dataLayer.push(arguments);
+}
+gtag("js", new Date());
+
+gtag("config", "G-TVGN1XBX7H");
+</script>
+</head>
+
+<body>
+<header>
+<img src="../images/banner.webp" alt="Pikobit Banner" class="banner" />
+<div class="hamburger" id="hamburger-menu">
+<i class="fas fa-bars"></i>
+</div>
+<div class="overlay" id="overlay"></div>
+<nav id="navbar">
+<ul class="nav-links">
+<li><a href="../index.html">Home</a></li>
+
+<li class="dropdown">
+<a href="#" id="dropdown-toggle">Servizi ▼</a>
+<ul class="dropdown-menu">
+<li><a href="../websites.html">Siti web personalizzati</a></li>
+<li><a href="../modern-apps.html">Applicazioni moderne</a></li>
+<li>
+<a href="../custom-software.html"
+>Software gestionali su misura</a
+>
+</li>
+<li>
+<a href="../creative-services.html"
+>Servizi Creativi e Soluzioni Complete</a
+>
+</li>
+<li><a href="../lessons.html">Lezioni e tutorial</a></li>
+</ul>
+</li>
+
+<li><a href="../ideas.html">Idee Innovative</a></li>
+<li><a href="../about.html">Chi Sono</a></li>
+<li><a href="../resources.html">Risorse</a></li>
+<li><a href="../contact.html">Contatti</a></li>
+</ul>
+</nav>
+</header>
+
+<main>
+<section class="intro">
+<div class="intro-container">
+<img
+src="../images/logo.webp"
+alt="Logo Pikobit - Tutorial e Progetti di Programmazione"
+class="logo"
+/>
+<p class="tagline">Programmazione della Settimana</p>
+<h1>Passkey spiegate semplice: è davvero la fine delle password?</h1>
+<p>
+Login con l'impronta o il volto invece della password: come
+funzionano le passkey e perché sono difficili da rubare.
+</p>
+</div>
+</section>
+
+<section class="why-pikobit">
+<h2>Come funzionano davvero le passkey</h2>
+<div class="article-body">
+<p>
+Una passkey non è una password più comoda, è un meccanismo
+diverso alla radice: quando la crei, il tuo dispositivo genera una
+coppia di chiavi crittografiche (due numeri matematicamente
+collegati: uno pubblico, che va al sito, e uno privato, che non
+esce mai dal tuo telefono o computer). Per accedere, il sito manda
+una specie di "domanda" cifrata con la chiave pubblica, e solo il
+tuo dispositivo — sbloccato con impronta, volto o PIN locale — può
+rispondere correttamente usando la chiave privata.
+</p>
+<p>
+La differenza pratica con la password è enorme: non c'è nessun
+segreto condiviso da intercettare o rubare con il phishing, perché
+la chiave privata resta sul dispositivo (spesso dentro un chip
+dedicato, il "secure enclave") e la passkey è agganciata al
+dominio esatto del sito — non funziona su un clone, anche
+identico. Lo standard sotto il cofano si chiama WebAuthn/FIDO2, e
+oggi i principali browser e sistemi operativi lo supportano di
+base.
+</p>
+</div>
+</section>
+
+<section class="why-pikobit">
+<h2>Esempi pratici</h2>
+<ul>
+<li>
+<strong>Persona comune</strong> — Accedi ad Amazon o Google con
+Face ID invece di digitare la password: niente da ricordare,
+niente da scrivere su un post-it, e se qualcuno ti manda un sito
+phishing identico all'originale, semplicemente non funziona,
+perché la tua chiave è legata solo al dominio vero.
+</li>
+<li>
+<strong>Programmatore</strong> — Integrare WebAuthn nel backend al
+posto del classico login utente/password elimina un intero
+capitolo di rischi: niente più hash di password da salvare, niente
+più data breach di credenziali da gestire. Per chi viene da
+Spring Security, è un cambio di paradigma simile al passare da
+un'autenticazione form-based con password store a un provider
+OAuth/OIDC esterno: il "segreto" non risiede più nel tuo database,
+e questo ti toglie di dosso un bel po' di responsabilità.
+</li>
+</ul>
+</section>
+
+<section class="why-pikobit">
+<p>
+<strong>Fonti:</strong>
+<a
+href="
+https://www.google.com/url?q=https://dev.to/thomasbnt/passkeys-explained-simply-52jk&source=gmail&ust=1785361355876000&sa=E
+"
+class="cta-link"
+target="_blank"
+rel="noopener noreferrer"
+>
+https://www.google.com/url?q=http://dev.to&source=gmail&ust=1785361355876000&sa=E
+</a
+>
+</p>
+</section>
+</main>
+
+<footer>
+<p>&copy; 2026 Pikobit. Tutti i diritti riservati.</p>
+<p>
+"Pikobit: Il tuo punto di partenza per creare, imparare e ispirare."
+</p>
+<div class="social-icons">
+<a
+href="
+https://www.google.com/url?q=https://www.youtube.com/@pikobit01&source=gmail&ust=1785361355877000&sa=E
+"
+target="_blank"
+rel="noopener noreferrer"
+><i class="fab fa-youtube"></i
+></a>
+<a
+href="
+https://www.google.com/url?q=https://www.linkedin.com/in/giuseppe-alaimo-aba40b226&source=gmail&ust=1785361355877000&sa=E
+"
+target="_blank"
+rel="noopener noreferrer"
+><i class="fab fa-linkedin"></i
+></a>
+</div>
+</footer>
+<button id="scrollToTop" title="Torna su">&#8679;</button>
+</body>
+</html>

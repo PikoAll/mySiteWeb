@@ -1,0 +1,262 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>
+MCP cambia pelle: la specifica diventa stateless. Cosa vuol dire per chi
+lavora con agenti AI - Blog PikoBit
+</title>
+<meta
+name="description"
+content="La specifica del Model Context Protocol (MCP) si sposta verso un 
+modello stateless. Cos'è MCP, perché lo stato conta e il parallelo con 
+l'architettura backend classica."
+/>
+<meta
+name="keywords"
+content="MCP, Model Context Protocol, agenti AI, architettura stateless, 
+REST API"
+/>
+<meta name="author" content="PikoBit" />
+
+<!-- Tag canonical -->
+<link
+rel="canonical"
+href="
+https://www.google.com/url?q=https://pikobit.it/blog/2026-07-28-mcp-specifica-stateless.html&source=gmail&ust=1785361355877000&sa=E
+"
+/>
+
+<!-- Open Graph -->
+<meta property="og:type" content="article" />
+<meta
+property="og:title"
+content="MCP cambia pelle: la specifica diventa stateless. Cosa vuol dire 
+per chi lavora con agenti AI"
+/>
+<meta
+property="og:description"
+content="La specifica del Model Context Protocol (MCP) si sposta verso un 
+modello stateless. Cos'è MCP, perché lo stato conta e il parallelo con 
+l'architettura backend classica."
+/>
+<meta property="og:image" content="
+https://www.google.com/url?q=https://pikobit.it/images/banner.webp&source=gmail&ust=1785361355877000&sa=E" 
+/>
+<meta
+property="og:url"
+content="
+https://www.google.com/url?q=https://pikobit.it/blog/2026-07-28-mcp-specifica-stateless.html&source=gmail&ust=1785361355877000&sa=E
+"
+/>
+
+<link rel="stylesheet" href="../styles/style.css?v=4.0.0.8" />
+<link
+href="
+https://www.google.com/url?q=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css&source=gmail&ust=1785361355877000&sa=E
+"
+rel="stylesheet"
+/>
+<link
+href="
+https://www.google.com/url?q=https://fonts.googleapis.com/css2?family%3DPoppins:wght@400;600%26display%3Dswap&source=gmail&ust=1785361355877000&sa=E
+"
+rel="stylesheet"
+/>
+<link rel="icon" href="../images/logo.webp" type="image/png" />
+
+<script src="../scripts/script.js?v=4.0.0.8"></script>
+
+<!-- Dati strutturati -->
+<script type="application/ld+json">
+{
+"@context": "
+https://www.google.com/url?q=https://schema.org&source=gmail&ust=1785361355877000&sa=E
+",
+"@type": "BlogPosting",
+"headline": "MCP cambia pelle: la specifica diventa stateless. Cosa vuol 
+dire per chi lavora con agenti AI",
+"description": "La specifica del Model Context Protocol (MCP) si sposta 
+verso un modello stateless. Cos'è MCP, perché lo stato conta e il parallelo 
+con l'architettura backend classica.",
+"datePublished": "2026-07-28",
+"author": {
+"@type": "Person",
+"name": "PikoBit",
+"sameAs": ["
+https://www.google.com/url?q=https://www.youtube.com/@pikobit01&source=gmail&ust=1785361355877000&sa=E
+"]
+}
+}
+</script>
+
+<!-- Google tag (gtag.js) -->
+<script
+async
+src="
+https://www.google.com/url?q=https://www.googletagmanager.com/gtag/js?id%3DG-TVGN1XBX7H&source=gmail&ust=1785361355877000&sa=E
+"
+></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag() {
+dataLayer.push(arguments);
+}
+gtag("js", new Date());
+
+gtag("config", "G-TVGN1XBX7H");
+</script>
+</head>
+
+<body>
+<header>
+<img src="../images/banner.webp" alt="Pikobit Banner" class="banner" />
+<div class="hamburger" id="hamburger-menu">
+<i class="fas fa-bars"></i>
+</div>
+<div class="overlay" id="overlay"></div>
+<nav id="navbar">
+<ul class="nav-links">
+<li><a href="../index.html">Home</a></li>
+
+<li class="dropdown">
+<a href="#" id="dropdown-toggle">Servizi ▼</a>
+<ul class="dropdown-menu">
+<li><a href="../websites.html">Siti web personalizzati</a></li>
+<li><a href="../modern-apps.html">Applicazioni moderne</a></li>
+<li>
+<a href="../custom-software.html"
+>Software gestionali su misura</a
+>
+</li>
+<li>
+<a href="../creative-services.html"
+>Servizi Creativi e Soluzioni Complete</a
+>
+</li>
+<li><a href="../lessons.html">Lezioni e tutorial</a></li>
+</ul>
+</li>
+
+<li><a href="../ideas.html">Idee Innovative</a></li>
+<li><a href="../about.html">Chi Sono</a></li>
+<li><a href="../resources.html">Risorse</a></li>
+<li><a href="../contact.html">Contatti</a></li>
+</ul>
+</nav>
+</header>
+
+<main>
+<section class="intro">
+<div class="intro-container">
+<img
+src="../images/logo.webp"
+alt="Logo Pikobit - Tutorial e Progetti di Programmazione"
+class="logo"
+/>
+<p class="tagline">AI per lo Sviluppo Software della Settimana</p>
+<h1>
+MCP cambia pelle: la specifica diventa stateless. Cosa vuol dire
+per chi lavora con agenti AI
+</h1>
+<p>
+Il protocollo che collega gli assistenti AI ai tool esterni si
+sposta verso un modello senza stato. Vediamo perché.
+</p>
+</div>
+</section>
+
+<section class="why-pikobit">
+<h2>Cos'è MCP e perché lo stato conta</h2>
+<div class="article-body">
+<p>
+MCP (Model Context Protocol) è lo standard che permette a un
+assistente AI come Claude di collegarsi a strumenti esterni —
+email, calendario, database, file — in modo uniforme, invece di
+richiedere un'integrazione su misura per ogni singolo servizio. In
+pratica è l'equivalente di una porta USB universale al posto di un
+cavo diverso per ogni dispositivo: chi scrive un "server" MCP per
+il proprio strumento sa che qualsiasi assistente compatibile potrà
+usarlo senza codice aggiuntivo.
+</p>
+<p>
+La novità della specifica 2026-07-28 è lo spostamento verso un
+modello stateless (senza stato): finora una sessione MCP poteva
+mantenere informazioni lato server tra una richiesta e l'altra
+(stateful, con stato mantenuto), un po' come una connessione
+persistente aperta. Nel nuovo modello ogni richiesta deve portare
+con sé tutto il contesto necessario, senza contare su ciò che il
+server ricorda da prima.
+</p>
+</div>
+</section>
+
+<section class="why-pikobit">
+<h2>Esempi pratici</h2>
+<ul>
+<li>
+<strong>Persona comune</strong> — È come la differenza tra
+chiamare un negozio dove il commesso si ricorda già di te dalla
+telefonata precedente, e chiamarne uno dove ogni volta devi
+ripetere nome e richiesta da capo: più lento a dirsi, ma il
+negozio "senza memoria" può gestire dieci volte più chiamate
+contemporaneamente, perché non deve tenere traccia di nessuno tra
+una chiamata e l'altra.
+</li>
+<li>
+<strong>Programmatore (parallelo Java)</strong> — È lo stesso
+salto che si fa passando da EJB session bean stateful a
+controller REST stateless: niente più sessione appesa al server
+(e niente sticky session da gestire nel load balancer), ma ogni
+richiesta deve portarsi dietro tutto il contesto che serve — come
+passare un JWT con tutti i claim necessari invece di affidarsi a
+uno stato salvato lato server. Si scala meglio in orizzontale, a
+costo di qualche byte in più per chiamata.
+</li>
+</ul>
+</section>
+
+<section class="why-pikobit">
+<p>
+<strong>Fonti:</strong>
+<a
+href="
+https://www.google.com/url?q=https://blog.modelcontextprotocol.io/posts/2026-07-28/&source=gmail&ust=1785361355877000&sa=E
+"
+class="cta-link"
+target="_blank"
+rel="noopener noreferrer"
+>Model Context Protocol Blog</a
+>
+</p>
+</section>
+</main>
+
+<footer>
+<p>&copy; 2026 Pikobit. Tutti i diritti riservati.</p>
+<p>
+"Pikobit: Il tuo punto di partenza per creare, imparare e ispirare."
+</p>
+<div class="social-icons">
+<a
+href="
+https://www.google.com/url?q=https://www.youtube.com/@pikobit01&source=gmail&ust=1785361355877000&sa=E
+"
+target="_blank"
+rel="noopener noreferrer"
+><i class="fab fa-youtube"></i
+></a>
+<a
+href="
+https://www.google.com/url?q=https://www.linkedin.com/in/giuseppe-alaimo-aba40b226&source=gmail&ust=1785361355877000&sa=E
+"
+target="_blank"
+rel="noopener noreferrer"
+><i class="fab fa-linkedin"></i
+></a>
+</div>
+</footer>
+<button id="scrollToTop" title="Torna su">&#8679;</button>
+</body>
+</html>
