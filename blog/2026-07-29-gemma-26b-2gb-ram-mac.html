@@ -1,0 +1,293 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>
+Un modello da 26 miliardi di parametri in 2 GB di RAM, su un Mac da 8 GB
+- Blog PikoBit
+</title>
+<meta
+name="description"
+content="TurboFieldfare fa girare Gemma 4 26B su un MacBook Air da 8 GB di 
+RAM senza caricare mai il modello intero in memoria: streamma solo i pezzi 
+che servono, direttamente dal disco."
+/>
+<meta
+name="keywords"
+content="TurboFieldfare, Gemma 4, Apple Silicon, inferenza locale, mixture 
+of experts, Swift Metal"
+/>
+<meta name="author" content="PikoBit" />
+
+<!-- Tag canonical -->
+<link
+rel="canonical"
+href="https://
+https://www.google.com/url?q=http://pikobit.it/blog/2026-07-29-gemma-26b-2gb-ram-mac.html&source=gmail&ust=1785428151799000&sa=E
+"
+/>
+
+<!-- Open Graph -->
+<meta property="og:type" content="article" />
+<meta
+property="og:title"
+content="Un modello da 26 miliardi di parametri in 2 GB di RAM, su un Mac 
+da 8 GB"
+/>
+<meta
+property="og:description"
+content="TurboFieldfare fa girare Gemma 4 26B su un MacBook Air da 8 GB di 
+RAM senza caricare mai il modello intero in memoria: streamma solo i pezzi 
+che servono, direttamente dal disco."
+/>
+<meta property="og:image" content="https://
+https://www.google.com/url?q=http://pikobit.it/images/banner.webp&source=gmail&ust=1785428151799000&sa=E" 
+/>
+<meta
+property="og:url"
+content="https://
+https://www.google.com/url?q=http://pikobit.it/blog/2026-07-29-gemma-26b-2gb-ram-mac.html&source=gmail&ust=1785428151799000&sa=E
+"
+/>
+
+<link rel="stylesheet" href="../styles/style.css?v=4.0.0.8" />
+<link
+href="https://
+https://www.google.com/url?q=http://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css&source=gmail&ust=1785428151799000&sa=E
+"
+rel="stylesheet"
+/>
+<link
+href="https://
+https://www.google.com/url?q=http://fonts.googleapis.com/css2?family%3DPoppins:wght@400;600%26display%3Dswap&source=gmail&ust=1785428151799000&sa=E
+"
+rel="stylesheet"
+/>
+<link rel="icon" href="../images/logo.webp" type="image/png" />
+
+<script src="../scripts/script.js?v=4.0.0.8"></script>
+
+<!-- Dati strutturati -->
+<script type="application/ld+json">
+{
+"@context": "https://
+https://www.google.com/url?q=http://schema.org&source=gmail&ust=1785428151799000&sa=E
+",
+"@type": "BlogPosting",
+"headline": "Un modello da 26 miliardi di parametri in 2 GB di RAM, su un 
+Mac da 8 GB",
+"description": "TurboFieldfare fa girare Gemma 4 26B su un MacBook Air da 8 
+GB di RAM senza caricare mai il modello intero in memoria: streamma solo i 
+pezzi che servono, direttamente dal disco.",
+"datePublished": "2026-07-29",
+"author": {
+"@type": "Person",
+"name": "PikoBit",
+"sameAs": ["https://
+https://www.google.com/url?q=http://www.youtube.com/@pikobit01&source=gmail&ust=1785428151799000&sa=E
+"]
+}
+}
+</script>
+
+<!-- Google tag (gtag.js) -->
+<script
+async
+src="https://
+https://www.google.com/url?q=http://www.googletagmanager.com/gtag/js?id%3DG-TVGN1XBX7H&source=gmail&ust=1785428151799000&sa=E
+"
+></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag() {
+dataLayer.push(arguments);
+}
+gtag("js", new Date());
+
+gtag("config", "G-TVGN1XBX7H");
+</script>
+</head>
+
+<body>
+<header>
+<img src="../images/banner.webp" alt="Pikobit Banner" class="banner" />
+<div class="hamburger" id="hamburger-menu">
+<i class="fas fa-bars"></i>
+</div>
+<div class="overlay" id="overlay"></div>
+<nav id="navbar">
+<ul class="nav-links">
+<li><a href="../index.html">Home</a></li>
+
+<li class="dropdown">
+<a href="#" id="dropdown-toggle">Servizi ▼</a>
+<ul class="dropdown-menu">
+<li><a href="../websites.html">Siti web personalizzati</a></li>
+<li><a href="../modern-apps.html">Applicazioni moderne</a></li>
+<li>
+<a href="../custom-software.html"
+>Software gestionali su misura</a
+>
+</li>
+<li>
+<a href="../creative-services.html"
+>Servizi Creativi e Soluzioni Complete</a
+>
+</li>
+<li><a href="../lessons.html">Lezioni e tutorial</a></li>
+</ul>
+</li>
+
+<li><a href="../ideas.html">Idee Innovative</a></li>
+<li><a href="../about.html">Chi Sono</a></li>
+<li><a href="../resources.html">Risorse</a></li>
+<li><a href="../contact.html">Contatti</a></li>
+</ul>
+</nav>
+</header>
+
+<main>
+<section class="intro">
+<div class="intro-container">
+<img
+src="../images/logo.webp"
+alt="Logo Pikobit - Tutorial e Progetti di Programmazione"
+class="logo"
+/>
+<p class="tagline">Programmazione</p>
+<h1>
+Un modello da 26 miliardi di parametri in 2 GB di RAM, su un Mac
+da 8 GB
+</h1>
+<p>
+TurboFieldfare non è l'ennesimo wrapper attorno a llama.cpp: è un
+runtime scritto da zero per un solo modello, e il risparmio di
+memoria si vede.
+</p>
+</div>
+</section>
+
+<section class="why-pikobit">
+<h2>Come si fa girare un modello da 14 GB in una macchina con 8 GB di 
+RAM</h2>
+<div class="article-body">
+<p>
+Gemma 4 26B-A4B è un modello da 26 miliardi di parametri in
+versione "mixture of experts" (in pratica, invece di attivare
+tutta la rete neurale per ogni parola generata, il modello è
+diviso in tanti sotto-blocchi specializzati — gli "esperti" — e ne
+attiva solo una piccola parte per volta). Il file completo pesa
+14,3 GB, troppo per stare comodamente in RAM su un MacBook Air da
+8 GB. TurboFieldfare, un runtime scritto in Swift e Metal (il
+framework Apple per programmare la GPU) apposta per questo
+modello, tiene in memoria solo il nucleo condiviso (1,35 GB) e la
+cache KV (i valori intermedi dell'attenzione, il meccanismo con
+cui il modello decide a cosa "prestare attenzione" nel testo già
+generato), poi streamma dal disco SSD solo gli esperti che
+servono token per token.
+</p>
+<p>
+Non è un wrapper generico sopra MLX o llama.cpp (le librerie più
+comuni per far girare LLM in locale), ma un runtime scritto su
+misura per questo specifico modello — la specializzazione è
+proprio quello che permette il risparmio estremo di memoria.
+All'installazione, il tool non scarica mai il checkpoint completo
+su disco: legge solo gli intervalli di byte necessari
+direttamente da Hugging Face e li riassembla nel formato interno,
+evitando una seconda copia integrale del modello.
+</p>
+</div>
+</section>
+
+<section class="why-pikobit">
+<h2>Perché conta, al di là dello stunt tecnico</h2>
+<div class="article-body">
+<p>
+Il progetto espone un'app Mac nativa, una CLI (interfaccia a riga
+di comando) e un server locale compatibile con le API OpenAI, così
+puoi puntarci qualunque tool che parli quel protocollo. È
+testuale, non gestisce immagini o audio, e i parametri di
+generazione di default (temperatura 0.2, cioè output piuttosto
+deterministico e poco "creativo") sono pensati per risposte
+coerenti più che per la fantasia.
+</p>
+<p>
+Per chi sviluppa, il punto non è "un altro modello locale", ma la
+dimostrazione che l'inferenza (il processo con cui un modello già
+addestrato genera una risposta) su hardware di fascia bassa non è
+più solo questione di ridurre i parametri: è anche questione di
+architettura del runtime che li carica. Aspettati più progetti che
+copiano questa strategia — nucleo in RAM, resto streammato — anche
+per altri modelli MoE.
+</p>
+</div>
+</section>
+
+<section class="why-pikobit">
+<h2>Esempi pratici</h2>
+<ul>
+<li>
+<strong>Per chi non programma</strong> — È un po' come guardare
+un film in streaming invece di scaricarlo tutto prima: non hai
+bisogno di spazio per l'intero file, arriva solo il pezzo che ti
+serve nel momento in cui ti serve. Qui succede lo stesso con
+"pezzi" di intelligenza artificiale invece che con i fotogrammi di
+un film.
+</li>
+<li>
+<strong>Per chi programma</strong> — Se stai valutando
+un'inferenza locale su hardware con poca RAM (un vecchio laptop
+aziendale, un Mac base per un side project), questa architettura
+a "streaming di esperti" è un pattern da tenere d'occhio anche per
+altri runtime MoE, non solo per Gemma: puoi applicare la stessa
+logica — nucleo sempre in memoria, resto caricato on-demand — a
+qualunque pipeline dove la memoria è il collo di bottiglia, non
+la potenza di calcolo.
+</li>
+</ul>
+</section>
+
+<section class="why-pikobit">
+<p>
+<strong>Fonti:</strong>
+<a
+href="https://
+https://www.google.com/url?q=http://github.com/drumih/turbo-fieldfare&source=gmail&ust=1785428151799000&sa=E
+"
+class="cta-link"
+target="_blank"
+rel="noopener noreferrer"
+>GitHub - turbo-fieldfare</a
+>
+</p>
+</section>
+</main>
+
+<footer>
+<p>&copy; 2026 Pikobit. Tutti i diritti riservati.</p>
+<p>
+"Pikobit: Il tuo punto di partenza per creare, imparare e ispirare."
+</p>
+<div class="social-icons">
+<a
+href="https://
+https://www.google.com/url?q=http://www.youtube.com/@pikobit01&source=gmail&ust=1785428151799000&sa=E
+"
+target="_blank"
+rel="noopener noreferrer"
+><i class="fab fa-youtube"></i
+></a>
+<a
+href="https://
+https://www.google.com/url?q=http://www.linkedin.com/in/giuseppe-alaimo-aba40b226&source=gmail&ust=1785428151799000&sa=E
+"
+target="_blank"
+rel="noopener noreferrer"
+><i class="fab fa-linkedin"></i
+></a>
+</div>
+</footer>
+<button id="scrollToTop" title="Torna su">&#8679;</button>
+</body>
+</html>
