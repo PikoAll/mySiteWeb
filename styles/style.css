@@ -592,8 +592,9 @@ strong {
 .article-box {
   width: 100%;
   max-width: 300px;
-  height: 225px;
-  /* Altezza fissa per uniformare i box */
+  min-height: 225px;
+  display: flex;
+  flex-direction: column;
   background-color: var(--color-bg-panel);
   border: 2px solid var(--color-accent);
   border-radius: 10px;
@@ -626,6 +627,11 @@ strong {
   color: var(--color-accent);
   font-size: 1.2rem;
   margin-bottom: 10px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .article-box p {
@@ -642,6 +648,7 @@ strong {
 }
 
 .article-box a {
+  margin-top: auto;
   color: var(--color-cta);
   text-decoration: none;
   font-weight: bold;
