@@ -1,0 +1,263 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>
+TurboFieldfare: 26 miliardi di parametri in 2GB di RAM - Blog PikoBit
+</title>
+<meta
+name="description"
+content="TurboFieldfare fa girare un modello AI da 26 miliardi di parametri 
+su un Mac con 8GB di RAM, senza caricarlo tutto in memoria. Come funziona, 
+spiegato semplice."
+/>
+<meta
+name="keywords"
+content="TurboFieldfare, Gemma 4, inferenza locale, Apple Silicon, Swift, 
+Metal, AI on-device"
+/>
+<meta name="author" content="PikoBit" />
+
+<!-- Tag canonical -->
+<link
+rel="canonical"
+href="https://pikobit.it/blog/2026-07-30-turbofieldfare-ai-in-2gb-ram.html"
+/>
+
+<!-- Open Graph -->
+<meta property="og:type" content="article" />
+<meta
+property="og:title"
+content="TurboFieldfare: 26 miliardi di parametri in 2GB di RAM"
+/>
+<meta
+property="og:description"
+content="TurboFieldfare fa girare un modello AI da 26 miliardi di parametri 
+su un Mac con 8GB di RAM, senza caricarlo tutto in memoria. Come funziona, 
+spiegato semplice."
+/>
+<meta property="og:image" 
+content="https://pikobit.it/images/banner.webp" />
+<meta
+property="og:url"
+content="https://pikobit.it/blog/2026-07-30-turbofieldfare-ai-in-2gb-ram.html"
+/>
+
+<link rel="stylesheet" href="../styles/style.css?v=4.0.0.8" />
+<link
+href="
+https://www.google.com/url?q=http://https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css&source=gmail&ust=1785518837869000&sa=E
+"
+rel="stylesheet"
+/>
+<link
+href="
+https://www.google.com/url?q=http://https://fonts.googleapis.com/css2?family%3DPoppins:wght@400;600%26display%3Dswap&source=gmail&ust=1785518837869000&sa=E
+"
+rel="stylesheet"
+/>
+<link rel="icon" href="../images/logo.webp" type="image/png" />
+
+<script src="../scripts/script.js?v=4.0.0.8"></script>
+
+<!-- Dati strutturati -->
+<script type="application/ld+json">
+{
+"@context": "https://schema.org",
+"@type": "BlogPosting",
+"headline": "TurboFieldfare: 26 miliardi di parametri in 2GB di RAM",
+"description": "TurboFieldfare fa girare un modello AI da 26 miliardi di 
+parametri su un Mac con 8GB di RAM, senza caricarlo tutto in memoria. Come 
+funziona, spiegato semplice.",
+"datePublished": "2026-07-30",
+"author": {
+"@type": "Person",
+"name": "PikoBit",
+"sameAs": ["
+https://www.google.com/url?q=http://https://www.youtube.com/@pikobit01&source=gmail&ust=1785518837869000&sa=E
+"]
+}
+}
+</script>
+
+<!-- Google tag (gtag.js) -->
+<script
+async
+src="
+https://www.google.com/url?q=http://https://www.googletagmanager.com/gtag/js?id%3DG-TVGN1XBX7H&source=gmail&ust=1785518837869000&sa=E
+"
+></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag() {
+dataLayer.push(arguments);
+}
+gtag("js", new Date());
+
+gtag("config", "G-TVGN1XBX7H");
+</script>
+</head>
+
+<body>
+<header>
+<img src="../images/banner.webp" alt="Pikobit Banner" class="banner" />
+<div class="hamburger" id="hamburger-menu">
+<i class="fas fa-bars"></i>
+</div>
+<div class="overlay" id="overlay"></div>
+<nav id="navbar">
+<ul class="nav-links">
+<li><a href="../index.html">Home</a></li>
+
+<li class="dropdown">
+<a href="#" id="dropdown-toggle">Servizi ▼</a>
+<ul class="dropdown-menu">
+<li><a href="../websites.html">Siti web personalizzati</a></li>
+<li><a href="../modern-apps.html">Applicazioni moderne</a></li>
+<li>
+<a href="../custom-software.html"
+>Software gestionali su misura</a
+>
+</li>
+<li>
+<a href="../creative-services.html"
+>Servizi Creativi e Soluzioni Complete</a
+>
+</li>
+<li><a href="../lessons.html">Lezioni e tutorial</a></li>
+</ul>
+</li>
+
+<li><a href="../ideas.html">Idee Innovative</a></li>
+<li><a href="../about.html">Chi Sono</a></li>
+<li><a href="../resources.html">Risorse</a></li>
+<li><a href="../contact.html">Contatti</a></li>
+</ul>
+</nav>
+</header>
+
+<main>
+<section class="intro">
+<div class="intro-container">
+<img
+src="../images/logo.webp"
+alt="Logo Pikobit - Tutorial e Progetti di Programmazione"
+class="logo"
+/>
+<p class="tagline">IA in locale</p>
+<h1>TurboFieldfare: 26 miliardi di parametri in 2GB di RAM</h1>
+<p>
+Un progetto open source fa girare un modello AI enorme su un Mac
+economico, senza caricarlo tutto in memoria.
+</p>
+</div>
+</section>
+
+<section class="why-pikobit">
+<h2>Come ci riesce</h2>
+<div class="article-body">
+<p>
+TurboFieldfare è un runtime scritto in Swift e Metal (il
+linguaggio e le API grafiche di Apple) pensato apposta per il
+modello Gemma 4 26B, un modello "MoE" (Mixture of Experts:
+invece di attivare tutta la rete neurale per ogni parola generata,
+ne accende solo una fetta, gli "esperti" più adatti al contesto).
+Il file completo pesa 14,3 GB, ma il programma tiene in RAM solo
+il nucleo condiviso (1,35 GB) e la cache KV (KV cache: la
+"memoria a breve termine" del modello, dove tiene i calcoli già
+fatti per non rifarli ad ogni parola nuova), e va a pescare sul
+disco solo gli esperti che servono token per token.
+</p>
+<p>
+Risultato: gira anche su un MacBook Air M2 con 8 GB di RAM, cosa
+normalmente impensabile per un modello da 26 miliardi di
+parametri. Non è un wrapper sopra strumenti già noti come MLX o
+llama.cpp, ma un motore scritto da zero solo per questo modello —
+per questo riesce a spremere così bene poca memoria.
+</p>
+</div>
+</section>
+
+<section class="why-pikobit">
+<h2>Perché conta</h2>
+<div class="article-body">
+<p>
+Il trend è chiaro: modelli sempre più grandi che girano su
+hardware sempre più modesto, in locale, senza passare dal cloud.
+Vantaggi concreti: nessun costo per token, nessun dato che esce
+dal tuo computer, nessuna dipendenza da un servizio esterno che
+un giorno potrebbe cambiare prezzo o sparire.
+</p>
+<p>
+Il progetto è ancora giovane (il repository lo dice chiaramente:
+il numero misurato è "un punto di riferimento, non un tetto
+massimo di prestazioni") e richiede macOS 26 e Metal 4, quindi non
+gira su hardware vecchio. Ma la direzione — inferenza locale
+seria anche su laptop di fascia bassa — è quella su cui vale la
+pena tenere d'occhio.
+</p>
+</div>
+</section>
+
+<section class="why-pikobit">
+<h2>Esempi pratici</h2>
+<ul>
+<li>
+<strong>Per tutti</strong> — Puoi far girare un assistente AI
+potente sul tuo Mac, anche uno non recentissimo, senza abbonamenti
+cloud e senza mandare le tue chat a un server esterno: utile se
+devi riassumere documenti riservati o scrivere testi senza
+condividerli con nessuno.
+</li>
+<li>
+<strong>Per chi programma</strong> — Puoi integrare inferenza
+locale in un'app desktop senza dipendere da API a pagamento,
+perfetto per prototipare funzioni AI offline-first o per
+rispettare vincoli sulla privacy dei dati tenendo tutto sul
+device dell'utente, invece che su un server terzo.
+</li>
+</ul>
+</section>
+
+<section class="why-pikobit">
+<p>
+<strong>Fonti:</strong>
+<a
+href="https://github.com/drumih/turbo-fieldfare"
+class="cta-link"
+target="_blank"
+rel="noopener noreferrer"
+>Repository TurboFieldfare su GitHub</a
+>
+</p>
+</section>
+</main>
+
+<footer>
+<p>&copy; 2026 Pikobit. Tutti i diritti riservati.</p>
+<p>
+"Pikobit: Il tuo punto di partenza per creare, imparare e ispirare."
+</p>
+<div class="social-icons">
+<a
+href="
+https://www.google.com/url?q=http://https://www.youtube.com/@pikobit01&source=gmail&ust=1785518837870000&sa=E
+"
+target="_blank"
+rel="noopener noreferrer"
+><i class="fab fa-youtube"></i
+></a>
+<a
+href="
+https://www.google.com/url?q=http://https://www.linkedin.com/in/giuseppe-alaimo-aba40b226&source=gmail&ust=1785518837870000&sa=E
+"
+target="_blank"
+rel="noopener noreferrer"
+><i class="fab fa-linkedin"></i
+></a>
+</div>
+</footer>
+<button id="scrollToTop" title="Torna su">&#8679;</button>
+</body>
+</html>
