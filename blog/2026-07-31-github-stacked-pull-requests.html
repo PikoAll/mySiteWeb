@@ -1,0 +1,277 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>
+Stacked Pull Request su GitHub: come funzionano - Blog PikoBit
+</title>
+<meta
+name="description"
+content="GitHub porta in preview pubblica le stacked pull request: PR piccole
+e impilate al posto di un'unica PR gigante. Cosa cambia nel flusso di
+lavoro e come iniziare con gh-stack."
+/>
+<meta
+name="keywords"
+content="stacked pull request, GitHub, gh-stack, code review, git,
+workflow sviluppo, merge queue"
+/>
+<meta name="author" content="PikoBit" />
+
+<!-- Tag canonical -->
+<link
+rel="canonical"
+href="https://pikobit.it/blog/2026-07-31-github-stacked-pull-requests.html"
+/>
+
+<!-- Open Graph -->
+<meta property="og:type" content="article" />
+<meta
+property="og:title"
+content="Stacked Pull Request su GitHub: come funzionano"
+/>
+<meta
+property="og:description"
+content="GitHub porta in preview pubblica le stacked pull request: PR piccole
+e impilate al posto di un'unica PR gigante. Cosa cambia nel flusso di
+lavoro e come iniziare con gh-stack."
+/>
+<meta property="og:image"
+content="https://pikobit.it/images/banner.webp" />
+<meta
+property="og:url"
+content="https://pikobit.it/blog/2026-07-31-github-stacked-pull-requests.html"
+/>
+
+<link rel="stylesheet" href="../styles/style.css?v=4.0.0.8" />
+<link
+href="
+https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css
+"
+rel="stylesheet"
+/>
+<link
+href="
+https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap
+"
+rel="stylesheet"
+/>
+<link rel="icon" href="../images/logo.webp" type="image/png" />
+
+<script src="../scripts/script.js?v=4.0.0.8"></script>
+
+<!-- Dati strutturati -->
+<script type="application/ld+json">
+{
+"@context": "https://schema.org",
+"@type": "BlogPosting",
+"headline": "Stacked Pull Request su GitHub: come funzionano",
+"description": "GitHub porta in preview pubblica le stacked pull request: PR
+piccole e impilate al posto di un'unica PR gigante. Cosa cambia nel flusso
+di lavoro e come iniziare con gh-stack.",
+"datePublished": "2026-07-31",
+"author": {
+"@type": "Person",
+"name": "PikoBit",
+"sameAs": ["
+https://www.youtube.com/@pikobit01
+"]
+}
+}
+</script>
+
+<!-- Google tag (gtag.js) -->
+<script
+async
+src="
+https://www.googletagmanager.com/gtag/js?id=G-TVGN1XBX7H
+"
+></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag() {
+dataLayer.push(arguments);
+}
+gtag("js", new Date());
+
+gtag("config", "G-TVGN1XBX7H");
+</script>
+</head>
+
+<body>
+<header>
+<img src="../images/banner.webp" alt="Pikobit Banner" class="banner" />
+<div class="hamburger" id="hamburger-menu">
+<i class="fas fa-bars"></i>
+</div>
+<div class="overlay" id="overlay"></div>
+<nav id="navbar">
+<ul class="nav-links">
+<li><a href="../index.html">Home</a></li>
+
+<li class="dropdown">
+<a href="#" id="dropdown-toggle">Servizi ▼</a>
+<ul class="dropdown-menu">
+<li><a href="../websites.html">Siti web personalizzati</a></li>
+<li><a href="../modern-apps.html">Applicazioni moderne</a></li>
+<li>
+<a href="../custom-software.html"
+>Software gestionali su misura</a
+>
+</li>
+<li>
+<a href="../creative-services.html"
+>Servizi Creativi e Soluzioni Complete</a
+>
+</li>
+<li><a href="../lessons.html">Lezioni e tutorial</a></li>
+</ul>
+</li>
+
+<li><a href="../ideas.html">Idee Innovative</a></li>
+<li><a href="../about.html">Chi Sono</a></li>
+<li><a href="../resources.html">Risorse</a></li>
+<li><a href="../contact.html">Contatti</a></li>
+</ul>
+</nav>
+</header>
+
+<main>
+<section class="intro">
+<div class="intro-container">
+<img
+src="../images/logo.webp"
+alt="Logo Pikobit - Tutorial e Progetti di Programmazione"
+class="logo"
+/>
+<p class="tagline">Strumenti Dev</p>
+<h1>Stacked Pull Request su GitHub: come funzionano</h1>
+<p>
+Basta PR gigantesche che nessuno vuole rivedere: GitHub porta le
+pull request impilate in preview pubblica per tutti.
+</p>
+</div>
+</section>
+
+<section class="why-pikobit">
+<h2>Il problema che risolvono</h2>
+<div class="article-body">
+<p>
+Chiunque abbia lavorato su una feature grossa conosce il dilemma:
+o apri un'unica PR enorme che il reviewer rimanda di giorno in
+giorno perché richiede troppo tempo, oppure spezzi il lavoro in
+più branch che devi rebasare a mano ogni volta che la prima
+cambia. Entrambe le strade rallentano tutti. Le stacked pull
+request (PR impilate) sono la risposta di GitHub, ora in preview
+pubblica su tutti i repository: una serie ordinata di PR, ognuna
+che rappresenta un livello focalizzato del cambiamento
+complessivo, dove ogni PR successiva punta a quella sottostante
+invece che al branch principale.
+</p>
+<p>
+Il team di Next.js in Vercel le usa da mesi proprio per questo:
+introdurre modifiche piccole mentre si spedisce una feature più
+grande, mantenendo ogni singola revisione gestibile. TED ha
+raccontato un problema simile — l'IA ha reso gli sviluppatori più
+produttivi, ma le PR sono cresciute a dismisura e i reviewer
+faticavano a starci dietro. Spezzare il cambiamento in livelli
+ordinati per dipendenza ha rimesso ordine nel flusso di revisione.
+</p>
+</div>
+</section>
+
+<section class="why-pikobit">
+<h2>Come funziona in pratica</h2>
+<div class="article-body">
+<p>
+Il concetto di base: parti da un branch e una PR per il primo
+cambiamento. Poi aggiungi branch e PR sopra, ciascuna con target
+il layer sotto invece di main. Ogni PR nella pila si rivede da
+sola, mostrando solo il diff di quel livello specifico — non
+l'intero cambiamento cumulato. Una "stack map" in cima alla PR
+fa vedere come quel pezzo si inserisce nel lavoro più ampio, così
+chi rivede capisce il contesto senza dover aprire tutte le altre
+PR una per una.
+</p>
+<p>
+La parte più comoda arriva al merge: puoi far confluire l'intera
+pila in un click, oppure integrare solo i livelli più bassi già
+pronti mentre quelli sopra restano aperti, si aggiornano da soli
+(rebase e retarget automatici) e continuano il loro percorso di
+revisione. Le protezioni sul branch principale e i check richiesti
+continuano a valere come sempre, non vengono aggirati da questo
+meccanismo.
+</p>
+<p>
+Per iniziare basta l'estensione ufficiale della CLI: <code>gh
+extension install github/gh-stack</code>. Da lì puoi creare e
+gestire le pile sia da terminale sia da github.com, e anche
+tramite agenti di coding come GitHub Copilot, che dispone di una
+skill dedicata proprio per lavorare con gh-stack.
+</p>
+</div>
+</section>
+
+<section class="why-pikobit">
+<h2>Esempi pratici</h2>
+<ul>
+<li>
+<strong>Per tutti</strong> — È come consegnare un mobile Ikea in
+scatole separate invece che tutto insieme in un pacco enorme: chi
+lo assembla (il reviewer) controlla un pezzo alla volta, capisce
+subito se qualcosa non torna, e non deve rimandare tutto perché
+manca tempo per affrontarlo in blocco.
+</li>
+<li>
+<strong>Per chi programma</strong> — La prossima volta che una
+feature ti sembra "troppo grande per una PR sola", non aspettare
+di finirla tutta: apri la prima PR con la parte più piccola e
+indipendente, poi impila sopra il resto. Il reviewer ti ringrazierà
+e tu eviterai il temuto rebase a catena quando qualcosa cambia più
+in basso nella pila.
+</li>
+</ul>
+</section>
+
+<section class="why-pikobit">
+<p>
+<strong>Fonti:</strong>
+<a
+href="https://github.blog/changelog/2026-07-30-stacked-pull-requests-are-now-in-public-preview/"
+class="cta-link"
+target="_blank"
+rel="noopener noreferrer"
+>Stacked pull requests are now in public preview su GitHub Changelog</a
+>
+</p>
+</section>
+</main>
+
+<footer>
+<p>&copy; 2026 Pikobit. Tutti i diritti riservati.</p>
+<p>
+"Pikobit: Il tuo punto di partenza per creare, imparare e ispirare."
+</p>
+<div class="social-icons">
+<a
+href="
+https://www.youtube.com/@pikobit01
+"
+target="_blank"
+rel="noopener noreferrer"
+><i class="fab fa-youtube"></i
+></a>
+<a
+href="
+https://www.linkedin.com/in/giuseppe-alaimo-aba40b226
+"
+target="_blank"
+rel="noopener noreferrer"
+><i class="fab fa-linkedin"></i
+></a>
+</div>
+</footer>
+<button id="scrollToTop" title="Torna su">&#8679;</button>
+</body>
+</html>
