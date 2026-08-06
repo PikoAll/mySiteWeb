@@ -1,0 +1,281 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>
+Herdr: il runtime open source per gestire più agenti AI in terminale -
+Blog PikoBit
+</title>
+<meta
+name="description"
+content="Herdr entra in Y Combinator ma resta open source (Apache 2.0):
+cos'è un runtime per agenti AI da terminale, che problema risolve
+per chi lavora con più agenti in parallelo e come provarlo."
+/>
+<meta
+name="keywords"
+content="Herdr, agenti AI, terminale, TUI, open source, Y Combinator,
+coding agent, produttività sviluppatori"
+/>
+<meta name="author" content="PikoBit" />
+
+<!-- Tag canonical -->
+<link
+rel="canonical"
+href="https://pikobit.it/blog/2026-08-07-herdr-runtime-agenti-ai-yc.html"
+/>
+
+<!-- Open Graph -->
+<meta property="og:type" content="article" />
+<meta
+property="og:title"
+content="Herdr: il runtime open source per gestire più agenti AI in terminale"
+/>
+<meta
+property="og:description"
+content="Herdr entra in Y Combinator ma resta open source (Apache 2.0):
+cos'è un runtime per agenti AI da terminale, che problema risolve
+per chi lavora con più agenti in parallelo e come provarlo."
+/>
+<meta property="og:image"
+content="https://pikobit.it/images/banner.webp" />
+<meta
+property="og:url"
+content="https://pikobit.it/blog/2026-08-07-herdr-runtime-agenti-ai-yc.html"
+/>
+
+<link rel="stylesheet" href="../styles/style.css?v=4.0.0.8" />
+<link
+href="
+https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css
+"
+rel="stylesheet"
+/>
+<link
+href="
+https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap
+"
+rel="stylesheet"
+/>
+<link rel="icon" href="../images/logo.webp" type="image/png" />
+
+<script src="../scripts/script.js?v=4.0.0.8"></script>
+
+<!-- Dati strutturati -->
+<script type="application/ld+json">
+{
+"@context": "https://schema.org",
+"@type": "BlogPosting",
+"headline": "Herdr: il runtime open source per gestire più agenti AI in
+terminale",
+"description": "Herdr entra in Y Combinator ma resta open source (Apache
+2.0): cos'è un runtime per agenti AI da terminale, che problema risolve
+per chi lavora con più agenti in parallelo e come provarlo.",
+"datePublished": "2026-08-07",
+"author": {
+"@type": "Person",
+"name": "PikoBit",
+"sameAs": ["
+https://www.youtube.com/@pikobit01
+"]
+}
+}
+</script>
+
+<!-- Google tag (gtag.js) -->
+<script
+async
+src="
+https://www.googletagmanager.com/gtag/js?id=G-TVGN1XBX7H
+"
+></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag() {
+dataLayer.push(arguments);
+}
+gtag("js", new Date());
+
+gtag("config", "G-TVGN1XBX7H");
+</script>
+</head>
+
+<body>
+<header>
+<img src="../images/banner.webp" alt="Pikobit Banner" class="banner" />
+<div class="hamburger" id="hamburger-menu">
+<i class="fas fa-bars"></i>
+</div>
+<div class="overlay" id="overlay"></div>
+<nav id="navbar">
+<ul class="nav-links">
+<li><a href="../index.html">Home</a></li>
+
+<li class="dropdown">
+<a href="#" id="dropdown-toggle">Servizi ▼</a>
+<ul class="dropdown-menu">
+<li><a href="../websites.html">Siti web personalizzati</a></li>
+<li><a href="../modern-apps.html">Applicazioni moderne</a></li>
+<li>
+<a href="../custom-software.html"
+>Software gestionali su misura</a
+>
+</li>
+<li>
+<a href="../creative-services.html"
+>Servizi Creativi e Soluzioni Complete</a
+>
+</li>
+<li><a href="../lessons.html">Lezioni e tutorial</a></li>
+</ul>
+</li>
+
+<li><a href="../ideas.html">Idee Innovative</a></li>
+<li><a href="../about.html">Chi Sono</a></li>
+<li><a href="../resources.html">Risorse</a></li>
+<li><a href="../contact.html">Contatti</a></li>
+</ul>
+</nav>
+</header>
+
+<main>
+<section class="intro">
+<div class="intro-container">
+<img
+src="../images/logo.webp"
+alt="Logo Pikobit - Tutorial e Progetti di Programmazione"
+class="logo"
+/>
+<p class="tagline">Strumenti Dev</p>
+<h1>Herdr: il runtime open source per gestire più agenti AI in terminale</h1>
+<p>
+Un solo sviluppatore ha portato un progetto a 25 mila stelle su GitHub
+e 340 mila download costruendo lo strumento che a lui stesso
+mancava. Ora Herdr entra in Y Combinator, ma il runtime resta
+gratuito e open source.
+</p>
+</div>
+</section>
+
+<section class="why-pikobit">
+<h2>Il problema: troppi agenti, nessun posto dove tenerli</h2>
+<div class="article-body">
+<p>
+Se lavori con più di un agente di coding AI in parallelo — uno che
+scrive una feature, uno che sistema i test, uno che gira su un
+branch diverso — probabilmente hai già sentito il problema che Herdr
+prova a risolvere: ogni agente vive in una sua finestra di terminale,
+non c'è un modo semplice per vedere a colpo d'occhio chi ha bisogno
+di te e chi sta ancora lavorando, e se chiudi la sessione SSH perdi
+tutto. Herdr nasce da questa frustrazione concreta, non da
+un'idea a tavolino: il suo autore racconta di essersi reso conto
+di essere lui stesso il collo di bottiglia nel proprio flusso di
+lavoro con gli agenti.
+</p>
+<p>
+La soluzione è un runtime persistente pensato apposta per questo
+caso d'uso: ogni pannello di terminale appartiene a un agente, ogni
+agente appartiene a un progetto, e le sessioni restano vive anche
+per ore o giorni, indipendentemente da dove giri il processo. Sopra
+il runtime c'è una TUI (interfaccia testuale) che mostra lo stato di
+tutti gli agenti insieme, così puoi capire in pochi secondi chi sta
+aspettando un input da te e chi può continuare da solo.
+</p>
+</div>
+</section>
+
+<section class="why-pikobit">
+<h2>Perché resta open source, e cosa significa per chi lo usa</h2>
+<div class="article-body">
+<p>
+La scelta più interessante, dal punto di vista di chi valuta
+strumenti dev, è che Herdr ha cambiato licenza da AGPL ad Apache 2.0
+proprio in vista dell'ingresso in Y Combinator: una licenza
+permissiva che permette di usare, modificare e integrare il runtime
+liberamente, anche in contesti commerciali. Il modello di business
+della futura azienda si costruirà sopra il runtime aperto — più
+client, integrazione con sandbox per codice rischioso, funzioni
+pensate per team — non chiudendolo. È lo stesso schema che ha
+funzionato per molti strumenti dev di successo: il core resta
+gratuito e verificabile, i servizi a valore aggiunto sono a
+pagamento.
+</p>
+<p>
+Per chi programma, il segnale utile non è tanto "un altro tool da
+installare" quanto la conferma di una tendenza: gestire più agenti AI
+contemporaneamente sta diventando un problema di infrastruttura a sé
+stante, non solo di prompt. Se oggi tieni traccia di due o tre agenti
+a mente aprendo schede diverse, vale la pena provare un runtime
+dedicato prima che il numero di agenti che gestisci ogni giorno
+diventi ingestibile.
+</p>
+</div>
+</section>
+
+<section class="why-pikobit">
+<h2>Da dove iniziare</h2>
+<ul>
+<li>
+<strong>Prova rapida</strong> — installa Herdr in locale o lancialo
+con <code>herdr --remote user@host</code> su una VPS: l'interfaccia
+si installa da sola e in pochi secondi hai un agente attivo dentro
+la TUI.
+</li>
+<li>
+<strong>Se lavori già con agenti in parallelo</strong> — sostituisci
+gradualmente le schede di terminale sparse con progetti e pannelli
+dentro Herdr, così puoi vedere lo stato di tutti gli agenti in una
+sola vista invece di controllarli uno a uno.
+</li>
+<li>
+<strong>Se ti interessa l'ecosistema</strong> — essendo il runtime
+aperto, esistono già estensioni di terze parti (Raycast, Stream Deck,
+app mobile): vale la pena guardare cosa esiste prima di costruire
+un'integrazione da zero.
+</li>
+</ul>
+</section>
+
+<section class="why-pikobit">
+<p>
+<strong>Fonti:</strong>
+<a
+href="https://herdr.dev/blog/herdr-is-joining-y-combinator/"
+class="cta-link"
+target="_blank"
+rel="noopener noreferrer"
+>Herdr is joining Y Combinator. The runtime stays open, sul blog di
+Herdr</a
+>
+</p>
+</section>
+</main>
+
+<footer>
+<p>&copy; 2026 Pikobit. Tutti i diritti riservati.</p>
+<p>
+"Pikobit: Il tuo punto di partenza per creare, imparare e ispirare."
+</p>
+<div class="social-icons">
+<a
+href="
+https://www.youtube.com/@pikobit01
+"
+target="_blank"
+rel="noopener noreferrer"
+><i class="fab fa-youtube"></i
+></a>
+<a
+href="
+https://www.linkedin.com/in/giuseppe-alaimo-aba40b226
+"
+target="_blank"
+rel="noopener noreferrer"
+><i class="fab fa-linkedin"></i
+></a>
+</div>
+</footer>
+<button id="scrollToTop" title="Torna su">&#8679;</button>
+</body>
+</html>

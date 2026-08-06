@@ -1,0 +1,298 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>
+SkillOpt di Microsoft: le Skill degli agenti AI si possono ottimizzare e
+portare tra modelli diversi - Blog PikoBit
+</title>
+<meta
+name="description"
+content="SkillOpt di Microsoft ottimizza i file di istruzioni (Skill) per
+gli agenti AI e dimostra che il risultato resta valido cambiando
+modello o passando da un harness come Codex a uno come Claude Code.
+Cosa significa per chi scrive le proprie Skill."
+/>
+<meta
+name="keywords"
+content="SkillOpt, Microsoft, Agent Skills, agenti AI, Claude Code, Codex,
+prompt engineering, sviluppo software"
+/>
+<meta name="author" content="PikoBit" />
+
+<!-- Tag canonical -->
+<link
+rel="canonical"
+href="https://pikobit.it/blog/2026-08-07-microsoft-skillopt-skill-agenti-ai.html"
+/>
+
+<!-- Open Graph -->
+<meta property="og:type" content="article" />
+<meta
+property="og:title"
+content="SkillOpt di Microsoft: le Skill degli agenti AI si possono
+ottimizzare e portare tra modelli diversi"
+/>
+<meta
+property="og:description"
+content="SkillOpt di Microsoft ottimizza i file di istruzioni (Skill) per
+gli agenti AI e dimostra che il risultato resta valido cambiando
+modello o passando da un harness come Codex a uno come Claude Code.
+Cosa significa per chi scrive le proprie Skill."
+/>
+<meta property="og:image"
+content="https://pikobit.it/images/banner.webp" />
+<meta
+property="og:url"
+content="https://pikobit.it/blog/2026-08-07-microsoft-skillopt-skill-agenti-ai.html"
+/>
+
+<link rel="stylesheet" href="../styles/style.css?v=4.0.0.8" />
+<link
+href="
+https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css
+"
+rel="stylesheet"
+/>
+<link
+href="
+https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap
+"
+rel="stylesheet"
+/>
+<link rel="icon" href="../images/logo.webp" type="image/png" />
+
+<script src="../scripts/script.js?v=4.0.0.8"></script>
+
+<!-- Dati strutturati -->
+<script type="application/ld+json">
+{
+"@context": "https://schema.org",
+"@type": "BlogPosting",
+"headline": "SkillOpt di Microsoft: le Skill degli agenti AI si possono
+ottimizzare e portare tra modelli diversi",
+"description": "SkillOpt di Microsoft ottimizza i file di istruzioni
+(Skill) per gli agenti AI e dimostra che il risultato resta valido
+cambiando modello o passando da un harness come Codex a uno come Claude
+Code. Cosa significa per chi scrive le proprie Skill.",
+"datePublished": "2026-08-07",
+"author": {
+"@type": "Person",
+"name": "PikoBit",
+"sameAs": ["
+https://www.youtube.com/@pikobit01
+"]
+}
+}
+</script>
+
+<!-- Google tag (gtag.js) -->
+<script
+async
+src="
+https://www.googletagmanager.com/gtag/js?id=G-TVGN1XBX7H
+"
+></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag() {
+dataLayer.push(arguments);
+}
+gtag("js", new Date());
+
+gtag("config", "G-TVGN1XBX7H");
+</script>
+</head>
+
+<body>
+<header>
+<img src="../images/banner.webp" alt="Pikobit Banner" class="banner" />
+<div class="hamburger" id="hamburger-menu">
+<i class="fas fa-bars"></i>
+</div>
+<div class="overlay" id="overlay"></div>
+<nav id="navbar">
+<ul class="nav-links">
+<li><a href="../index.html">Home</a></li>
+
+<li class="dropdown">
+<a href="#" id="dropdown-toggle">Servizi ▼</a>
+<ul class="dropdown-menu">
+<li><a href="../websites.html">Siti web personalizzati</a></li>
+<li><a href="../modern-apps.html">Applicazioni moderne</a></li>
+<li>
+<a href="../custom-software.html"
+>Software gestionali su misura</a
+>
+</li>
+<li>
+<a href="../creative-services.html"
+>Servizi Creativi e Soluzioni Complete</a
+>
+</li>
+<li><a href="../lessons.html">Lezioni e tutorial</a></li>
+</ul>
+</li>
+
+<li><a href="../ideas.html">Idee Innovative</a></li>
+<li><a href="../about.html">Chi Sono</a></li>
+<li><a href="../resources.html">Risorse</a></li>
+<li><a href="../contact.html">Contatti</a></li>
+</ul>
+</nav>
+</header>
+
+<main>
+<section class="intro">
+<div class="intro-container">
+<img
+src="../images/logo.webp"
+alt="Logo Pikobit - Tutorial e Progetti di Programmazione"
+class="logo"
+/>
+<p class="tagline">AI per lo sviluppo software</p>
+<h1>
+SkillOpt di Microsoft: le Skill degli agenti AI si possono ottimizzare
+e portare tra modelli diversi
+</h1>
+<p>
+Un risultato quasi perfetto sui benchmark ha attirato l'attenzione,
+ma il dato più utile per chi scrive Skill ogni giorno è un altro:
+un file di istruzioni ottimizzato bene continua a funzionare anche
+cambiando modello o harness.
+</p>
+</div>
+</section>
+
+<section class="why-pikobit">
+<h2>Cos'è SkillOpt e perché parte da un problema concreto</h2>
+<div class="article-body">
+<p>
+Se hai letto il nostro articolo su
+<a
+href="2026-07-31-skills-vs-mcp-differenze.html"
+class="cta-link"
+>Skills vs MCP</a
+>, sai già che le Skill sono file di istruzioni in linguaggio
+naturale che insegnano a un agente AI come affrontare un compito
+specifico, senza bisogno di scrivere codice o integrazioni. Il
+problema pratico è che scriverne una buona è più difficile di quanto
+sembri: due frasi ambigue, un ordine di passaggi poco chiaro o un
+esempio fuorviante possono far fallire l'agente su casi che a un
+umano sembrerebbero ovvi. Finora la scrittura di una Skill efficace
+era soprattutto un lavoro di tentativi ed errori, guidato
+dall'esperienza di chi la scriveva.
+</p>
+<p>
+SkillOpt di Microsoft affronta questo problema trattando
+l'ottimizzazione di una Skill come un processo sistematico invece
+che artigianale: parte da una versione iniziale del file di
+istruzioni, la testa contro casi concreti, individua dove l'agente
+sbaglia o è ambiguo, e riscrive le istruzioni per correggere
+esattamente quel punto. È un ciclo iterativo di verifica e
+correzione applicato al testo che guida l'agente, non al modello
+sottostante.
+</p>
+</div>
+</section>
+
+<section class="why-pikobit">
+<h2>Il dato che conta davvero: la portabilità tra modelli e harness</h2>
+<div class="article-body">
+<p>
+Il punteggio pressoché perfetto ottenuto nei test è quello che ha
+fatto notizia, ma è un numero legato al benchmark specifico usato
+per la valutazione, e come tale va preso con la cautela con cui
+si guarda qualunque risultato "quasi 100%". Il dato più utile per
+chi lavora con gli agenti ogni giorno riguarda invece la
+portabilità: il file di Skill ottimizzato (il cosiddetto
+<code>best_skill.md</code>) continua a funzionare bene anche quando
+cambi il modello che lo esegue, e anche quando lo sposti da un
+harness a un altro — ad esempio da Codex a Claude Code. In altre
+parole, l'ottimizzazione non "impara i vizi" di un modello
+specifico, ma migliora la qualità intrinseca delle istruzioni.
+</p>
+<p>
+Questo è esattamente il tipo di garanzia che serve a chi investe
+tempo a scrivere Skill per il proprio team o per i propri progetti:
+sapere che il lavoro fatto oggi non va rifatto da capo quando l'anno
+prossimo cambi modello o strumento. Rende le Skill un asset più
+simile a documentazione tecnica ben scritta — che resta utile nel
+tempo — che a un prompt ottimizzato per un modello specifico, che
+invecchia alla prima major release.
+</p>
+</div>
+</section>
+
+<section class="why-pikobit">
+<h2>Cosa portarsi a casa se scrivi Skill oggi</h2>
+<ul>
+<li>
+<strong>Testa contro casi reali, non contro l'intuizione</strong> —
+il principio dietro SkillOpt è verificabile anche a mano: prendi la
+tua Skill, falla eseguire su 5-10 casi concreti e diversi tra loro,
+annota dove l'agente interpreta male le istruzioni, e correggi solo
+quei punti invece di riscrivere tutto da zero.
+</li>
+<li>
+<strong>Preferisci istruzioni verificabili a istruzioni vaghe</strong> —
+una Skill che dice "controlla che il risultato sia corretto" è
+meno utile di una che specifica come verificarlo (un test da far
+girare, un formato di output atteso). Più la verifica è concreta,
+meno l'agente ha spazio per interpretazioni diverse tra un modello e
+l'altro.
+</li>
+<li>
+<strong>Non dare per scontata la portabilità, ma puntaci</strong> —
+se scrivi Skill destinate a più strumenti (o che dovranno
+sopravvivere al prossimo cambio di modello in azienda), scrivile
+pensando a istruzioni generali e verificabili piuttosto che a
+scorciatoie che sfruttano il comportamento di un modello specifico.
+</li>
+</ul>
+</section>
+
+<section class="why-pikobit">
+<p>
+<strong>Fonti:</strong>
+<a
+href="https://www.marktechpost.com/2026/08/05/microsoft-skillopt-agent-skill-transfer-portability/"
+class="cta-link"
+target="_blank"
+rel="noopener noreferrer"
+>Microsoft's SkillOpt Shows Optimized Agent Skill Artifacts Transfer
+Across Model Scales and Between Codex and Claude Code Harnesses, su
+MarkTechPost</a
+>
+</p>
+</section>
+</main>
+
+<footer>
+<p>&copy; 2026 Pikobit. Tutti i diritti riservati.</p>
+<p>
+"Pikobit: Il tuo punto di partenza per creare, imparare e ispirare."
+</p>
+<div class="social-icons">
+<a
+href="
+https://www.youtube.com/@pikobit01
+"
+target="_blank"
+rel="noopener noreferrer"
+><i class="fab fa-youtube"></i
+></a>
+<a
+href="
+https://www.linkedin.com/in/giuseppe-alaimo-aba40b226
+"
+target="_blank"
+rel="noopener noreferrer"
+><i class="fab fa-linkedin"></i
+></a>
+</div>
+</footer>
+<button id="scrollToTop" title="Torna su">&#8679;</button>
+</body>
+</html>
