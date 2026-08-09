@@ -76,6 +76,15 @@ nav ul li a:hover {
   flex-direction: row;
 }
 
+/* Icone SVG inline (sostituiscono Font Awesome CDN) */
+/* Icons: Font Awesome Free 6.7.2 - CC BY 4.0 - https://fontawesome.com/license/free */
+.icon-svg {
+  width: 1em;
+  height: 1em;
+  fill: currentColor;
+  vertical-align: -0.125em;
+}
+
 /* Stile per il pulsante hamburger */
 .hamburger {
   display: block;
