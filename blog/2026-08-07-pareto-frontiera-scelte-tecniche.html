@@ -1,0 +1,331 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>
+La frontiera di Pareto spiegata a chi programma: scegliere tra due
+obiettivi in conflitto - Blog PikoBit
+</title>
+<meta
+name="description"
+content="Come usare la frontiera di Pareto per scegliere tra opzioni con
+due obiettivi in conflitto (costo, velocità, qualità), con un
+esempio pratico di codice per filtrare le scelte dominate quando
+confronti librerie, modelli AI o piani cloud."
+/>
+<meta
+name="keywords"
+content="frontiera di Pareto, Pareto front, ottimizzazione, decisioni
+tecniche, scelta tool, programmazione, algoritmi"
+/>
+<meta name="author" content="PikoBit" />
+
+<!-- Tag canonical -->
+<link
+rel="canonical"
+href="https://pikobit.it/blog/2026-08-07-pareto-frontiera-scelte-tecniche.html"
+/>
+
+<!-- Open Graph -->
+<meta property="og:type" content="article" />
+<meta
+property="og:title"
+content="La frontiera di Pareto spiegata a chi programma: scegliere tra
+due obiettivi in conflitto"
+/>
+<meta
+property="og:description"
+content="Come usare la frontiera di Pareto per scegliere tra opzioni con
+due obiettivi in conflitto (costo, velocità, qualità), con un
+esempio pratico di codice per filtrare le scelte dominate quando
+confronti librerie, modelli AI o piani cloud."
+/>
+<meta property="og:image"
+content="https://pikobit.it/images/banner.webp" />
+<meta
+property="og:url"
+content="https://pikobit.it/blog/2026-08-07-pareto-frontiera-scelte-tecniche.html"
+/>
+
+<link rel="stylesheet" href="../styles/style.css?v=4.0.0.8" />
+<link
+href="
+https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css
+"
+rel="stylesheet"
+/>
+<link
+href="
+https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap
+"
+rel="stylesheet"
+/>
+<link rel="icon" href="../images/logo.webp" type="image/png" />
+
+<script src="../scripts/script.js?v=4.0.0.8"></script>
+
+<!-- Dati strutturati -->
+<script type="application/ld+json">
+{
+"@context": "https://schema.org",
+"@type": "BlogPosting",
+"headline": "La frontiera di Pareto spiegata a chi programma: scegliere
+tra due obiettivi in conflitto",
+"description": "Come usare la frontiera di Pareto per scegliere tra
+opzioni con due obiettivi in conflitto (costo, velocità, qualità), con
+un esempio pratico di codice per filtrare le scelte dominate quando
+confronti librerie, modelli AI o piani cloud.",
+"datePublished": "2026-08-07",
+"author": {
+"@type": "Person",
+"name": "PikoBit",
+"sameAs": ["
+https://www.youtube.com/@pikobit01
+"]
+}
+}
+</script>
+
+<!-- Google tag (gtag.js) -->
+<script
+async
+src="
+https://www.googletagmanager.com/gtag/js?id=G-TVGN1XBX7H
+"
+></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag() {
+dataLayer.push(arguments);
+}
+gtag("js", new Date());
+
+gtag("config", "G-TVGN1XBX7H");
+</script>
+</head>
+
+<body>
+<header>
+<img src="../images/banner.webp" alt="Pikobit Banner" class="banner" />
+<div class="hamburger" id="hamburger-menu">
+<i class="fas fa-bars"></i>
+</div>
+<div class="overlay" id="overlay"></div>
+<nav id="navbar">
+<ul class="nav-links">
+<li><a href="../index.html">Home</a></li>
+
+<li class="dropdown">
+<a href="#" id="dropdown-toggle">Servizi ▼</a>
+<ul class="dropdown-menu">
+<li><a href="../websites.html">Siti web personalizzati</a></li>
+<li><a href="../modern-apps.html">Applicazioni moderne</a></li>
+<li>
+<a href="../custom-software.html"
+>Software gestionali su misura</a
+>
+</li>
+<li>
+<a href="../creative-services.html"
+>Servizi Creativi e Soluzioni Complete</a
+>
+</li>
+<li><a href="../lessons.html">Lezioni e tutorial</a></li>
+</ul>
+</li>
+
+<li><a href="../ideas.html">Idee Innovative</a></li>
+<li><a href="../about.html">Chi Sono</a></li>
+<li><a href="../resources.html">Risorse</a></li>
+<li><a href="../contact.html">Contatti</a></li>
+</ul>
+</nav>
+</header>
+
+<main>
+<section class="intro">
+<div class="intro-container">
+<img
+src="../images/logo.webp"
+alt="Logo Pikobit - Tutorial e Progetti di Programmazione"
+class="logo"
+/>
+<p class="tagline">Metodo</p>
+<h1>
+La frontiera di Pareto spiegata a chi programma: scegliere tra due
+obiettivi in conflitto
+</h1>
+<p>
+Quale libreria scelgo, veloce o leggera? Quale modello AI uso,
+economico o preciso? Un'idea vecchia di un secolo, presa in prestito
+dall'economia, ti aiuta a scartare le opzioni sbagliate prima ancora
+di doverci pensare.
+</p>
+</div>
+</section>
+
+<section class="why-pikobit">
+<h2>Il problema: due metriche che tirano in direzioni opposte</h2>
+<div class="article-body">
+<p>
+Capita spesso, programmando, di dover scegliere tra opzioni che sono
+migliori l'una dell'altra su una metrica e peggiori su un'altra:
+una libreria più veloce ma con un bundle più pesante, un database più
+scalabile ma più complesso da gestire, un modello AI più economico
+ma meno preciso. Quando le metriche vanno in direzioni opposte, non
+esiste un "il migliore" in assoluto: dipende da quanto pesi l'una
+rispetto all'altra, e quel peso spesso non lo conosci con certezza
+finché non hai già scelto.
+</p>
+<p>
+L'economista Vilfredo Pareto, più di un secolo fa, propose un modo
+per affrontare esattamente questo tipo di scelta senza dover
+decidere in anticipo quanto vale ogni metrica. L'idea è semplice:
+invece di cercare "la" scelta migliore, elimina prima tutte le
+scelte che sono oggettivamente peggiori di un'altra su ogni
+dimensione — quelle che in gergo si dicono "dominate" — e lavora solo
+su ciò che resta.
+</p>
+</div>
+</section>
+
+<section class="why-pikobit">
+<h2>Cosa significa "dominata" e come si filtra</h2>
+<div class="article-body">
+<p>
+Un'opzione A domina un'opzione B se A è uguale o migliore di B su
+ogni metrica, e strettamente migliore su almeno una. Se hai due
+librerie con le stesse dimensioni del bundle ma una è più veloce,
+la più lenta è dominata: non c'è alcun motivo, in nessuno scenario,
+per preferirla. Le opzioni che nessuna riesce a dominare formano la
+cosiddetta frontiera di Pareto: sono le uniche che meritano di
+entrare nella tua valutazione finale, perché ciascuna vince su
+qualcosa rispetto a tutte le altre.
+</p>
+<p>
+Il punto centrale è che la frontiera non ti dice quale scegliere —
+quello dipende dalle tue priorità, dal contesto del progetto, da
+vincoli che magari non sono nemmeno rappresentati nei numeri — ma
+ti garantisce di scartare solo le opzioni che nessuno sceglierebbe
+mai in nessuna circostanza, e di concentrare la discussione (con te
+stesso o col team) solo su un sottoinsieme piccolo e già filtrato.
+Su una lista di trenta opzioni, spesso la frontiera ne contiene
+cinque o sei: un risparmio enorme di tempo decisionale.
+</p>
+</div>
+</section>
+
+<section class="why-pikobit">
+<h2>Filtrare la frontiera con poche righe di codice</h2>
+<div class="article-body">
+<p>
+Calcolare la frontiera di Pareto è un esercizio di programmazione
+utile di per sé, oltre che uno strumento pratico. Ecco una funzione
+che, data una lista di opzioni con due metriche dove valori più
+bassi sono migliori (ad esempio costo e latenza), restituisce solo
+quelle non dominate:
+</p>
+<pre><code>function paretoFront(options) {
+  // Each option: { name, cost, latency } — lower is better for both.
+  return options.filter((candidate) => {
+    return !options.some((other) => {
+      if (other === candidate) return false;
+      const notWorse =
+        other.cost <= candidate.cost && other.latency <= candidate.latency;
+      const strictlyBetter =
+        other.cost < candidate.cost || other.latency < candidate.latency;
+      return notWorse && strictlyBetter; // "other" dominates "candidate"
+    });
+  });
+}
+
+const llmOptions = [
+  { name: "model-a-mini", cost: 0.1, latency: 200 },
+  { name: "model-b-fast", cost: 0.3, latency: 90 },
+  { name: "model-c-pro", cost: 0.8, latency: 250 }, // dominated by model-b-fast
+  { name: "model-d-balanced", cost: 0.4, latency: 150 },
+];
+
+console.log(paretoFront(llmOptions).map((o) => o.name));
+// -> ["model-a-mini", "model-b-fast", "model-d-balanced"]</code></pre>
+<p>
+<code>model-c-pro</code> sparisce dalla lista perché
+<code>model-b-fast</code> costa meno ed è anche più veloce: nessuno
+sceglierebbe mai <code>model-c-pro</code> avendo a disposizione
+l'altro. Le tre opzioni rimaste, invece, richiedono davvero una
+decisione: dipende se per il tuo caso d'uso conta di più risparmiare
+o rispondere in fretta. La stessa funzione si applica a qualunque
+confronto a due metriche: piani di hosting per prezzo e uptime,
+dipendenze npm per dimensione e velocità, algoritmi di sort per
+tempo e memoria.
+</p>
+</div>
+</section>
+
+<section class="why-pikobit">
+<h2>Quando usarla (e quando no)</h2>
+<ul>
+<li>
+<strong>Usala</strong> quando confronti più di due o tre opzioni su
+due o più metriche numeriche e non hai già un peso chiaro da
+assegnare a ciascuna: ti fa risparmiare tempo scartando in automatico
+le scelte oggettivamente peggiori.
+</li>
+<li>
+<strong>Non ti serve</strong> se conosci già la tua funzione di
+utilità — cioè sai esattamente quanto vale un secondo di latenza
+risparmiato in termini di costo accettabile — perché a quel punto il
+problema si riduce a ottimizzare un solo numero, e la frontiera non
+aggiunge informazione.
+</li>
+<li>
+<strong>Attenzione ai falsi bipoli</strong> — verifica che le due
+metriche siano davvero in conflitto strutturale e non solo per
+coincidenza nel tuo dataset: se aggiungendo un'opzione il conflitto
+sparisce, probabilmente stavi confrontando le opzioni sbagliate.
+</li>
+</ul>
+</section>
+
+<section class="why-pikobit">
+<p>
+<strong>Fonti:</strong>
+<a
+href="https://www.mayerowitz.io/blog/mario-meets-pareto"
+class="cta-link"
+target="_blank"
+rel="noopener noreferrer"
+>Mario Meets Pareto, di Antoine Mayerowitz</a
+>
+</p>
+</section>
+</main>
+
+<footer>
+<p>&copy; 2026 Pikobit. Tutti i diritti riservati.</p>
+<p>
+"Pikobit: Il tuo punto di partenza per creare, imparare e ispirare."
+</p>
+<div class="social-icons">
+<a
+href="
+https://www.youtube.com/@pikobit01
+"
+target="_blank"
+rel="noopener noreferrer"
+><i class="fab fa-youtube"></i
+></a>
+<a
+href="
+https://www.linkedin.com/in/giuseppe-alaimo-aba40b226
+"
+target="_blank"
+rel="noopener noreferrer"
+><i class="fab fa-linkedin"></i
+></a>
+</div>
+</footer>
+<button id="scrollToTop" title="Torna su">&#8679;</button>
+</body>
+</html>
