@@ -1,0 +1,310 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>
+ESPHome: il primo kit ufficiale per iniziare con la domotica fai da te -
+Blog PikoBit
+</title>
+<meta
+name="description"
+content="ESPHome lancia il primo kit ufficiale pensato per i principianti:
+cos'è, come funziona e perché è un buon punto di partenza per chi vuole
+imparare l'elettronica e la domotica scrivendo poco codice."
+/>
+<meta
+name="keywords"
+content="ESPHome, domotica fai da te, Home Assistant, ESP32, kit
+principianti, IoT, elettronica"
+/>
+<meta name="author" content="PikoBit" />
+
+<!-- Tag canonical -->
+<link
+rel="canonical"
+href="https://pikobit.it/blog/2026-08-14-esphome-kit-domotica-fai-da-te.html"
+/>
+
+<!-- Open Graph -->
+<meta property="og:type" content="article" />
+<meta
+property="og:title"
+content="ESPHome: il primo kit ufficiale per iniziare con la domotica
+fai da te"
+/>
+<meta
+property="og:description"
+content="ESPHome lancia il primo kit ufficiale pensato per i principianti:
+cos'è, come funziona e perché è un buon punto di partenza per chi vuole
+imparare l'elettronica e la domotica scrivendo poco codice."
+/>
+<meta property="og:image"
+content="https://pikobit.it/images/banner.webp" />
+<meta
+property="og:url"
+content="https://pikobit.it/blog/2026-08-14-esphome-kit-domotica-fai-da-te.html"
+/>
+
+<link rel="stylesheet" href="../styles/style.css?v=4.0.0.8" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link
+href="
+https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap
+"
+rel="stylesheet"
+/>
+<link rel="icon" href="../images/logo.webp" type="image/png" />
+
+<script defer src="../scripts/script.js?v=4.0.0.8"></script>
+
+<!-- Dati strutturati -->
+<script type="application/ld+json">
+{
+"@context": "https://schema.org",
+"@type": "BlogPosting",
+"headline": "ESPHome: il primo kit ufficiale per iniziare con la
+domotica fai da te",
+"description": "ESPHome lancia il primo kit ufficiale pensato per i
+principianti: cos'è, come funziona e perché è un buon punto di
+partenza per chi vuole imparare l'elettronica e la domotica
+scrivendo poco codice.",
+"datePublished": "2026-08-14",
+"author": {
+"@type": "Person",
+"name": "PikoBit",
+"sameAs": ["
+https://www.youtube.com/@pikobit01
+"]
+}
+}
+</script>
+
+<!-- Google tag (gtag.js) -->
+<script
+async
+src="
+https://www.googletagmanager.com/gtag/js?id=G-TVGN1XBX7H
+"
+></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag() {
+dataLayer.push(arguments);
+}
+gtag("js", new Date());
+
+gtag("config", "G-TVGN1XBX7H");
+</script>
+</head>
+
+<body>
+<header>
+<img src="../images/banner.webp" alt="Pikobit Banner" class="banner" width="1024" height="587" />
+<div class="hamburger" id="hamburger-menu" role="button" tabindex="0" aria-label="Apri menu di navigazione" aria-expanded="false">
+<svg class="icon-svg" viewBox="0 0 448 512" aria-hidden="true"><path d="M0 96C0 78.3 14.3 64 32 64l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 128C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 288c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32L32 448c-17.7 0-32-14.3-32-32s14.3-32 32-32l384 0c17.7 0 32 14.3 32 32z"/></svg>
+</div>
+<div class="overlay" id="overlay"></div>
+<nav id="navbar">
+<ul class="nav-links">
+<li><a href="../index.html">Home</a></li>
+
+<li class="dropdown">
+<a href="#" id="dropdown-toggle" aria-haspopup="true" aria-expanded="false">Servizi ▼</a>
+<ul class="dropdown-menu">
+<li><a href="../websites.html">Siti web personalizzati</a></li>
+<li><a href="../modern-apps.html">Applicazioni moderne</a></li>
+<li>
+<a href="../custom-software.html"
+>Software gestionali su misura</a
+>
+</li>
+<li>
+<a href="../creative-services.html"
+>Servizi Creativi e Soluzioni Complete</a
+>
+</li>
+<li><a href="../lessons.html">Lezioni e tutorial</a></li>
+</ul>
+</li>
+
+<li><a href="../ideas.html">Idee Innovative</a></li>
+<li><a href="../about.html">Chi Sono</a></li>
+<li><a href="../resources.html">Risorse</a></li>
+<li><a href="../contact.html">Contatti</a></li>
+</ul>
+</nav>
+</header>
+
+<main>
+<section class="intro">
+<div class="intro-container">
+<img
+src="../images/logo.webp"
+alt="Logo Pikobit - Tutorial e Progetti di Programmazione"
+class="logo" width="671" height="752" />
+<p class="tagline">Domotica e Maker</p>
+<h1>
+ESPHome: il primo kit ufficiale per iniziare con la domotica
+fai da te
+</h1>
+<p>
+Il progetto open source dietro migliaia di sensori e interruttori
+smart fatti in casa lancia il suo primo kit pensato apposta per chi
+parte da zero. Ecco cos'è ESPHome, come funziona e se vale la pena
+iniziare da lì.
+</p>
+</div>
+</section>
+
+<section class="why-pikobit">
+<h2>Cos'è ESPHome, in due parole</h2>
+<div class="article-body">
+<p>
+ESPHome è un progetto open source che permette di trasformare
+piccole schede economiche come l'ESP32 o l'ESP8266 in dispositivi
+smart — sensori di temperatura, interruttori, luci, contatti
+magnetici per porte e finestre — senza dover scrivere firmware in
+C++ da zero. Si descrive il comportamento del dispositivo in un
+file di configurazione in formato YAML, ESPHome genera il codice,
+lo compila e lo carica sulla scheda. Il risultato si integra in
+automatico con <strong>Home Assistant</strong>, la piattaforma di
+domotica open source più diffusa tra chi si costruisce l'impianto
+smart in casa da sé.
+</p>
+<p>
+Fino ad oggi, il punto debole di questo approccio era l'ingresso:
+bisognava sapere quale scheda comprare, capire il pinout, procurarsi
+sensori compatibili e saldare o collegare i cavi giusti. Un ostacolo
+non enorme per chi già smanetta con l'elettronica, ma sufficiente a
+scoraggiare chi si avvicina per la prima volta.
+</p>
+</div>
+</section>
+
+<section class="why-pikobit">
+<h2>Cosa cambia con il kit ufficiale</h2>
+<div class="article-body">
+<p>
+Il nuovo kit ufficiale ESPHome nasce apposta per abbattere quella
+soglia d'ingresso: una scheda già supportata al cento per cento,
+un set di sensori e attuatori scelti per funzionare subito con le
+configurazioni di esempio, e una guida pensata per chi non ha mai
+scritto una riga di YAML in vita sua. L'idea è la stessa di certi
+kit Arduino da principianti: non vuole insegnarti tutta
+l'elettronica, vuole farti ottenere un primo risultato funzionante
+in una sera, così che la seconda sera tu abbia già voglia di
+continuare.
+</p>
+<p>
+Per chi impara a programmare, questo è un dettaglio che conta più
+di quanto sembri. La differenza tra un tutorial che "in teoria
+funziona" e uno che funziona davvero al primo tentativo è spesso
+ciò che decide se una persona abbandona l'hobby dopo un weekend o
+ci costruisce sopra un anno di progetti. Un kit curato riduce le
+variabili che possono andare storte — scheda incompatibile, sensore
+diverso da quello del tutorial, cavo sbagliato — lasciando solo la
+parte che conta davvero imparare: il ragionamento su come descrivere
+un comportamento in configurazione.
+</p>
+</div>
+</section>
+
+<section class="why-pikobit">
+<h2>Un primo dispositivo, in pratica</h2>
+<div class="article-body">
+<p>
+Una configurazione ESPHome minima per un sensore di temperatura
+assomiglia a questa (semplificata per l'esempio):
+</p>
+<pre><code>esphome:
+  name: sensore-soggiorno
+
+esp32:
+  board: esp32dev
+
+wifi:
+  ssid: "la-tua-rete"
+  password: "la-tua-password"
+
+api:
+ota:
+
+sensor:
+  - platform: dht
+    pin: GPIO4
+    temperature:
+      name: "Temperatura Soggiorno"
+    humidity:
+      name: "Umidità Soggiorno"
+    update_interval: 60s</code></pre>
+<p>
+Non c'è un ciclo <code>loop()</code> da scrivere, non c'è gestione
+manuale della connessione Wi-Fi: si dichiara cosa deve fare il
+dispositivo e ESPHome si occupa del resto, compreso l'aggiornamento
+del firmware via rete (<code>ota</code>) una volta che il dispositivo
+è online. È un buon primo contatto con un'idea che tornerà utile
+ben oltre la domotica: separare la <em>configurazione dichiarativa</em>
+(cosa voglio) dalla logica di basso livello (come si ottiene),
+lo stesso principio che si ritrova in strumenti come Terraform o
+Kubernetes, solo su scala molto più piccola e comprensibile.
+</p>
+</div>
+</section>
+
+<section class="why-pikobit">
+<h2>Per chi ha senso iniziare da qui</h2>
+<ul>
+<li>
+<strong>Chi vuole toccare con mano l'IoT</strong> senza affrontare
+subito la curva ripida di protocolli come MQTT o Zigbee scritti
+a mano: ESPHome li astrae per te, ma restano lì sotto quando
+vorrai capirli meglio.
+</li>
+<li>
+<strong>Chi ha già Home Assistant</strong> e vuole aggiungere
+sensori su misura senza comprare dispositivi commerciali chiusi,
+spesso legati a cloud di terze parti che potrebbero sparire domani.
+</li>
+<li>
+<strong>Chi insegna programmazione</strong> a ragazzi o principianti:
+vedere un sensore reale che manda dati veri a una dashboard reale
+motiva molto più di un esercizio astratto su una console.
+</li>
+</ul>
+</section>
+</main>
+
+<footer>
+<p>&copy; 2026 Pikobit. Tutti i diritti riservati.</p>
+<p>
+"Pikobit: Il tuo punto di partenza per creare, imparare e ispirare."
+</p>
+<div class="social-icons">
+<a
+href="
+https://www.youtube.com/@pikobit01
+"
+target="_blank"
+rel="noopener noreferrer"
+ aria-label="YouTube"><svg class="icon-svg" viewBox="0 0 576 512" aria-hidden="true"><path d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z"/></svg></a>
+<a
+href="
+https://www.linkedin.com/in/giuseppe-alaimo-aba40b226
+"
+target="_blank"
+rel="noopener noreferrer"
+ aria-label="LinkedIn"><svg class="icon-svg" viewBox="0 0 448 512" aria-hidden="true"><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg></a>
+<a
+href="
+https://www.instagram.com/pikobit_it/
+"
+target="_blank"
+rel="noopener noreferrer"
+ aria-label="Instagram"><svg class="icon-svg" viewBox="0 0 448 512" aria-hidden="true"><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg></a>
+</div>
+</footer>
+<button id="scrollToTop" title="Torna su">&#8679;</button>
+</body>
+</html>

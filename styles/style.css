@@ -7,6 +7,11 @@
 }
 
 /* Generale */
+html,
+body {
+  overflow-x: hidden;
+}
+
 body {
   font-family: "Poppins", sans-serif;
   margin: 0;
@@ -14,6 +19,14 @@ body {
   background-color: var(--color-bg);
   color: white;
   line-height: 1.6;
+}
+
+/* Blocchi di codice: contenere le righe lunghe invece di allargare la pagina */
+pre {
+  overflow-x: auto;
+  max-width: 100%;
+  box-sizing: border-box;
+  white-space: pre;
 }
 
 .mission-vision-title {
