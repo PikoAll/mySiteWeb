@@ -1,0 +1,301 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>
+Un registro può cancellare il tuo dominio: la lezione per chi
+costruisce identità digitali - Blog PikoBit
+</title>
+<meta
+name="description"
+content="Un registrar ha ottenuto il via libera per eliminare un'intera
+categoria di domini, con 22.000 persone che perdono sito, email e
+accessi legati a un indirizzo pagato fino al 2040. Cosa imparare, da
+sviluppatore, sul rischio di dipendere da infrastrutture che non
+controlli."
+/>
+<meta
+name="keywords"
+content="dominio dipendenza terze parti, rischio infrastruttura,
+autenticazione email, gestione DNS, sviluppo software"
+/>
+<meta name="author" content="PikoBit" />
+
+<!-- Tag canonical -->
+<link
+rel="canonical"
+href="https://pikobit.it/blog/2026-09-04-dominio-terzo-livello-dipendenza-rischio.html"
+/>
+
+<!-- Open Graph -->
+<meta property="og:type" content="article" />
+<meta
+property="og:title"
+content="Un registro può cancellare il tuo dominio: la lezione per chi
+costruisce identità digitali"
+/>
+<meta
+property="og:description"
+content="Un registrar ha ottenuto il via libera per eliminare un'intera
+categoria di domini, con 22.000 persone che perdono sito, email e
+accessi legati a un indirizzo pagato fino al 2040. Cosa imparare, da
+sviluppatore, sul rischio di dipendere da infrastrutture che non
+controlli."
+/>
+<meta property="og:image"
+content="https://pikobit.it/images/banner.webp" />
+<meta
+property="og:url"
+content="https://pikobit.it/blog/2026-09-04-dominio-terzo-livello-dipendenza-rischio.html"
+/>
+
+<link rel="stylesheet" href="../styles/style.css?v=4.0.0.8" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link
+href="
+https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap
+"
+rel="stylesheet"
+/>
+<link rel="icon" href="../images/logo.webp" type="image/png" />
+
+<script defer src="../scripts/script.js?v=4.0.0.8"></script>
+
+<!-- Dati strutturati -->
+<script type="application/ld+json">
+{
+"@context": "https://schema.org",
+"@type": "BlogPosting",
+"headline": "Un registro può cancellare il tuo dominio: la lezione per
+chi costruisce identità digitali",
+"description": "Un registrar ha ottenuto il via libera per eliminare
+un'intera categoria di domini, con 22.000 persone che perdono sito,
+email e accessi legati a un indirizzo pagato fino al 2040. Cosa
+imparare, da sviluppatore, sul rischio di dipendere da infrastrutture
+che non controlli.",
+"datePublished": "2026-09-04",
+"author": {
+"@type": "Person",
+"name": "PikoBit",
+"sameAs": ["
+https://www.youtube.com/@pikobit01
+"]
+}
+}
+</script>
+
+<!-- Google tag (gtag.js) -->
+<script
+async
+src="
+https://www.googletagmanager.com/gtag/js?id=G-TVGN1XBX7H
+"
+></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag() {
+dataLayer.push(arguments);
+}
+gtag("js", new Date());
+
+gtag("config", "G-TVGN1XBX7H");
+</script>
+</head>
+
+<body>
+<header>
+<img src="../images/banner.webp" alt="Pikobit Banner" class="banner" width="1024" height="587" />
+<div class="hamburger" id="hamburger-menu" role="button" tabindex="0" aria-label="Apri menu di navigazione" aria-expanded="false">
+<svg class="icon-svg" viewBox="0 0 448 512" aria-hidden="true"><path d="M0 96C0 78.3 14.3 64 32 64l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 128C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 288c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32L32 448c-17.7 0-32-14.3-32-32s14.3-32 32-32l384 0c17.7 0 32 14.3 32 32z"/></svg>
+</div>
+<div class="overlay" id="overlay"></div>
+<nav id="navbar">
+<ul class="nav-links">
+<li><a href="../index.html">Home</a></li>
+
+<li class="dropdown">
+<a href="#" id="dropdown-toggle" aria-haspopup="true" aria-expanded="false">Servizi ▼</a>
+<ul class="dropdown-menu">
+<li><a href="../websites.html">Siti web personalizzati</a></li>
+<li><a href="../modern-apps.html">Applicazioni moderne</a></li>
+<li>
+<a href="../custom-software.html"
+>Software gestionali su misura</a
+>
+</li>
+<li>
+<a href="../creative-services.html"
+>Servizi Creativi e Soluzioni Complete</a
+>
+</li>
+<li><a href="../lessons.html">Lezioni e tutorial</a></li>
+</ul>
+</li>
+
+<li><a href="../ideas.html">Idee Innovative</a></li>
+<li><a href="../about.html">Chi Sono</a></li>
+<li><a href="../resources.html">Risorse</a></li>
+<li><a href="../contact.html">Contatti</a></li>
+</ul>
+</nav>
+</header>
+
+<main>
+<section class="intro">
+<div class="intro-container">
+<img
+src="../images/logo.webp"
+alt="Logo Pikobit - Tutorial e Progetti di Programmazione"
+class="logo" width="671" height="752" />
+<p class="tagline">Programmazione e strumenti dev</p>
+<h1>
+Un registro può cancellare il tuo dominio: la lezione per chi
+costruisce identità digitali
+</h1>
+<p>
+Uno sviluppatore ha registrato il proprio dominio personale quasi
+venticinque anni fa, pagato fino al 2040. A febbraio smetterà di
+esistere lo stesso, perché il registro ha deciso di eliminare
+un'intera categoria tecnica di indirizzi. Non è un caso isolato: è
+un promemoria su quanto poco controlliamo, davvero, le fondamenta
+digitali su cui costruiamo.
+</p>
+</div>
+</section>
+
+<section class="why-pikobit">
+<h2>Cosa è successo, in breve</h2>
+<div class="article-body">
+<p>
+Nel caso raccontato dallo sviluppatore Neil Fraser, il dominio in
+questione era del tipo <code>xxx.yyy.name</code> — un cosiddetto
+dominio di terzo livello, registrato regolarmente presso un
+operatore accreditato, con tanto di record whois pubblico, esattamente
+come un normale <code>.it</code> o <code>.com</code>. Il registro che
+gestisce l'estensione ha proposto — e ottenuto l'approvazione — di
+eliminare tecnicamente l'intero livello per semplificare la propria
+infrastruttura. Risultato: chi aveva registrato un indirizzo di
+quel tipo lo perde, anche se pagato per altri quindici anni, e il
+livello superiore del dominio (quello senza il nome scelto
+dall'utente) tornerà libero e registrabile da chiunque.
+</p>
+<p>
+Il problema non è "solo" perdere un sito. È che quell'indirizzo era
+usato anche come email, come identità per accedere ad altri servizi,
+e come endpoint per dispositivi IoT connessi. Se qualcun altro
+registra il dominio liberato, può ricreare quello stesso indirizzo
+email e usarlo per resettare password su servizi terzi che non hanno
+modo di sapere che il proprietario è cambiato.
+</p>
+</div>
+</section>
+
+<section class="why-pikobit">
+<h2>La lezione tecnica: mappa da cosa dipendi davvero</h2>
+<div class="article-body">
+<p>
+Molti sviluppatori — e molte piccole attività che si affidano a un
+solo indirizzo email per tutto — non si sono mai chiesti quanti
+servizi dipendono da un singolo dominio che non controllano al 100%.
+Vale la pena farsi, una volta ogni tanto, un piccolo inventario:
+</p>
+<ul>
+<li>
+<strong>Autenticazione:</strong> quanti account (banca, hosting,
+GitHub, provider cloud) usano quell'indirizzo email come unico
+metodo di recupero password?
+</li>
+<li>
+<strong>Firma del codice e accessi:</strong> ci sono chiavi SSH,
+token API o certificati legati a quel dominio o a quell'email?
+</li>
+<li>
+<strong>Dispositivi e integrazioni:</strong> ci sono webhook,
+dispositivi smart-home o automazioni che puntano a un sottodominio
+che gestisci tu?
+</li>
+<li>
+<strong>Terze parti fuori dal tuo controllo:</strong> il dominio,
+il registrar, il provider email e il DNS sono soggetti a decisioni
+di aziende terze che puoi solo subire, non negoziare.
+</li>
+</ul>
+<p>
+Nessuno di questi punti si risolve smettendo di usare domini — sarebbe
+impraticabile. Si risolve sapendo con precisione cosa succederebbe se
+uno di questi anelli si rompesse domani, e avendo almeno un secondo
+fattore di autenticazione (una chiave hardware, un'app authenticator)
+che non dipende dall'email come unico paracadute.
+</p>
+</div>
+</section>
+
+<section class="why-pikobit">
+<h2>Per chi registra domini oggi: preferisci il secondo livello</h2>
+<div class="article-body">
+<p>
+Un dettaglio tecnico spesso ignorato: registrare
+<code>tuonome.com</code> non è la stessa cosa, in termini di
+rischio, che registrare <code>tuonome.provider.com</code> o un
+dominio di terzo livello come quello del caso qui sopra. Nel primo
+caso il contratto è diretto tra te e il registro; nel secondo, sei a
+un livello di distanza in più, soggetto anche alle decisioni
+aziendali di chi gestisce il livello sopra il tuo. Per un progetto
+personale, un portfolio, un piccolo business o un cliente che ti
+chiede di gestire il suo dominio, la scelta di un'estensione
+generica e diffusa (<code>.it</code>, <code>.com</code>, <code>.eu</code>)
+registrata direttamente a tuo nome resta la base più solida: meno
+livelli intermedi significano meno soggetti che, un giorno, possono
+decidere qualcosa al posto tuo.
+</p>
+</div>
+</section>
+
+<section class="why-pikobit">
+<p>
+<strong>Fonte:</strong>
+<a
+href="https://neil.fraser.name/news/2026/09/03/"
+class="cta-link"
+target="_blank"
+rel="noopener noreferrer"
+>.name Termination, il racconto originale di Neil Fraser</a
+>
+</p>
+</section>
+</main>
+
+<footer>
+<p>&copy; 2026 Pikobit. Tutti i diritti riservati.</p>
+<p>
+"Pikobit: Il tuo punto di partenza per creare, imparare e ispirare."
+</p>
+<div class="social-icons">
+<a
+href="
+https://www.youtube.com/@pikobit01
+"
+target="_blank"
+rel="noopener noreferrer"
+ aria-label="YouTube"><svg class="icon-svg" viewBox="0 0 576 512" aria-hidden="true"><path d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z"/></svg></a>
+<a
+href="
+https://www.linkedin.com/in/giuseppe-alaimo-aba40b226
+"
+target="_blank"
+rel="noopener noreferrer"
+ aria-label="LinkedIn"><svg class="icon-svg" viewBox="0 0 448 512" aria-hidden="true"><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg></a>
+<a
+href="
+https://www.instagram.com/pikobit_it/
+"
+target="_blank"
+rel="noopener noreferrer"
+ aria-label="Instagram"><svg class="icon-svg" viewBox="0 0 448 512" aria-hidden="true"><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg></a>
+</div>
+</footer>
+<button id="scrollToTop" title="Torna su">&#8679;</button>
+</body>
+</html>

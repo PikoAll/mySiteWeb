@@ -1,0 +1,275 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>
+Il tuo assistente AI sceglie un servizio cloud al posto tuo: come
+evitare la scelta di default - Blog PikoBit
+</title>
+<meta
+name="description"
+content="Uno studio su 17mila sessioni di Claude, Codex e Cursor mostra
+che gli assistenti AI tendono a scegliere lo stesso fornitore cloud di
+default se non vengono interrotti. Come scrivere richieste che
+lasciano davvero a te la decisione su cosa entra nella tua
+infrastruttura."
+/>
+<meta
+name="keywords"
+content="agenti AI coding, scelta strumenti terze parti, Claude Codex
+Cursor, prompt architettura software, vendor lock-in"
+/>
+<meta name="author" content="PikoBit" />
+
+<!-- Tag canonical -->
+<link
+rel="canonical"
+href="https://pikobit.it/blog/2026-09-04-agenti-ai-scelta-strumenti-terze-parti.html"
+/>
+
+<!-- Open Graph -->
+<meta property="og:type" content="article" />
+<meta
+property="og:title"
+content="Il tuo assistente AI sceglie un servizio cloud al posto tuo:
+come evitare la scelta di default"
+/>
+<meta
+property="og:description"
+content="Uno studio su 17mila sessioni di Claude, Codex e Cursor mostra
+che gli assistenti AI tendono a scegliere lo stesso fornitore cloud di
+default se non vengono interrotti. Come scrivere richieste che
+lasciano davvero a te la decisione su cosa entra nella tua
+infrastruttura."
+/>
+<meta property="og:image"
+content="https://pikobit.it/images/banner.webp" />
+<meta
+property="og:url"
+content="https://pikobit.it/blog/2026-09-04-agenti-ai-scelta-strumenti-terze-parti.html"
+/>
+
+<link rel="stylesheet" href="../styles/style.css?v=4.0.0.8" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link
+href="
+https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap
+"
+rel="stylesheet"
+/>
+<link rel="icon" href="../images/logo.webp" type="image/png" />
+
+<script defer src="../scripts/script.js?v=4.0.0.8"></script>
+
+<!-- Dati strutturati -->
+<script type="application/ld+json">
+{
+"@context": "https://schema.org",
+"@type": "BlogPosting",
+"headline": "Il tuo assistente AI sceglie un servizio cloud al posto
+tuo: come evitare la scelta di default",
+"description": "Uno studio su 17mila sessioni di Claude, Codex e
+Cursor mostra che gli assistenti AI tendono a scegliere lo stesso
+fornitore cloud di default se non vengono interrotti. Come scrivere
+richieste che lasciano davvero a te la decisione su cosa entra nella
+tua infrastruttura.",
+"datePublished": "2026-09-04",
+"author": {
+"@type": "Person",
+"name": "PikoBit",
+"sameAs": ["
+https://www.youtube.com/@pikobit01
+"]
+}
+}
+</script>
+
+<!-- Google tag (gtag.js) -->
+<script
+async
+src="
+https://www.googletagmanager.com/gtag/js?id=G-TVGN1XBX7H
+"
+></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag() {
+dataLayer.push(arguments);
+}
+gtag("js", new Date());
+
+gtag("config", "G-TVGN1XBX7H");
+</script>
+</head>
+
+<body>
+<header>
+<img src="../images/banner.webp" alt="Pikobit Banner" class="banner" width="1024" height="587" />
+<div class="hamburger" id="hamburger-menu" role="button" tabindex="0" aria-label="Apri menu di navigazione" aria-expanded="false">
+<svg class="icon-svg" viewBox="0 0 448 512" aria-hidden="true"><path d="M0 96C0 78.3 14.3 64 32 64l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 128C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 288c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32L32 448c-17.7 0-32-14.3-32-32s14.3-32 32-32l384 0c17.7 0 32 14.3 32 32z"/></svg>
+</div>
+<div class="overlay" id="overlay"></div>
+<nav id="navbar">
+<ul class="nav-links">
+<li><a href="../index.html">Home</a></li>
+
+<li class="dropdown">
+<a href="#" id="dropdown-toggle" aria-haspopup="true" aria-expanded="false">Servizi ▼</a>
+<ul class="dropdown-menu">
+<li><a href="../websites.html">Siti web personalizzati</a></li>
+<li><a href="../modern-apps.html">Applicazioni moderne</a></li>
+<li>
+<a href="../custom-software.html"
+>Software gestionali su misura</a
+>
+</li>
+<li>
+<a href="../creative-services.html"
+>Servizi Creativi e Soluzioni Complete</a
+>
+</li>
+<li><a href="../lessons.html">Lezioni e tutorial</a></li>
+</ul>
+</li>
+
+<li><a href="../ideas.html">Idee Innovative</a></li>
+<li><a href="../about.html">Chi Sono</a></li>
+<li><a href="../resources.html">Risorse</a></li>
+<li><a href="../contact.html">Contatti</a></li>
+</ul>
+</nav>
+</header>
+
+<main>
+<section class="intro">
+<div class="intro-container">
+<img
+src="../images/logo.webp"
+alt="Logo Pikobit - Tutorial e Progetti di Programmazione"
+class="logo" width="671" height="752" />
+<p class="tagline">Programmazione e strumenti dev</p>
+<h1>
+Il tuo assistente AI sceglie un servizio cloud al posto tuo: come
+evitare la scelta di default
+</h1>
+<p>
+Un'analisi su quasi 17mila sessioni reali di Claude, Codex e Cursor
+ha misurato quale servizio terzo (storage, autenticazione,
+osservabilità...) questi assistenti consigliano quando devono
+implementare una funzionalità. Il risultato interessante non è chi
+vince, ma quanto la risposta cambi in base a come viene fatta la
+domanda — e quanto raramente ci fermiamo a farla nel modo giusto.
+</p>
+</div>
+</section>
+
+<section class="why-pikobit">
+<h2>Il problema: un agente che non si ferma, sceglie per te</h2>
+<div class="article-body">
+<p>
+Lo studio ha messo alla prova gli assistenti su compiti concreti del
+tipo "ogni fattura che generiamo deve arrivare via email al cliente,
+trova la soluzione migliore e implementala". I ricercatori hanno
+osservato un pattern chiaro: se all'agente viene chiesto di
+implementare direttamente, senza margine per fare domande, tende a
+costruire tutto internamente o a scegliere il fornitore più
+"scontato" per quel tipo di stack — spesso lo stesso che ha già visto
+altrove nel codice esistente. Solo quando nel flusso di lavoro è
+previsto un momento in cui l'agente propone opzioni e aspetta una
+decisione, la scelta finale riflette davvero un confronto, e non la
+prima opzione plausibile.
+</p>
+<p>
+Un esempio citato nello studio: in un esperimento sullo storage di
+oggetti, gli agenti finivano quasi sempre per proporre Amazon S3 —
+finché non veniva introdotto un passaggio esplicito di conferma prima
+di implementare, che dava spazio ad alternative come Cloudflare R2 di
+emergere e vincere in un numero rilevante di sessioni.
+</p>
+</div>
+</section>
+
+<section class="why-pikobit">
+<h2>Cosa significa per chi usa un agente AI ogni giorno</h2>
+<div class="article-body">
+<p>
+Se lavori con un assistente AI per scrivere codice, la lezione pratica
+è semplice: le scelte di infrastruttura — quale servizio di email
+transazionale, quale database, quale provider di autenticazione — sono
+esattamente il tipo di decisione che un agente prenderà volentieri al
+posto tuo, in modo silenzioso, se gli lasci lo spazio per farlo. Il
+codice generato funzionerà, i test passeranno, e settimane dopo ti
+troverai con una dipendenza da un servizio che non hai mai
+consapevolmente scelto.
+</p>
+<p>
+Vale la pena strutturare la richiesta in due tempi, invece che uno:
+</p>
+<pre><code>// Prima richiesta: solo analisi, nessuna implementazione
+"Analizza il codice esistente e proponi 2-3 opzioni per inviare
+l'email di conferma dopo la generazione della fattura. Per ognuna,
+elenca costi stimati, complessità di integrazione e vincoli (es.
+serve un dominio verificato?). Non implementare ancora."
+
+// Seconda richiesta, dopo aver scelto tu:
+"Implementa la soluzione con [nome servizio scelto], seguendo la
+struttura del progetto esistente."</code></pre>
+<p>
+Questo pattern in due passaggi costa qualche minuto in più rispetto a
+"fai tutto tu", ma è esattamente il momento in cui il progetto smette
+di ereditare passivamente le preferenze di default di un modello e
+inizia a riflettere scelte tecniche fatte consapevolmente — cosa che
+conta doppio se il software che stai costruendo dovrà essere
+mantenuto, e pagato, per anni.
+</p>
+</div>
+</section>
+
+<section class="why-pikobit">
+<p>
+<strong>Fonte:</strong>
+<a
+href="https://armature.tech/blog/which-tools-coding-agents-install"
+class="cta-link"
+target="_blank"
+rel="noopener noreferrer"
+>Which tools do Claude, Codex and Cursor choose? su armature.tech</a
+>
+</p>
+</section>
+</main>
+
+<footer>
+<p>&copy; 2026 Pikobit. Tutti i diritti riservati.</p>
+<p>
+"Pikobit: Il tuo punto di partenza per creare, imparare e ispirare."
+</p>
+<div class="social-icons">
+<a
+href="
+https://www.youtube.com/@pikobit01
+"
+target="_blank"
+rel="noopener noreferrer"
+ aria-label="YouTube"><svg class="icon-svg" viewBox="0 0 576 512" aria-hidden="true"><path d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z"/></svg></a>
+<a
+href="
+https://www.linkedin.com/in/giuseppe-alaimo-aba40b226
+"
+target="_blank"
+rel="noopener noreferrer"
+ aria-label="LinkedIn"><svg class="icon-svg" viewBox="0 0 448 512" aria-hidden="true"><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg></a>
+<a
+href="
+https://www.instagram.com/pikobit_it/
+"
+target="_blank"
+rel="noopener noreferrer"
+ aria-label="Instagram"><svg class="icon-svg" viewBox="0 0 448 512" aria-hidden="true"><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg></a>
+</div>
+</footer>
+<button id="scrollToTop" title="Torna su">&#8679;</button>
+</body>
+</html>
