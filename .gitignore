@@ -1,1 +1,9 @@
 .claude/settings.local.json
+
+# File temporanei .backup lasciati dai tool (regola suprema: mai cancellare,
+# ma non vanno versionati)
+*.tmp.backup
+
+# Cache Python degli script in scripts/
+__pycache__/
+*.pyc
