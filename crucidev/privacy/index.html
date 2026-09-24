@@ -1,4 +1,12 @@
 <!doctype html>
+<!--
+  Informativa privacy dell'app Crucidev, linkata dalla scheda Google Play:
+  l'URL https://pikobit.it/crucidev/privacy/ NON deve cambiare.
+  Nessun Google Analytics (niente gtag) e nessun Google Fonts su questa pagina:
+  l'informativa dichiara "nessun tracciamento", e la pagina che lo dice non
+  traccia e non contatta terzi nemmeno per chi la legge.
+  Il testo IT + EN e' quello dichiarato a Google: si cambia solo con l'app.
+-->
 <html lang="it">
   <head>
     <meta charset="UTF-8" />
@@ -24,8 +32,15 @@
     <link rel="stylesheet" href="../../styles/style.css?v=4.0.0.8" />
     <link rel="icon" href="../../images/logo.webp" type="image/png" />
 
-    <!-- Nessun Google Analytics su questa pagina: e' l'informativa di un'app
-         che non traccia nessuno, e non traccia nemmeno chi la legge. -->
+    <!-- style.css has no rule for links inside body text: without this they
+         render in the browser's default blue, unreadable on the dark panel. -->
+    <style>
+      main a { color: var(--color-accent); }
+      main a:hover { color: white; }
+    </style>
+
+    <script defer src="../../scripts/script.js?v=4.0.0.8"></script>
+
 
     <script type="application/ld+json">
       {
@@ -51,194 +66,306 @@
     </script>
   </head>
   <body>
-    <header>
-      <nav id="navbar" aria-label="Navigazione principale">
-        <ul class="nav-links">
-          <li><a href="../../index.html">Home</a></li>
-          <li><a href="../../contact.html">Contatti</a></li>
-        </ul>
-      </nav>
-    </header>
+<header>
+<img src="../../images/banner.webp" alt="Pikobit Banner" class="banner" width="1024" height="587" />
+<div class="hamburger" id="hamburger-menu" role="button" tabindex="0" aria-label="Apri menu di navigazione" aria-expanded="false">
+<svg class="icon-svg" viewBox="0 0 448 512" aria-hidden="true"><path d="M0 96C0 78.3 14.3 64 32 64l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 128C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 288c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32L32 448c-17.7 0-32-14.3-32-32s14.3-32 32-32l384 0c17.7 0 32 14.3 32 32z"/></svg>
+</div>
+<div class="overlay" id="overlay"></div>
+<nav id="navbar">
+<ul class="nav-links">
+<li><a href="../../index.html">Home</a></li>
+
+<li class="dropdown">
+<a href="#" id="dropdown-toggle" aria-haspopup="true" aria-expanded="false">Servizi ▼</a>
+<ul class="dropdown-menu">
+<li><a href="../../websites.html">Siti web personalizzati</a></li>
+<li><a href="../../modern-apps.html">Applicazioni moderne</a></li>
+<li>
+<a href="../../custom-software.html"
+>Software gestionali su misura</a
+>
+</li>
+<li>
+<a href="../../creative-services.html"
+>Servizi Creativi e Soluzioni Complete</a
+>
+</li>
+<li><a href="../../lessons.html">Lezioni e tutorial</a></li>
+</ul>
+</li>
+
+<li><a href="../../ideas.html">Idee Innovative</a></li>
+<li><a href="../../about.html">Chi Sono</a></li>
+<li><a href="../../resources.html">Risorse</a></li>
+<li><a href="../../contact.html">Contatti</a></li>
+</ul>
+</nav>
+</header>
+
     <main>
-      <section lang="it" id="it">
-        <h1>Crucidev — Informativa sulla privacy</h1>
-        <p><strong>Ultimo aggiornamento:</strong> 24 settembre 2026</p>
-        <p>
-          <a href="#en" hreflang="en">English version below</a>
-        </p>
-
+      <section class="intro" lang="it" id="it">
+        <div class="intro-container">
+          <h1>Crucidev — Informativa sulla privacy</h1>
+          <p><strong>Ultimo aggiornamento:</strong> 24 settembre 2026</p>
+          <p>
+            <a href="#en" hreflang="en">English version below</a>
+          </p>
+        </div>
+      </section>
+      <section class="why-pikobit" lang="it">
         <h2>Chi è il titolare</h2>
-        <p>
-          Crucidev (pacchetto Android <code>it.pikobit.crucidev</code>) è
-          sviluppata da Giuseppe Alaimo — PikoBit,
-          <a href="https://pikobit.it/">pikobit.it</a>. Per qualunque domanda
-          sulla privacy:
-          <a href="mailto:piko.bit.00@gmail.com">piko.bit.00@gmail.com</a>.
-        </p>
-
+        <div class="article-body">
+          <p>
+            Crucidev (pacchetto Android <code>it.pikobit.crucidev</code>) è
+            sviluppata da Giuseppe Alaimo — PikoBit,
+            <a href="https://pikobit.it/">pikobit.it</a>. Per qualunque domanda
+            sulla privacy:
+            <a href="mailto:piko.bit.00@gmail.com">piko.bit.00@gmail.com</a>.
+          </p>
+        </div>
+      </section>
+      <section class="why-pikobit" lang="it">
         <h2>In breve</h2>
-        <ul>
-          <li>Non serve un account e non c'è nessun login.</li>
-          <li>
-            L'app <strong>non raccoglie e non condivide dati personali</strong>:
-            non ha il permesso di accesso a Internet e non contiene strumenti di
-            analisi, di segnalazione dei crash o di pubblicità.
-          </li>
-          <li>Non ci sono acquisti in-app né pubblicità.</li>
-          <li>Tutto ciò che l'app salva resta sul tuo telefono.</li>
-        </ul>
-
+        <div class="article-body">
+          <ul>
+            <li>Non serve un account e non c'è nessun login.</li>
+            <li>
+              L'app <strong>non raccoglie e non condivide dati personali</strong>:
+              non ha il permesso di accesso a Internet e non contiene strumenti di
+              analisi, di segnalazione dei crash o di pubblicità.
+            </li>
+            <li>Non ci sono acquisti in-app né pubblicità.</li>
+            <li>Tutto ciò che l'app salva resta sul tuo telefono.</li>
+          </ul>
+        </div>
+      </section>
+      <section class="why-pikobit" lang="it">
         <h2>Cosa salva l'app sul telefono</h2>
-        <p>
-          Per farti riprendere da dove eri, l'app tiene in un database locale,
-          solo sul tuo dispositivo:
-        </p>
-        <ul>
-          <li>
-            le griglie iniziate e completate, con lettere inserite e tempi;
-          </li>
-          <li>la serie di giorni della sfida del giorno;</li>
-          <li>
-            le coin dell'app, una moneta virtuale che si guadagna giocando e non
-            si compra;
-          </li>
-          <li>le voci incontrate, per il ripasso;</li>
-          <li>le preferenze: tema, suono, vibrazione.</li>
-        </ul>
-        <p>
-          Nessuno di questi dati viene inviato a noi o a terzi. Non contengono
-          nome, email, posizione o altri dati che ti identificano.
-        </p>
-
+        <div class="article-body">
+          <p>
+            Per farti riprendere da dove eri, l'app tiene in un database locale,
+            solo sul tuo dispositivo:
+          </p>
+          <ul>
+            <li>
+              le griglie iniziate e completate, con lettere inserite e tempi;
+            </li>
+            <li>la serie di giorni della sfida del giorno;</li>
+            <li>
+              le coin dell'app, una moneta virtuale che si guadagna giocando e non
+              si compra;
+            </li>
+            <li>le voci incontrate, per il ripasso;</li>
+            <li>le preferenze: tema, suono, vibrazione.</li>
+          </ul>
+          <p>
+            Nessuno di questi dati viene inviato a noi o a terzi. Non contengono
+            nome, email, posizione o altri dati che ti identificano.
+          </p>
+        </div>
+      </section>
+      <section class="why-pikobit" lang="it">
         <h2>Backup di Android</h2>
-        <p>
-          Se sul tuo telefono è attivo il backup di Android, il sistema può
-          includere i dati dell'app nel backup del tuo account Google, secondo
-          le tue impostazioni. Quel backup è gestito da Google: noi non vi
-          abbiamo accesso.
-        </p>
-
+        <div class="article-body">
+          <p>
+            Se sul tuo telefono è attivo il backup di Android, il sistema può
+            includere i dati dell'app nel backup del tuo account Google, secondo
+            le tue impostazioni. Quel backup è gestito da Google: noi non vi
+            abbiamo accesso.
+          </p>
+        </div>
+      </section>
+      <section class="why-pikobit" lang="it">
         <h2>Link esterni</h2>
-        <p>
-          Dalla schermata iniziale puoi aprire il sito
-          <a href="https://pikobit.it/">pikobit.it</a>. Si apre nel tuo browser
-          solo se tocchi il link, e da lì vale l'informativa del sito.
-        </p>
-
+        <div class="article-body">
+          <p>
+            Dalla schermata iniziale puoi aprire il sito
+            <a href="https://pikobit.it/">pikobit.it</a>. Si apre nel tuo browser
+            solo se tocchi il link, e da lì vale l'informativa del sito.
+          </p>
+        </div>
+      </section>
+      <section class="why-pikobit" lang="it">
         <h2>Come cancellare i dati</h2>
-        <ul>
-          <li>
-            <strong>Impostazioni → Azzera progressi</strong> cancella griglie,
-            ripasso e serie, e riporta le coin al valore iniziale.
-          </li>
-          <li>
-            Per cancellare tutto, anche le preferenze: Impostazioni di Android →
-            App → Crucidev → Spazio di archiviazione → Cancella dati, oppure
-            disinstalla l'app.
-          </li>
-        </ul>
-
+        <div class="article-body">
+          <ul>
+            <li>
+              <strong>Impostazioni → Azzera progressi</strong> cancella griglie,
+              ripasso e serie, e riporta le coin al valore iniziale.
+            </li>
+            <li>
+              Per cancellare tutto, anche le preferenze: Impostazioni di Android →
+              App → Crucidev → Spazio di archiviazione → Cancella dati, oppure
+              disinstalla l'app.
+            </li>
+          </ul>
+        </div>
+      </section>
+      <section class="why-pikobit" lang="it">
         <h2>Minori</h2>
-        <p>
-          Crucidev è un cruciverba sui termini dell'informatica, pensato per chi
-          programma. Non raccoglie dati di nessuno, minori compresi.
-        </p>
-
+        <div class="article-body">
+          <p>
+            Crucidev è un cruciverba sui termini dell'informatica, pensato per chi
+            programma. Non raccoglie dati di nessuno, minori compresi.
+          </p>
+        </div>
+      </section>
+      <section class="why-pikobit" lang="it">
         <h2>Modifiche</h2>
-        <p>
-          Se l'app cambierà il modo di trattare i dati, questa pagina verrà
-          aggiornata prima, con una nuova data in alto.
-        </p>
+        <div class="article-body">
+          <p>
+            Se l'app cambierà il modo di trattare i dati, questa pagina verrà
+            aggiornata prima, con una nuova data in alto.
+          </p>
+        </div>
       </section>
 
       <hr />
 
-      <section lang="en" id="en">
-        <h1>Crucidev — Privacy policy</h1>
-        <p><strong>Last updated:</strong> 24 September 2026</p>
-
+      <section class="intro" lang="en" id="en">
+        <div class="intro-container">
+          <h1>Crucidev — Privacy policy</h1>
+          <p><strong>Last updated:</strong> 24 September 2026</p>
+        </div>
+      </section>
+      <section class="why-pikobit" lang="en">
         <h2>Who we are</h2>
-        <p>
-          Crucidev (Android package <code>it.pikobit.crucidev</code>) is
-          developed by Giuseppe Alaimo — PikoBit,
-          <a href="https://pikobit.it/">pikobit.it</a>. For any privacy
-          question:
-          <a href="mailto:piko.bit.00@gmail.com">piko.bit.00@gmail.com</a>.
-        </p>
-
+        <div class="article-body">
+          <p>
+            Crucidev (Android package <code>it.pikobit.crucidev</code>) is
+            developed by Giuseppe Alaimo — PikoBit,
+            <a href="https://pikobit.it/">pikobit.it</a>. For any privacy
+            question:
+            <a href="mailto:piko.bit.00@gmail.com">piko.bit.00@gmail.com</a>.
+          </p>
+        </div>
+      </section>
+      <section class="why-pikobit" lang="en">
         <h2>In short</h2>
-        <ul>
-          <li>No account and no login.</li>
-          <li>
-            The app <strong>does not collect or share personal data</strong>: it
-            has no Internet permission and contains no analytics, crash
-            reporting or advertising tools.
-          </li>
-          <li>No in-app purchases and no ads.</li>
-          <li>Everything the app stores stays on your phone.</li>
-        </ul>
-
+        <div class="article-body">
+          <ul>
+            <li>No account and no login.</li>
+            <li>
+              The app <strong>does not collect or share personal data</strong>: it
+              has no Internet permission and contains no analytics, crash
+              reporting or advertising tools.
+            </li>
+            <li>No in-app purchases and no ads.</li>
+            <li>Everything the app stores stays on your phone.</li>
+          </ul>
+        </div>
+      </section>
+      <section class="why-pikobit" lang="en">
         <h2>What the app stores on your phone</h2>
-        <p>
-          To let you pick up where you left off, the app keeps in a local
-          database, only on your device:
-        </p>
-        <ul>
-          <li>
-            started and completed grids, with the letters entered and times;
-          </li>
-          <li>your daily challenge streak;</li>
-          <li>
-            the app's coins, a virtual currency earned by playing and never
-            sold;
-          </li>
-          <li>the terms you have met, for review;</li>
-          <li>your preferences: theme, sound, vibration.</li>
-        </ul>
-        <p>
-          None of this data is sent to us or to third parties. It contains no
-          name, email, location or other data that identifies you.
-        </p>
-
+        <div class="article-body">
+          <p>
+            To let you pick up where you left off, the app keeps in a local
+            database, only on your device:
+          </p>
+          <ul>
+            <li>
+              started and completed grids, with the letters entered and times;
+            </li>
+            <li>your daily challenge streak;</li>
+            <li>
+              the app's coins, a virtual currency earned by playing and never
+              sold;
+            </li>
+            <li>the terms you have met, for review;</li>
+            <li>your preferences: theme, sound, vibration.</li>
+          </ul>
+          <p>
+            None of this data is sent to us or to third parties. It contains no
+            name, email, location or other data that identifies you.
+          </p>
+        </div>
+      </section>
+      <section class="why-pikobit" lang="en">
         <h2>Android backup</h2>
-        <p>
-          If Android backup is enabled on your phone, the system may include the
-          app's data in your Google account backup, according to your settings.
-          That backup is managed by Google: we have no access to it.
-        </p>
-
+        <div class="article-body">
+          <p>
+            If Android backup is enabled on your phone, the system may include the
+            app's data in your Google account backup, according to your settings.
+            That backup is managed by Google: we have no access to it.
+          </p>
+        </div>
+      </section>
+      <section class="why-pikobit" lang="en">
         <h2>External links</h2>
-        <p>
-          From the home screen you can open
-          <a href="https://pikobit.it/">pikobit.it</a>. It opens in your browser
-          only if you tap the link, and the website's own policy applies there.
-        </p>
-
+        <div class="article-body">
+          <p>
+            From the home screen you can open
+            <a href="https://pikobit.it/">pikobit.it</a>. It opens in your browser
+            only if you tap the link, and the website's own policy applies there.
+          </p>
+        </div>
+      </section>
+      <section class="why-pikobit" lang="en">
         <h2>How to delete your data</h2>
-        <ul>
-          <li>
-            <strong>Settings → Azzera progressi</strong> (reset progress)
-            deletes grids, review and streak, and resets coins to their starting
-            value.
-          </li>
-          <li>
-            To delete everything, preferences included: Android Settings → Apps
-            → Crucidev → Storage → Clear data, or uninstall the app.
-          </li>
-        </ul>
-
+        <div class="article-body">
+          <ul>
+            <li>
+              <strong>Settings → Azzera progressi</strong> (reset progress)
+              deletes grids, review and streak, and resets coins to their starting
+              value.
+            </li>
+            <li>
+              To delete everything, preferences included: Android Settings → Apps
+              → Crucidev → Storage → Clear data, or uninstall the app.
+            </li>
+          </ul>
+        </div>
+      </section>
+      <section class="why-pikobit" lang="en">
         <h2>Children</h2>
-        <p>
-          Crucidev is a crossword about computing terms, made for people who
-          write code. It collects no data from anyone, children included.
-        </p>
-
+        <div class="article-body">
+          <p>
+            Crucidev is a crossword about computing terms, made for people who
+            write code. It collects no data from anyone, children included.
+          </p>
+        </div>
+      </section>
+      <section class="why-pikobit" lang="en">
         <h2>Changes</h2>
-        <p>
-          If the app ever changes how it handles data, this page will be updated
-          first, with a new date at the top.
-        </p>
+        <div class="article-body">
+          <p>
+            If the app ever changes how it handles data, this page will be updated
+            first, with a new date at the top.
+          </p>
+        </div>
       </section>
     </main>
+
+<footer>
+<p>&copy; 2026 Pikobit. Tutti i diritti riservati.</p>
+<p>
+"Pikobit: Il tuo punto di partenza per creare, imparare e ispirare."
+</p>
+<div class="social-icons">
+<a
+href="
+https://www.youtube.com/@pikobit01
+"
+target="_blank"
+rel="noopener noreferrer"
+ aria-label="YouTube"><svg class="icon-svg" viewBox="0 0 576 512" aria-hidden="true"><path d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z"/></svg></a>
+<a
+href="
+https://www.linkedin.com/in/giuseppe-alaimo-aba40b226
+"
+target="_blank"
+rel="noopener noreferrer"
+ aria-label="LinkedIn"><svg class="icon-svg" viewBox="0 0 448 512" aria-hidden="true"><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg></a>
+<a
+href="
+https://www.instagram.com/pikobit_it/
+"
+target="_blank"
+rel="noopener noreferrer"
+ aria-label="Instagram"><svg class="icon-svg" viewBox="0 0 448 512" aria-hidden="true"><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg></a>
+</div>
+</footer>
+<button id="scrollToTop" title="Torna su">&#8679;</button>
   </body>
 </html>
