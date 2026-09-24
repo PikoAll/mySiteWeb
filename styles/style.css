@@ -6,6 +6,25 @@
   --color-cta-hover: orangered;
 }
 
+/* Poppins servito dal sito stesso (niente richieste a fonts.googleapis.com /
+   fonts.gstatic.com): file da @fontsource/poppins, licenza OFL in
+   fonts/poppins/LICENSE. Solo i due pesi usati davvero nel sito, 400 e 600. */
+@font-face {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("../fonts/poppins/poppins-latin-400-normal.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("../fonts/poppins/poppins-latin-600-normal.woff2") format("woff2");
+}
+
 /* Generale */
 html,
 body {
@@ -19,6 +38,26 @@ body {
   background-color: var(--color-bg);
   color: white;
   line-height: 1.6;
+}
+
+/* Colore dei link uniforme su tutto il sito: prima non esisteva una regola
+   generica su `a`, quindi i link senza classe (corpo del testo, pagine senza
+   override dedicato) prendevano il blu di default del browser, con contrasto
+   insufficiente sullo sfondo scuro del sito. Le regole piu' specifiche
+   (nav, .cta-link, .article-box a, ecc.) restano invariate: qui sotto vince
+   solo dove non c'e' gia' un colore dedicato. */
+a {
+  color: var(--color-accent);
+  text-decoration: underline;
+}
+
+a:hover,
+a:focus-visible {
+  color: white;
+}
+
+a:visited {
+  color: var(--color-accent);
 }
 
 /* Blocchi di codice: contenere le righe lunghe invece di allargare la pagina */
