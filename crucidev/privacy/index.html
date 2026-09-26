@@ -2,9 +2,11 @@
 <!--
   Informativa privacy dell'app Crucidev, linkata dalla scheda Google Play:
   l'URL https://pikobit.it/crucidev/privacy/ NON deve cambiare.
-  Nessun Google Analytics (niente gtag) e nessun Google Fonts su questa pagina:
-  l'informativa dichiara "nessun tracciamento", e la pagina che lo dice non
-  traccia e non contatta terzi nemmeno per chi la legge.
+  Nessun Google Analytics (niente gtag) e nessuna richiesta a Google Fonts su
+  questa pagina: l'informativa dichiara "nessun tracciamento", e la pagina che
+  lo dice non contatta terzi nemmeno per chi la legge. Il font Poppins e'
+  servito da fonts/poppins/ (file locali, licenza OFL), non da
+  fonts.googleapis.com: uniforme col resto del sito senza contattare terzi.
   Il testo IT + EN e' quello dichiarato a Google: si cambia solo con l'app.
 -->
 <html lang="it">
@@ -29,17 +31,17 @@
     <meta property="og:url" content="https://pikobit.it/crucidev/privacy/" />
     <meta property="og:image" content="https://pikobit.it/images/banner.webp" />
 
-    <link rel="stylesheet" href="../../styles/style.css?v=4.0.0.9" />
+    <link rel="stylesheet" href="../../styles/style.css?v=4.0.0.10" />
+    <link
+      rel="preload"
+      href="../../fonts/poppins/poppins-latin-400-normal.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
     <link rel="icon" href="../../images/logo.webp" type="image/png" />
 
-    <!-- style.css has no rule for links inside body text: without this they
-         render in the browser's default blue, unreadable on the dark panel. -->
-    <style>
-      main a { color: var(--color-accent); }
-      main a:hover { color: white; }
-    </style>
-
-    <script defer src="../../scripts/script.js?v=4.0.0.9"></script>
+    <script defer src="../../scripts/script.js?v=4.0.0.10"></script>
 
 
     <script type="application/ld+json">
