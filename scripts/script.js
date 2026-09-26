@@ -185,3 +185,113 @@ document.addEventListener("DOMContentLoaded", () => {
 
   /*FINE DISPENE FOTO PER PAGINA CREATIVE SERVICES*/
 });
+
+// Reveal on scroll: only sections below the fold, only with JS (never the LCP).
+(() => {
+  if (
+    !("IntersectionObserver" in window) ||
+    window.matchMedia("(prefers-reduced-motion: reduce)").matches
+  )
+    return;
+  const targets = Array.from(
+    document.querySelectorAll("main > section:not(.intro)"),
+  ).filter((el) => el.getBoundingClientRect().top > window.innerHeight);
+  if (!targets.length) return;
+  const io = new IntersectionObserver(
+    (entries) =>
+      entries.forEach((e) => {
+        if (!e.isIntersecting) return;
+        e.target.classList.add("is-visible");
+        io.unobserve(e.target);
+      }),
+    // Root extended upwards: a section jumped over counts as seen.
+    { rootMargin: "100000px 0px -8% 0px" },
+  );
+  targets.forEach((el) => {
+    el.classList.add("reveal");
+    io.observe(el);
+  });
+})();
+
+// Page scene (scripts/fx/, declared with data-fx): lazy, fail-closed (else the
+// static CSS background). Blog articles get the header strip from here, so
+// the ones published by the weekly script get it too.
+(() => {
+  const intro = document.querySelector("main .intro-container");
+  if (!document.querySelector("[data-fx]") && intro && /\/blog\//.test(location.pathname)) {
+    const strip = document.createElement("div");
+    strip.className = "fx-strip";
+    strip.dataset.fx = "circuit";
+    strip.dataset.fxMode = "strip";
+    intro.prepend(strip);
+  }
+  const host = document.querySelector("[data-fx]");
+  const scene = host && host.dataset.fx;
+  let canvasOk = false;
+  try {
+    canvasOk = !!document.createElement("canvas").getContext("2d");
+  } catch (e) {}
+  if (
+    !/^[a-z]+$/.test(scene || "") ||
+    !canvasOk ||
+    matchMedia("(prefers-reduced-motion: reduce)").matches ||
+    !(navigator.hardwareConcurrency > 2) ||
+    !("IntersectionObserver" in window && "ResizeObserver" in window)
+  )
+    return;
+  // same ?v= as this file
+  const base = document.querySelector('script[src*="scripts/script.js"]').src;
+  const add = (name, next) => {
+    const s = document.createElement("script");
+    s.src = base.replace("script.js", "fx/" + name + ".js");
+    s.onload = next;
+    document.head.appendChild(s);
+  };
+  // fx.css before the canvas mounts
+  const load = () => {
+    const l = document.createElement("link");
+    l.rel = "stylesheet";
+    l.href = base.replace("scripts/script.js", "styles/fx.css");
+    l.onload = () => add(scene, () => add("core"));
+    document.head.appendChild(l);
+  };
+  const idle = () =>
+    "requestIdleCallback" in window ? requestIdleCallback(load, { timeout: 3000 }) : setTimeout(load, 1500);
+  if (document.readyState === "complete") idle();
+  else addEventListener("load", idle, { once: true });
+})();
+
+// Mouse only: card spotlight and magnetic standalone CTAs.
+(() => {
+  if (!matchMedia("(hover: hover) and (pointer: fine)").matches) return;
+  if (matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  let raf = 0;
+  let ev = null;
+  let pulled = null;
+  const apply = () => {
+    raf = 0;
+    const t = ev.target instanceof Element ? ev.target : null;
+    const card = t && t.closest(".goals li, .why-pikobit li");
+    if (card) {
+      const r = card.getBoundingClientRect();
+      card.style.setProperty("--mx", ev.clientX - r.left + "px");
+      card.style.setProperty("--my", ev.clientY - r.top + "px");
+    }
+    const cta = t && t.closest(".intro-container > a.cta-link");
+    if (pulled && pulled !== cta) pulled.style.transform = "";
+    pulled = cta;
+    if (cta) {
+      const r = cta.getBoundingClientRect();
+      const pull = (d, k) => Math.max(-6, Math.min(6, d * k)).toFixed(1) + "px";
+      cta.style.transform = `translate(${pull(ev.clientX - r.left - r.width / 2, 0.15)}, ${pull(ev.clientY - r.top - r.height / 2, 0.3)})`;
+    }
+  };
+  document.addEventListener(
+    "pointermove",
+    (e) => {
+      ev = e;
+      raf = raf || requestAnimationFrame(apply);
+    },
+    { passive: true },
+  );
+})();
