@@ -5,8 +5,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const navbar = document.getElementById("navbar");
   const overlay = document.getElementById("overlay");
   const scrollToTopButton = document.getElementById("scrollToTop");
-  const dropdownToggle = document.getElementById("dropdown-toggle");
-  const dropdownMenu = document.querySelector(".dropdown-menu");
 
   // Gestione click sul pulsante hamburger
   hamburger.addEventListener("click", (event) => {
@@ -70,42 +68,78 @@ document.addEventListener("DOMContentLoaded", () => {
     console.log("EVENTO: Click sul bottone 'Torna su'");
   });
 
-  // Gestione apertura e chiusura del dropdown menu
-  dropdownToggle.addEventListener("click", (event) => {
-    event.preventDefault();
-    event.stopPropagation(); // Evita conflitti con altri listener
-    if (dropdownMenu.style.display === "block") {
-      dropdownMenu.style.display = "none";
-      dropdownToggle.setAttribute("aria-expanded", "false");
-      console.log("EVENTO: Click sul dropdown, chiuso");
-    } else {
-      dropdownMenu.style.display = "block";
-      dropdownToggle.setAttribute("aria-expanded", "true");
-      console.log("EVENTO: Click sul dropdown, aperto");
+  // Dropdown menus ("Servizi", "Dove lavoro", ...): handled by class, so any
+  // number of <li class="dropdown"> works. The toggle is the <a> child, the
+  // menu is the .dropdown-menu child. Open state = .active class on the menu
+  // (never an inline style: it would disable the CSS :hover on desktop).
+  const dropdowns = Array.from(document.querySelectorAll(".dropdown"))
+    .map((root) => ({
+      root,
+      toggle: root.querySelector(":scope > a"),
+      menu: root.querySelector(":scope > .dropdown-menu"),
+    }))
+    .filter((d) => d.toggle && d.menu);
+
+  const setOpen = (d, open) => {
+    d.menu.classList.toggle("active", open);
+    d.toggle.setAttribute("aria-expanded", open ? "true" : "false");
+  };
+  const closeAll = (except) =>
+    dropdowns.forEach((d) => d !== except && setOpen(d, false));
+
+  dropdowns.forEach((d) => {
+    d.toggle.addEventListener("click", (event) => {
+      event.preventDefault();
+      event.stopPropagation(); // Evita conflitti con altri listener
+      const open = !d.menu.classList.contains("active");
+      closeAll(d);
+      setOpen(d, open);
+    });
+
+    d.toggle.addEventListener("keydown", (event) => {
+      if (event.key === " ") {
+        event.preventDefault(); // evita lo scroll pagina sullo Spazio
+        d.toggle.click();
+      } else if (event.key === "ArrowDown") {
+        event.preventDefault();
+        closeAll(d);
+        setOpen(d, true);
+        const first = d.menu.querySelector("a");
+        if (first) first.focus();
+      }
+    });
+
+    // Tab fuori dalla tendina: si chiude. Solo da tastiera: un "focusout"
+    // generico scatterebbe anche al tocco su un'altra voce, e nel menu mobile
+    // (fisarmonica) la chiusura sposterebbe le voci prima che arrivi il click.
+    d.root.addEventListener("keydown", (event) => {
+      if (event.key !== "Tab") return;
+      setTimeout(() => {
+        if (!d.root.contains(document.activeElement)) setOpen(d, false);
+      });
+    });
+  });
+
+  // Esc chiude la tendina aperta e riporta il focus sul suo pulsante
+  document.addEventListener("keydown", (event) => {
+    if (event.key !== "Escape") return;
+    const open = dropdowns.find((d) => d.menu.classList.contains("active"));
+    if (open) {
+      setOpen(open, false);
+      open.toggle.focus();
     }
   });
 
-  // Click al di fuori del dropdown per chiuderlo
+  // Click al di fuori delle tendine: le chiude (e chiude il menu mobile)
   document.addEventListener("click", (event) => {
+    if (dropdowns.some((d) => d.root.contains(event.target))) return;
+    closeAll();
     if (
-      !dropdownToggle.contains(event.target) &&
-      !dropdownMenu.contains(event.target)
+      navbar.classList.contains("active") ||
+      overlay.classList.contains("active")
     ) {
-      dropdownMenu.style.display = "none";
-      dropdownToggle.setAttribute("aria-expanded", "false");
-      console.log("EVENTO: Click fuori dal dropdown, chiuso");
-      // Verifica se il menu è aperto
-      if (
-        navbar.classList.contains("active") ||
-        overlay.classList.contains("active")
-      ) {
-        console.log(
-          "EVENTO: Menu aperto, chiudo simulando clic sull'hamburger",
-        );
-
-        // Simula un clic sull'hamburger
-        hamburger.click();
-      }
+      console.log("EVENTO: Menu aperto, chiudo simulando clic sull'hamburger");
+      hamburger.click();
     }
   });
 
@@ -123,6 +157,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const slide = document.querySelector(".carousel-slide");
   const images = document.querySelectorAll(".carousel-slide img");
   let currentIndex = 0;
+  if (!slide || images.length === 0) return; // pagina senza carosello
 
   // Calcola la larghezza dell'immagine dinamicamente
   const updateWidth = () => images[0].clientWidth;
