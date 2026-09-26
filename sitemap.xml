@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
         <loc>https://pikobit.it/</loc>
-        <lastmod>2024-12-29</lastmod>
+        <lastmod>2026-09-26</lastmod>
         <priority>1.0</priority>
     </url>
     <url>
@@ -17,17 +17,17 @@
     </url>
      <url>
         <loc>https://pikobit.it/websites.html</loc>
-        <lastmod>2024-12-30</lastmod>
+        <lastmod>2026-09-26</lastmod>
         <priority>0.8</priority>
     </url>
      <url>
         <loc>https://pikobit.it/modern-apps.html</loc>
-        <lastmod>2024-12-30</lastmod>
+        <lastmod>2026-09-26</lastmod>
         <priority>0.8</priority>
     </url>
      <url>
         <loc>https://pikobit.it/custom-software.html</loc>
-        <lastmod>2024-12-30</lastmod>
+        <lastmod>2026-09-26</lastmod>
         <priority>0.8</priority>
     </url>
      <url>
@@ -42,7 +42,7 @@
     </url>
     <url>
         <loc>https://pikobit.it/resources.html</loc>
-        <lastmod>2024-12-31</lastmod>
+        <lastmod>2026-09-26</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
@@ -53,222 +53,327 @@
     </url>
     <url>
         <loc>https://pikobit.it/blog/2026-07-28-mcp-specifica-stateless.html</loc>
-        <lastmod>2026-07-28</lastmod>
+        <lastmod>2026-09-26</lastmod>
         <priority>0.6</priority>
     </url>
     <url>
         <loc>https://pikobit.it/blog/2026-07-28-multa-lusha-vendita-dati-personali.html</loc>
-        <lastmod>2026-07-28</lastmod>
+        <lastmod>2026-09-26</lastmod>
         <priority>0.6</priority>
     </url>
     <url>
         <loc>https://pikobit.it/blog/2026-07-28-passkey-spiegate-semplice.html</loc>
-        <lastmod>2026-07-28</lastmod>
+        <lastmod>2026-09-26</lastmod>
         <priority>0.6</priority>
     </url>
     <url>
         <loc>https://pikobit.it/blog/2026-07-28-phishing-finto-portale-automobilista.html</loc>
-        <lastmod>2026-07-28</lastmod>
+        <lastmod>2026-09-26</lastmod>
         <priority>0.6</priority>
     </url>
     <url>
         <loc>https://pikobit.it/blog/2026-07-28-strumenti-dev-della-settimana.html</loc>
-        <lastmod>2026-07-28</lastmod>
+        <lastmod>2026-09-26</lastmod>
         <priority>0.6</priority>
     </url>
     <url>
         <loc>https://pikobit.it/blog/2026-07-29-gemma-26b-2gb-ram-mac.html</loc>
-        <lastmod>2026-07-29</lastmod>
+        <lastmod>2026-09-26</lastmod>
         <priority>0.6</priority>
     </url>
     <url>
         <loc>https://pikobit.it/blog/2026-07-29-junior-developer-pipeline-rotta.html</loc>
-        <lastmod>2026-07-29</lastmod>
+        <lastmod>2026-09-26</lastmod>
         <priority>0.6</priority>
     </url>
     <url>
         <loc>https://pikobit.it/blog/2026-07-29-slopsquatting-pacchetti-ai-allucinati.html</loc>
-        <lastmod>2026-07-29</lastmod>
+        <lastmod>2026-09-26</lastmod>
         <priority>0.6</priority>
     </url>
     <url>
         <loc>https://pikobit.it/blog/2026-07-29-vibe-coding-fine-luna-di-miele.html</loc>
-        <lastmod>2026-07-29</lastmod>
+        <lastmod>2026-09-26</lastmod>
         <priority>0.6</priority>
     </url>
     <url>
         <loc>https://pikobit.it/blog/2026-07-30-junior-developer-ia.html</loc>
-        <lastmod>2026-07-30</lastmod>
+        <lastmod>2026-09-26</lastmod>
         <priority>0.6</priority>
     </url>
     <url>
         <loc>https://pikobit.it/blog/2026-07-30-slopsquatting-pacchetti-ai-fake.html</loc>
-        <lastmod>2026-07-30</lastmod>
+        <lastmod>2026-09-26</lastmod>
         <priority>0.6</priority>
     </url>
     <url>
         <loc>https://pikobit.it/blog/2026-07-30-turbofieldfare-ai-in-2gb-ram.html</loc>
-        <lastmod>2026-07-30</lastmod>
+        <lastmod>2026-09-26</lastmod>
         <priority>0.6</priority>
     </url>
     <url>
         <loc>https://pikobit.it/blog/2026-07-30-vibe-coding-dal-caos-alle-specifiche.html</loc>
-        <lastmod>2026-07-30</lastmod>
+        <lastmod>2026-09-26</lastmod>
         <priority>0.6</priority>
     </url>
     <url>
         <loc>https://pikobit.it/blog/2026-07-31-github-stacked-pull-requests.html</loc>
-        <lastmod>2026-07-31</lastmod>
+        <lastmod>2026-09-26</lastmod>
         <priority>0.6</priority>
     </url>
     <url>
         <loc>https://pikobit.it/blog/2026-07-31-skills-vs-mcp-differenze.html</loc>
-        <lastmod>2026-07-31</lastmod>
+        <lastmod>2026-09-26</lastmod>
         <priority>0.6</priority>
     </url>
     <url>
         <loc>https://pikobit.it/blog/2026-07-31-ferrari-ftm-aerodinamica-f1.html</loc>
-        <lastmod>2026-07-31</lastmod>
+        <lastmod>2026-09-26</lastmod>
         <priority>0.6</priority>
     </url>
     <url>
         <loc>https://pikobit.it/blog/2026-07-31-tv-box-android-frode-pubblicitaria.html</loc>
-        <lastmod>2026-07-31</lastmod>
+        <lastmod>2026-09-26</lastmod>
         <priority>0.6</priority>
     </url>
     <url>
         <loc>https://pikobit.it/blog/2026-08-07-google-maps-ask-maps-gemini-ai.html</loc>
-        <lastmod>2026-08-07</lastmod>
+        <lastmod>2026-09-26</lastmod>
         <priority>0.6</priority>
     </url>
     <url>
         <loc>https://pikobit.it/blog/2026-08-07-herdr-runtime-agenti-ai-yc.html</loc>
-        <lastmod>2026-08-07</lastmod>
+        <lastmod>2026-09-26</lastmod>
         <priority>0.6</priority>
     </url>
     <url>
         <loc>https://pikobit.it/blog/2026-08-07-microsoft-skillopt-skill-agenti-ai.html</loc>
-        <lastmod>2026-08-07</lastmod>
+        <lastmod>2026-09-26</lastmod>
         <priority>0.6</priority>
     </url>
     <url>
         <loc>https://pikobit.it/blog/2026-08-07-pareto-frontiera-scelte-tecniche.html</loc>
-        <lastmod>2026-08-07</lastmod>
+        <lastmod>2026-09-26</lastmod>
         <priority>0.6</priority>
     </url>
     <url>
         <loc>https://pikobit.it/blog/2026-08-14-esphome-kit-domotica-fai-da-te.html</loc>
-        <lastmod>2026-08-14</lastmod>
+        <lastmod>2026-09-26</lastmod>
         <priority>0.6</priority>
     </url>
     <url>
         <loc>https://pikobit.it/blog/2026-08-14-np-hard-non-e-una-condanna.html</loc>
-        <lastmod>2026-08-14</lastmod>
+        <lastmod>2026-09-26</lastmod>
         <priority>0.6</priority>
     </url>
     <url>
         <loc>https://pikobit.it/blog/2026-08-14-ai-non-sostituisce-il-pensiero.html</loc>
-        <lastmod>2026-08-14</lastmod>
+        <lastmod>2026-09-26</lastmod>
         <priority>0.6</priority>
     </url>
     <url>
         <loc>https://pikobit.it/blog/2026-08-14-quanto-costa-sito-web-professionale.html</loc>
-        <lastmod>2026-08-14</lastmod>
+        <lastmod>2026-09-26</lastmod>
         <priority>0.6</priority>
     </url>
     <url>
         <loc>https://pikobit.it/blog/2026-08-28-porsche-audio-nitruro-gallio.html</loc>
-        <lastmod>2026-08-28</lastmod>
+        <lastmod>2026-09-26</lastmod>
         <priority>0.6</priority>
     </url>
     <url>
         <loc>https://pikobit.it/blog/2026-08-28-cloudflare-dns-cache-ottimizzazione-memoria.html</loc>
-        <lastmod>2026-08-28</lastmod>
+        <lastmod>2026-09-26</lastmod>
         <priority>0.6</priority>
     </url>
     <url>
         <loc>https://pikobit.it/blog/2026-08-28-ai-reviewer-test-i-controlli.html</loc>
-        <lastmod>2026-08-28</lastmod>
+        <lastmod>2026-09-26</lastmod>
         <priority>0.6</priority>
     </url>
     <url>
         <loc>https://pikobit.it/blog/2026-08-28-sito-fatto-in-casa-vs-professionale.html</loc>
-        <lastmod>2026-08-28</lastmod>
+        <lastmod>2026-09-26</lastmod>
         <priority>0.6</priority>
     </url>
     <url>
         <loc>https://pikobit.it/blog/2026-09-04-chrome-estensioni-malware-crypto.html</loc>
-        <lastmod>2026-09-04</lastmod>
+        <lastmod>2026-09-26</lastmod>
         <priority>0.6</priority>
     </url>
     <url>
         <loc>https://pikobit.it/blog/2026-09-04-dominio-terzo-livello-dipendenza-rischio.html</loc>
-        <lastmod>2026-09-04</lastmod>
+        <lastmod>2026-09-26</lastmod>
         <priority>0.6</priority>
     </url>
     <url>
         <loc>https://pikobit.it/blog/2026-09-04-agenti-ai-scelta-strumenti-terze-parti.html</loc>
-        <lastmod>2026-09-04</lastmod>
+        <lastmod>2026-09-26</lastmod>
         <priority>0.6</priority>
     </url>
     <url>
         <loc>https://pikobit.it/blog/2026-09-04-costruire-con-ai-senza-sapere-architettura.html</loc>
-        <lastmod>2026-09-04</lastmod>
+        <lastmod>2026-09-26</lastmod>
         <priority>0.6</priority>
     </url>
     <url>
         <loc>https://pikobit.it/blog/2026-09-04-cosa-chiedere-prima-di-firmare-sito-software.html</loc>
-        <lastmod>2026-09-04</lastmod>
+        <lastmod>2026-09-26</lastmod>
         <priority>0.6</priority>
     </url>
     <url>
         <loc>https://pikobit.it/blog/2026-09-11-scatola-cavi-elettronica-maker.html</loc>
-        <lastmod>2026-09-11</lastmod>
+        <lastmod>2026-09-26</lastmod>
         <priority>0.6</priority>
     </url>
     <url>
         <loc>https://pikobit.it/blog/2026-09-11-cognition-swe-2-modello-coding-ai.html</loc>
-        <lastmod>2026-09-11</lastmod>
+        <lastmod>2026-09-26</lastmod>
         <priority>0.6</priority>
     </url>
     <url>
         <loc>https://pikobit.it/blog/2026-09-11-agenti-ai-o-pipeline-travestita.html</loc>
-        <lastmod>2026-09-11</lastmod>
+        <lastmod>2026-09-26</lastmod>
         <priority>0.6</priority>
     </url>
     <url>
         <loc>https://pikobit.it/blog/2026-09-11-perche-attivita-non-si-trova-su-google.html</loc>
-        <lastmod>2026-09-11</lastmod>
+        <lastmod>2026-09-26</lastmod>
         <priority>0.6</priority>
     </url>
     <url>
         <loc>https://pikobit.it/blog/2026-09-18-id3-gti-guida-definita-dal-software.html</loc>
-        <lastmod>2026-09-18</lastmod>
+        <lastmod>2026-09-26</lastmod>
         <priority>0.6</priority>
     </url>
     <url>
         <loc>https://pikobit.it/blog/2026-09-18-tapo-c200-falle-videocamere-domestiche.html</loc>
-        <lastmod>2026-09-18</lastmod>
+        <lastmod>2026-09-26</lastmod>
         <priority>0.6</priority>
     </url>
     <url>
         <loc>https://pikobit.it/blog/2026-09-18-bend-linguaggio-prove-codice-ai.html</loc>
-        <lastmod>2026-09-18</lastmod>
+        <lastmod>2026-09-26</lastmod>
         <priority>0.6</priority>
     </url>
     <url>
         <loc>https://pikobit.it/blog/2026-09-18-test-generati-ai-verifica.html</loc>
-        <lastmod>2026-09-18</lastmod>
+        <lastmod>2026-09-26</lastmod>
         <priority>0.6</priority>
     </url>
     <url>
         <loc>https://pikobit.it/blog/2026-09-18-gestionale-su-misura-o-software-pronto.html</loc>
-        <lastmod>2026-09-18</lastmod>
+        <lastmod>2026-09-26</lastmod>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://pikobit.it/blog/2026-09-25-volkswagen-airconsole-tetris-auto.html</loc>
+        <lastmod>2026-09-26</lastmod>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://pikobit.it/blog/2026-09-25-f-droid-2-0-redesign-kotlin-compose.html</loc>
+        <lastmod>2026-09-26</lastmod>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://pikobit.it/blog/2026-09-25-ai-giusta-per-il-compito-routing-modelli.html</loc>
+        <lastmod>2026-09-26</lastmod>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://pikobit.it/blog/2026-09-25-manutenzione-sito-web-costo-nascosto.html</loc>
+        <lastmod>2026-09-26</lastmod>
         <priority>0.6</priority>
     </url>
     <url>
         <loc>https://pikobit.it/crucidev/privacy/</loc>
         <lastmod>2026-09-24</lastmod>
         <priority>0.3</priority>
+    </url>
+    <url>
+        <loc>https://pikobit.it/programmatore-monopoli.html</loc>
+        <lastmod>2026-09-26</lastmod>
+        <priority>0.9</priority>
+    </url>
+    <url>
+        <loc>https://pikobit.it/blog/2026-09-26-sito-web-o-pagina-facebook-attivita-monopoli.html</loc>
+        <lastmod>2026-09-26</lastmod>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://pikobit.it/blog/2026-09-26-sito-web-ristoranti-bb-case-vacanza-puglia.html</loc>
+        <lastmod>2026-09-26</lastmod>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://pikobit.it/blog/2026-09-26-sito-artigiani-negozi-monopoli-cinque-pagine.html</loc>
+        <lastmod>2026-09-26</lastmod>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://pikobit.it/blog/2026-09-26-prenotazioni-online-parrucchieri-estetisti-studi.html</loc>
+        <lastmod>2026-09-26</lastmod>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://pikobit.it/dove-lavoro.html</loc>
+        <lastmod>2026-09-26</lastmod>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://pikobit.it/programmatore-bari.html</loc>
+        <lastmod>2026-09-26</lastmod>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://pikobit.it/programmatore-polignano-a-mare.html</loc>
+        <lastmod>2026-09-26</lastmod>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://pikobit.it/programmatore-fasano.html</loc>
+        <lastmod>2026-09-26</lastmod>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://pikobit.it/programmatore-conversano.html</loc>
+        <lastmod>2026-09-26</lastmod>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://pikobit.it/programmatore-castellana-grotte.html</loc>
+        <lastmod>2026-09-26</lastmod>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://pikobit.it/programmatore-putignano.html</loc>
+        <lastmod>2026-09-26</lastmod>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://pikobit.it/programmatore-casamassima.html</loc>
+        <lastmod>2026-09-26</lastmod>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://pikobit.it/programmatore-ostuni.html</loc>
+        <lastmod>2026-09-26</lastmod>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://pikobit.it/programmatore-brindisi.html</loc>
+        <lastmod>2026-09-26</lastmod>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://pikobit.it/programmatore-taranto.html</loc>
+        <lastmod>2026-09-26</lastmod>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://pikobit.it/programmatore-lecce.html</loc>
+        <lastmod>2026-09-26</lastmod>
+        <priority>0.8</priority>
     </url>
 </urlset>

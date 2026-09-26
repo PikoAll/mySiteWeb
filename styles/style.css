@@ -603,9 +603,12 @@ strong {
   color: white;
 }
 
-/* Mostra il menu al passaggio del mouse */
-.dropdown:hover .dropdown-menu {
-  display: block;
+/* Mostra il menu al passaggio del mouse (solo dove esiste un vero hover:
+   su touch l'hover "resta attaccato" e terrebbe aperta la tendina) */
+@media (hover: hover) {
+  .dropdown:hover .dropdown-menu {
+    display: block;
+  }
 }
 
 /* Per il click toggle (opzionale, già supportato nello script JS) */
@@ -628,6 +631,65 @@ strong {
     background-color: var(--color-bg-panel);
     color: white;
   }
+}
+
+/* Tendina "Dove lavoro": 13 voci, non deve uscire dallo schermo */
+.nav-zone .dropdown-menu {
+  max-height: 70vh;
+  overflow-y: auto;
+}
+
+@media (max-width: 768px) {
+  /* Nel menu mobile le tendine si aprono in linea (a fisarmonica) e spingono
+     giu' le voci successive: assolute, coprirebbero la voce sotto */
+  #navbar .dropdown {
+    display: block;
+  }
+
+  #navbar .dropdown-menu {
+    position: static;
+    transform: none;
+    width: auto;
+    max-height: none;
+    box-shadow: none;
+    padding: 5px 0 0;
+  }
+
+  #navbar .dropdown-menu li {
+    padding: 0;
+  }
+
+  #navbar .dropdown-menu li + li {
+    margin-top: 0;
+  }
+
+  /* Nel menu mobile si apre solo col click: l'hover di una finestra stretta
+     con il mouse aprirebbe la fisarmonica e farebbe saltare le voci */
+  #navbar .dropdown:hover .dropdown-menu:not(.active) {
+    display: none;
+  }
+
+  /* Menu aperto piu' alto dello schermo: scorre. flex-start e non center:
+     con center il contenuto in eccesso sborda anche SOPRA, e quella parte
+     (Home, Servizi, il pulsante della tendina) non si raggiunge scorrendo */
+  #navbar.active {
+    max-height: calc(100vh - 60px);
+    overflow-y: auto;
+    justify-content: flex-start;
+  }
+}
+
+/* Breadcrumb delle pagine "Dove lavoro" */
+.breadcrumb {
+  max-width: 1000px;
+  margin: 16px auto 0;
+  padding: 0 16px;
+  font-size: 0.95rem;
+  color: #ccc;
+}
+
+.breadcrumb a {
+  color: var(--color-accent);
 }
 
 /*FINE per pulsavte servizi nella navbar -----------*/
@@ -795,3 +857,8 @@ section {
 }
 
 /*FINE DISPENE FOTO PER PAGINA CREATIVE SERVICES*/
+
+/* Riga NAP del footer: i link devono leggersi sul fondo scuro */
+.nap a {
+  color: var(--color-accent);
+}
