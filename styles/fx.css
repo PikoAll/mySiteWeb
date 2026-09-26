@@ -1,0 +1,74 @@
+/* Live scene rules (scripts/fx/). Loaded by script.js right before the scene,
+   never render-blocking: nothing here changes the layout, and the canvas is
+   mounted only after this file has loaded. The static fallback background
+   stays in style.css. */
+[data-fx].fx-on {
+  background-image: radial-gradient(
+    ellipse at 50% 0%,
+    rgba(0, 191, 255, 0.1),
+    transparent 60%
+  );
+}
+
+[data-fx] > *,
+.intro-container:has(> .fx-strip) > :not(.fx-strip) {
+  position: relative;
+  z-index: 1;
+}
+
+[data-fx] > .fx-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.8s ease;
+  /* keep the middle calm, where the H1 and the text are */
+  -webkit-mask-image: radial-gradient(
+    ellipse 55% 45% at 50% 55%,
+    rgba(0, 0, 0, 0.35),
+    #000 100%
+  );
+  mask-image: radial-gradient(
+    ellipse 55% 45% at 50% 55%,
+    rgba(0, 0, 0, 0.35),
+    #000 100%
+  );
+}
+
+[data-fx].fx-on > .fx-canvas {
+  opacity: 1;
+}
+
+/* Blog and resources: only a thin band at the top of the header, never a
+   canvas under the text people read. */
+.intro-container > .fx-strip {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 120px;
+  z-index: 0;
+  -webkit-mask-image: linear-gradient(#000, transparent);
+  mask-image: linear-gradient(#000, transparent);
+}
+
+.intro-container > .fx-strip > .fx-canvas {
+  -webkit-mask-image: none;
+  mask-image: none;
+}
+
+/* Cards: a soft light follows the mouse (script.js sets --mx/--my). */
+@media (hover: hover) and (pointer: fine) {
+  .goals ul li,
+  .why-pikobit ul li {
+    background-image: radial-gradient(
+      220px circle at var(--mx, -999px) var(--my, -999px),
+      rgba(0, 191, 255, 0.12),
+      transparent 70%
+    );
+  }
+}
+

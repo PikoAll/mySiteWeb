@@ -25,6 +25,18 @@
   src: url("../fonts/poppins/poppins-latin-600-normal.woff2") format("woff2");
 }
 
+/* Local font with Poppins' metrics: until Poppins arrives the text already
+   takes the same room, so the swap moves nothing (CLS) and does not repaint
+   a bigger block (LCP). Arial on Windows/macOS, its metric twins on Linux. */
+@font-face {
+  font-family: "Poppins Fallback";
+  src: local("Arial"), local("Liberation Sans"), local("Arimo");
+  size-adjust: 112.16%;
+  ascent-override: 93.62%;
+  descent-override: 31.21%;
+  line-gap-override: 8.92%;
+}
+
 /* Generale */
 html,
 body {
@@ -32,7 +44,7 @@ body {
 }
 
 body {
-  font-family: "Poppins", sans-serif;
+  font-family: "Poppins", "Poppins Fallback", sans-serif;
   margin: 0;
   padding: 0;
   background-color: var(--color-bg);
@@ -56,8 +68,10 @@ a:focus-visible {
   color: white;
 }
 
-a:visited {
-  color: var(--color-accent);
+/* Parole lunghe senza spazi ("creazione/lettura/modifica"): si spezzano
+   solo se non entrano nella riga, invece di uscire dallo schermo */
+main {
+  overflow-wrap: break-word;
 }
 
 /* Blocchi di codice: contenere le righe lunghe invece di allargare la pagina */
@@ -333,7 +347,11 @@ main section {
 }
 
 .intro-container h1 {
-  font-size: 2.5rem;
+  /* 2.5rem on desktop, smaller on phones: long Italian words
+     ("programmatore") must fit a 390px screen */
+  font-size: clamp(1.7rem, 1rem + 4vw, 2.5rem);
+  overflow-wrap: break-word;
+  hyphens: auto;
   color: var(--color-accent);
   margin-bottom: 20px;
 }
@@ -383,12 +401,6 @@ main section {
   text-align: left;
 }
 
-.why-pikobit ul li:hover {
-  background-color: #1a1c21;
-  border: 2px solid var(--color-accent);
-  transform: scale(1.05);
-  transition: all 0.3s ease;
-}
 
 .article-body {
   max-width: 800px;
@@ -418,11 +430,130 @@ main section {
   text-align: left;
 }
 
-.goals ul li:hover {
+/* Service/work cards: lift + accent glow. Same box size on hover (the old
+   1px -> 2px border made the text jump), keyboard focus gets the same look. */
+.goals ul li,
+.why-pikobit ul li {
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    background-color 0.25s ease;
+}
+
+.goals ul li:focus-within,
+.why-pikobit ul li:focus-within {
   background-color: #1a1c21;
-  border: 2px solid var(--color-accent);
-  transform: scale(1.05);
-  transition: all 0.3s ease;
+  box-shadow:
+    0 0 0 1px var(--color-accent),
+    0 8px 24px rgba(0, 191, 255, 0.18);
+}
+
+@media (hover: hover) {
+  .goals ul li:hover,
+  .why-pikobit ul li:hover {
+    background-color: #1a1c21;
+    transform: translateY(-3px);
+    box-shadow:
+      0 0 0 1px var(--color-accent),
+      0 8px 24px rgba(0, 191, 255, 0.18);
+  }
+}
+
+/* Sections reveal on scroll: .reveal is added by script.js only, so the
+   content stays visible without JS. */
+.reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition:
+    opacity 0.6s ease,
+    transform 0.6s ease;
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* Page scenes (scripts/fx/). The static background below IS the fallback
+   (no JS, reduced motion, weak device): same palette, a faint PCB grid. The
+   rules for the live canvas are in fx.css, loaded by script.js only when a
+   scene is about to run, so they never block the first render. */
+[data-fx] {
+  background-image:
+    radial-gradient(ellipse at 50% 0%, rgba(0, 191, 255, 0.1), transparent 60%),
+    linear-gradient(rgba(0, 191, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 191, 255, 0.05) 1px, transparent 1px);
+  background-size:
+    auto,
+    26px 26px,
+    26px 26px;
+}
+
+/* Standalone CTAs (not the links inside a sentence): a slow light running
+   along the border. Without @property support the border is simply orange. */
+@property --fx-angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
+.intro-container > a.cta-link {
+  display: inline-block;
+  padding: 0.6em 1.3em;
+  border: 1.5px solid transparent;
+  border-radius: 999px;
+  background:
+    linear-gradient(var(--color-bg-panel), var(--color-bg-panel)) padding-box,
+    conic-gradient(
+        from var(--fx-angle),
+        rgba(255, 165, 0, 0.35),
+        var(--color-cta) 20%,
+        rgba(255, 165, 0, 0.35) 40%
+      )
+      border-box;
+  animation: fx-spin 6s linear infinite;
+  transition:
+    transform 0.2s ease-out,
+    color 0.3s ease;
+}
+
+@keyframes fx-spin {
+  to {
+    --fx-angle: 360deg;
+  }
+}
+
+/* Eyebrow above the H1: typed in once, CSS only so it starts with the first
+   paint (a JS start would show the text, hide it, then type it). The full
+   text is in the HTML: this is only a clip. */
+@keyframes fx-type {
+  from {
+    clip-path: inset(0 100% 0 0);
+  }
+  to {
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .intro-container .tagline {
+    animation: fx-type 1.1s steps(24, end) 0.2s both;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .goals ul li,
+  .why-pikobit ul li,
+  .reveal {
+    transition: none;
+  }
+  .goals ul li:hover,
+  .why-pikobit ul li:hover {
+    transform: none;
+  }
+  .intro-container > a.cta-link {
+    animation: none;
+  }
 }
 
 .call-to-action ul {
