@@ -6,7 +6,7 @@ import re
 html_directory = "./"  # Cambia il percorso se necessario
 
 # Nuova versione da aggiungere
-new_version = "4.0.1.2"  # Aggiorna la versione qui
+new_version = "4.3.1.0"  # Aggiorna la versione qui
 
 # Funzione per aggiornare CSS e JS
 def update_version_in_html(file_path, new_version):
@@ -16,7 +16,7 @@ def update_version_in_html(file_path, new_version):
     # Aggiorna il riferimento a CSS e JS, a qualsiasi profondità
     # (./styles, ../styles, ../../scripts) e con o senza "defer"
     content = re.sub(
-        r'((?:styles/style\.css|scripts/script\.js))(\?v=\d+\.\d+\.\d+\.\d+)?"',
+        r'((?:styles/style\.css|scripts/script\.js|scripts/blog-week\.js|scripts/contact\.js))(\?v=\d+\.\d+\.\d+\.\d+)?"',
         rf'\1?v={new_version}"',
         content
     )
@@ -28,7 +28,7 @@ def update_version_in_html(file_path, new_version):
 
 # Scansiona tutti i file HTML, sottocartelle incluse (blog/, crucidev/)
 for root, _dirs, files in os.walk(html_directory):
-    if "/." in root:  # .git, .venv, ...
+    if "/." in root or "node_modules" in root:  # .git, .venv, tests/e2e deps
         continue
     for filename in files:
         if filename.endswith(".html"):

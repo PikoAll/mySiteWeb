@@ -1,5 +1,8 @@
 /* Scene "puglia": dotted region (approximate hand-written outline), the 12
-   cities, pulses from Monopoli; data-fx-city highlights one city. */
+   cities, pulses from Monopoli; data-fx-city highlights one city. On wide
+   screens every city dot is also a real link (<a> laid over the canvas,
+   env.overlay) to its page; on narrow ones the map sits behind the text, so
+   no links there (the city list below the hero has them all). */
 (window.PikoFx = window.PikoFx || {}).puglia = (env) => {
   // Clockwise from the Molise border: Gargano, Adriatic coast, Salento,
   // Ionian coast, then the inland border with Basilicata and Campania.
@@ -52,6 +55,20 @@
     putignano: [17.12, 40.85],
     taranto: [17.24, 40.47],
   };
+  const NAMES = {
+    monopoli: "Monopoli",
+    "polignano-a-mare": "Polignano a Mare",
+    bari: "Bari",
+    brindisi: "Brindisi",
+    casamassima: "Casamassima",
+    "castellana-grotte": "Castellana Grotte",
+    conversano: "Conversano",
+    fasano: "Fasano",
+    lecce: "Lecce",
+    ostuni: "Ostuni",
+    putignano: "Putignano",
+    taranto: "Taranto",
+  };
   const K = Math.cos((41 * Math.PI) / 180); // equirectangular at 41°N
   const rnd = env.rand(Date.now() & 0xffff);
   const target = CITIES[env.city] ? env.city : "";
@@ -71,6 +88,47 @@
     return c;
   };
 
+  // Links over the dots. Out of the tab order and hidden from screen
+  // readers: the same links are in the page as a list, this is a shortcut
+  // for the mouse and the finger.
+  const placeLinks = (wide) => {
+    let box = env.overlay;
+    if (!wide) {
+      if (box) box.hidden = true;
+      return;
+    }
+    if (!box) {
+      box = env.overlay = document.createElement("div");
+      box.className = "fx-map-links";
+      box.setAttribute("aria-hidden", "true");
+      for (const c in CITIES) {
+        const a = document.createElement("a");
+        a.href = "programmatore-" + c + ".html";
+        a.tabIndex = -1;
+        a.dataset.city = c;
+        if (c === target) a.className = "is-here";
+        const label = document.createElement("span");
+        label.textContent = NAMES[c];
+        a.appendChild(label);
+        box.appendChild(a);
+      }
+      env.host.appendChild(box);
+    }
+    box.hidden = false;
+    for (const a of box.children) {
+      const [x, y] = pos[a.dataset.city];
+      // Some cities are ~10px apart (Putignano/Castellana): the hit circle
+      // is as wide as the gap to the nearest one, so two never overlap.
+      let near = Infinity;
+      for (const c in pos)
+        if (c !== a.dataset.city)
+          near = Math.min(near, Math.hypot(pos[c][0] - x, pos[c][1] - y));
+      const d = Math.max(8, Math.min(32, Math.floor(near)));
+      a.style.cssText = `left:${x}px;top:${y}px;width:${d}px;height:${d}px;margin:${-d / 2}px 0 0 ${-d / 2}px`;
+    }
+    box.dataset.ready = "1"; // placed on the current geometry
+  };
+
   const spawn = () => {
     const others = Object.keys(CITIES).filter((c) => c !== "monopoli");
     const to =
@@ -82,6 +140,7 @@
 
   return {
     tilt: 4,
+    syncResize: true, // the city links must follow the dots at once
     resize() {
       const { w, h } = env;
       const lon = OUTLINE.map((p) => p[0]);
@@ -126,6 +185,7 @@
           );
       }
       map = L;
+      placeLinks(wide);
       pulses = Array.from({ length: 3 }, spawn);
       pulses.forEach((p) => (p.f = rnd()));
       ring = {};
@@ -136,6 +196,7 @@
       const oy = -m.y * 6;
       ctx.save();
       ctx.translate(ox, oy);
+      if (env.overlay) env.overlay.style.translate = `${ox}px ${oy}px`;
       ctx.drawImage(map.c, 0, 0, map.c.width / dpr, map.c.height / dpr);
       ctx.globalCompositeOperation = "lighter";
       const sp = env.glow();

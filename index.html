@@ -30,7 +30,7 @@
     <meta property="og:image" content="https://pikobit.it/images/banner.webp" />
     <meta property="og:url" content="https://pikobit.it/" />
 
-    <link rel="stylesheet" href="./styles/style.css?v=4.0.1.2" />
+    <link rel="stylesheet" href="./styles/style.css?v=4.3.1.0" />
     <link
       rel="preload"
       href="fonts/poppins/poppins-latin-400-normal.woff2"
@@ -38,9 +38,16 @@
       type="font/woff2"
       crossorigin
     />
+    <link
+      rel="preload"
+      href="fonts/poppins/poppins-latin-600-normal.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
     <link rel="icon" href="./images/logo.webp" type="image/png" />
 
-    <script defer src="scripts/script.js?v=4.0.1.2"></script>
+    <script defer src="scripts/script.js?v=4.3.1.0"></script>
 
     <!-- Dati strutturati -->
     <script type="application/ld+json">
@@ -118,92 +125,43 @@
   </head>
 
   <body>
-    <header>
-      <img
-        src="./images/banner.webp"
-        alt="Pikobit Banner"
-        class="banner"
-        width="1024"
-        height="587"
-      />
-      <div
-        class="hamburger"
-        id="hamburger-menu"
-        role="button"
-        tabindex="0"
-        aria-label="Apri menu di navigazione"
-        aria-expanded="false"
-      >
-        <svg class="icon-svg" viewBox="0 0 448 512" aria-hidden="true">
-          <path
-            d="M0 96C0 78.3 14.3 64 32 64l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 128C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 288c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32L32 448c-17.7 0-32-14.3-32-32s14.3-32 32-32l384 0c17.7 0 32 14.3 32 32z"
-          />
-        </svg>
-      </div>
-      <div class="overlay" id="overlay"></div>
-      <nav id="navbar">
-        <ul class="nav-links">
-          <li><a href="index.html">Home</a></li>
-
-          <li class="dropdown">
-            <a
-              href="#"
-              id="dropdown-toggle"
-              aria-haspopup="true"
-              aria-expanded="false"
-              >Servizi ▼</a
-            >
-            <ul class="dropdown-menu">
-              <li><a href="websites.html">Siti web personalizzati</a></li>
-              <li><a href="modern-apps.html">Applicazioni moderne</a></li>
-              <li>
-                <a href="custom-software.html">Software gestionali su misura</a>
-              </li>
-              <li>
-                <a href="creative-services.html"
-                  >Servizi Creativi e Soluzioni Complete</a
-                >
-              </li>
-              <li><a href="lessons.html">Lezioni e tutorial</a></li>
-            </ul>
-          </li>
-
-<li class="dropdown nav-zone">
-<a href="dove-lavoro.html" class="dropdown-toggle" aria-haspopup="true" aria-expanded="false">Dove lavoro ▼</a>
+    <header class="site-header" id="site-header">
+<div class="brand-band">
+<a class="brand" href="index.html" aria-label="Pikobit, vai alla home"><svg class="wordmark" viewBox="-3 -4 553 109" aria-hidden="true" focusable="false"><g fill="#fff" stroke="#fff" stroke-width="3" stroke-linejoin="round"><path d="M0 0H50C68 0 82 14 82 33C82 52 68 66 50 66H21V100H0V44H50C55 44 60 40 60 33C60 26 55 22 50 22H21V30H0Z"/><path d="M96 0H117V100H96Z"/><path d="M134 0H155V35L188 0H217L178 45L220 100H192L162 58L155 65V100H134Z"/><path fill-rule="evenodd" d="M275.5-1.5a51.5 51.5 0 1 0 .01 0ZM275.5 19a31 31 0 1 1-.01 0Z"/><path fill-rule="evenodd" d="M341 0H389C405 0 417 9 417 21C417 30 413 36 407 40C417 45 423 54 423 68C423 86 411 100 393 100H341V40H388C393 40 396 36 396 31C396 26 393 22 388 22H362V30H341ZM362 60H393C399 60 402 64 402 69C402 74 399 78 393 78H362Z"/><path d="M437 0H458V100H437Z"/><path d="M473 0H547V22H520.5V100H499.5V22H473Z"/></g><circle cx="275.5" cy="50" r="11.5" fill="none" stroke="#9ad8f3" stroke-width="9"/></svg></a>
+<button class="hamburger" id="hamburger-menu" type="button" aria-label="Apri menu di navigazione" aria-expanded="false" aria-controls="navbar"><svg class="icon-svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 6h18M3 12h18M3 18h18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg></button>
+</div>
+<div class="overlay" id="overlay"></div>
+<nav id="navbar" aria-label="Menu principale">
+<ul class="nav-links">
+<li><a href="index.html" aria-current="page">Home</a></li>
+<li class="dropdown">
+<a href="#" id="dropdown-toggle" aria-haspopup="true" aria-expanded="false">Servizi ▼</a>
 <ul class="dropdown-menu">
-<li><a href="programmatore-monopoli.html">Monopoli</a></li>
-<li><a href="programmatore-bari.html">Bari</a></li>
-<li><a href="programmatore-polignano-a-mare.html">Polignano a Mare</a></li>
-<li><a href="programmatore-fasano.html">Fasano</a></li>
-<li><a href="programmatore-conversano.html">Conversano</a></li>
-<li><a href="programmatore-castellana-grotte.html">Castellana Grotte</a></li>
-<li><a href="programmatore-putignano.html">Putignano</a></li>
-<li><a href="programmatore-casamassima.html">Casamassima</a></li>
-<li><a href="programmatore-ostuni.html">Ostuni</a></li>
-<li><a href="programmatore-brindisi.html">Brindisi</a></li>
-<li><a href="programmatore-taranto.html">Taranto</a></li>
-<li><a href="programmatore-lecce.html">Lecce</a></li>
-<li><a href="dove-lavoro.html">Tutte le zone</a></li>
+<li><a href="websites.html">Siti web personalizzati</a></li>
+<li><a href="modern-apps.html">Applicazioni moderne</a></li>
+<li><a href="custom-software.html">Software gestionali su misura</a></li>
+<li><a href="creative-services.html">Servizi Creativi e Soluzioni Complete</a></li>
+<li><a href="lessons.html">Lezioni e tutorial</a></li>
 </ul>
 </li>
-
-          <li><a href="ideas.html">Idee Innovative</a></li>
-          <li><a href="about.html">Chi Sono</a></li>
-          <li><a href="resources.html">Risorse</a></li>
-          <li><a href="contact.html">Contatti</a></li>
-        </ul>
-      </nav>
-    </header>
+<li><a href="dove-lavoro.html">Dove lavoro</a></li>
+<li><a href="ideas.html">Progetti &amp; idee</a></li>
+<li><a href="about.html">Chi sono</a></li>
+<li><a href="resources.html">Blog</a></li>
+<li class="nav-cta"><a href="contact.html">Contatti</a></li>
+</ul>
+</nav>
+</header>
 
     <main>
       <section class="intro">
         <div class="intro-container" data-fx="circuit" data-fx-mode="full">
           <img
-            src="./images/logo.webp"
+            src="./images/brand/pikobit-symbol.svg"
             alt="Logo Pikobit - Tutorial e Progetti di Programmazione"
             class="logo"
-            width="671"
-            height="752"
+            width="120"
+            height="112"
           />
           <p class="tagline">Siti web, app e gestionali su misura</p>
           <h1>Pikobit, programmatore e web designer a Monopoli</h1>
@@ -211,44 +169,49 @@
             Sono Giuseppe, Software Engineer Senior con solida esperienza in
             Java/Spring e in altri stack moderni: realizzo siti web,
             applicazioni e software gestionali su misura per aziende e
-            professionisti di Monopoli e di tutta la zona tra Bari, Brindisi
+            professionisti di
+            <a href="programmatore-monopoli.html">Monopoli</a> e di tutta la
+            zona tra Bari, Brindisi
             e Taranto. Se hai un progetto da realizzare, parliamone:
-            <a href="programmatore-monopoli.html" class="cta-link"
+            <a href="dove-lavoro.html" class="cta-link"
               >ecco come lavoro e in quali zone</a
             >.
           </p>
         </div>
       </section>
 
-      <section class="goals">
-        <h2>I Servizi di Pikobit</h2>
-        <ul>
-          <li>
-            <a href="websites.html" class="cta-link-blue"
-              ><strong>Siti web personalizzati</strong></a
-            >: Progettati per rappresentare la tua attività online.
-          </li>
-          <li>
-            <a href="modern-apps.html" class="cta-link-blue"
-              ><strong>Applicazioni moderne</strong></a
-            >: Ottimizzate per migliorare la tua produttività.
-          </li>
-          <li>
-            <a href="custom-software.html" class="cta-link-blue"
-              ><strong>Software gestionali su misura</strong></a
-            >: Perfetti per le tue esigenze aziendali.
-          </li>
-          <li>
-            <a href="lessons.html" class="cta-link-blue"
-              ><strong>Lezioni e tutorial</strong></a
-            >: Per imparare a programmare e sviluppare progetti reali.
-          </li>
-          <li>
-            <strong>Bigliettini da Visita con QR Code:</strong> Collega il mondo
-            fisico al digitale, aumentando le interazioni con il tuo sito web.
-          </li>
-        </ul>
-        <p>
+      <section class="block" id="servizi" aria-labelledby="h-servizi">
+        <h2 id="h-servizi">I Servizi di Pikobit</h2>
+        <div class="carousel">
+          <ul class="carousel-track" tabindex="0" aria-label="I Servizi di Pikobit, scorri per vederli tutti">
+            <li class="card card--link">
+              <svg class="icon" aria-hidden="true"><use href="images/icons.svg#i-browser"/></svg>
+              <h3><a href="websites.html">Siti web personalizzati</a></h3>
+              <p>Progettati per rappresentare la tua attività online.</p>
+            </li>
+            <li class="card card--link">
+              <svg class="icon" aria-hidden="true"><use href="images/icons.svg#i-phone"/></svg>
+              <h3><a href="modern-apps.html">Applicazioni moderne</a></h3>
+              <p>Ottimizzate per migliorare la tua produttività.</p>
+            </li>
+            <li class="card card--link">
+              <svg class="icon" aria-hidden="true"><use href="images/icons.svg#i-chart"/></svg>
+              <h3><a href="custom-software.html">Software gestionali su misura</a></h3>
+              <p>Perfetti per le tue esigenze aziendali.</p>
+            </li>
+            <li class="card card--link">
+              <svg class="icon" aria-hidden="true"><use href="images/icons.svg#i-grad"/></svg>
+              <h3><a href="lessons.html">Lezioni e tutorial</a></h3>
+              <p>Per imparare a programmare e sviluppare progetti reali.</p>
+            </li>
+            <li class="card card--link">
+              <svg class="icon" aria-hidden="true"><use href="images/icons.svg#i-qr"/></svg>
+              <h3><a href="creative-services.html">Bigliettini da Visita con QR Code</a></h3>
+              <p>Collega il mondo fisico al digitale, aumentando le interazioni con il tuo sito web.</p>
+            </li>
+          </ul>
+        </div>
+        <p class="block-cta">
           <strong
             >Hai un'idea o un progetto?
             <a href="contact.html" class="cta-link">Contattami subito</a> per
@@ -257,31 +220,48 @@
         </p>
       </section>
 
-      <section class="why-pikobit">
-        <h2>Perché scegliere Pikobit?</h2>
-        <ul>
-          <li>
-            Anni di esperienza nello sviluppo software, laureato in informatica,
-            con progetti che vanno dai siti aziendali ai gestionali complessi.
-          </li>
-          <li>
-            Soluzioni su misura, pensate per le esigenze reali della tua
-            attività, non template preconfezionati.
-          </li>
-          <li>
-            Supporto diretto e continuo, dalla progettazione al rilascio e
-            oltre.
-          </li>
-          <li>
-            Automatizzo processi ripetitivi e integro sistemi esistenti, per
-            farti risparmiare tempo, non solo per costruire da zero.
-          </li>
-          <li>
-            Se preferisci imparare tu stesso, propongo anche lezioni e percorsi
-            di programmazione personalizzati.
-          </li>
-        </ul>
-        <p>
+      <section class="block" id="perche-pikobit" aria-labelledby="h-perche">
+        <h2 id="h-perche">Perché scegliere Pikobit?</h2>
+        <div class="carousel">
+          <ul class="carousel-track" tabindex="0" aria-label="Perché scegliere Pikobit, scorri per vedere tutti i motivi">
+            <li class="card">
+              <svg class="icon" aria-hidden="true"><use href="images/icons.svg#i-code"/></svg>
+              <p>
+                Anni di esperienza nello sviluppo software, laureato in informatica,
+                con progetti che vanno dai siti aziendali ai gestionali complessi.
+              </p>
+            </li>
+            <li class="card">
+              <svg class="icon" aria-hidden="true"><use href="images/icons.svg#i-sliders"/></svg>
+              <p>
+                Soluzioni su misura, pensate per le esigenze reali della tua
+                attività, non template preconfezionati.
+              </p>
+            </li>
+            <li class="card">
+              <svg class="icon" aria-hidden="true"><use href="images/icons.svg#i-support"/></svg>
+              <p>
+                Supporto diretto e continuo, dalla progettazione al rilascio e
+                oltre.
+              </p>
+            </li>
+            <li class="card">
+              <svg class="icon" aria-hidden="true"><use href="images/icons.svg#i-gear"/></svg>
+              <p>
+                Automatizzo processi ripetitivi e integro sistemi esistenti, per
+                farti risparmiare tempo, non solo per costruire da zero.
+              </p>
+            </li>
+            <li class="card">
+              <svg class="icon" aria-hidden="true"><use href="images/icons.svg#i-book"/></svg>
+              <p>
+                Se preferisci imparare tu stesso, propongo anche lezioni e percorsi
+                di programmazione personalizzati.
+              </p>
+            </li>
+          </ul>
+        </div>
+        <p class="block-cta">
           <strong
             >Non aspettare!
             <a href="contact.html" class="cta-link">Scrivimi ora</a> e
@@ -290,26 +270,38 @@
         </p>
       </section>
 
-      <section class="goals">
-        <h2>Cosa troverai su Pikobit</h2>
-        <ul>
-          <li>
-            Video e guide per creare progetti complessi, come applicazioni web e
-            gestionali personalizzati.
-          </li>
-          <li>Tutorial su YouTube per imparare a programmare da zero.</li>
-          <li>
-            Consigli e recensioni su libri e strumenti per la programmazione.
-          </li>
-          <li>
-            La possibilità di <strong>collaborare con me</strong> per sviluppare
-            software su misura o per lezioni personalizzate.
-          </li>
-        </ul>
+      <section class="block" id="cosa-troverai" aria-labelledby="h-troverai">
+        <h2 id="h-troverai">Cosa troverai su Pikobit</h2>
+        <div class="carousel">
+          <ul class="carousel-track" tabindex="0" aria-label="Cosa troverai su Pikobit, scorri per vedere tutto">
+            <li class="card">
+              <svg class="icon" aria-hidden="true"><use href="images/icons.svg#i-layers"/></svg>
+              <p>
+                Video e guide per creare progetti complessi, come applicazioni web e
+                gestionali personalizzati.
+              </p>
+            </li>
+            <li class="card">
+              <svg class="icon" aria-hidden="true"><use href="images/icons.svg#i-play"/></svg>
+              <p>Tutorial su YouTube per imparare a programmare da zero.</p>
+            </li>
+            <li class="card">
+              <svg class="icon" aria-hidden="true"><use href="images/icons.svg#i-star"/></svg>
+              <p>Consigli e recensioni su libri e strumenti per la programmazione.</p>
+            </li>
+            <li class="card">
+              <svg class="icon" aria-hidden="true"><use href="images/icons.svg#i-users"/></svg>
+              <p>
+                La possibilità di <strong>collaborare con me</strong> per sviluppare
+                software su misura o per lezioni personalizzate.
+              </p>
+            </li>
+          </ul>
+        </div>
       </section>
 
-      <section class="call-to-action">
-        <h2>Seguimi</h2>
+      <section class="block call-to-action" id="seguimi" aria-labelledby="h-seguimi">
+        <h2 id="h-seguimi">Seguimi</h2>
         <p>Per contenuti tecnici e aggiornamenti sui miei progetti:</p>
         <ul>
           <li><a href="https://www.youtube.com/@pikobit01">YouTube</a></li>
@@ -319,6 +311,7 @@
 
     <footer>
 <p class="nap">Pikobit · Programmatore e web designer · Monopoli (BA) · <a href="tel:+393518891903">351 889 1903</a> · <a href="mailto:piko.bit.00@gmail.com">piko.bit.00@gmail.com</a></p>
+<nav class="footer-zone" aria-label="Zone in cui lavoro"><p>Zone: <a href="programmatore-monopoli.html">Monopoli</a> · <a href="programmatore-bari.html">Bari</a> · <a href="programmatore-polignano-a-mare.html">Polignano a Mare</a> · <a href="programmatore-fasano.html">Fasano</a> · <a href="programmatore-conversano.html">Conversano</a> · <a href="programmatore-castellana-grotte.html">Castellana Grotte</a> · <a href="programmatore-putignano.html">Putignano</a> · <a href="programmatore-casamassima.html">Casamassima</a> · <a href="programmatore-ostuni.html">Ostuni</a> · <a href="programmatore-brindisi.html">Brindisi</a> · <a href="programmatore-taranto.html">Taranto</a> · <a href="programmatore-lecce.html">Lecce</a></p></nav>
       <p>&copy; 2026 Pikobit. Tutti i diritti riservati.</p>
       <p>
         "Pikobit: Il tuo punto di partenza per creare, imparare e ispirare."

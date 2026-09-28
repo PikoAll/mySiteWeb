@@ -30,7 +30,7 @@
     <meta property="og:image" content="https://pikobit.it/images/banner.webp" />
     <meta property="og:url" content="https://pikobit.it/contact.html" />
 
-    <link rel="stylesheet" href="./styles/style.css?v=4.0.1.2" />
+    <link rel="stylesheet" href="./styles/style.css?v=4.3.1.0" />
     <link
       rel="preload"
       href="fonts/poppins/poppins-latin-400-normal.woff2"
@@ -40,20 +40,46 @@
     />
     <link rel="icon" href="./images/logo.webp" type="image/png" />
 
-    <script defer src="scripts/script.js?v=4.0.1.2"></script>
+    <script defer src="scripts/script.js?v=4.3.1.0"></script>
+    <script defer src="scripts/contact.js?v=4.3.1.0"></script>
 
     <!-- Dati strutturati -->
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
-        "@type": "ContactPage",
-        "contactPoint": {
-          "@type": "ContactPoint",
-          "telephone": "+39-351-889-1903",
-          "email": "piko.bit.00@gmail.com",
-          "contactType": "customer support",
-          "availableLanguage": ["Italian", "English"]
-        }
+        "@graph": [
+          {
+            "@type": "ContactPage",
+            "@id": "https://pikobit.it/contact.html",
+            "url": "https://pikobit.it/contact.html",
+            "name": "Contatti PikoBit - Monopoli e Provincia di Bari",
+            "inLanguage": "it",
+            "about": { "@id": "https://pikobit.it/#business" },
+            "contactPoint": {
+              "@type": "ContactPoint",
+              "telephone": "+39-351-889-1903",
+              "email": "piko.bit.00@gmail.com",
+              "contactType": "customer support",
+              "availableLanguage": ["Italian", "English"]
+            }
+          },
+          {
+            "@type": "ProfessionalService",
+            "@id": "https://pikobit.it/#business",
+            "name": "Pikobit",
+            "url": "https://pikobit.it",
+            "telephone": "+39-351-889-1903",
+            "email": "piko.bit.00@gmail.com",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Monopoli",
+              "addressRegion": "BA",
+              "postalCode": "70043",
+              "addressCountry": "IT"
+            },
+            "openingHours": "Mo-Fr 09:00-17:00"
+          }
+        ]
       }
     </script>
 
@@ -74,91 +100,42 @@
   </head>
 
   <body>
-    <header>
-      <img
-        src="./images/banner.webp"
-        alt="Pikobit Banner"
-        class="banner"
-        width="1024"
-        height="587"
-      />
-      <div
-        class="hamburger"
-        id="hamburger-menu"
-        role="button"
-        tabindex="0"
-        aria-label="Apri menu di navigazione"
-        aria-expanded="false"
-      >
-        <svg class="icon-svg" viewBox="0 0 448 512" aria-hidden="true">
-          <path
-            d="M0 96C0 78.3 14.3 64 32 64l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 128C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 288c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32L32 448c-17.7 0-32-14.3-32-32s14.3-32 32-32l384 0c17.7 0 32 14.3 32 32z"
-          />
-        </svg>
-      </div>
-      <div class="overlay" id="overlay"></div>
-      <nav id="navbar">
-        <ul class="nav-links">
-          <li><a href="index.html">Home</a></li>
-
-          <li class="dropdown">
-            <a
-              href="#"
-              id="dropdown-toggle"
-              aria-haspopup="true"
-              aria-expanded="false"
-              >Servizi ▼</a
-            >
-            <ul class="dropdown-menu">
-              <li><a href="websites.html">Siti web personalizzati</a></li>
-              <li><a href="modern-apps.html">Applicazioni moderne</a></li>
-              <li>
-                <a href="custom-software.html">Software gestionali su misura</a>
-              </li>
-              <li>
-                <a href="creative-services.html"
-                  >Servizi Creativi e Soluzioni Complete</a
-                >
-              </li>
-              <li><a href="lessons.html">Lezioni e tutorial</a></li>
-            </ul>
-          </li>
-
-<li class="dropdown nav-zone">
-<a href="dove-lavoro.html" class="dropdown-toggle" aria-haspopup="true" aria-expanded="false">Dove lavoro ▼</a>
+    <header class="site-header" id="site-header">
+<div class="brand-band">
+<a class="brand" href="index.html" aria-label="Pikobit, vai alla home"><svg class="wordmark" viewBox="-3 -4 553 109" aria-hidden="true" focusable="false"><g fill="#fff" stroke="#fff" stroke-width="3" stroke-linejoin="round"><path d="M0 0H50C68 0 82 14 82 33C82 52 68 66 50 66H21V100H0V44H50C55 44 60 40 60 33C60 26 55 22 50 22H21V30H0Z"/><path d="M96 0H117V100H96Z"/><path d="M134 0H155V35L188 0H217L178 45L220 100H192L162 58L155 65V100H134Z"/><path fill-rule="evenodd" d="M275.5-1.5a51.5 51.5 0 1 0 .01 0ZM275.5 19a31 31 0 1 1-.01 0Z"/><path fill-rule="evenodd" d="M341 0H389C405 0 417 9 417 21C417 30 413 36 407 40C417 45 423 54 423 68C423 86 411 100 393 100H341V40H388C393 40 396 36 396 31C396 26 393 22 388 22H362V30H341ZM362 60H393C399 60 402 64 402 69C402 74 399 78 393 78H362Z"/><path d="M437 0H458V100H437Z"/><path d="M473 0H547V22H520.5V100H499.5V22H473Z"/></g><circle cx="275.5" cy="50" r="11.5" fill="none" stroke="#9ad8f3" stroke-width="9"/></svg></a>
+<button class="hamburger" id="hamburger-menu" type="button" aria-label="Apri menu di navigazione" aria-expanded="false" aria-controls="navbar"><svg class="icon-svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 6h18M3 12h18M3 18h18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg></button>
+</div>
+<div class="overlay" id="overlay"></div>
+<nav id="navbar" aria-label="Menu principale">
+<ul class="nav-links">
+<li><a href="index.html">Home</a></li>
+<li class="dropdown">
+<a href="#" id="dropdown-toggle" aria-haspopup="true" aria-expanded="false">Servizi ▼</a>
 <ul class="dropdown-menu">
-<li><a href="programmatore-monopoli.html">Monopoli</a></li>
-<li><a href="programmatore-bari.html">Bari</a></li>
-<li><a href="programmatore-polignano-a-mare.html">Polignano a Mare</a></li>
-<li><a href="programmatore-fasano.html">Fasano</a></li>
-<li><a href="programmatore-conversano.html">Conversano</a></li>
-<li><a href="programmatore-castellana-grotte.html">Castellana Grotte</a></li>
-<li><a href="programmatore-putignano.html">Putignano</a></li>
-<li><a href="programmatore-casamassima.html">Casamassima</a></li>
-<li><a href="programmatore-ostuni.html">Ostuni</a></li>
-<li><a href="programmatore-brindisi.html">Brindisi</a></li>
-<li><a href="programmatore-taranto.html">Taranto</a></li>
-<li><a href="programmatore-lecce.html">Lecce</a></li>
-<li><a href="dove-lavoro.html">Tutte le zone</a></li>
+<li><a href="websites.html">Siti web personalizzati</a></li>
+<li><a href="modern-apps.html">Applicazioni moderne</a></li>
+<li><a href="custom-software.html">Software gestionali su misura</a></li>
+<li><a href="creative-services.html">Servizi Creativi e Soluzioni Complete</a></li>
+<li><a href="lessons.html">Lezioni e tutorial</a></li>
 </ul>
 </li>
-
-          <li><a href="ideas.html">Idee Innovative</a></li>
-          <li><a href="about.html">Chi Sono</a></li>
-          <li><a href="resources.html">Risorse</a></li>
-          <li><a href="contact.html">Contatti</a></li>
-        </ul>
-      </nav>
-    </header>
+<li><a href="dove-lavoro.html">Dove lavoro</a></li>
+<li><a href="ideas.html">Progetti &amp; idee</a></li>
+<li><a href="about.html">Chi sono</a></li>
+<li><a href="resources.html">Blog</a></li>
+<li class="nav-cta"><a href="contact.html" aria-current="page">Contatti</a></li>
+</ul>
+</nav>
+</header>
     <main class="main-contact">
       <section class="intro">
         <div class="intro-container" data-fx="neural">
           <img
-            src="./images/logo.webp"
+            src="./images/brand/pikobit-symbol.svg"
             alt="Logo Pikobit - Tutorial e Progetti di Programmazione"
             class="logo"
-            width="671"
-            height="752"
+            width="120"
+            height="112"
           />
           <h1>Contattami</h1>
           <p>
@@ -173,37 +150,110 @@
         </div>
       </section>
 
-      <section class="contact-details">
-        <h2>Informazioni di contatto</h2>
-        <p>
-          <strong>Email:</strong>
-          <a href="mailto:piko.bit.00@gmail.com" class="cta-link"
-            >piko.bit.00@gmail.com</a
-          >
-        </p>
-        <p>
-          <strong>Telefono:</strong>
-          <a href="tel:+393518891903" class="cta-link">+39 351 889 1903</a>
-        </p>
-        <p>
-          <a
-            href="https://wa.me/393518891903"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="cta-link"
-          >
-            Scrivimi su WhatsApp
-          </a>
-        </p>
-        <p>
-          Lavoro principalmente nel sud-est barese e in Puglia (Monopoli,
-          Castellana Grotte, Fasano, Polignano a Mare, Casamassima, Turi,
-          Conversano, Bari, Taranto e Brindisi).
-        </p>
+      <section class="contact-layout" aria-label="Contatti e modulo">
+        <div class="contact-details">
+          <h2>Informazioni di contatto</h2>
+          <ul class="contact-list">
+            <li>
+              <svg class="icon" aria-hidden="true"><use href="images/icons.svg#i-phone"/></svg>
+              <span><strong>Telefono:</strong>
+                <a href="tel:+393518891903" class="cta-link">+39 351 889 1903</a></span>
+            </li>
+            <li>
+              <svg class="icon" aria-hidden="true"><use href="images/icons.svg#i-chat"/></svg>
+              <span><strong>WhatsApp:</strong>
+                <a href="https://wa.me/393518891903" target="_blank" rel="noopener noreferrer" class="cta-link">Scrivimi su WhatsApp</a></span>
+            </li>
+            <li>
+              <svg class="icon" aria-hidden="true"><use href="images/icons.svg#i-mail"/></svg>
+              <span><strong>Email:</strong>
+                <a href="mailto:piko.bit.00@gmail.com" class="cta-link">piko.bit.00@gmail.com</a></span>
+            </li>
+            <li>
+              <svg class="icon" aria-hidden="true"><use href="images/icons.svg#i-pin"/></svg>
+              <span><strong>Zona servita:</strong> Monopoli e tutta la Puglia
+                centro-meridionale. Vengo io da te, oppure lavoriamo da remoto.</span>
+            </li>
+            <li>
+              <svg class="icon" aria-hidden="true"><use href="images/icons.svg#i-clock"/></svg>
+              <span><strong>Orari:</strong> dal lunedì al venerdì, 9:00–17:00</span>
+            </li>
+          </ul>
+          <p>
+            Lavoro principalmente nel sud-est barese e in Puglia (Monopoli,
+            Castellana Grotte, Fasano, Polignano a Mare, Casamassima, Turi,
+            Conversano, Bari, Taranto e Brindisi).
+            <a href="dove-lavoro.html" class="cta-link">Tutte le zone</a>
+          </p>
+        </div>
+
+        <!-- The site has no backend: the two buttons open WhatsApp or the
+             mail app with the message already written (scripts/contact.js).
+             Without JS the form falls back to a plain mailto. -->
+        <form class="contact-form" id="contact-form" action="mailto:piko.bit.00@gmail.com" method="post" enctype="text/plain" novalidate>
+          <h2>Scrivimi</h2>
+          <p class="form-hint">I campi con * sono obbligatori.</p>
+          <div class="field">
+            <label for="cf-nome">Nome *</label>
+            <input id="cf-nome" name="nome" type="text" autocomplete="name" required minlength="2" aria-describedby="cf-nome-err" />
+            <p class="field-error" id="cf-nome-err"></p>
+          </div>
+          <div class="field-row">
+            <div class="field">
+              <label for="cf-telefono">Telefono</label>
+              <input id="cf-telefono" name="telefono" type="tel" autocomplete="tel" inputmode="tel" aria-describedby="cf-telefono-err" />
+              <p class="field-error" id="cf-telefono-err"></p>
+            </div>
+            <div class="field">
+              <label for="cf-email">Email</label>
+              <input id="cf-email" name="email" type="email" autocomplete="email" aria-describedby="cf-email-err" />
+              <p class="field-error" id="cf-email-err"></p>
+            </div>
+          </div>
+          <div class="field-row">
+            <div class="field">
+              <label for="cf-tipo">Tipo di progetto</label>
+              <select id="cf-tipo" name="tipo">
+                <option value="">Scegli…</option>
+                <option>Sito web</option>
+                <option>Software su misura</option>
+                <option>App</option>
+                <option>Lezioni</option>
+                <option>Altro</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="cf-citta">Città</label>
+              <input id="cf-citta" name="citta" type="text" autocomplete="address-level2" />
+            </div>
+          </div>
+          <div class="field">
+            <label for="cf-messaggio">Messaggio *</label>
+            <textarea id="cf-messaggio" name="messaggio" rows="6" required minlength="10" aria-describedby="cf-messaggio-err"></textarea>
+            <p class="field-error" id="cf-messaggio-err"></p>
+          </div>
+          <div class="field field-check">
+            <input id="cf-privacy" name="privacy" type="checkbox" required aria-describedby="cf-privacy-err" />
+            <label for="cf-privacy">Ho letto l'<a href="privacy.html" class="cta-link">informativa privacy</a> e acconsento a essere ricontattato. *</label>
+            <p class="field-error" id="cf-privacy-err"></p>
+          </div>
+          <div class="form-actions">
+            <button type="submit" class="btn btn-whatsapp" name="via" value="whatsapp">
+              <svg class="icon" aria-hidden="true"><use href="images/icons.svg#i-chat"/></svg>
+              Invia su WhatsApp
+            </button>
+            <button type="submit" class="btn btn-email" name="via" value="email">
+              <svg class="icon" aria-hidden="true"><use href="images/icons.svg#i-mail"/></svg>
+              Invia email
+            </button>
+          </div>
+          <p class="form-status" id="cf-status" role="status"></p>
+        </form>
       </section>
     </main>
     <footer>
 <p class="nap">Pikobit · Programmatore e web designer · Monopoli (BA) · <a href="tel:+393518891903">351 889 1903</a> · <a href="mailto:piko.bit.00@gmail.com">piko.bit.00@gmail.com</a></p>
+<nav class="footer-zone" aria-label="Zone in cui lavoro"><p>Zone: <a href="programmatore-monopoli.html">Monopoli</a> · <a href="programmatore-bari.html">Bari</a> · <a href="programmatore-polignano-a-mare.html">Polignano a Mare</a> · <a href="programmatore-fasano.html">Fasano</a> · <a href="programmatore-conversano.html">Conversano</a> · <a href="programmatore-castellana-grotte.html">Castellana Grotte</a> · <a href="programmatore-putignano.html">Putignano</a> · <a href="programmatore-casamassima.html">Casamassima</a> · <a href="programmatore-ostuni.html">Ostuni</a> · <a href="programmatore-brindisi.html">Brindisi</a> · <a href="programmatore-taranto.html">Taranto</a> · <a href="programmatore-lecce.html">Lecce</a></p></nav>
       <p>&copy; 2026 Pikobit. Tutti i diritti riservati.</p>
       <p>
         "Pikobit: Il tuo punto di partenza per creare, imparare e ispirare."

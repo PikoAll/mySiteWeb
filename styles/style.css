@@ -38,9 +38,14 @@
 }
 
 /* Generale */
-html,
-body {
+/* hidden on html goes to the viewport; clip (not hidden) on body, which
+   would otherwise become a scroll container and break the sticky header */
+html {
   overflow-x: hidden;
+}
+
+body {
+  overflow-x: clip;
 }
 
 body {
@@ -96,50 +101,132 @@ pre {
   /* Per un effetto di transizione */
 }
 
-/* Header */
-header img.banner {
-  width: 100%;
-  max-height: 200px;
-  object-fit: cover;
-  transform: scale(0);
-  /* Inizia in scala ridotta */
-  animation: grow 1s ease-out forwards;
+/* Header: circuit band (vector, sharp at any DPR) + wordmark + menu. Sticky
+   with a negative top: the band scrolls up until only its last
+   --band-stuck px are left, so the header gets smaller without changing
+   height (no layout shift). script.js sets --p (0..1, scroll progress) and
+   the wordmark follows into the strip with a transform. Without JS the
+   menu still stays on top. */
+.site-header {
+  --band-h: 132px;
+  --band-stuck: 56px;
+  --brand-scale: 0.55;
+  --p: 0;
+  position: sticky;
+  top: calc(var(--band-stuck) - var(--band-h));
+  z-index: 1000;
+  background-color: var(--color-bg);
 }
 
-nav ul {
-  list-style: none;
-  margin: 0;
-  padding: 10px 20px;
+.brand-band {
+  position: relative;
+  /* above the menu overlay (998): the open menu does not blur the header */
+  z-index: 999;
+  height: var(--band-h);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background:
+    radial-gradient(
+      ellipse 34% 62% at 50% 50%,
+      var(--color-bg) 40%,
+      transparent 100%
+    ),
+    url("../images/brand/header-circuit.svg") center / cover no-repeat,
+    var(--color-bg);
+  border-bottom: 1px solid rgba(0, 191, 255, 0.25);
+}
+
+.brand {
+  display: block;
+  line-height: 0;
+  border-radius: 6px;
+  transform: translateY(calc(var(--p) * (var(--band-h) - var(--band-stuck)) / 2))
+    scale(calc(1 - var(--p) * (1 - var(--brand-scale))));
+  will-change: transform;
+}
+
+.brand .wordmark {
+  display: block;
+  width: clamp(180px, 26vw, 330px);
+  height: auto;
+}
+
+#navbar {
   display: flex;
   justify-content: center;
   background-color: var(--color-bg-panel);
+  border-bottom: 1px solid rgba(0, 191, 255, 0.15);
 }
 
-nav ul li {
-  margin: 0 15px;
+.nav-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 6px 16px;
+}
+
+.nav-links > li {
+  margin: 0 12px;
 }
 
 nav ul li a {
   color: var(--color-accent);
   text-decoration: none;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
 }
 
-nav ul li a:hover {
+nav ul li a:hover,
+nav ul li a:focus-visible,
+nav ul li a[aria-current] {
   color: white;
 }
 
-/* Navbar - Modalità desktop */
-#navbar {
-  display: flex;
-  /* Mantieni la navbar visibile su desktop */
-  justify-content: center;
-  background-color: var(--color-bg-panel);
-  padding: 10px 0;
+/* Parent section of the page (city page -> "Dove lavoro", post -> "Blog"):
+   a thin orange underline, lighter than the current page. */
+nav ul li a.nav-parent {
+  text-decoration: underline;
+  text-decoration-color: var(--color-cta);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 6px;
 }
 
-#navbar ul {
-  flex-direction: row;
+/* Contatti: the one button of the menu */
+.nav-links > li.nav-cta a {
+  display: inline-block;
+  padding: 0.35em 1.1em;
+  border-radius: 999px;
+  background-color: var(--color-cta);
+  color: var(--color-bg);
+  font-weight: 600;
+  transition: background-color 0.2s ease;
+}
+
+.nav-links > li.nav-cta a:hover,
+.nav-links > li.nav-cta a:focus-visible {
+  background-color: var(--color-cta-hover);
+  color: var(--color-bg);
+}
+
+/* On contact.html the button keeps its orange: "you are here" is a ring
+   and an underline, not another colour. */
+.nav-links > li.nav-cta a[aria-current] {
+  background-color: var(--color-cta);
+  color: var(--color-bg);
+  box-shadow:
+    0 0 0 2px var(--color-bg-panel),
+    0 0 0 3px var(--color-cta);
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
+}
+
+/* Anchors (#section) must not end up under the sticky header */
+html {
+  scroll-padding-top: 130px;
 }
 
 /* Icone SVG inline (sostituiscono Font Awesome CDN) */
@@ -151,29 +238,37 @@ nav ul li a:hover {
   vertical-align: -0.125em;
 }
 
-/* Stile per il pulsante hamburger */
+/* Hamburger: "glass" button, readable on any background, always inside the
+   visible strip of the sticky header. */
 .hamburger {
-  display: block;
+  display: none;
+  position: absolute;
+  right: 16px;
+  bottom: calc((var(--band-stuck) - 44px) / 2);
+  /* centred on the band at the top of the page, on the strip once stuck */
+  transform: translateY(calc((1 - var(--p)) * (var(--band-stuck) - var(--band-h)) / 2));
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  align-items: center;
+  justify-content: center;
   font-size: 1.5rem;
-  color: blue;
-  position: fixed;
-  /* Rimane sempre sopra */
-  top: 20px;
-  right: 20px;
-  z-index: 1000;
-  /* Assicurati che stia sopra l'overlay */
+  color: white;
+  background-color: rgba(13, 15, 18, 0.55);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  border: 1px solid var(--color-accent);
+  border-radius: 12px;
+  box-shadow: 0 0 12px rgba(0, 191, 255, 0.25);
   cursor: pointer;
-  transition: color 0.3s ease;
+  z-index: 1001;
 }
 
-/* Nascondi l'icona hamburger in modalità desktop */
-@media screen and (min-width: 769px) {
-  .hamburger {
-    display: none;
-    /* Nasconde l'icona hamburger */
-  }
+.hamburger:hover,
+.hamburger:focus-visible,
+.hamburger[aria-expanded="true"] {
+  background-color: rgba(0, 191, 255, 0.18);
 }
-
 .cta-link {
   color: var(--color-cta);
   text-decoration: none;
@@ -190,34 +285,32 @@ nav ul li a:hover {
 }
 
 @media screen and (max-width: 768px) {
+  .site-header {
+    --band-h: 96px;
+    --band-stuck: 60px;
+    --brand-scale: 0.8;
+  }
+
+  .brand .wordmark {
+    width: 170px;
+  }
+
   .hamburger {
-    display: block;
-    /* Mostra il pulsante in modalità mobile */
-    font-size: 1.5rem;
-    color: var(--color-cta-hover);
-    /* Cambia il colore dell'icona */
-    position: fixed;
-    cursor: pointer;
-    transition: color 0.3s ease;
-    /* Aggiungi una transizione per l'effetto hover */
+    display: flex;
   }
 
   #navbar {
     display: none;
     /* Nascondi la navbar di default */
     flex-direction: column;
-    /* Trasforma la navbar in verticale */
     background-color: var(--color-bg-panel);
     position: fixed;
-    top: 60px;
+    /* right under the header, whatever its height (set by script.js) */
+    top: var(--nav-top, 60px);
     right: 0;
     width: 100%;
     z-index: 999;
-    /* Assicurati che sia sopra l'overlay */
-    transition:
-      transform 0.3s ease,
-      opacity 0.3s ease;
-    /* Opzionale */
+    border-bottom: 1px solid var(--color-accent);
   }
 
   #navbar.active {
@@ -234,7 +327,7 @@ nav ul li a:hover {
   #navbar ul li {
     margin: 0;
     text-align: center;
-    padding: 15px 0;
+    padding: 12px 0;
   }
 }
 
@@ -324,9 +417,15 @@ main section {
   opacity: 0.08;
 }
 
+/* Round frame with the vector mark inside: the padding keeps the square
+   symbol within the circle (corners at 0.707 of the radius). */
 .intro-container img.logo {
+  box-sizing: border-box;
   width: 120px;
-  height: auto;
+  height: 120px;
+  padding: 19px;
+  object-fit: contain;
+  background-color: var(--color-bg);
   margin-bottom: 20px;
   border: 3px solid var(--color-accent);
   border-radius: 50%;
@@ -343,7 +442,7 @@ main section {
   letter-spacing: 1px;
   font-size: 0.95rem;
   font-weight: 600;
-  margin: 0 0 5px;
+  margin: 0 auto 5px;
 }
 
 .intro-container h1 {
@@ -357,8 +456,11 @@ main section {
 }
 
 .intro-container p {
+  max-width: 70ch;
+  margin-inline: auto;
   font-size: 1.2rem;
   line-height: 1.8;
+  overflow-wrap: anywhere;
 }
 
 .why-pikobit {
@@ -430,34 +532,8 @@ main section {
   text-align: left;
 }
 
-/* Service/work cards: lift + accent glow. Same box size on hover (the old
-   1px -> 2px border made the text jump), keyboard focus gets the same look. */
-.goals ul li,
-.why-pikobit ul li {
-  transition:
-    transform 0.25s ease,
-    box-shadow 0.25s ease,
-    background-color 0.25s ease;
-}
-
-.goals ul li:focus-within,
-.why-pikobit ul li:focus-within {
-  background-color: #1a1c21;
-  box-shadow:
-    0 0 0 1px var(--color-accent),
-    0 8px 24px rgba(0, 191, 255, 0.18);
-}
-
-@media (hover: hover) {
-  .goals ul li:hover,
-  .why-pikobit ul li:hover {
-    background-color: #1a1c21;
-    transform: translateY(-3px);
-    box-shadow:
-      0 0 0 1px var(--color-accent),
-      0 8px 24px rgba(0, 191, 255, 0.18);
-  }
-}
+/* .goals / .why-pikobit list items are text, not links: no hover effect
+   (only .card--link reacts, see "Cards"). */
 
 /* Sections reveal on scroll: .reveal is added by script.js only, so the
    content stays visible without JS. */
@@ -542,13 +618,12 @@ main section {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .goals ul li,
-  .why-pikobit ul li,
-  .reveal {
+  .reveal,
+  .card--link {
     transition: none;
   }
-  .goals ul li:hover,
-  .why-pikobit ul li:hover {
+  .card--link:hover,
+  .card--link:focus-within {
     transform: none;
   }
   .intro-container > a.cta-link {
@@ -613,14 +688,6 @@ footer .social-icons a:hover {
 
 /* Responsive */
 @media screen and (max-width: 768px) {
-  nav ul {
-    flex-direction: column;
-  }
-
-  header img.banner {
-    max-height: 150px;
-  }
-
   main img.logo {
     width: 80px;
   }
@@ -764,12 +831,6 @@ strong {
   }
 }
 
-/* Tendina "Dove lavoro": 13 voci, non deve uscire dallo schermo */
-.nav-zone .dropdown-menu {
-  max-height: 70vh;
-  overflow-y: auto;
-}
-
 @media (max-width: 768px) {
   /* Nel menu mobile le tendine si aprono in linea (a fisarmonica) e spingono
      giu' le voci successive: assolute, coprirebbero la voce sotto */
@@ -804,7 +865,7 @@ strong {
      con center il contenuto in eccesso sborda anche SOPRA, e quella parte
      (Home, Servizi, il pulsante della tendina) non si raggiunge scorrendo */
   #navbar.active {
-    max-height: calc(100vh - 60px);
+    max-height: calc(100vh - var(--nav-top, 60px));
     overflow-y: auto;
     justify-content: flex-start;
   }
@@ -942,54 +1003,930 @@ strong {
 
 /*FINE LA PAGINA resource -----------*/
 
-/*DISPENSE FOTOPER PAGINA CREATIVE SERVICES*/
-/* Contenitore del carousel */
-.carousel-container {
-  width: 100%;
-  max-width: 600px;
-  overflow: hidden;
-  margin: 20px auto;
-  position: relative;
-  border: 2px solid #ccc;
-  border-radius: 10px;
-}
-
-.carousel-slide {
-  display: flex;
-  transition: transform 0.5s ease-in-out; /* Aggiunge la transizione fluida */
-  width: 100%; /* Assicurati che il contenitore si adatti */
-}
-
-.carousel-slide img {
-  width: 100%; /* L'immagine occupa tutto lo spazio disponibile */
-  flex-shrink: 0; /* Evita che le immagini si ridimensionino */
-  max-width: 600px;
-  height: auto;
-  object-fit: cover;
-}
+/* Vertical rhythm of every section (was inside the old photo slider block) */
 section {
   padding: 20px 0; /* Riduci il padding verticale */
 }
 
-.carousel-slide img:hover {
-  transform: scale(1.05); /* Effetto zoom leggero */
-  transition: transform 0.3s ease-in-out;
-}
 
-@media (max-width: 768px) {
-  .carousel-btn {
-    padding: 8px;
-    font-size: 16px;
-  }
-
-  .carousel-container {
-    border: none; /* Rimuove il bordo per un design più pulito su mobile */
-  }
-}
-
-/*FINE DISPENE FOTO PER PAGINA CREATIVE SERVICES*/
 
 /* Riga NAP del footer: i link devono leggersi sul fondo scuro */
 .nap a {
   color: var(--color-accent);
+}
+
+/* Footer "Zone": the 12 city pages, linked from every page */
+.footer-zone p {
+  max-width: 900px;
+  margin: 8px auto;
+  font-size: 0.9rem;
+  color: #ccc;
+}
+
+.footer-zone a {
+  color: var(--color-accent);
+  white-space: nowrap;
+}
+
+/* City chips (dove-lavoro and the "Zone" lists of the city pages): a
+   .card--link chip is clickable as a whole, a plain one (Turi, the page you
+   are on) stays flat. Same rule as the card grids: the column count follows
+   the number of chips, never ONE chip alone on the last row
+   (tests/e2e/layout.spec.mjs).
+     chips   <600px          600-1023px            >=1024px
+     1       1               1                     1
+     3       1               3                     3
+     4       2 (2+2)         2 (2+2)               4
+     5       1               3 (3+2)               5
+     6       2 (2+2+2)       3 (3+3)               3 (3+3)
+     13      1               5 (5+5+3) >=800px     5 (5+5+3) */
+.goals ul.city-grid {
+  display: grid;
+  grid-template-columns: repeat(var(--cols, 1), minmax(0, 220px));
+  justify-content: center;
+  gap: 10px;
+  max-width: 900px;
+}
+
+:where(.city-grid):where(:has(> :nth-child(4):last-child), :has(> :nth-child(6):last-child)) {
+  --cols: 2;
+}
+
+@media (min-width: 600px) {
+  :where(.city-grid):where(
+      :has(> :nth-child(3):last-child),
+      :has(> :nth-child(5):last-child),
+      :has(> :nth-child(6):last-child)
+    ) {
+    --cols: 3;
+  }
+}
+
+@media (min-width: 800px) {
+  :where(.city-grid):where(:has(> :nth-child(13):last-child)) {
+    --cols: 5;
+  }
+}
+
+@media (min-width: 1024px) {
+  :where(.city-grid):where(:has(> :nth-child(4):last-child)) {
+    --cols: 4;
+  }
+  :where(.city-grid):where(:has(> :nth-child(5):last-child)) {
+    --cols: 5;
+  }
+}
+
+.goals ul.city-grid li {
+  position: relative;
+  margin: 0;
+  padding: 0.45em 1.1em;
+  font-size: 1rem;
+  text-align: center;
+  border: 1px solid rgba(0, 191, 255, 0.2);
+  border-radius: 999px;
+}
+
+.goals ul.city-grid li.card--link {
+  border-color: rgba(0, 191, 255, 0.55);
+}
+
+.city-grid li.card--link a {
+  color: var(--color-accent);
+  text-decoration: none;
+}
+
+.city-grid li.card--link a::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 999px;
+}
+
+.city-grid li.card--link a::before {
+  content: "→ " / "";
+  color: var(--color-cta);
+}
+
+/* ===== Restyling components (home, service pages, ideas, about, blog) ===== */
+
+/* Icons from images/icons.svg (<use>): stroke set here, the sprite root
+   attributes do not reach the cloned symbol. */
+.icon {
+  width: 1.6rem;
+  height: 1.6rem;
+  flex: none;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* Section with a centred title and an optional one-line lead */
+.block {
+  max-width: 1200px;
+  margin: 0 auto 56px;
+  padding: 0 4px;
+}
+
+.block > h2 {
+  font-size: clamp(1.5rem, 1.1rem + 1.6vw, 2rem);
+  color: var(--color-accent);
+  margin: 0 0 8px;
+}
+
+.block > h2::after {
+  content: "";
+  display: block;
+  width: 50px;
+  height: 3px;
+  margin: 10px auto 0;
+  background-color: var(--color-accent);
+}
+
+.block > .lead {
+  max-width: 720px;
+  margin: 12px auto 0;
+  color: #ddd;
+}
+
+/* Quick index of the page (anchors) */
+.page-toc {
+  max-width: 1100px;
+  margin: 0 auto 40px;
+}
+
+.page-toc ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.page-toc a {
+  display: inline-block;
+  padding: 0.35em 0.95em;
+  border: 1px solid rgba(0, 191, 255, 0.45);
+  border-radius: 999px;
+  color: var(--color-accent);
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.page-toc a:hover,
+.page-toc a:focus-visible {
+  background-color: rgba(0, 191, 255, 0.15);
+  color: white;
+}
+
+/* Cards (grid and carousel share them) */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(var(--cols, 1), minmax(0, 1fr));
+  gap: 16px;
+  list-style: none;
+  margin: 24px 0 0;
+  padding: 0;
+  text-align: left;
+}
+
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 20px;
+  background-color: var(--color-bg-panel);
+  border: 1px solid rgba(0, 191, 255, 0.35);
+  border-radius: 12px;
+  text-align: left;
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.card .icon {
+  width: 2.2rem;
+  height: 2.2rem;
+  padding: 8px;
+  color: var(--color-accent);
+  background-color: rgba(0, 191, 255, 0.1);
+  border-radius: 10px;
+  box-sizing: content-box;
+}
+
+.card h3 {
+  margin: 4px 0 0;
+  font-size: 1.1rem;
+  line-height: 1.35;
+  color: white;
+}
+
+.card h3 a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.card h3 a::after {
+  /* the whole card is the link */
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 12px;
+}
+
+.card p {
+  margin: 0;
+  color: #ddd;
+}
+
+.card .card-note {
+  margin-top: auto;
+  padding-top: 10px;
+  border-top: 1px solid rgba(0, 191, 255, 0.2);
+  font-size: 0.95rem;
+}
+
+.card .card-note em {
+  color: var(--color-cta);
+  font-style: normal;
+  font-weight: 600;
+}
+
+/* Static cards (no link): flatter, no hover, so they never look like
+   buttons. */
+.card:not(.card--link) {
+  border-color: rgba(0, 191, 255, 0.18);
+  background-color: rgba(18, 21, 26, 0.6);
+}
+
+/* Clickable cards and chips (.card--link, set in the HTML: the h3 link
+   covers the whole card). Orange hover, keyboard focus looks the same. */
+.card--link {
+  cursor: pointer;
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.card.card--link::after {
+  content: "Scopri di più →" / "";
+  margin-top: auto;
+  padding-top: 6px;
+  color: var(--color-cta);
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.card--link:focus-within,
+.goals ul.city-grid li.card--link:focus-within {
+  border-color: var(--color-cta);
+  box-shadow:
+    0 0 0 1px var(--color-cta),
+    0 8px 24px rgba(255, 165, 0, 0.2);
+}
+
+.card--link a:focus-visible {
+  outline: none;
+}
+
+@media (hover: hover) {
+  .card--link:hover,
+  .goals ul.city-grid li.card--link:hover {
+    transform: translateY(-3px);
+    border-color: var(--color-cta);
+    box-shadow:
+      0 0 0 1px var(--color-cta),
+      0 8px 24px rgba(255, 165, 0, 0.2);
+  }
+}
+
+/* Carousel: horizontal scroll-snap track, every card in the DOM, no
+   autoplay. Works without JS (swipe, trackpad, scrollbar, arrow keys on the
+   focused track); script.js only adds the arrow buttons. Wide screens: grid. */
+.carousel {
+  position: relative;
+  margin-top: 24px;
+}
+
+.carousel-track {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: min(78%, 300px);
+  gap: 16px;
+  margin: 0;
+  padding: 4px 4px 14px;
+  list-style: none;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-padding: 0 4px;
+  overscroll-behavior-x: contain;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(0, 191, 255, 0.5) transparent;
+}
+
+.carousel-track:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 4px;
+  border-radius: 12px;
+}
+
+.carousel-track > .card {
+  scroll-snap-align: start;
+}
+
+.carousel-btn {
+  position: absolute;
+  top: calc(50% - 30px);
+  z-index: 2;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  color: white;
+  background-color: rgba(13, 15, 18, 0.7);
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+  border: 1px solid var(--color-accent);
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.carousel-btn .icon {
+  width: 1.3rem;
+  height: 1.3rem;
+}
+
+/* Arrows under the track, centred: they never cover the text. The room
+   is reserved in CSS (padding), so adding them from JS moves nothing. */
+.carousel {
+  padding-bottom: 54px;
+}
+
+.carousel-btn {
+  top: auto;
+  bottom: 0;
+}
+
+.carousel-btn.prev {
+  left: calc(50% - 52px);
+}
+
+.carousel-btn.next {
+  right: calc(50% - 52px);
+}
+
+.carousel.has-overflow .carousel-btn {
+  display: flex;
+}
+
+.carousel-btn:disabled {
+  opacity: 0.35;
+  cursor: default;
+}
+
+.carousel-btn:not(:disabled):hover,
+.carousel-btn:focus-visible {
+  background-color: rgba(0, 191, 255, 0.2);
+}
+
+/* Wide screens: all the cards of a carousel on ONE row (5 services = 5
+   columns), never 4 + 1 orphan. Narrower: the swipe carousel above. */
+@media (min-width: 1100px) {
+  .carousel:not(.carousel--photos) {
+    padding-bottom: 0;
+  }
+  .carousel-track {
+    grid-auto-flow: column;
+    grid-auto-columns: minmax(0, 1fr);
+    overflow: visible;
+    padding-bottom: 0;
+  }
+}
+
+/* Alternating sections: text beside a light illustration */
+.split {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+  align-items: center;
+  text-align: left;
+}
+
+.split > h2 {
+  grid-column: 1 / -1;
+  text-align: center;
+}
+
+@media (min-width: 860px) {
+  .split {
+    grid-template-columns: 3fr 2fr;
+  }
+  .split > .split-text {
+    grid-row: 2;
+    grid-column: 1;
+  }
+  .split > .split-art,
+  .split > .carousel {
+    grid-row: 2;
+    grid-column: 2;
+  }
+  /* reversed: illustration on the left, text on the right */
+  .split--rev {
+    grid-template-columns: 2fr 3fr;
+  }
+  .split--rev > .split-text {
+    grid-column: 2;
+  }
+  .split--rev > .split-art {
+    grid-column: 1;
+  }
+}
+
+.split-art {
+  display: flex;
+  justify-content: center;
+}
+
+.split-art svg {
+  width: min(220px, 60vw);
+  height: auto;
+  color: var(--color-accent);
+  overflow: visible;
+}
+
+.split-art .ring {
+  fill: none;
+  stroke: rgba(0, 191, 255, 0.35);
+  stroke-width: 1;
+  stroke-dasharray: 4 6;
+  transform-origin: 50% 50%;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .split-art .ring {
+    animation: fx-orbit 30s linear infinite;
+  }
+  .split-art .ring + .ring {
+    animation-direction: reverse;
+    animation-duration: 45s;
+  }
+}
+
+@keyframes fx-orbit {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Numbered steps: only where the content is a real sequence */
+.steps {
+  counter-reset: step;
+  list-style: none;
+  margin: 24px 0 0;
+  padding: 0;
+  display: grid;
+  gap: 14px;
+  grid-template-columns: repeat(var(--cols, 1), minmax(0, 1fr));
+  text-align: left;
+}
+
+.steps > li {
+  counter-increment: step;
+  position: relative;
+  padding: 52px 18px 18px;
+  background-color: var(--color-bg-panel);
+  border: 1px solid rgba(0, 191, 255, 0.35);
+  border-radius: 12px;
+}
+
+.steps > li::before {
+  content: counter(step);
+  position: absolute;
+  top: 14px;
+  left: 18px;
+  width: 30px;
+  height: 30px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background-color: var(--color-accent);
+  color: var(--color-bg);
+  font-weight: 600;
+}
+
+.steps h3 {
+  margin: 0 0 6px;
+  font-size: 1.05rem;
+  color: white;
+}
+
+.steps p {
+  margin: 0;
+  color: #ddd;
+}
+
+/* Final CTA band */
+.cta-band {
+  max-width: 900px;
+  margin: 0 auto 56px;
+}
+
+.cta-band .intro-container h2 {
+  color: var(--color-accent);
+  margin-top: 0;
+}
+
+/* Quote under the H1 (was an h3 right after the h1: heading order) */
+.highlighted-text {
+  font-size: 1.15rem;
+  font-style: italic;
+  color: var(--color-cta);
+  margin: 0 auto 16px;
+}
+
+/* Testimonials / small quotes */
+.quote-card blockquote {
+  margin: 0;
+  font-style: italic;
+}
+
+.quote-card .icon {
+  background: none;
+  padding: 0;
+}
+
+/* About: short paragraphs, more air */
+.prose {
+  max-width: 720px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.prose p {
+  font-size: 1.1rem;
+  line-height: 1.85;
+  margin: 0 0 1.1em;
+}
+
+.prose .key {
+  padding: 14px 18px;
+  border-left: 3px solid var(--color-accent);
+  background-color: rgba(0, 191, 255, 0.07);
+  border-radius: 0 10px 10px 0;
+}
+
+.intro-container .prose p {
+  font-size: 1.1rem;
+}
+
+/* Blog: older articles hidden only by script.js (no JS = all visible) */
+.article-box[hidden] {
+  display: none;
+}
+
+.show-older {
+  display: block;
+  margin: 28px auto 0;
+  padding: 0.7em 1.6em;
+  font: inherit;
+  font-weight: 600;
+  color: var(--color-bg);
+  background-color: var(--color-accent);
+  border: 0;
+  border-radius: 999px;
+  cursor: pointer;
+}
+
+.show-older:hover,
+.show-older:focus-visible {
+  background-color: white;
+}
+
+.show-older[hidden] {
+  display: none;
+}
+
+.block-cta {
+  margin: 24px auto 0;
+  max-width: 720px;
+}
+
+.split-art .art-icon {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.3;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.split-art .ring {
+  transform-box: fill-box;
+}
+
+.split-text > .card-grid {
+  margin-top: 0;
+}
+
+.split-text > p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+}
+
+/* Photo carousel (creative-services): one photo per view at every width */
+.carousel--photos .carousel-track {
+  grid-auto-flow: column;
+  grid-template-columns: none;
+  grid-auto-columns: 100%;
+  overflow-x: auto;
+}
+
+.carousel--photos .photo {
+  scroll-snap-align: start;
+}
+
+.carousel--photos img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  border: 1px solid rgba(0, 191, 255, 0.35);
+}
+
+/* Card grids (.card-grid, .steps): the number of columns follows the
+   number of cards, so the last row is never ONE orphan card
+   (tests/e2e/layout.spec.mjs checks every page at every width).
+     cards   <600px   600-1023px        >=1024px
+     2       1        2                 2
+     3       1        3                 3
+     4       1        2 (2+2)           4
+     5       1        3 (3+2)           5
+     6       1        3 (3+3)           3 (3+3)
+     7       1        4 (4+3) >=768px   4 (4+3)
+   Inside a .split the text column is narrow: 2 columns at most. The count
+   rules are in :where() (no specificity) so that override wins. */
+@media (min-width: 600px) {
+  :where(.card-grid, .steps) {
+    --cols: 2;
+  }
+  :where(.card-grid, .steps):where(
+      :has(> :nth-child(3):last-child),
+      :has(> :nth-child(5):last-child),
+      :has(> :nth-child(6):last-child)
+    ) {
+    --cols: 3;
+  }
+  :where(.card-grid, .steps):where(:has(> :nth-child(7):last-child)) {
+    --cols: 1;
+  }
+}
+
+@media (min-width: 768px) {
+  :where(.card-grid, .steps):where(:has(> :nth-child(7):last-child)) {
+    --cols: 4;
+  }
+}
+
+@media (min-width: 1024px) {
+  :where(.card-grid, .steps):where(:has(> :nth-child(4):last-child)) {
+    --cols: 4;
+  }
+  :where(.card-grid, .steps):where(:has(> :nth-child(5):last-child)) {
+    --cols: 5;
+  }
+}
+
+@media (min-width: 600px) {
+  .split-text > .card-grid {
+    --cols: 2;
+  }
+}
+
+/* ===== contact.html: info on the left, form on the right (stacked on
+   phones). "Glass" panels, orange for the actions. ===== */
+.contact-layout {
+  display: grid;
+  gap: 24px;
+  max-width: 1100px;
+  margin: 0 auto 56px;
+  padding: 0 16px;
+  text-align: left;
+}
+
+@media (min-width: 900px) {
+  .contact-layout {
+    grid-template-columns: 2fr 3fr;
+    align-items: start;
+  }
+}
+
+.contact-details,
+.contact-form {
+  padding: 24px;
+  background-color: rgba(18, 21, 26, 0.72);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(0, 191, 255, 0.3);
+  border-radius: 14px;
+}
+
+.contact-details h2,
+.contact-form h2 {
+  margin: 0 0 12px;
+  color: var(--color-accent);
+  font-size: 1.4rem;
+}
+
+.contact-list {
+  list-style: none;
+  margin: 0 0 16px;
+  padding: 0;
+  display: grid;
+  gap: 14px;
+}
+
+.contact-list li {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+}
+
+.contact-list .icon {
+  color: var(--color-accent);
+  margin-top: 2px;
+}
+
+.contact-list a {
+  overflow-wrap: anywhere;
+}
+
+.form-hint {
+  margin: 0 0 16px;
+  color: #ccc;
+  font-size: 0.95rem;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 14px;
+  min-width: 0;
+}
+
+.field-row {
+  display: grid;
+  gap: 0 16px;
+}
+
+@media (min-width: 600px) {
+  .field-row {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.field label {
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.contact-form input:not([type="checkbox"]),
+.contact-form select,
+.contact-form textarea {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0.65em 0.8em;
+  font: inherit;
+  color: white;
+  background-color: rgba(13, 15, 18, 0.85);
+  border: 1px solid rgba(0, 191, 255, 0.35);
+  border-radius: 10px;
+}
+
+.contact-form textarea {
+  resize: vertical;
+  min-height: 140px;
+}
+
+.contact-form input:focus-visible,
+.contact-form select:focus-visible,
+.contact-form textarea:focus-visible {
+  outline: 2px solid var(--color-cta);
+  outline-offset: 1px;
+  border-color: var(--color-cta);
+}
+
+.contact-form [aria-invalid="true"] {
+  border-color: #ff6b6b;
+}
+
+.field-error {
+  margin: 0;
+  min-height: 0;
+  color: #ff8a8a;
+  font-size: 0.9rem;
+}
+
+.field-error:empty {
+  display: none;
+}
+
+.field-check {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 4px 10px;
+  align-items: start;
+}
+
+.field-check input {
+  width: 20px;
+  height: 20px;
+  margin: 3px 0 0;
+  accent-color: var(--color-cta);
+}
+
+.field-check label {
+  font-weight: 400;
+}
+
+.field-check .field-error {
+  grid-column: 1 / -1;
+}
+
+.form-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  flex: 1 1 200px;
+  min-height: 48px;
+  padding: 0.6em 1.3em;
+  font: inherit;
+  font-weight: 600;
+  border-radius: 999px;
+  cursor: pointer;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.btn .icon {
+  width: 1.3rem;
+  height: 1.3rem;
+}
+
+.btn-whatsapp {
+  color: var(--color-bg);
+  background-color: var(--color-cta);
+  border: 1px solid var(--color-cta);
+}
+
+.btn-email {
+  color: var(--color-cta);
+  background-color: transparent;
+  border: 1px solid var(--color-cta);
+}
+
+.btn:hover,
+.btn:focus-visible {
+  box-shadow: 0 0 0 2px rgba(255, 165, 0, 0.35), 0 6px 18px rgba(255, 165, 0, 0.25);
+}
+
+.btn-whatsapp:hover,
+.btn-whatsapp:focus-visible {
+  background-color: var(--color-cta-hover);
+  border-color: var(--color-cta-hover);
+}
+
+.btn:focus-visible {
+  outline: 2px solid white;
+  outline-offset: 2px;
+}
+
+.form-status {
+  margin: 12px 0 0;
+  color: #ddd;
+}
+
+.form-status:empty {
+  display: none;
 }

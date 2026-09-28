@@ -42,6 +42,52 @@
   opacity: 1;
 }
 
+/* Puglia map: every city dot is a link (scripts/fx/puglia.js places them).
+   A hit circle centred on the dot (up to 32px, sized by puglia.js so two
+   never overlap), the name shows on hover. */
+[data-fx] > .fx-map-links {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.fx-map-links[hidden] {
+  display: none;
+}
+
+.fx-map-links a {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: auto;
+  cursor: pointer;
+  transition: box-shadow 0.2s ease;
+}
+
+.fx-map-links a span {
+  position: absolute;
+  left: 50%;
+  bottom: calc(100% + 2px);
+  transform: translateX(-50%);
+  padding: 2px 8px;
+  border-radius: 6px;
+  white-space: nowrap;
+  font-size: 0.85rem;
+  color: var(--color-bg);
+  background-color: var(--color-cta);
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  pointer-events: none;
+}
+
+.fx-map-links a:hover {
+  box-shadow: 0 0 0 2px var(--color-cta), 0 0 16px rgba(255, 165, 0, 0.5);
+}
+
+.fx-map-links a:hover span {
+  opacity: 1;
+}
+
 /* Blog and resources: only a thin band at the top of the header, never a
    canvas under the text people read. */
 .intro-container > .fx-strip {
@@ -62,11 +108,10 @@
 
 /* Cards: a soft light follows the mouse (script.js sets --mx/--my). */
 @media (hover: hover) and (pointer: fine) {
-  .goals ul li,
-  .why-pikobit ul li {
+  .card--link {
     background-image: radial-gradient(
       220px circle at var(--mx, -999px) var(--my, -999px),
-      rgba(0, 191, 255, 0.12),
+      rgba(255, 165, 0, 0.1),
       transparent 70%
     );
   }
