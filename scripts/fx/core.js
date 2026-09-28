@@ -1,7 +1,7 @@
 /*
  * Pikobit FX engine: mounts the page scene (window.PikoFx[name], loaded first
  * by script.js) on [data-fx]. Owns canvas, DPR cap, resize, pause, 30 fps on
- * touch, pointer, tilt, dispose. Scene = (env) => ({ tilt, resize(), frame(dt, t) }).
+ * touch, pointer, tilt, dispose. Scene = (env) => ({ tilt, syncResize, resize(), frame(dt, t) }).
  */
 (() => {
   "use strict";
@@ -53,6 +53,7 @@
     const touch = window.matchMedia("(pointer: coarse)").matches;
     const sprites = {};
     const env = {
+      host,
       ctx,
       dpr,
       touch,
@@ -124,10 +125,13 @@
       }
       p.x += (p.tx - p.x) * 0.06;
       p.y += (p.ty - p.y) * 0.06;
-      if (tilt)
+      if (tilt) {
         canvas.style.transform =
           `perspective(900px) rotateX(${(-p.y * tilt).toFixed(2)}deg) ` +
           `rotateY(${(p.x * tilt).toFixed(2)}deg) scale(1.08)`;
+        // HTML laid over the scene (e.g. the city links) moves with it
+        if (env.overlay) env.overlay.style.transform = canvas.style.transform;
+      }
       ctx.clearRect(0, 0, env.w, env.h);
       scene.frame(dt, t);
       if (scene.textSafe) {
@@ -164,13 +168,21 @@
     };
     const onVisibility = () => (document.hidden ? stop() : start());
     let timer = 0;
+    const changed = () => {
+      const r = host.getBoundingClientRect();
+      return Math.round(r.width) !== env.w || Math.round(r.height) !== env.h;
+    };
+    // Debounced: redrawing a scene while the window is dragged is wasted
+    // work. A scene with real links over the canvas (scene.syncResize) is
+    // redone at once instead, inside the observer callback, i.e. before the
+    // next paint: dots and links can never be seen (or clicked) out of step.
     const ro = new ResizeObserver(() => {
+      if (scene.syncResize) {
+        if (changed()) resize();
+        return;
+      }
       clearTimeout(timer);
-      timer = setTimeout(() => {
-        const r = host.getBoundingClientRect();
-        if (Math.round(r.width) !== env.w || Math.round(r.height) !== env.h)
-          resize();
-      }, 150);
+      timer = setTimeout(() => changed() && resize(), 150);
     });
     const io = new IntersectionObserver(([e]) => {
       onScreen = e.isIntersecting;
@@ -199,6 +211,7 @@
       host.classList.remove("fx-on");
       canvas.width = canvas.height = 0; // release the backing store now
       canvas.remove();
+      if (env.overlay) env.overlay.remove();
     };
   }
 

@@ -28,7 +28,7 @@
     <meta property="og:url" content="https://pikobit.it/websites.html" />
 
     <!-- Collegamenti CSS -->
-    <link rel="stylesheet" href="./styles/style.css?v=4.0.1.2" />
+    <link rel="stylesheet" href="./styles/style.css?v=4.3.1.0" />
     <link
       rel="preload"
       href="fonts/poppins/poppins-latin-400-normal.woff2"
@@ -38,7 +38,7 @@
     />
     <link rel="icon" href="./images/logo.webp" type="image/png" />
 
-    <script defer src="scripts/script.js?v=4.0.1.2"></script>
+    <script defer src="scripts/script.js?v=4.3.1.0"></script>
 
     <!-- Dati strutturati -->
     <script type="application/ld+json">
@@ -72,67 +72,41 @@
   </head>
 
   <body>
-    <header>
-      <img src="./images/banner.webp" alt="Pikobit Banner" class="banner" width="1024" height="587" />
-      <div class="hamburger" id="hamburger-menu" role="button" tabindex="0" aria-label="Apri menu di navigazione" aria-expanded="false">
-        <svg class="icon-svg" viewBox="0 0 448 512" aria-hidden="true"><path d="M0 96C0 78.3 14.3 64 32 64l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 128C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 288c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32L32 448c-17.7 0-32-14.3-32-32s14.3-32 32-32l384 0c17.7 0 32 14.3 32 32z"/></svg>
-      </div>
-      <div class="overlay" id="overlay"></div>
-      <nav id="navbar">
-        <ul class="nav-links">
-          <li><a href="index.html">Home</a></li>
-
-          <li class="dropdown">
-            <a href="#" id="dropdown-toggle" aria-haspopup="true" aria-expanded="false">Servizi ▼</a>
-            <ul class="dropdown-menu">
-              <li><a href="websites.html">Siti web personalizzati</a></li>
-              <li><a href="modern-apps.html">Applicazioni moderne</a></li>
-              <li>
-                <a href="custom-software.html">Software gestionali su misura</a>
-              </li>
-              <li>
-                <a href="creative-services.html"
-                  >Servizi Creativi e Soluzioni Complete</a
-                >
-              </li>
-              <li><a href="lessons.html">Lezioni e tutorial</a></li>
-            </ul>
-          </li>
-
-<li class="dropdown nav-zone">
-<a href="dove-lavoro.html" class="dropdown-toggle" aria-haspopup="true" aria-expanded="false">Dove lavoro ▼</a>
+    <header class="site-header" id="site-header">
+<div class="brand-band">
+<a class="brand" href="index.html" aria-label="Pikobit, vai alla home"><svg class="wordmark" viewBox="-3 -4 553 109" aria-hidden="true" focusable="false"><g fill="#fff" stroke="#fff" stroke-width="3" stroke-linejoin="round"><path d="M0 0H50C68 0 82 14 82 33C82 52 68 66 50 66H21V100H0V44H50C55 44 60 40 60 33C60 26 55 22 50 22H21V30H0Z"/><path d="M96 0H117V100H96Z"/><path d="M134 0H155V35L188 0H217L178 45L220 100H192L162 58L155 65V100H134Z"/><path fill-rule="evenodd" d="M275.5-1.5a51.5 51.5 0 1 0 .01 0ZM275.5 19a31 31 0 1 1-.01 0Z"/><path fill-rule="evenodd" d="M341 0H389C405 0 417 9 417 21C417 30 413 36 407 40C417 45 423 54 423 68C423 86 411 100 393 100H341V40H388C393 40 396 36 396 31C396 26 393 22 388 22H362V30H341ZM362 60H393C399 60 402 64 402 69C402 74 399 78 393 78H362Z"/><path d="M437 0H458V100H437Z"/><path d="M473 0H547V22H520.5V100H499.5V22H473Z"/></g><circle cx="275.5" cy="50" r="11.5" fill="none" stroke="#9ad8f3" stroke-width="9"/></svg></a>
+<button class="hamburger" id="hamburger-menu" type="button" aria-label="Apri menu di navigazione" aria-expanded="false" aria-controls="navbar"><svg class="icon-svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 6h18M3 12h18M3 18h18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg></button>
+</div>
+<div class="overlay" id="overlay"></div>
+<nav id="navbar" aria-label="Menu principale">
+<ul class="nav-links">
+<li><a href="index.html">Home</a></li>
+<li class="dropdown">
+<a href="#" id="dropdown-toggle" aria-haspopup="true" aria-expanded="false">Servizi ▼</a>
 <ul class="dropdown-menu">
-<li><a href="programmatore-monopoli.html">Monopoli</a></li>
-<li><a href="programmatore-bari.html">Bari</a></li>
-<li><a href="programmatore-polignano-a-mare.html">Polignano a Mare</a></li>
-<li><a href="programmatore-fasano.html">Fasano</a></li>
-<li><a href="programmatore-conversano.html">Conversano</a></li>
-<li><a href="programmatore-castellana-grotte.html">Castellana Grotte</a></li>
-<li><a href="programmatore-putignano.html">Putignano</a></li>
-<li><a href="programmatore-casamassima.html">Casamassima</a></li>
-<li><a href="programmatore-ostuni.html">Ostuni</a></li>
-<li><a href="programmatore-brindisi.html">Brindisi</a></li>
-<li><a href="programmatore-taranto.html">Taranto</a></li>
-<li><a href="programmatore-lecce.html">Lecce</a></li>
-<li><a href="dove-lavoro.html">Tutte le zone</a></li>
+<li><a href="websites.html" aria-current="page">Siti web personalizzati</a></li>
+<li><a href="modern-apps.html">Applicazioni moderne</a></li>
+<li><a href="custom-software.html">Software gestionali su misura</a></li>
+<li><a href="creative-services.html">Servizi Creativi e Soluzioni Complete</a></li>
+<li><a href="lessons.html">Lezioni e tutorial</a></li>
 </ul>
 </li>
-
-          <li><a href="ideas.html">Idee Innovative</a></li>
-          <li><a href="about.html">Chi Sono</a></li>
-          <li><a href="resources.html">Risorse</a></li>
-          <li><a href="contact.html">Contatti</a></li>
-        </ul>
-      </nav>
-    </header>
+<li><a href="dove-lavoro.html">Dove lavoro</a></li>
+<li><a href="ideas.html">Progetti &amp; idee</a></li>
+<li><a href="about.html">Chi sono</a></li>
+<li><a href="resources.html">Blog</a></li>
+<li class="nav-cta"><a href="contact.html">Contatti</a></li>
+</ul>
+</nav>
+</header>
 
     <main class="main-contact">
       <section class="intro">
         <div class="intro-container" data-fx="web">
           <img
-            src="./images/logo.webp"
+            src="./images/brand/pikobit-symbol.svg"
             alt="Logo Pikobit - Tutorial e Progetti di Programmazione"
-            class="logo" width="671" height="752" />
+            class="logo" width="120" height="112" />
           <h1>Realizzazione siti web a Monopoli e in Puglia</h1>
           <p>
             Un sito web ben progettato è essenziale per rappresentare al meglio
@@ -146,105 +120,119 @@
         </div>
       </section>
 
-      <section class="goals">
+      <nav class="page-toc" aria-label="In questa pagina">
+        <ul>
+          <li><a href="#servizi">Servizi Offerti</a></li>
+          <li><a href="#caratteristiche">Caratteristiche principali</a></li>
+          <li><a href="#processo">Il nostro processo</a></li>
+          <li><a href="#portfolio">Portfolio</a></li>
+        </ul>
+      </nav>
+
+      <section class="block" id="servizi">
         <h2>Servizi Offerti</h2>
-        <ul>
-          <li>
-            <strong>Siti vetrina:</strong> Ideali per presentare la tua attività
-            e i tuoi servizi in modo professionale.
-          </li>
-          <li>
-            <strong>Design responsive:</strong> Progettati per essere perfetti
-            su dispositivi desktop, tablet e smartphone.
-          </li>
-          <li>
-            <strong>Ottimizzazione SEO:</strong> Migliora la visibilità sui
-            motori di ricerca per raggiungere più clienti.
-          </li>
-          <li>
-            <strong>Sicurezza dei dati:</strong> Implementiamo le migliori
-            pratiche per proteggere il sito e i dati degli utenti con
-            certificati SSL e sistemi di backup.
-          </li>
-          <li>
-            <strong>Velocità ottimizzata:</strong> Garantiamo che il sito sia
-            rapido e performante, per offrire un'esperienza di navigazione
-            fluida e migliorare il ranking sui motori di ricerca.
-          </li>
-          <li>
-            <strong>Design personalizzato:</strong> Ogni sito è unico e
-            progettato per riflettere l'identità del tuo brand, con grafiche
-            originali e un layout accattivante.
-          </li>
-          <li>
-            <strong>Compatibilità multilingua:</strong> Creiamo siti web in
-            grado di supportare più lingue, per raggiungere un pubblico
-            internazionale.
-          </li>
-        </ul>
+          <ul class="card-grid">
+            <li class="card">
+              <svg class="icon" aria-hidden="true"><use href="images/icons.svg#i-store"/></svg>
+              <h3>Siti vetrina</h3>
+              <p>Ideali per presentare la tua attività e i tuoi servizi in modo professionale.</p>
+            </li>
+            <li class="card">
+              <svg class="icon" aria-hidden="true"><use href="images/icons.svg#i-devices"/></svg>
+              <h3>Design responsive</h3>
+              <p>Progettati per essere perfetti su dispositivi desktop, tablet e smartphone.</p>
+            </li>
+            <li class="card">
+              <svg class="icon" aria-hidden="true"><use href="images/icons.svg#i-search"/></svg>
+              <h3>Ottimizzazione SEO</h3>
+              <p>Migliora la visibilità sui motori di ricerca per raggiungere più clienti.</p>
+            </li>
+            <li class="card">
+              <svg class="icon" aria-hidden="true"><use href="images/icons.svg#i-shield"/></svg>
+              <h3>Sicurezza dei dati</h3>
+              <p>Implementiamo le migliori pratiche per proteggere il sito e i dati degli utenti con certificati SSL e sistemi di backup.</p>
+            </li>
+            <li class="card">
+              <svg class="icon" aria-hidden="true"><use href="images/icons.svg#i-bolt"/></svg>
+              <h3>Velocità ottimizzata</h3>
+              <p>Garantiamo che il sito sia rapido e performante, per offrire un'esperienza di navigazione fluida e migliorare il ranking sui motori di ricerca.</p>
+            </li>
+            <li class="card">
+              <svg class="icon" aria-hidden="true"><use href="images/icons.svg#i-palette"/></svg>
+              <h3>Design personalizzato</h3>
+              <p>Ogni sito è unico e progettato per riflettere l'identità del tuo brand, con grafiche originali e un layout accattivante.</p>
+            </li>
+            <li class="card">
+              <svg class="icon" aria-hidden="true"><use href="images/icons.svg#i-globe"/></svg>
+              <h3>Compatibilità multilingua</h3>
+              <p>Creiamo siti web in grado di supportare più lingue, per raggiungere un pubblico internazionale.</p>
+            </li>
+          </ul>
       </section>
 
-      <section class="why-pikobit">
+      <section class="block split" id="caratteristiche">
         <h2>Caratteristiche principali</h2>
-        <ul>
-          <li>
-            <strong>Velocità di caricamento:</strong> Siti ottimizzati per
-            garantire tempi di caricamento rapidi.
-          </li>
-          <li>
-            <strong>Compatibilità cross-browser:</strong> Garantiamo che il sito
-            funzioni correttamente su tutti i browser principali.
-          </li>
-          <li>
-            <strong>Integrazioni personalizzate:</strong> Collega il sito a
-            servizi come Google Analytics o social media.
-          </li>
-          <li>
-            <strong>Supporto continuo:</strong> Offriamo assistenza tecnica per
-            mantenere il tuo sito sempre aggiornato e sicuro.
-          </li>
-        </ul>
+        <div class="split-text">
+          <ul class="card-grid">
+            <li class="card">
+              <svg class="icon" aria-hidden="true"><use href="images/icons.svg#i-clock"/></svg>
+              <h3>Velocità di caricamento</h3>
+              <p>Siti ottimizzati per garantire tempi di caricamento rapidi.</p>
+            </li>
+            <li class="card">
+              <svg class="icon" aria-hidden="true"><use href="images/icons.svg#i-browser"/></svg>
+              <h3>Compatibilità cross-browser</h3>
+              <p>Garantiamo che il sito funzioni correttamente su tutti i browser principali.</p>
+            </li>
+            <li class="card">
+              <svg class="icon" aria-hidden="true"><use href="images/icons.svg#i-plug"/></svg>
+              <h3>Integrazioni personalizzate</h3>
+              <p>Collega il sito a servizi come Google Analytics o social media.</p>
+            </li>
+            <li class="card">
+              <svg class="icon" aria-hidden="true"><use href="images/icons.svg#i-support"/></svg>
+              <h3>Supporto continuo</h3>
+              <p>Offriamo assistenza tecnica per mantenere il tuo sito sempre aggiornato e sicuro.</p>
+            </li>
+          </ul>
+        </div>
+        <div class="split-art" aria-hidden="true"><svg viewBox="0 0 200 200" focusable="false"><circle class="ring" cx="100" cy="100" r="92"/><circle class="ring" cx="100" cy="100" r="74"/><circle cx="100" cy="100" r="54" fill="rgba(0,191,255,.08)" stroke="rgba(0,191,255,.5)"/><svg class="art-icon" x="68" y="68" width="64" height="64" viewBox="0 0 24 24"><use href="images/icons.svg#i-browser"/></svg></svg></div>
       </section>
 
-      <section class="goals">
-        <h2 class="mission-vision-title">Il nostro processo</h2>
-        <ul>
-          <li>
-            <strong>Consulenza iniziale:</strong> Discutiamo le tue esigenze e
-            gli obiettivi del progetto.
-          </li>
-          <li>
-            <strong>Progettazione:</strong> Creiamo un design su misura che
-            rappresenti il tuo brand.
-          </li>
-          <li>
-            <strong>Sviluppo:</strong> Costruiamo il sito con tecnologie moderne
-            e ottimizzate.
-          </li>
-          <li>
-            <strong>Test e lancio:</strong> Garantiamo che il sito sia perfetto
-            prima di pubblicarlo.
-          </li>
-          <li>
-            <strong>Assistenza post-lancio:</strong> Forniamo supporto continuo
-            per aggiornamenti e miglioramenti.
-          </li>
-        </ul>
+      <section class="block" id="processo">
+        <h2>Il nostro processo</h2>
+        <ol class="steps">
+          <li><h3>Consulenza iniziale</h3><p>Discutiamo le tue esigenze e gli obiettivi del progetto.</p></li>
+          <li><h3>Progettazione</h3><p>Creiamo un design su misura che rappresenti il tuo brand.</p></li>
+          <li><h3>Sviluppo</h3><p>Costruiamo il sito con tecnologie moderne e ottimizzate.</p></li>
+          <li><h3>Test e lancio</h3><p>Garantiamo che il sito sia perfetto prima di pubblicarlo.</p></li>
+          <li><h3>Assistenza post-lancio</h3><p>Forniamo supporto continuo per aggiornamenti e miglioramenti.</p></li>
+        </ol>
       </section>
 
-      <section class="why-pikobit">
-        <h3 class="cta-link-blue">Scopri le nostre Idee Innovative</h3>
-        <ul>
-          <li>
+      <section class="block split split--rev" id="idee">
+        <h2>Scopri le nostre Idee Innovative</h2>
+        <div class="split-text">
+          <p>
             Vuoi digitalizzare il tuo business o esplorare soluzioni creative
             per migliorare la produttività? Dai un'occhiata alle
             <a href="ideas.html" class="cta-link">Idee Innovative</a> che
             abbiamo pensato per i nostri clienti!
-          </li>
-        </ul>
+          </p>
+        </div>
+        <div class="split-art" aria-hidden="true"><svg viewBox="0 0 200 200" focusable="false"><circle class="ring" cx="100" cy="100" r="92"/><circle class="ring" cx="100" cy="100" r="74"/><circle cx="100" cy="100" r="54" fill="rgba(0,191,255,.08)" stroke="rgba(0,191,255,.5)"/><svg class="art-icon" x="68" y="68" width="64" height="64" viewBox="0 0 24 24"><use href="images/icons.svg#i-bulb"/></svg></svg></div>
       </section>
 
-      <section class="call-to-action">
+      <section class="block" id="portfolio">
+        <h2>Portfolio</h2>
+        <p class="lead">
+          Raccolgo qui a breve esempi di siti realizzati per i miei clienti. Nel
+          frattempo, contattami per parlare del tuo progetto: ti mostro
+          volentieri lavori simili già completati.
+        </p>
+      </section>
+
+      <section class="cta-band" id="contatti">
         <div class="intro-container">
           <h2>Vuoi un sito web personalizzato?</h2>
           <p>
@@ -254,19 +242,11 @@
           <a href="contact.html" class="cta-link">Contattami Ora</a>
         </div>
       </section>
-
-      <section class="call-to-action">
-        <h2>Portfolio</h2>
-        <p>
-          Raccolgo qui a breve esempi di siti realizzati per i miei clienti. Nel
-          frattempo, contattami per parlare del tuo progetto: ti mostro
-          volentieri lavori simili già completati.
-        </p>
-      </section>
     </main>
 
     <footer>
 <p class="nap">Pikobit · Programmatore e web designer · Monopoli (BA) · <a href="tel:+393518891903">351 889 1903</a> · <a href="mailto:piko.bit.00@gmail.com">piko.bit.00@gmail.com</a></p>
+<nav class="footer-zone" aria-label="Zone in cui lavoro"><p>Zone: <a href="programmatore-monopoli.html">Monopoli</a> · <a href="programmatore-bari.html">Bari</a> · <a href="programmatore-polignano-a-mare.html">Polignano a Mare</a> · <a href="programmatore-fasano.html">Fasano</a> · <a href="programmatore-conversano.html">Conversano</a> · <a href="programmatore-castellana-grotte.html">Castellana Grotte</a> · <a href="programmatore-putignano.html">Putignano</a> · <a href="programmatore-casamassima.html">Casamassima</a> · <a href="programmatore-ostuni.html">Ostuni</a> · <a href="programmatore-brindisi.html">Brindisi</a> · <a href="programmatore-taranto.html">Taranto</a> · <a href="programmatore-lecce.html">Lecce</a></p></nav>
       <p>&copy; 2026 Pikobit. Tutti i diritti riservati.</p>
       <p>
         "Pikobit: Il tuo punto di partenza per creare, imparare e ispirare."

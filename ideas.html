@@ -34,7 +34,7 @@
     <meta property="og:url" content="https://pikobit.it/ideas.html" />
 
     <!-- Collegamenti CSS -->
-    <link rel="stylesheet" href="./styles/style.css?v=4.0.1.2" />
+    <link rel="stylesheet" href="./styles/style.css?v=4.3.1.0" />
     <link
       rel="preload"
       href="fonts/poppins/poppins-latin-400-normal.woff2"
@@ -44,7 +44,7 @@
     />
     <link rel="icon" href="./images/logo.webp" type="image/png" />
 
-    <script defer src="scripts/script.js?v=4.0.1.2"></script>
+    <script defer src="scripts/script.js?v=4.3.1.0"></script>
 
     <!-- Dati strutturati -->
     <script type="application/ld+json">
@@ -82,67 +82,41 @@
   </head>
 
   <body>
-    <header>
-      <img src="./images/banner.webp" alt="Pikobit Banner" class="banner" width="1024" height="587" />
-      <div class="hamburger" id="hamburger-menu" role="button" tabindex="0" aria-label="Apri menu di navigazione" aria-expanded="false">
-        <svg class="icon-svg" viewBox="0 0 448 512" aria-hidden="true"><path d="M0 96C0 78.3 14.3 64 32 64l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 128C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 288c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32L32 448c-17.7 0-32-14.3-32-32s14.3-32 32-32l384 0c17.7 0 32 14.3 32 32z"/></svg>
-      </div>
-      <div class="overlay" id="overlay"></div>
-      <nav id="navbar">
-        <ul class="nav-links">
-          <li><a href="index.html">Home</a></li>
-
-          <li class="dropdown">
-            <a href="#" id="dropdown-toggle" aria-haspopup="true" aria-expanded="false">Servizi ▼</a>
-            <ul class="dropdown-menu">
-              <li><a href="websites.html">Siti web personalizzati</a></li>
-              <li><a href="modern-apps.html">Applicazioni moderne</a></li>
-              <li>
-                <a href="custom-software.html">Software gestionali su misura</a>
-              </li>
-              <li>
-                <a href="creative-services.html"
-                  >Servizi Creativi e Soluzioni Complete</a
-                >
-              </li>
-              <li><a href="lessons.html">Lezioni e tutorial</a></li>
-            </ul>
-          </li>
-
-<li class="dropdown nav-zone">
-<a href="dove-lavoro.html" class="dropdown-toggle" aria-haspopup="true" aria-expanded="false">Dove lavoro ▼</a>
+    <header class="site-header" id="site-header">
+<div class="brand-band">
+<a class="brand" href="index.html" aria-label="Pikobit, vai alla home"><svg class="wordmark" viewBox="-3 -4 553 109" aria-hidden="true" focusable="false"><g fill="#fff" stroke="#fff" stroke-width="3" stroke-linejoin="round"><path d="M0 0H50C68 0 82 14 82 33C82 52 68 66 50 66H21V100H0V44H50C55 44 60 40 60 33C60 26 55 22 50 22H21V30H0Z"/><path d="M96 0H117V100H96Z"/><path d="M134 0H155V35L188 0H217L178 45L220 100H192L162 58L155 65V100H134Z"/><path fill-rule="evenodd" d="M275.5-1.5a51.5 51.5 0 1 0 .01 0ZM275.5 19a31 31 0 1 1-.01 0Z"/><path fill-rule="evenodd" d="M341 0H389C405 0 417 9 417 21C417 30 413 36 407 40C417 45 423 54 423 68C423 86 411 100 393 100H341V40H388C393 40 396 36 396 31C396 26 393 22 388 22H362V30H341ZM362 60H393C399 60 402 64 402 69C402 74 399 78 393 78H362Z"/><path d="M437 0H458V100H437Z"/><path d="M473 0H547V22H520.5V100H499.5V22H473Z"/></g><circle cx="275.5" cy="50" r="11.5" fill="none" stroke="#9ad8f3" stroke-width="9"/></svg></a>
+<button class="hamburger" id="hamburger-menu" type="button" aria-label="Apri menu di navigazione" aria-expanded="false" aria-controls="navbar"><svg class="icon-svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 6h18M3 12h18M3 18h18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg></button>
+</div>
+<div class="overlay" id="overlay"></div>
+<nav id="navbar" aria-label="Menu principale">
+<ul class="nav-links">
+<li><a href="index.html">Home</a></li>
+<li class="dropdown">
+<a href="#" id="dropdown-toggle" aria-haspopup="true" aria-expanded="false">Servizi ▼</a>
 <ul class="dropdown-menu">
-<li><a href="programmatore-monopoli.html">Monopoli</a></li>
-<li><a href="programmatore-bari.html">Bari</a></li>
-<li><a href="programmatore-polignano-a-mare.html">Polignano a Mare</a></li>
-<li><a href="programmatore-fasano.html">Fasano</a></li>
-<li><a href="programmatore-conversano.html">Conversano</a></li>
-<li><a href="programmatore-castellana-grotte.html">Castellana Grotte</a></li>
-<li><a href="programmatore-putignano.html">Putignano</a></li>
-<li><a href="programmatore-casamassima.html">Casamassima</a></li>
-<li><a href="programmatore-ostuni.html">Ostuni</a></li>
-<li><a href="programmatore-brindisi.html">Brindisi</a></li>
-<li><a href="programmatore-taranto.html">Taranto</a></li>
-<li><a href="programmatore-lecce.html">Lecce</a></li>
-<li><a href="dove-lavoro.html">Tutte le zone</a></li>
+<li><a href="websites.html">Siti web personalizzati</a></li>
+<li><a href="modern-apps.html">Applicazioni moderne</a></li>
+<li><a href="custom-software.html">Software gestionali su misura</a></li>
+<li><a href="creative-services.html">Servizi Creativi e Soluzioni Complete</a></li>
+<li><a href="lessons.html">Lezioni e tutorial</a></li>
 </ul>
 </li>
-
-          <li><a href="ideas.html">Idee Innovative</a></li>
-          <li><a href="about.html">Chi Sono</a></li>
-          <li><a href="resources.html">Risorse</a></li>
-          <li><a href="contact.html">Contatti</a></li>
-        </ul>
-      </nav>
-    </header>
+<li><a href="dove-lavoro.html">Dove lavoro</a></li>
+<li><a href="ideas.html" aria-current="page">Progetti &amp; idee</a></li>
+<li><a href="about.html">Chi sono</a></li>
+<li><a href="resources.html">Blog</a></li>
+<li class="nav-cta"><a href="contact.html">Contatti</a></li>
+</ul>
+</nav>
+</header>
 
     <main class="main-contact">
       <section class="intro">
         <div class="intro-container" data-fx="neural">
           <img
-            src="./images/logo.webp"
+            src="./images/brand/pikobit-symbol.svg"
             alt="Logo Pikobit - Idee Innovative"
-            class="logo" width="671" height="752" />
+            class="logo" width="120" height="112" />
           <h1>Idee e Soluzioni Innovative per Digitalizzare il Tuo Business</h1>
           <p>
             Esplora alcune delle idee creative e delle soluzioni tecnologiche
@@ -154,107 +128,80 @@
         </div>
       </section>
 
-      <section class="goals">
+      <section class="block" id="idee">
         <h2>Idee per il Tuo Business</h2>
-        <ul>
-          <li>
-            <a href="custom-software.html" class="cta-link-blue">
-              <strong
-                >Menu Interattivo per Ristoranti - Soluzioni Tecnologiche
-                Innovative:</strong
-              ></a
-            >
-            Immagina un menu digitale che non solo mostri i piatti, ma permetta
-            ai clienti di ordinare direttamente dal proprio smartphone.
-            <em>Vantaggi:</em> Risparmio sul personale e miglioramento
-            dell'esperienza del cliente.
-          </li>
-
-          <li>
-            <a href="modern-apps.html" class="cta-link-blue">
-              <strong
-                >Professionisti (Estetisti, Barbieri, Parrucchieri):</strong
-              ></a
-            >
-            Piattaforma per gestire prenotazioni in tempo reale, riducendo le
-            telefonate e ottimizzando la gestione degli appuntamenti.
-            <em>Vantaggi:</em> Risparmio di tempo, riduzione degli errori e
-            organizzazione ottimale.
-          </li>
-
-          <li>
-            <strong
-              >Schede di Allenamento Online - Software per la
-              Produttività:</strong
-            >
-            Un portale dove i clienti delle palestre possono accedere alle loro
-            schede, monitorare i progressi e ricevere aggiornamenti.
-            <em>Vantaggi:</em> Accesso facile ai dati di allenamento e
-            monitoraggio continuo dei risultati.
-          </li>
-
-          <li>
-            <strong>Sistema di Gestione Eventi:</strong>
-            Una piattaforma avanzata per organizzare eventi come corsi, workshop
-            e meeting aziendali. Consente una gestione automatizzata delle
-            iscrizioni, con notifiche ai partecipanti e integrazione con
-            calendari digitali.
-            <em>Vantaggi:</em> Riduce il lavoro manuale e offre una soluzione
-            moderna per promuovere e gestire eventi senza complicazioni.
-          </li>
-
-          <li>
-            <strong>Monitoraggio dei Feedback dei Clienti:</strong>
-            Un sistema dedicato alla raccolta e analisi di feedback tramite
-            moduli online o recensioni dei clienti. Perfetto per chi vuole
-            migliorare continuamente la qualità dei propri servizi.
-            <em>Vantaggi:</em> Migliora l’esperienza dei clienti, rafforza la
-            fidelizzazione e offre insights utili per il miglioramento continuo.
-          </li>
-
-          <li>
-            <strong>Prenotazioni per Test Drive:</strong>
-            Una soluzione dedicata agli autosaloni che permette ai clienti di
-            prenotare facilmente un test drive delle vetture direttamente
-            online. Include gestione automatizzata degli slot disponibili e
-            conferme in tempo reale.
-            <em>Vantaggi:</em> Riduce il carico di lavoro amministrativo per il
-            concessionario e offre ai clienti un'esperienza semplice e moderna.
-          </li>
+        <ul class="card-grid idea-grid">
+            <li class="card card--link">
+              <svg class="icon" aria-hidden="true"><use href="images/icons.svg#i-menu"/></svg>
+              <h3><a href="custom-software.html">Menu Interattivo per Ristoranti - Soluzioni Tecnologiche Innovative</a></h3>
+              <p>Immagina un menu digitale che non solo mostri i piatti, ma permetta ai clienti di ordinare direttamente dal proprio smartphone.</p>
+              <p class="card-note"><em>Vantaggi:</em> Risparmio sul personale e miglioramento dell'esperienza del cliente.</p>
+            </li>
+            <li class="card card--link">
+              <svg class="icon" aria-hidden="true"><use href="images/icons.svg#i-scissors"/></svg>
+              <h3><a href="modern-apps.html">Professionisti (Estetisti, Barbieri, Parrucchieri)</a></h3>
+              <p>Piattaforma per gestire prenotazioni in tempo reale, riducendo le telefonate e ottimizzando la gestione degli appuntamenti.</p>
+              <p class="card-note"><em>Vantaggi:</em> Risparmio di tempo, riduzione degli errori e organizzazione ottimale.</p>
+            </li>
+            <li class="card">
+              <svg class="icon" aria-hidden="true"><use href="images/icons.svg#i-dumbbell"/></svg>
+              <h3>Schede di Allenamento Online - Software per la Produttività</h3>
+              <p>Un portale dove i clienti delle palestre possono accedere alle loro schede, monitorare i progressi e ricevere aggiornamenti.</p>
+              <p class="card-note"><em>Vantaggi:</em> Accesso facile ai dati di allenamento e monitoraggio continuo dei risultati.</p>
+            </li>
+            <li class="card">
+              <svg class="icon" aria-hidden="true"><use href="images/icons.svg#i-calendar"/></svg>
+              <h3>Sistema di Gestione Eventi</h3>
+              <p>Una piattaforma avanzata per organizzare eventi come corsi, workshop e meeting aziendali. Consente una gestione automatizzata delle iscrizioni, con notifiche ai partecipanti e integrazione con calendari digitali.</p>
+              <p class="card-note"><em>Vantaggi:</em> Riduce il lavoro manuale e offre una soluzione moderna per promuovere e gestire eventi senza complicazioni.</p>
+            </li>
+            <li class="card">
+              <svg class="icon" aria-hidden="true"><use href="images/icons.svg#i-star"/></svg>
+              <h3>Monitoraggio dei Feedback dei Clienti</h3>
+              <p>Un sistema dedicato alla raccolta e analisi di feedback tramite moduli online o recensioni dei clienti. Perfetto per chi vuole migliorare continuamente la qualità dei propri servizi.</p>
+              <p class="card-note"><em>Vantaggi:</em> Migliora l’esperienza dei clienti, rafforza la fidelizzazione e offre insights utili per il miglioramento continuo.</p>
+            </li>
+            <li class="card">
+              <svg class="icon" aria-hidden="true"><use href="images/icons.svg#i-car"/></svg>
+              <h3>Prenotazioni per Test Drive</h3>
+              <p>Una soluzione dedicata agli autosaloni che permette ai clienti di prenotare facilmente un test drive delle vetture direttamente online. Include gestione automatizzata degli slot disponibili e conferme in tempo reale.</p>
+              <p class="card-note"><em>Vantaggi:</em> Riduce il carico di lavoro amministrativo per il concessionario e offre ai clienti un'esperienza semplice e moderna.</p>
+            </li>
         </ul>
       </section>
 
-      <section class="why-pikobit">
+      <section class="block split" id="perche-pikobit">
         <h2>Perché scegliere Pikobit?</h2>
-        <ul>
-          <li>
-            Sviluppo su misura, senza soluzioni preconfezionate: ogni progetto è
-            pensato per il tuo business specifico.
-          </li>
-          <li>
-            Come Software Engineer Senior Java/Spring, porto competenze solide
-            su sistemi affidabili e scalabili anche in progetti di piccole
-            dimensioni.
-          </li>
-        </ul>
+        <div class="split-text">
+          <ul class="card-grid">
+            <li class="card">
+              <svg class="icon" aria-hidden="true"><use href="images/icons.svg#i-sliders"/></svg>
+              <p>Sviluppo su misura, senza soluzioni preconfezionate: ogni progetto è pensato per il tuo business specifico.</p>
+            </li>
+            <li class="card">
+              <svg class="icon" aria-hidden="true"><use href="images/icons.svg#i-shield"/></svg>
+              <p>Come Software Engineer Senior Java/Spring, porto competenze solide su sistemi affidabili e scalabili anche in progetti di piccole dimensioni.</p>
+            </li>
+          </ul>
+        </div>
+        <div class="split-art" aria-hidden="true"><svg viewBox="0 0 200 200" focusable="false"><circle class="ring" cx="100" cy="100" r="92"/><circle class="ring" cx="100" cy="100" r="74"/><circle cx="100" cy="100" r="54" fill="rgba(0,191,255,.08)" stroke="rgba(0,191,255,.5)"/><svg class="art-icon" x="68" y="68" width="64" height="64" viewBox="0 0 24 24"><use href="images/icons.svg#i-bulb"/></svg></svg></div>
       </section>
 
-      <section class="cta">
+      <section class="cta-band" id="contatti">
         <div class="intro-container">
           <h2>Hai un'idea brillante? Realizziamola insieme!</h2>
           <p>
             Contattami per discutere la tua idea o per ricevere una consulenza
             personalizzata.
           </p>
-          <a href="contact.html" class="cta-link"
-            >Richiedi una consulenza gratuita</a
-          >
+          <a href="contact.html" class="cta-link">Richiedi una consulenza gratuita</a>
         </div>
       </section>
     </main>
 
     <footer>
 <p class="nap">Pikobit · Programmatore e web designer · Monopoli (BA) · <a href="tel:+393518891903">351 889 1903</a> · <a href="mailto:piko.bit.00@gmail.com">piko.bit.00@gmail.com</a></p>
+<nav class="footer-zone" aria-label="Zone in cui lavoro"><p>Zone: <a href="programmatore-monopoli.html">Monopoli</a> · <a href="programmatore-bari.html">Bari</a> · <a href="programmatore-polignano-a-mare.html">Polignano a Mare</a> · <a href="programmatore-fasano.html">Fasano</a> · <a href="programmatore-conversano.html">Conversano</a> · <a href="programmatore-castellana-grotte.html">Castellana Grotte</a> · <a href="programmatore-putignano.html">Putignano</a> · <a href="programmatore-casamassima.html">Casamassima</a> · <a href="programmatore-ostuni.html">Ostuni</a> · <a href="programmatore-brindisi.html">Brindisi</a> · <a href="programmatore-taranto.html">Taranto</a> · <a href="programmatore-lecce.html">Lecce</a></p></nav>
       <p>&copy; 2026 Pikobit. Tutti i diritti riservati.</p>
       <p>
         "Pikobit: Il tuo punto di partenza per creare, imparare e ispirare."

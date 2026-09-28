@@ -7,3 +7,8 @@
 # Cache Python degli script in scripts/
 __pycache__/
 *.pyc
+
+# Playwright (tests/e2e): dipendenze e report locali
+node_modules/
+test-results/
+playwright-report/

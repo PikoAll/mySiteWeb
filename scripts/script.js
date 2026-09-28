@@ -6,50 +6,39 @@ document.addEventListener("DOMContentLoaded", () => {
   const overlay = document.getElementById("overlay");
   const scrollToTopButton = document.getElementById("scrollToTop");
 
-  // Gestione click sul pulsante hamburger
+  const header = document.getElementById("site-header");
+
+  // Mobile menu. The hamburger is a <button>: Enter/Space already fire click.
+  const setMenu = (open) => {
+    if (open && header) {
+      // the menu opens right under the header, whatever its current height
+      navbar.style.setProperty(
+        "--nav-top",
+        Math.max(0, header.getBoundingClientRect().bottom) + "px",
+      );
+    }
+    navbar.classList.toggle("active", open);
+    overlay.classList.toggle("active", open);
+    hamburger.setAttribute("aria-expanded", open ? "true" : "false");
+    hamburger.setAttribute(
+      "aria-label",
+      open ? "Chiudi menu di navigazione" : "Apri menu di navigazione",
+    );
+  };
+
   hamburger.addEventListener("click", (event) => {
     event.stopPropagation();
-    navbar.classList.toggle("active");
-    overlay.classList.toggle("active");
-    hamburger.setAttribute(
-      "aria-expanded",
-      navbar.classList.contains("active"),
-    );
-    console.log("EVENTO: Click sul pulsante hamburger");
-
-    if (navbar.classList.contains("active")) {
-      history.replaceState({ menu: "opened" }, ""); // Modifica lo stato corrente
-      console.log("EVENTO: Stato aggiornato nella cronologia");
-    }
-  });
-
-  // Gestione apertura/chiusura da tastiera (Invio/Spazio) sul div-bottone hamburger
-  hamburger.addEventListener("keydown", (event) => {
-    if (event.key === "Enter" || event.key === " ") {
-      event.preventDefault(); // evita lo scroll pagina sullo Spazio
-      hamburger.click();
-      console.log("EVENTO: Tastiera sul pulsante hamburger");
-    }
+    const open = !navbar.classList.contains("active");
+    setMenu(open);
+    if (open) history.replaceState({ menu: "opened" }, ""); // Modifica lo stato corrente
   });
 
   window.addEventListener("popstate", (event) => {
-    if (event.state && event.state.menu === "opened") {
-      console.log("EVENTO: popstate, chiudo menu");
-      navbar.classList.remove("active");
-      overlay.classList.remove("active");
-      hamburger.setAttribute("aria-expanded", "false");
-    } else {
-      console.log("EVENTO: popstate, navigazione normale");
-    }
+    if (event.state && event.state.menu === "opened") setMenu(false);
   });
 
   // Gestione click sull'overlay per chiudere il menu
-  overlay.addEventListener("click", () => {
-    navbar.classList.remove("active");
-    overlay.classList.remove("active");
-    hamburger.setAttribute("aria-expanded", "false");
-    console.log("EVENTO: Click sull'overlay");
-  });
+  overlay.addEventListener("click", () => setMenu(false));
 
   // Gestione scroll per mostrare o nascondere il bottone "Torna su"
   window.addEventListener("scroll", () => {
@@ -127,6 +116,9 @@ document.addEventListener("DOMContentLoaded", () => {
     if (open) {
       setOpen(open, false);
       open.toggle.focus();
+    } else if (navbar.classList.contains("active")) {
+      setMenu(false);
+      hamburger.focus();
     }
   });
 
@@ -134,13 +126,7 @@ document.addEventListener("DOMContentLoaded", () => {
   document.addEventListener("click", (event) => {
     if (dropdowns.some((d) => d.root.contains(event.target))) return;
     closeAll();
-    if (
-      navbar.classList.contains("active") ||
-      overlay.classList.contains("active")
-    ) {
-      console.log("EVENTO: Menu aperto, chiudo simulando clic sull'hamburger");
-      hamburger.click();
-    }
+    if (navbar.classList.contains("active")) setMenu(false);
   });
 
   // Reset navbar e overlay all'avvio
@@ -152,38 +138,6 @@ document.addEventListener("DOMContentLoaded", () => {
     overlay.classList.remove("active");
     console.log("INIZIALIZZAZIONE: Reset navbar e overlay all'avvio");
   }
-
-  /*DISPENSE FOTOPER PAGINA CREATIVE SERVICES*/
-  const slide = document.querySelector(".carousel-slide");
-  const images = document.querySelectorAll(".carousel-slide img");
-  let currentIndex = 0;
-  if (!slide || images.length === 0) return; // pagina senza carosello
-
-  // Calcola la larghezza dell'immagine dinamicamente
-  const updateWidth = () => images[0].clientWidth;
-
-  // Funzione per scorrere automaticamente
-  const autoScroll = () => {
-    currentIndex++;
-    if (currentIndex >= images.length) {
-      currentIndex = 0; // Torna alla prima immagine
-    }
-    slide.style.transform = `translateX(${-updateWidth() * currentIndex}px)`;
-  };
-
-  // Scorrimento automatico ogni 3 secondi
-  setInterval(autoScroll, 3000);
-
-  // Aggiorna larghezza immagine su resize
-  window.addEventListener("resize", () => {
-    slide.style.transition = "none"; // Disabilita transizione durante il resize
-    slide.style.transform = `translateX(${-updateWidth() * currentIndex}px)`;
-    setTimeout(() => {
-      slide.style.transition = "transform 0.5s ease-in-out"; // Riabilita la transizione
-    });
-  });
-
-  /*FINE DISPENE FOTO PER PAGINA CREATIVE SERVICES*/
 });
 
 // Reveal on scroll: only sections below the fold, only with JS (never the LCP).
@@ -271,7 +225,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const apply = () => {
     raf = 0;
     const t = ev.target instanceof Element ? ev.target : null;
-    const card = t && t.closest(".goals li, .why-pikobit li");
+    const card = t && t.closest(".card--link");
     if (card) {
       const r = card.getBoundingClientRect();
       card.style.setProperty("--mx", ev.clientX - r.left + "px");
@@ -294,4 +248,76 @@ document.addEventListener("DOMContentLoaded", () => {
     },
     { passive: true },
   );
+})();
+
+// Sticky header: scroll progress --p (0..1) moves the wordmark into the strip
+// left on screen (style.css, .brand). Transform only: no layout shift.
+(() => {
+  const header = document.getElementById("site-header");
+  const band = header && header.querySelector(".brand-band");
+  if (!band) return;
+  let range = 0;
+  let raf = 0;
+  const measure = () => {
+    const stuck = parseFloat(getComputedStyle(header).getPropertyValue("--band-stuck")) || 0;
+    range = band.offsetHeight - stuck;
+  };
+  const update = () => {
+    raf = 0;
+    const p = range > 0 ? Math.min(1, Math.max(0, window.scrollY / range)) : 0;
+    header.style.setProperty("--p", p.toFixed(3));
+  };
+  addEventListener("scroll", () => (raf = raf || requestAnimationFrame(update)), { passive: true });
+  addEventListener("resize", () => (measure(), update()), { passive: true });
+  measure();
+  update();
+})();
+
+// Carousels (.carousel > .carousel-track): arrows added here, so without JS
+// the track still scrolls (swipe, trackpad, keyboard). No autoplay.
+(() => {
+  document.querySelectorAll(".carousel").forEach((root, n) => {
+    const track = root.querySelector(".carousel-track");
+    if (!track) return;
+    if (!track.id) track.id = "carousel-" + (n + 1);
+    const sprite = (document.querySelector('script[src*="scripts/script.js"]').getAttribute("src").match(/^(?:\.\.\/)*/) || [""])[0] + "images/icons.svg";
+    const button = (cls, label, icon) => {
+      const b = document.createElement("button");
+      b.type = "button";
+      b.className = "carousel-btn " + cls;
+      b.setAttribute("aria-label", label);
+      b.setAttribute("aria-controls", track.id);
+      b.innerHTML = `<svg class="icon" aria-hidden="true"><use href="${sprite}#${icon}"/></svg>`;
+      root.appendChild(b);
+      return b;
+    };
+    const prev = button("prev", "Scorri indietro", "i-chevron-left");
+    const next = button("next", "Scorri avanti", "i-chevron-right");
+    const step = () => {
+      const card = track.firstElementChild;
+      const gap = parseFloat(getComputedStyle(track).columnGap) || 0;
+      return card ? card.getBoundingClientRect().width + gap : track.clientWidth;
+    };
+    const go = (dir) => track.scrollBy({ left: dir * step(), behavior: "smooth" });
+    prev.addEventListener("click", () => go(-1));
+    next.addEventListener("click", () => go(1));
+    track.addEventListener("keydown", (e) => {
+      if (e.target !== track) return;
+      if (e.key === "ArrowRight" || e.key === "ArrowLeft") {
+        e.preventDefault();
+        go(e.key === "ArrowRight" ? 1 : -1);
+      }
+    });
+    let raf = 0;
+    const sync = () => {
+      raf = 0;
+      const max = track.scrollWidth - track.clientWidth;
+      root.classList.toggle("has-overflow", max > 2);
+      prev.disabled = track.scrollLeft <= 2;
+      next.disabled = track.scrollLeft >= max - 2;
+    };
+    track.addEventListener("scroll", () => (raf = raf || requestAnimationFrame(sync)), { passive: true });
+    if ("ResizeObserver" in window) new ResizeObserver(sync).observe(track);
+    sync();
+  });
 })();
