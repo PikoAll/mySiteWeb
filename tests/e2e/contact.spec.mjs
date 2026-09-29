@@ -80,6 +80,10 @@ test("the privacy link works and the NAP matches the footer", async ({ page }) =
   await expect(info.locator('a[href="tel:+393518891903"]')).toBeVisible();
   await expect(info.locator('a[href="mailto:piko.bit.00@gmail.com"]')).toBeVisible();
   await expect(info.locator('a[href="https://wa.me/393518891903"]')).toBeVisible();
+  // Legal basis is art. 6.1.b (pre-contract), not consent: the box only
+  // confirms the notice was read.
+  await expect(page.locator('label[for="cf-privacy"]')).toHaveText("Ho letto l'informativa privacy. *");
+  await expect(page.locator("#cf-privacy")).toHaveAttribute("required", "");
   await page.locator('label[for="cf-privacy"] a').click();
   await expect(page).toHaveURL(/privacy\.html$/);
   await expect(page.locator("h1")).toHaveText("Informativa privacy");

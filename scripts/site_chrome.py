@@ -16,6 +16,11 @@ Single source of the site chrome (it replaces add_nav_zone.py):
   with class="nav-parent" (light style), never aria-current.
 - city pages: a visible breadcrumb Home › Dove lavoro › <city> right after
   <main>, same names as their BreadcrumbList JSON-LD.
+- cookie consent: the hardcoded Google tag (gtag.js) is removed and
+  <script defer src=".../scripts/consent.js"> goes in <head> instead (it loads
+  Google Analytics only after "Accetta"); the footer gets a line with
+  "Privacy" and "Preferenze cookie" (data-cookie-prefs reopens the banner,
+  without JS the link just opens privacy.html#cookie).
 
 Links get the prefix of the page depth ("", "../", "../../"), so the same
 script serves root pages, blog/ and crucidev/privacy/. Running it twice
@@ -94,6 +99,17 @@ ZONE_RE = re.compile(r'\n?<nav class="footer-zone".*?</nav>', re.S)
 NAP_RE = re.compile(r'<p class="nap">.*?</p>', re.S)
 BREADCRUMB_RE = re.compile(r'\s*<nav class="breadcrumb"[^>]*>.*?</nav>', re.S)
 MAIN_RE = re.compile(r"<main\b[^>]*>")
+# The Google tag in any of its formattings (prettier, blog, compact), with the
+# comment above it and the leading whitespace.
+GA_RE = re.compile(
+    r"[ \t]*(?:<!--\s*Google tag \(gtag\.js\)\s*-->\s*)?"
+    r"<script\s+async\s+src=\"\s*https://www\.googletagmanager\.com/gtag/js\?[^\"]*\"\s*>\s*</script>"
+    r"\s*<script>\s*window\.dataLayer.*?</script>[ \t]*\n?",
+    re.S,
+)
+CONSENT_RE = re.compile(r'<script defer src="(?:\.\./)*scripts/consent\.js[^"]*"></script>')
+SCRIPT_VERSION_RE = re.compile(r'scripts/script\.js(\?v=[\d.]+)"')
+LEGAL_RE = re.compile(r'\n?<p class="footer-legal">.*?</p>', re.S)
 LOGO_RE = re.compile(r'<img\b(?=[^>]*\bclass="logo")(?=[^>]*logo\.webp)[^>]*>', re.S)
 REPO_ROOT = Path(__file__).resolve().parent.parent
 SKIP_DIRS = {".git", "tests", "node_modules"}
@@ -150,6 +166,32 @@ def footer_zone(prefix):
     return f'\n<nav class="footer-zone" aria-label="Zone in cui lavoro"><p>Zone: {links}</p></nav>'
 
 
+def footer_legal(prefix):
+    return (
+        f'\n<p class="footer-legal"><a href="{prefix}privacy.html">Privacy</a> · '
+        f'<a href="{prefix}privacy.html#cookie" data-cookie-prefs>Preferenze cookie</a></p>'
+    )
+
+
+def _consent_script(html, prefix):
+    """Drop the hardcoded Google tag, make sure consent.js is loaded in <head>.
+
+    An existing consent.js tag is kept as it is (update_versions.py owns its
+    ?v=); a new one takes the version of script.js on the same page."""
+    html = GA_RE.sub("", html)
+    if CONSENT_RE.search(html):
+        return html
+    version = SCRIPT_VERSION_RE.search(html)
+    tag = f'<script defer src="{prefix}scripts/consent.js{version.group(1) if version else ""}"></script>'
+    at = html.find("</head>")
+    if at == -1:
+        at = html.rfind("</body>")
+    line = html.rfind("\n", 0, at) + 1  # same indentation as </head>
+    indent = html[line:at] if not html[line:at].strip() else ""
+    at = line if indent or line == at else at
+    return html[:at] + indent + tag + "\n" + html[at:]
+
+
 def breadcrumb(label):
     return (
         '<nav class="breadcrumb" aria-label="Percorso">\n'
@@ -187,13 +229,14 @@ def render(path, root):
     html = HEADER_RE.sub(lambda m: header(prefix, rel), html, count=1)
 
     def fix_footer(m):
-        foot = ZONE_RE.sub("", m.group(0))
+        foot = LEGAL_RE.sub("", ZONE_RE.sub("", m.group(0)))
         nap = NAP_RE.search(foot)
         at = nap.end() if nap else foot.index(">") + 1
-        return foot[:at] + footer_zone(prefix) + foot[at:]
+        return foot[:at] + footer_zone(prefix) + footer_legal(prefix) + foot[at:]
 
     html = FOOTER_RE.sub(fix_footer, html, count=1)
     html = _city_breadcrumb(html, rel)
+    html = _consent_script(html, prefix)
     return LOGO_RE.sub(lambda m: _logo(m.group(0)), html)
 
 
