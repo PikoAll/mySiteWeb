@@ -3,10 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Programmatore e Web Designer a Taranto - Pikobit</title>
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
+    <title>Programmatore e Web Designer a Taranto | Pikobit</title>
     <meta
       name="description"
-      content="Software gestionali, applicazioni web e siti su misura per imprese, professionisti e commercio di Taranto. Primo incontro in videochiamata, preventivo gratuito."
+      content="Programmatore e web designer a Taranto: gestionali, applicazioni web e siti su misura per imprese, professionisti e commercio. Preventivo gratuito."
     />
     <meta name="author" content="Pikobit" />
 
@@ -15,15 +16,21 @@
 
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="Programmatore e Web Designer a Taranto - Pikobit" />
-    <meta
-      property="og:description"
-      content="Software gestionali, applicazioni web e siti su misura per imprese, professionisti e commercio di Taranto. Primo incontro in videochiamata, preventivo gratuito."
-    />
-    <meta property="og:image" content="https://pikobit.it/images/banner.webp" />
+    <meta property="og:title" content="Programmatore e Web Designer a Taranto | Pikobit" />
+    <meta property="og:description" content="Programmatore e web designer a Taranto: gestionali, applicazioni web e siti su misura per imprese, professionisti e commercio. Preventivo gratuito." />
+    <meta property="og:image" content="https://pikobit.it/images/brand/og-pikobit-1200x630.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Pikobit - programmatore e web designer a Monopoli" />
+    <meta property="og:locale" content="it_IT" />
+    <meta property="og:site_name" content="Pikobit" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:description" content="Programmatore e web designer a Taranto: gestionali, applicazioni web e siti su misura per imprese, professionisti e commercio. Preventivo gratuito." />
+    <meta name="twitter:title" content="Programmatore e Web Designer a Taranto | Pikobit" />
+    <meta name="twitter:image" content="https://pikobit.it/images/brand/og-pikobit-1200x630.jpg" />
     <meta property="og:url" content="https://pikobit.it/programmatore-taranto.html" />
 
-    <link rel="stylesheet" href="./styles/style.css?v=4.3.2.0" />
+    <link rel="stylesheet" href="./styles/style.css?v=4.3.3.0" />
     <link
       rel="preload"
       href="fonts/poppins/poppins-latin-400-normal.woff2"
@@ -31,9 +38,21 @@
       type="font/woff2"
       crossorigin
     />
-    <link rel="icon" href="./images/logo.webp" type="image/png" />
+    <link
+      rel="preload"
+      href="fonts/poppins/poppins-latin-600-normal.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/brand/favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/images/brand/favicon-192.png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <meta name="theme-color" content="#0d0f12" />
 
-    <script defer src="scripts/script.js?v=4.3.2.0"></script>
+    <script defer src="scripts/script.js?v=4.3.3.0"></script>
 
     <!-- Dati strutturati: attività, pagina e breadcrumb -->
     <!-- prettier-ignore -->
@@ -45,8 +64,20 @@
             "@type": "ProfessionalService",
             "@id": "https://pikobit.it/#business",
             "name": "Pikobit",
-            "url": "https://pikobit.it",
-            "image": "https://pikobit.it/images/logo.webp",
+            "url": "https://pikobit.it/",
+            "image": {
+              "@type": "ImageObject",
+              "url": "https://pikobit.it/images/brand/pikobit-logo-512.png",
+              "width": 512,
+              "height": 512
+            },
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://pikobit.it/images/brand/pikobit-logo-512.png",
+              "width": 512,
+              "height": 512
+            },
+            "description": "Programmatore e web designer a Monopoli: siti web, applicazioni e software gestionali su misura per aziende e professionisti.",
             "telephone": "+39-351-889-1903",
             "email": "piko.bit.00@gmail.com",
             "address": {
@@ -56,24 +87,184 @@
               "postalCode": "70043",
               "addressCountry": "IT"
             },
+            "geo": {
+              "@type": "GeoCoordinates",
+              "latitude": 40.95,
+              "longitude": 17.3
+            },
+            "hasMap": "https://www.google.com/maps?cid=16391512325002463359",
             "openingHours": "Mo-Fr 09:00-17:00",
             "sameAs": [
+              "https://www.google.com/maps?cid=16391512325002463359",
               "https://www.instagram.com/pikobit_it/",
               "https://www.youtube.com/@pikobit01"
             ],
-            "description": "Programmatore e web designer con base a Monopoli: siti web, gestionali e applicazioni su misura anche per attività di Taranto.",
-            "areaServed": {
-              "@type": "City",
-              "name": "Taranto",
-              "addressCountry": "IT"
+            "founder": {
+              "@id": "https://pikobit.it/#giuseppe"
+            },
+            "employee": {
+              "@id": "https://pikobit.it/#giuseppe"
+            },
+            "areaServed": [
+              {
+                "@type": "City",
+                "name": "Monopoli",
+                "addressCountry": "IT"
+              },
+              {
+                "@type": "City",
+                "name": "Polignano a Mare",
+                "addressCountry": "IT"
+              },
+              {
+                "@type": "City",
+                "name": "Fasano",
+                "addressCountry": "IT"
+              },
+              {
+                "@type": "City",
+                "name": "Conversano",
+                "addressCountry": "IT"
+              },
+              {
+                "@type": "City",
+                "name": "Castellana Grotte",
+                "addressCountry": "IT"
+              },
+              {
+                "@type": "City",
+                "name": "Turi",
+                "addressCountry": "IT"
+              },
+              {
+                "@type": "City",
+                "name": "Casamassima",
+                "addressCountry": "IT"
+              },
+              {
+                "@type": "City",
+                "name": "Bari",
+                "addressCountry": "IT"
+              },
+              {
+                "@type": "City",
+                "name": "Brindisi",
+                "addressCountry": "IT"
+              },
+              {
+                "@type": "City",
+                "name": "Taranto",
+                "addressCountry": "IT"
+              },
+              {
+                "@type": "City",
+                "name": "Putignano",
+                "addressCountry": "IT"
+              },
+              {
+                "@type": "City",
+                "name": "Ostuni",
+                "addressCountry": "IT"
+              },
+              {
+                "@type": "City",
+                "name": "Lecce",
+                "addressCountry": "IT"
+              }
+            ],
+            "knowsAbout": [
+              "Siti web personalizzati",
+              "Applicazioni moderne",
+              "Software gestionali su misura",
+              "Lezioni e tutorial",
+              "Bigliettini da Visita con QR Code"
+            ],
+            "hasOfferCatalog": {
+              "@type": "OfferCatalog",
+              "name": "Servizi",
+              "itemListElement": [
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@id": "https://pikobit.it/websites.html#service"
+                  }
+                },
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@id": "https://pikobit.it/modern-apps.html#service"
+                  }
+                },
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@id": "https://pikobit.it/custom-software.html#service"
+                  }
+                },
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@id": "https://pikobit.it/lessons.html#service"
+                  }
+                },
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@id": "https://pikobit.it/creative-services.html#service"
+                  }
+                }
+              ]
             }
+          },
+          {
+            "@type": "Person",
+            "@id": "https://pikobit.it/#giuseppe",
+            "name": "Giuseppe Alaimo",
+            "jobTitle": "Software Engineer",
+            "description": "Software Engineer Senior specializzato in Java/Spring, sviluppa siti web, applicazioni e software su misura; crea anche tutorial e progetti di programmazione.",
+            "url": "https://pikobit.it/about.html",
+            "image": {
+              "@type": "ImageObject",
+              "url": "https://pikobit.it/images/brand/pikobit-logo-512.png",
+              "width": 512,
+              "height": 512
+            },
+            "worksFor": {
+              "@id": "https://pikobit.it/#business"
+            },
+            "knowsAbout": [
+              "Java",
+              "Spring Boot",
+              "Python",
+              "C",
+              "C++",
+              "Flutter",
+              "Dart",
+              "Kotlin",
+              "Android Studio",
+              "Angular",
+              "React",
+              "HTML",
+              "CSS",
+              "JavaScript",
+              "WordPress",
+              "PostgreSQL",
+              "MySQL",
+              "Clean Architecture",
+              "Design pattern",
+              "Test automatici"
+            ],
+            "sameAs": [
+              "https://www.linkedin.com/in/giuseppe-alaimo-aba40b226",
+              "https://www.superprof.it/laureato-informatica-lezioni-programmazione-web-per-creazione-sito-web-javascript-nodejs-html-css-python-flask.html"
+            ]
           },
           {
             "@type": "WebPage",
             "@id": "https://pikobit.it/programmatore-taranto.html",
             "url": "https://pikobit.it/programmatore-taranto.html",
-            "name": "Programmatore e Web Designer a Taranto - Pikobit",
-            "description": "Software gestionali, applicazioni web e siti su misura per imprese, professionisti e commercio di Taranto. Primo incontro in videochiamata, preventivo gratuito.",
+            "name": "Programmatore e Web Designer a Taranto | Pikobit",
+            "description": "Programmatore e web designer a Taranto: gestionali, applicazioni web e siti su misura per imprese, professionisti e commercio. Preventivo gratuito.",
             "about": {
               "@id": "https://pikobit.it/#business"
             },
@@ -105,12 +296,28 @@
                 "item": "https://pikobit.it/programmatore-taranto.html"
               }
             ]
+          },
+          {
+            "@type": "Service",
+            "@id": "https://pikobit.it/programmatore-taranto.html#service",
+            "name": "Realizzazione siti web, software e app a Taranto",
+            "description": "Programmatore e web designer a Taranto: gestionali, applicazioni web e siti su misura per imprese, professionisti e commercio. Preventivo gratuito.",
+            "url": "https://pikobit.it/programmatore-taranto.html",
+            "provider": {
+              "@id": "https://pikobit.it/#business"
+            },
+            "areaServed": {
+              "@type": "City",
+              "name": "Taranto",
+              "addressCountry": "IT"
+            },
+            "serviceType": "Realizzazione siti web e sviluppo software su misura"
           }
         ]
       }
     </script>
 
-  <script defer src="scripts/consent.js?v=4.3.2.0"></script>
+  <script defer src="scripts/consent.js?v=4.3.3.0"></script>
   </head>
 
   <body>
@@ -156,7 +363,7 @@
             alt="Logo Pikobit - Programmatore e web designer"
             class="logo"
             width="120"
-            height="112"
+            height="112" fetchpriority="high"
           />
           <p class="tagline">Siti web, app e gestionali su misura</p>
           <h1>Programmatore e web designer a Taranto</h1>
@@ -217,6 +424,71 @@
       </section>
 
       <section class="why-pikobit">
+        <h2>Realizzazione siti web per imprese e professionisti di Taranto</h2>
+        <div class="article-body">
+          <p>
+          Un'impresa di manutenzione che lavora come fornitore per il porto o
+          per l'industria viene cercata da altre aziende, non da privati. Il suo
+          sito deve dire con precisione che lavori esegue, in quali settori, e a
+          chi rivolgersi per una richiesta. Poche pagine scritte bene valgono
+          più di un sito pieno di animazioni, e un modulo di contatto che chieda
+          subito le informazioni utili fa risparmiare un giro di telefonate.
+          </p>
+          <p>
+          Il commercio del borgo e dei quartieri ha esigenze diverse: comparire
+          quando qualcuno cerca in zona, con indirizzo, orari, prodotti e una
+          foto della vetrina. Uno studio professionale ha bisogno di presentare
+          i servizi e, se serve, di far prenotare gli appuntamenti direttamente
+          online. E chi accoglie i visitatori che arrivano per la città vecchia
+          e il Museo Archeologico deve farsi trovare anche da chi non è di qui.
+          </p>
+          <p>
+          Nel sito tengo separati questi pubblici, perché
+          ognuno cerca risposte sue. Se vuoi capire come imposto il lavoro,
+          trovi il metodo nella pagina sulla <a href="websites.html" class="cta-link">creazione di siti web</a>:
+          da web designer ci metto la cura per la grafica, da programmatore la
+          velocità e l'ordine del codice.
+          </p>
+        </div>
+      </section>
+
+      <section class="why-pikobit">
+        <h2>Gestionali e app per le commesse a Taranto</h2>
+        <div class="article-body">
+          <p>
+          Nelle imprese che lavorano a commessa, il lavoro attraversa sempre le
+          stesse fasi, e in ognuna si possono perdere informazioni:
+          </p>
+          <ul>
+            <li>
+              <strong>Apertura</strong>: la richiesta del cliente, il
+              preventivo accettato, i documenti da raccogliere.
+            </li>
+            <li>
+              <strong>Esecuzione</strong>: quale squadra va dove, con quali
+              materiali e mezzi, entro quale data.
+            </li>
+            <li>
+              <strong>Chiusura</strong>: rapportini, foto, firma del cliente e
+              tutto quello che serve per fatturare senza rincorrere nessuno.
+            </li>
+          </ul>
+          <p>
+          Lo <a href="custom-software.html" class="cta-link">sviluppo software su misura</a>
+          collega queste fasi in un unico gestionale, così l'ufficio vede a che
+          punto è ogni commessa senza fare dieci telefonate. La parte che si usa
+          in cantiere diventa un'<a href="modern-apps.html" class="cta-link">applicazione web</a>
+          pensata per mani sporche e poco tempo: pulsanti grandi, pochi campi,
+          foto scattate direttamente dal telefono.
+          </p>
+          <p>
+          Lavorare con chi conosce sia le app sia il lato gestionale evita il problema più comune: l'app per le squadre da una parte, i dati
+          dell'ufficio dall'altra, e nessuno che li tiene allineati. Con un unico software su misura le due metà parlano fra loro.
+          </p>
+        </div>
+      </section>
+
+      <section class="why-pikobit">
         <h2>Domande frequenti da Taranto</h2>
         <div class="article-body">
           <h3>Le squadre possono compilare i rapportini dal telefono?</h3>
@@ -254,11 +526,11 @@
       <section class="goals">
         <h2>Zone vicine</h2>
         <ul class="city-grid">
-          <li class="card--link"><a href="programmatore-monopoli.html" class="cta-link-blue">Programmatore a Monopoli</a></li>
+          <li class="card--link"><a href="programmatore-monopoli.html" class="cta-link-blue">Siti web a Monopoli</a></li>
           <li class="card--link"><a href="programmatore-brindisi.html" class="cta-link-blue">Brindisi</a></li>
           <li class="card--link"><a href="programmatore-lecce.html" class="cta-link-blue">Lecce</a></li>
           <li class="card--link"><a href="programmatore-ostuni.html" class="cta-link-blue">Ostuni</a></li>
-          <li class="card--link"><a href="dove-lavoro.html" class="cta-link-blue">Tutte le zone in cui lavoro</a></li>
+          <li class="card--link"><a href="dove-lavoro.html" class="cta-link-blue">Tutte le zone</a></li>
         </ul>
       </section>
 
@@ -296,8 +568,8 @@
 
     <footer>
 <p class="nap">Pikobit · Programmatore e web designer · Monopoli (BA) · <a href="tel:+393518891903">351 889 1903</a> · <a href="mailto:piko.bit.00@gmail.com">piko.bit.00@gmail.com</a></p>
-<nav class="footer-zone" aria-label="Zone in cui lavoro"><p>Zone: <a href="programmatore-monopoli.html">Monopoli</a> · <a href="programmatore-bari.html">Bari</a> · <a href="programmatore-polignano-a-mare.html">Polignano a Mare</a> · <a href="programmatore-fasano.html">Fasano</a> · <a href="programmatore-conversano.html">Conversano</a> · <a href="programmatore-castellana-grotte.html">Castellana Grotte</a> · <a href="programmatore-putignano.html">Putignano</a> · <a href="programmatore-casamassima.html">Casamassima</a> · <a href="programmatore-ostuni.html">Ostuni</a> · <a href="programmatore-brindisi.html">Brindisi</a> · <a href="programmatore-taranto.html">Taranto</a> · <a href="programmatore-lecce.html">Lecce</a></p></nav>
-<p class="footer-legal"><a href="privacy.html">Privacy</a> · <a href="privacy.html#cookie" data-cookie-prefs>Preferenze cookie</a></p>
+<nav class="footer-zone" aria-label="Zone in cui lavoro"><p>Zone: <a href="programmatore-monopoli.html">Monopoli</a> · <a href="programmatore-bari.html">Bari</a> · <a href="programmatore-polignano-a-mare.html">Polignano a Mare</a> · <a href="programmatore-fasano.html">Fasano</a> · <a href="programmatore-conversano.html">Conversano</a> · <a href="programmatore-castellana-grotte.html">Castellana Grotte</a> · <a href="programmatore-putignano.html">Putignano</a> · <a href="programmatore-turi.html">Turi</a> · <a href="programmatore-casamassima.html">Casamassima</a> · <a href="programmatore-ostuni.html">Ostuni</a> · <a href="programmatore-brindisi.html">Brindisi</a> · <a href="programmatore-taranto.html">Taranto</a> · <a href="programmatore-lecce.html">Lecce</a></p></nav>
+<p class="footer-legal"><a href="privacy.html">Privacy</a> · <a href="privacy.html#cookie" data-cookie-prefs>Preferenze cookie</a> · <a href="https://www.google.com/maps?cid=16391512325002463359" target="_blank" rel="noopener">Trovami su Google Maps</a></p>
       <p>&copy; 2026 Pikobit. Tutti i diritti riservati.</p>
       <p>
         "Pikobit: Il tuo punto di partenza per creare, imparare e ispirare."

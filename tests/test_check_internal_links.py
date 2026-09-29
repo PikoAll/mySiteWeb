@@ -41,3 +41,36 @@ def test_sitemap_locs_must_exist(tmp_path):
         "<url><loc>https://pikobit.it/gone.html</loc></url></urlset>"
     )
     assert cil.missing_sitemap_targets(tmp_path, "https://pikobit.it/") == ["https://pikobit.it/gone.html"]
+
+
+# --- assets referenced outside the HTML (css url(), manifest, fx scenes) ----
+
+def test_css_url_must_exist(tmp_path):
+    (tmp_path / "styles").mkdir()
+    (tmp_path / "fonts").mkdir()
+    (tmp_path / "fonts" / "a.woff2").write_bytes(b"")
+    (tmp_path / "styles" / "s.css").write_text(
+        '@font-face{src:url("../fonts/a.woff2")} .x{background:url(../img/no.svg)} .y{background:url(data:x)}')
+    assert [str(t) for _, t in cil.broken_assets(tmp_path)] == ["../img/no.svg"]
+
+
+def test_manifest_icons_must_exist(tmp_path):
+    (tmp_path / "i.png").write_bytes(b"")
+    (tmp_path / "site.webmanifest").write_text('{"icons": [{"src": "/i.png"}, {"src": "/gone.png"}]}')
+    assert [t for _, t in cil.broken_assets(tmp_path)] == ["/gone.png"]
+
+
+def test_fx_scene_needs_its_script_core_and_css(tmp_path):
+    (tmp_path / "scripts" / "fx").mkdir(parents=True)
+    (tmp_path / "styles").mkdir()
+    (tmp_path / "scripts" / "fx" / "core.js").write_text("")
+    (tmp_path / "scripts" / "fx" / "web.js").write_text("")
+    (tmp_path / "index.html").write_text('<div data-fx="web"></div><div data-fx="qr"></div>')
+    assert sorted(t for _, t in cil.broken_assets(tmp_path)) == ["scripts/fx/qr.js", "styles/fx.css"]
+
+
+def test_root_argument(tmp_path, capsys):
+    make_site(tmp_path)
+    assert cil.main(["--root", str(tmp_path)]) == 0
+    (tmp_path / "blog" / "x.html").write_text('<a href="../nope.html">x</a>')
+    assert cil.main(["--root", str(tmp_path)]) == 1

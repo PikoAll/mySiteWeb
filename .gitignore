@@ -12,3 +12,6 @@ __pycache__/
 node_modules/
 test-results/
 playwright-report/
+
+# Sito pubblicato, generato da scripts/build_site.py (anche in CI)
+_site/

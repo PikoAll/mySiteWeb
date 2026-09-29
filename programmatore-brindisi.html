@@ -3,10 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Programmatore e Web Designer a Brindisi - Pikobit</title>
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
+    <title>Programmatore e Web Designer a Brindisi | Pikobit</title>
     <meta
       name="description"
-      content="Gestionali, applicazioni web e siti su misura per aziende, servizi e commercio di Brindisi. Primo incontro in videochiamata, poi di persona. Preventivo gratuito."
+      content="Programmatore e web designer a Brindisi: gestionali, applicazioni web e siti su misura per aziende, servizi e commercio. Preventivo gratuito."
     />
     <meta name="author" content="Pikobit" />
 
@@ -15,15 +16,21 @@
 
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="Programmatore e Web Designer a Brindisi - Pikobit" />
-    <meta
-      property="og:description"
-      content="Gestionali, applicazioni web e siti su misura per aziende, servizi e commercio di Brindisi. Primo incontro in videochiamata, poi di persona. Preventivo gratuito."
-    />
-    <meta property="og:image" content="https://pikobit.it/images/banner.webp" />
+    <meta property="og:title" content="Programmatore e Web Designer a Brindisi | Pikobit" />
+    <meta property="og:description" content="Programmatore e web designer a Brindisi: gestionali, applicazioni web e siti su misura per aziende, servizi e commercio. Preventivo gratuito." />
+    <meta property="og:image" content="https://pikobit.it/images/brand/og-pikobit-1200x630.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Pikobit - programmatore e web designer a Monopoli" />
+    <meta property="og:locale" content="it_IT" />
+    <meta property="og:site_name" content="Pikobit" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:description" content="Programmatore e web designer a Brindisi: gestionali, applicazioni web e siti su misura per aziende, servizi e commercio. Preventivo gratuito." />
+    <meta name="twitter:title" content="Programmatore e Web Designer a Brindisi | Pikobit" />
+    <meta name="twitter:image" content="https://pikobit.it/images/brand/og-pikobit-1200x630.jpg" />
     <meta property="og:url" content="https://pikobit.it/programmatore-brindisi.html" />
 
-    <link rel="stylesheet" href="./styles/style.css?v=4.3.2.0" />
+    <link rel="stylesheet" href="./styles/style.css?v=4.3.3.0" />
     <link
       rel="preload"
       href="fonts/poppins/poppins-latin-400-normal.woff2"
@@ -31,9 +38,21 @@
       type="font/woff2"
       crossorigin
     />
-    <link rel="icon" href="./images/logo.webp" type="image/png" />
+    <link
+      rel="preload"
+      href="fonts/poppins/poppins-latin-600-normal.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/brand/favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/images/brand/favicon-192.png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <meta name="theme-color" content="#0d0f12" />
 
-    <script defer src="scripts/script.js?v=4.3.2.0"></script>
+    <script defer src="scripts/script.js?v=4.3.3.0"></script>
 
     <!-- Dati strutturati: attività, pagina e breadcrumb -->
     <!-- prettier-ignore -->
@@ -45,8 +64,20 @@
             "@type": "ProfessionalService",
             "@id": "https://pikobit.it/#business",
             "name": "Pikobit",
-            "url": "https://pikobit.it",
-            "image": "https://pikobit.it/images/logo.webp",
+            "url": "https://pikobit.it/",
+            "image": {
+              "@type": "ImageObject",
+              "url": "https://pikobit.it/images/brand/pikobit-logo-512.png",
+              "width": 512,
+              "height": 512
+            },
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://pikobit.it/images/brand/pikobit-logo-512.png",
+              "width": 512,
+              "height": 512
+            },
+            "description": "Programmatore e web designer a Monopoli: siti web, applicazioni e software gestionali su misura per aziende e professionisti.",
             "telephone": "+39-351-889-1903",
             "email": "piko.bit.00@gmail.com",
             "address": {
@@ -56,24 +87,184 @@
               "postalCode": "70043",
               "addressCountry": "IT"
             },
+            "geo": {
+              "@type": "GeoCoordinates",
+              "latitude": 40.95,
+              "longitude": 17.3
+            },
+            "hasMap": "https://www.google.com/maps?cid=16391512325002463359",
             "openingHours": "Mo-Fr 09:00-17:00",
             "sameAs": [
+              "https://www.google.com/maps?cid=16391512325002463359",
               "https://www.instagram.com/pikobit_it/",
               "https://www.youtube.com/@pikobit01"
             ],
-            "description": "Programmatore e web designer con base a Monopoli: siti web, gestionali e applicazioni su misura anche per attività di Brindisi.",
-            "areaServed": {
-              "@type": "City",
-              "name": "Brindisi",
-              "addressCountry": "IT"
+            "founder": {
+              "@id": "https://pikobit.it/#giuseppe"
+            },
+            "employee": {
+              "@id": "https://pikobit.it/#giuseppe"
+            },
+            "areaServed": [
+              {
+                "@type": "City",
+                "name": "Monopoli",
+                "addressCountry": "IT"
+              },
+              {
+                "@type": "City",
+                "name": "Polignano a Mare",
+                "addressCountry": "IT"
+              },
+              {
+                "@type": "City",
+                "name": "Fasano",
+                "addressCountry": "IT"
+              },
+              {
+                "@type": "City",
+                "name": "Conversano",
+                "addressCountry": "IT"
+              },
+              {
+                "@type": "City",
+                "name": "Castellana Grotte",
+                "addressCountry": "IT"
+              },
+              {
+                "@type": "City",
+                "name": "Turi",
+                "addressCountry": "IT"
+              },
+              {
+                "@type": "City",
+                "name": "Casamassima",
+                "addressCountry": "IT"
+              },
+              {
+                "@type": "City",
+                "name": "Bari",
+                "addressCountry": "IT"
+              },
+              {
+                "@type": "City",
+                "name": "Brindisi",
+                "addressCountry": "IT"
+              },
+              {
+                "@type": "City",
+                "name": "Taranto",
+                "addressCountry": "IT"
+              },
+              {
+                "@type": "City",
+                "name": "Putignano",
+                "addressCountry": "IT"
+              },
+              {
+                "@type": "City",
+                "name": "Ostuni",
+                "addressCountry": "IT"
+              },
+              {
+                "@type": "City",
+                "name": "Lecce",
+                "addressCountry": "IT"
+              }
+            ],
+            "knowsAbout": [
+              "Siti web personalizzati",
+              "Applicazioni moderne",
+              "Software gestionali su misura",
+              "Lezioni e tutorial",
+              "Bigliettini da Visita con QR Code"
+            ],
+            "hasOfferCatalog": {
+              "@type": "OfferCatalog",
+              "name": "Servizi",
+              "itemListElement": [
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@id": "https://pikobit.it/websites.html#service"
+                  }
+                },
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@id": "https://pikobit.it/modern-apps.html#service"
+                  }
+                },
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@id": "https://pikobit.it/custom-software.html#service"
+                  }
+                },
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@id": "https://pikobit.it/lessons.html#service"
+                  }
+                },
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@id": "https://pikobit.it/creative-services.html#service"
+                  }
+                }
+              ]
             }
+          },
+          {
+            "@type": "Person",
+            "@id": "https://pikobit.it/#giuseppe",
+            "name": "Giuseppe Alaimo",
+            "jobTitle": "Software Engineer",
+            "description": "Software Engineer Senior specializzato in Java/Spring, sviluppa siti web, applicazioni e software su misura; crea anche tutorial e progetti di programmazione.",
+            "url": "https://pikobit.it/about.html",
+            "image": {
+              "@type": "ImageObject",
+              "url": "https://pikobit.it/images/brand/pikobit-logo-512.png",
+              "width": 512,
+              "height": 512
+            },
+            "worksFor": {
+              "@id": "https://pikobit.it/#business"
+            },
+            "knowsAbout": [
+              "Java",
+              "Spring Boot",
+              "Python",
+              "C",
+              "C++",
+              "Flutter",
+              "Dart",
+              "Kotlin",
+              "Android Studio",
+              "Angular",
+              "React",
+              "HTML",
+              "CSS",
+              "JavaScript",
+              "WordPress",
+              "PostgreSQL",
+              "MySQL",
+              "Clean Architecture",
+              "Design pattern",
+              "Test automatici"
+            ],
+            "sameAs": [
+              "https://www.linkedin.com/in/giuseppe-alaimo-aba40b226",
+              "https://www.superprof.it/laureato-informatica-lezioni-programmazione-web-per-creazione-sito-web-javascript-nodejs-html-css-python-flask.html"
+            ]
           },
           {
             "@type": "WebPage",
             "@id": "https://pikobit.it/programmatore-brindisi.html",
             "url": "https://pikobit.it/programmatore-brindisi.html",
-            "name": "Programmatore e Web Designer a Brindisi - Pikobit",
-            "description": "Gestionali, applicazioni web e siti su misura per aziende, servizi e commercio di Brindisi. Primo incontro in videochiamata, poi di persona. Preventivo gratuito.",
+            "name": "Programmatore e Web Designer a Brindisi | Pikobit",
+            "description": "Programmatore e web designer a Brindisi: gestionali, applicazioni web e siti su misura per aziende, servizi e commercio. Preventivo gratuito.",
             "about": {
               "@id": "https://pikobit.it/#business"
             },
@@ -105,12 +296,28 @@
                 "item": "https://pikobit.it/programmatore-brindisi.html"
               }
             ]
+          },
+          {
+            "@type": "Service",
+            "@id": "https://pikobit.it/programmatore-brindisi.html#service",
+            "name": "Realizzazione siti web, software e app a Brindisi",
+            "description": "Programmatore e web designer a Brindisi: gestionali, applicazioni web e siti su misura per aziende, servizi e commercio. Preventivo gratuito.",
+            "url": "https://pikobit.it/programmatore-brindisi.html",
+            "provider": {
+              "@id": "https://pikobit.it/#business"
+            },
+            "areaServed": {
+              "@type": "City",
+              "name": "Brindisi",
+              "addressCountry": "IT"
+            },
+            "serviceType": "Realizzazione siti web e sviluppo software su misura"
           }
         ]
       }
     </script>
 
-  <script defer src="scripts/consent.js?v=4.3.2.0"></script>
+  <script defer src="scripts/consent.js?v=4.3.3.0"></script>
   </head>
 
   <body>
@@ -156,10 +363,10 @@
             alt="Logo Pikobit - Programmatore e web designer"
             class="logo"
             width="120"
-            height="112"
+            height="112" fetchpriority="high"
           />
           <p class="tagline">Siti web, app e gestionali su misura</p>
-          <h1>Programmatore e web designer per aziende e attività di Brindisi</h1>
+          <h1>Programmatore e web designer a Brindisi, per aziende e attività</h1>
           <p>
             Brindisi è una città di porto, con l'aeroporto, un polo industriale e tante aziende di servizi. Sono Giuseppe, programmatore e web designer di Pikobit: lavoro da Monopoli e sviluppo software, applicazioni e siti su misura anche per chi ha un'attività a Brindisi.
           </p>
@@ -217,6 +424,60 @@
       </section>
 
       <section class="why-pikobit">
+        <h2>Siti web per il porto, i servizi e il commercio di Brindisi</h2>
+        <div class="article-body">
+          <p>
+          Un'azienda di logistica non ha bisogno di un sito da cartolina: le
+          serve una presentazione seria dei servizi, di dove opera e di come
+          chiedere un preventivo, scritta per chi in un'altra azienda deve
+          scegliere un fornitore e ha poco tempo per farlo. Contano chiarezza,
+          contatti diretti e pagine che si aprono subito.
+          </p>
+          <p>
+          Tutt'altra storia per chi lavora con i viaggiatori che passano fra il
+          porto e l'aeroporto, o con i turisti del lungomare e del centro
+          storico: un bar, un ristorante, un piccolo alloggio. Lì servono la
+          posizione, gli orari, qualche informazione in inglese e un contatto
+          rapido dal telefono. Per professionisti e studi, invece, un sito sobrio
+          che spieghi di cosa si occupano e come fissare un appuntamento.
+          </p>
+          <p>
+          Ogni <a href="websites.html" class="cta-link">sito web</a> che realizzo parte da una domanda: chi deve convincere questa pagina? Da web
+          designer scelgo struttura e grafica di conseguenza, senza effetti che
+          rallentano e basta. È lo stesso approccio con cui ho creato i siti di altre attività, come l'impresa di traslochi che
+          trovi fra i lavori qui sotto.
+          </p>
+        </div>
+      </section>
+
+      <section class="why-pikobit">
+        <h2>Sviluppo software e app per le aziende di Brindisi</h2>
+        <div class="article-body">
+          <p>
+          Vengo dal software aziendale: sono laureato in informatica e lavoro
+          come Software Engineer Senior, specializzato in Java e Spring. I
+          processi con molti passaggi e molte persone coinvolte sono il mio
+          terreno di tutti i giorni, ed è proprio quello che si trova nelle
+          aziende che ruotano attorno al porto e all'area industriale.
+          </p>
+          <p>
+          Prendi una spedizione: passa dall'ufficio al magazzino, poi all'autista
+          e infine al cliente. Ogni passaggio dovrebbe lasciare una traccia, ma
+          spesso resta in una telefonata o in un foglio che nessuno ritrova. Un
+          <a href="custom-software.html" class="cta-link">gestionale su misura</a> costruito
+          su quel flusso mostra a che punto è ogni pratica, chi la sta seguendo
+          e quali scadenze si avvicinano. È sviluppo software che si ripaga in
+          ore risparmiate, non in funzioni in più.
+          </p>
+          <p>
+          Per chi lavora fuori sede, fra banchine, magazzini e clienti, lo <a href="modern-apps.html" class="cta-link">sviluppo di un'app</a> si traduce di solito in
+          un'applicazione web: la usi dal telefono, la aggiorni senza passare dagli
+          store, funziona su qualunque dispositivo. Da programmatore ti propongo la soluzione più semplice da mantenere nel tempo.
+          </p>
+        </div>
+      </section>
+
+      <section class="why-pikobit">
         <h2>Domande frequenti da Brindisi</h2>
         <div class="article-body">
           <h3>Puoi sviluppare un&#x27;app per il personale che lavora fuori sede?</h3>
@@ -254,11 +515,11 @@
       <section class="goals">
         <h2>Zone vicine</h2>
         <ul class="city-grid">
-          <li class="card--link"><a href="programmatore-monopoli.html" class="cta-link-blue">Programmatore a Monopoli</a></li>
+          <li class="card--link"><a href="programmatore-monopoli.html" class="cta-link-blue">Siti web a Monopoli</a></li>
           <li class="card--link"><a href="programmatore-ostuni.html" class="cta-link-blue">Ostuni</a></li>
           <li class="card--link"><a href="programmatore-lecce.html" class="cta-link-blue">Lecce</a></li>
           <li class="card--link"><a href="programmatore-taranto.html" class="cta-link-blue">Taranto</a></li>
-          <li class="card--link"><a href="dove-lavoro.html" class="cta-link-blue">Tutte le zone in cui lavoro</a></li>
+          <li class="card--link"><a href="dove-lavoro.html" class="cta-link-blue">Tutte le zone</a></li>
         </ul>
       </section>
 
@@ -296,8 +557,8 @@
 
     <footer>
 <p class="nap">Pikobit · Programmatore e web designer · Monopoli (BA) · <a href="tel:+393518891903">351 889 1903</a> · <a href="mailto:piko.bit.00@gmail.com">piko.bit.00@gmail.com</a></p>
-<nav class="footer-zone" aria-label="Zone in cui lavoro"><p>Zone: <a href="programmatore-monopoli.html">Monopoli</a> · <a href="programmatore-bari.html">Bari</a> · <a href="programmatore-polignano-a-mare.html">Polignano a Mare</a> · <a href="programmatore-fasano.html">Fasano</a> · <a href="programmatore-conversano.html">Conversano</a> · <a href="programmatore-castellana-grotte.html">Castellana Grotte</a> · <a href="programmatore-putignano.html">Putignano</a> · <a href="programmatore-casamassima.html">Casamassima</a> · <a href="programmatore-ostuni.html">Ostuni</a> · <a href="programmatore-brindisi.html">Brindisi</a> · <a href="programmatore-taranto.html">Taranto</a> · <a href="programmatore-lecce.html">Lecce</a></p></nav>
-<p class="footer-legal"><a href="privacy.html">Privacy</a> · <a href="privacy.html#cookie" data-cookie-prefs>Preferenze cookie</a></p>
+<nav class="footer-zone" aria-label="Zone in cui lavoro"><p>Zone: <a href="programmatore-monopoli.html">Monopoli</a> · <a href="programmatore-bari.html">Bari</a> · <a href="programmatore-polignano-a-mare.html">Polignano a Mare</a> · <a href="programmatore-fasano.html">Fasano</a> · <a href="programmatore-conversano.html">Conversano</a> · <a href="programmatore-castellana-grotte.html">Castellana Grotte</a> · <a href="programmatore-putignano.html">Putignano</a> · <a href="programmatore-turi.html">Turi</a> · <a href="programmatore-casamassima.html">Casamassima</a> · <a href="programmatore-ostuni.html">Ostuni</a> · <a href="programmatore-brindisi.html">Brindisi</a> · <a href="programmatore-taranto.html">Taranto</a> · <a href="programmatore-lecce.html">Lecce</a></p></nav>
+<p class="footer-legal"><a href="privacy.html">Privacy</a> · <a href="privacy.html#cookie" data-cookie-prefs>Preferenze cookie</a> · <a href="https://www.google.com/maps?cid=16391512325002463359" target="_blank" rel="noopener">Trovami su Google Maps</a></p>
       <p>&copy; 2026 Pikobit. Tutti i diritti riservati.</p>
       <p>
         "Pikobit: Il tuo punto di partenza per creare, imparare e ispirare."

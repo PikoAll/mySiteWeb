@@ -73,9 +73,17 @@ def process(html_path: Path, dry_run: bool) -> bool:
     return True
 
 
+def pages():
+    # _site/ is the built copy (scripts/build_site.py): never edited in place
+    return sorted(
+        p for p in ROOT.rglob("*.html")
+        if not {"node_modules", "tests", "_site"} & set(p.relative_to(ROOT).parts)
+    )
+
+
 def main() -> int:
     dry_run = "--dry-run" in sys.argv
-    html_files = sorted(ROOT.rglob("*.html"))
+    html_files = pages()
     changed = []
     skipped_no_match = []
     for f in html_files:

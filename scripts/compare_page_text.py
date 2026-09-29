@@ -76,7 +76,8 @@ def _words(s):
 
 def lost_sentences(old_html, new_html):
     new = _words(main_text(new_html).replace(BLOCK, " "))
-    return [s for s in sentences(main_text(old_html)) if _words(s) not in new]
+    # A sentence with no word ("*" after "privacy.") has nothing to lose.
+    return [s for s in sentences(main_text(old_html)) if _words(s).strip() and _words(s) not in new]
 
 
 def main(argv):

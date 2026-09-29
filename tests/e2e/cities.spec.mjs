@@ -65,7 +65,7 @@ for (const city of CITIES) {
 
 test("the map dots sit on the drawn cities", async ({ page }) => {
   await page.goto("dove-lavoro.html");
-  await expect(page.locator(".fx-map-links a")).toHaveCount(12, { timeout: 15_000 });
+  await expect(page.locator(".fx-map-links a")).toHaveCount(CITIES.length, { timeout: 15_000 });
   await settledBox(page, page.locator(".fx-map-links a").first());
   await page.waitForTimeout(300); // one more painted frame
   // the canvas paints a bright dot at every city: sample it under each link
