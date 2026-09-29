@@ -54,6 +54,7 @@
     ostuni: [17.58, 40.73],
     putignano: [17.12, 40.85],
     taranto: [17.24, 40.47],
+    turi: [17.02, 40.92],
   };
   const NAMES = {
     monopoli: "Monopoli",
@@ -68,6 +69,7 @@
     ostuni: "Ostuni",
     putignano: "Putignano",
     taranto: "Taranto",
+    turi: "Turi",
   };
   const K = Math.cos((41 * Math.PI) / 180); // equirectangular at 41°N
   const rnd = env.rand(Date.now() & 0xffff);

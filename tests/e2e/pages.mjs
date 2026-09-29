@@ -11,5 +11,5 @@ export const PAGES = readdirSync(ROOT)
 export const CITIES = [
   "monopoli", "bari", "polignano-a-mare", "fasano", "conversano",
   "castellana-grotte", "putignano", "casamassima", "ostuni", "brindisi",
-  "taranto", "lecce",
+  "taranto", "lecce", "turi",
 ];

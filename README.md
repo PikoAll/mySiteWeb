@@ -25,6 +25,31 @@ Non serve altro: non c'è una VPS da raggiungere via SSH, non ci sono permessi d
 
 ---
 
+## Dati strutturati e meta SEO (anche per la pipeline del venerdì)
+
+Cosa c'è nel sito per Google e perché (parole chiave per pagina, regole di title e description, dati strutturati, divieti, storico delle decisioni): [docs/SEO.md](docs/SEO.md).
+
+Il JSON-LD e i meta SEO dell'`<head>` non si scrivono a mano: li mette [`scripts/seo_head.py`](scripts/seo_head.py), idempotente (rilanciato = zero differenze). Un'unica entità `ProfessionalService` (`https://pikobit.it/#business`) e un'unica `Person` (`#giuseppe`), identiche byte per byte su tutte le pagine; ogni articolo ha `BlogPosting` con `dateModified`, breadcrumb e `article:*_time`. `crucidev/privacy/` resta fuori (è la policy di un'app).
+
+Dopo che l'agente ha scritto gli articoli nuovi, **prima del push**:
+
+```bash
+python3 scripts/brand_head.py blog/NUOVO-ARTICOLO.html # favicon, og:image, logo del brand nuovo
+python3 scripts/seo_head.py blog/NUOVO-ARTICOLO.html   # uno o più file
+python3 scripts/seo_head.py --verifica                 # exit 1 = pagina non conforme (anche immagini vecchie o mancanti), niente push
+python3 scripts/verify_jsonld.py                       # JSON valido, stessa @id = stessi dati
+```
+
+Dopo il push (facoltativo, lo lancia Giuseppe): avvisare Bing/Yandex via IndexNow. Senza `--invia` mostra solo l'anteprima.
+
+```bash
+python3 scripts/indexnow_ping.py --invia blog/NUOVO-ARTICOLO.html
+```
+
+La chiave IndexNow è il file `<chiave>.txt` in radice: è pubblica per costruzione, non è un segreto. Google non usa IndexNow: per Google vale il `lastmod` della sitemap.
+
+---
+
 ## Dominio e DNS
 
 Il dominio `pikobit.it` è registrato/gestito su OVH, con il DNS configurato per puntare a GitHub Pages:

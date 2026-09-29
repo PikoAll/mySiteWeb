@@ -6,7 +6,7 @@ import re
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
-SKIP_DIRS = {".git", "tests", "node_modules"}
+SKIP_DIRS = {".git", "tests", "node_modules", "_site"}
 CARD_RE = re.compile(r'<li class="(card(?:\s[^"]*)?)">(.*?)</li>', re.S)
 
 

@@ -30,7 +30,7 @@ NAP = (
 
 FOOTER_RE = re.compile(r"<footer[^>]*>")
 REPO_ROOT = Path(__file__).resolve().parent.parent
-SKIP_DIRS = {".git", "tests", "node_modules"}
+SKIP_DIRS = {".git", "tests", "node_modules", "_site"}  # _site: built copy, see build_site.py
 
 
 def default_targets(root):

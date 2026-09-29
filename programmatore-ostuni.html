@@ -3,7 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Web Designer e Programmatore a Ostuni - Pikobit</title>
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
+    <title>Web Designer e Programmatore a Ostuni | Pikobit</title>
     <meta
       name="description"
       content="Siti web in più lingue per B&amp;B, case vacanza, masserie e ristoranti di Ostuni. Primo incontro in videochiamata, poi di persona. Preventivo gratuito."
@@ -15,15 +16,21 @@
 
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="Web Designer e Programmatore a Ostuni - Pikobit" />
-    <meta
-      property="og:description"
-      content="Siti web in più lingue per B&amp;B, case vacanza, masserie e ristoranti di Ostuni. Primo incontro in videochiamata, poi di persona. Preventivo gratuito."
-    />
-    <meta property="og:image" content="https://pikobit.it/images/banner.webp" />
+    <meta property="og:title" content="Web Designer e Programmatore a Ostuni | Pikobit" />
+    <meta property="og:description" content="Siti web in più lingue per B&amp;B, case vacanza, masserie e ristoranti di Ostuni. Primo incontro in videochiamata, poi di persona. Preventivo gratuito." />
+    <meta property="og:image" content="https://pikobit.it/images/brand/og-pikobit-1200x630.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Pikobit - programmatore e web designer a Monopoli" />
+    <meta property="og:locale" content="it_IT" />
+    <meta property="og:site_name" content="Pikobit" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:description" content="Siti web in più lingue per B&amp;B, case vacanza, masserie e ristoranti di Ostuni. Primo incontro in videochiamata, poi di persona. Preventivo gratuito." />
+    <meta name="twitter:title" content="Web Designer e Programmatore a Ostuni | Pikobit" />
+    <meta name="twitter:image" content="https://pikobit.it/images/brand/og-pikobit-1200x630.jpg" />
     <meta property="og:url" content="https://pikobit.it/programmatore-ostuni.html" />
 
-    <link rel="stylesheet" href="./styles/style.css?v=4.3.2.0" />
+    <link rel="stylesheet" href="./styles/style.css?v=4.3.3.0" />
     <link
       rel="preload"
       href="fonts/poppins/poppins-latin-400-normal.woff2"
@@ -31,9 +38,21 @@
       type="font/woff2"
       crossorigin
     />
-    <link rel="icon" href="./images/logo.webp" type="image/png" />
+    <link
+      rel="preload"
+      href="fonts/poppins/poppins-latin-600-normal.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/brand/favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/images/brand/favicon-192.png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <meta name="theme-color" content="#0d0f12" />
 
-    <script defer src="scripts/script.js?v=4.3.2.0"></script>
+    <script defer src="scripts/script.js?v=4.3.3.0"></script>
 
     <!-- Dati strutturati: attività, pagina e breadcrumb -->
     <!-- prettier-ignore -->
@@ -45,8 +64,20 @@
             "@type": "ProfessionalService",
             "@id": "https://pikobit.it/#business",
             "name": "Pikobit",
-            "url": "https://pikobit.it",
-            "image": "https://pikobit.it/images/logo.webp",
+            "url": "https://pikobit.it/",
+            "image": {
+              "@type": "ImageObject",
+              "url": "https://pikobit.it/images/brand/pikobit-logo-512.png",
+              "width": 512,
+              "height": 512
+            },
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://pikobit.it/images/brand/pikobit-logo-512.png",
+              "width": 512,
+              "height": 512
+            },
+            "description": "Programmatore e web designer a Monopoli: siti web, applicazioni e software gestionali su misura per aziende e professionisti.",
             "telephone": "+39-351-889-1903",
             "email": "piko.bit.00@gmail.com",
             "address": {
@@ -56,24 +87,184 @@
               "postalCode": "70043",
               "addressCountry": "IT"
             },
+            "geo": {
+              "@type": "GeoCoordinates",
+              "latitude": 40.95,
+              "longitude": 17.3
+            },
+            "hasMap": "https://www.google.com/maps?cid=16391512325002463359",
             "openingHours": "Mo-Fr 09:00-17:00",
             "sameAs": [
+              "https://www.google.com/maps?cid=16391512325002463359",
               "https://www.instagram.com/pikobit_it/",
               "https://www.youtube.com/@pikobit01"
             ],
-            "description": "Programmatore e web designer con base a Monopoli: siti web, gestionali e applicazioni su misura anche per attività di Ostuni.",
-            "areaServed": {
-              "@type": "City",
-              "name": "Ostuni",
-              "addressCountry": "IT"
+            "founder": {
+              "@id": "https://pikobit.it/#giuseppe"
+            },
+            "employee": {
+              "@id": "https://pikobit.it/#giuseppe"
+            },
+            "areaServed": [
+              {
+                "@type": "City",
+                "name": "Monopoli",
+                "addressCountry": "IT"
+              },
+              {
+                "@type": "City",
+                "name": "Polignano a Mare",
+                "addressCountry": "IT"
+              },
+              {
+                "@type": "City",
+                "name": "Fasano",
+                "addressCountry": "IT"
+              },
+              {
+                "@type": "City",
+                "name": "Conversano",
+                "addressCountry": "IT"
+              },
+              {
+                "@type": "City",
+                "name": "Castellana Grotte",
+                "addressCountry": "IT"
+              },
+              {
+                "@type": "City",
+                "name": "Turi",
+                "addressCountry": "IT"
+              },
+              {
+                "@type": "City",
+                "name": "Casamassima",
+                "addressCountry": "IT"
+              },
+              {
+                "@type": "City",
+                "name": "Bari",
+                "addressCountry": "IT"
+              },
+              {
+                "@type": "City",
+                "name": "Brindisi",
+                "addressCountry": "IT"
+              },
+              {
+                "@type": "City",
+                "name": "Taranto",
+                "addressCountry": "IT"
+              },
+              {
+                "@type": "City",
+                "name": "Putignano",
+                "addressCountry": "IT"
+              },
+              {
+                "@type": "City",
+                "name": "Ostuni",
+                "addressCountry": "IT"
+              },
+              {
+                "@type": "City",
+                "name": "Lecce",
+                "addressCountry": "IT"
+              }
+            ],
+            "knowsAbout": [
+              "Siti web personalizzati",
+              "Applicazioni moderne",
+              "Software gestionali su misura",
+              "Lezioni e tutorial",
+              "Bigliettini da Visita con QR Code"
+            ],
+            "hasOfferCatalog": {
+              "@type": "OfferCatalog",
+              "name": "Servizi",
+              "itemListElement": [
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@id": "https://pikobit.it/websites.html#service"
+                  }
+                },
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@id": "https://pikobit.it/modern-apps.html#service"
+                  }
+                },
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@id": "https://pikobit.it/custom-software.html#service"
+                  }
+                },
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@id": "https://pikobit.it/lessons.html#service"
+                  }
+                },
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@id": "https://pikobit.it/creative-services.html#service"
+                  }
+                }
+              ]
             }
+          },
+          {
+            "@type": "Person",
+            "@id": "https://pikobit.it/#giuseppe",
+            "name": "Giuseppe Alaimo",
+            "jobTitle": "Software Engineer",
+            "description": "Software Engineer Senior specializzato in Java/Spring, sviluppa siti web, applicazioni e software su misura; crea anche tutorial e progetti di programmazione.",
+            "url": "https://pikobit.it/about.html",
+            "image": {
+              "@type": "ImageObject",
+              "url": "https://pikobit.it/images/brand/pikobit-logo-512.png",
+              "width": 512,
+              "height": 512
+            },
+            "worksFor": {
+              "@id": "https://pikobit.it/#business"
+            },
+            "knowsAbout": [
+              "Java",
+              "Spring Boot",
+              "Python",
+              "C",
+              "C++",
+              "Flutter",
+              "Dart",
+              "Kotlin",
+              "Android Studio",
+              "Angular",
+              "React",
+              "HTML",
+              "CSS",
+              "JavaScript",
+              "WordPress",
+              "PostgreSQL",
+              "MySQL",
+              "Clean Architecture",
+              "Design pattern",
+              "Test automatici"
+            ],
+            "sameAs": [
+              "https://www.linkedin.com/in/giuseppe-alaimo-aba40b226",
+              "https://www.superprof.it/laureato-informatica-lezioni-programmazione-web-per-creazione-sito-web-javascript-nodejs-html-css-python-flask.html"
+            ]
           },
           {
             "@type": "WebPage",
             "@id": "https://pikobit.it/programmatore-ostuni.html",
             "url": "https://pikobit.it/programmatore-ostuni.html",
-            "name": "Web Designer e Programmatore a Ostuni - Pikobit",
-            "description": "Siti web in più lingue per B&B, case vacanza, masserie e ristoranti di Ostuni. Primo incontro in videochiamata, poi di persona. Preventivo gratuito.",
+            "name": "Web Designer e Programmatore a Ostuni | Pikobit",
+            "description": "Siti web in più lingue per B\u0026B, case vacanza, masserie e ristoranti di Ostuni. Primo incontro in videochiamata, poi di persona. Preventivo gratuito.",
             "about": {
               "@id": "https://pikobit.it/#business"
             },
@@ -105,12 +296,28 @@
                 "item": "https://pikobit.it/programmatore-ostuni.html"
               }
             ]
+          },
+          {
+            "@type": "Service",
+            "@id": "https://pikobit.it/programmatore-ostuni.html#service",
+            "name": "Realizzazione siti web, software e app a Ostuni",
+            "description": "Siti web in più lingue per B\u0026B, case vacanza, masserie e ristoranti di Ostuni. Primo incontro in videochiamata, poi di persona. Preventivo gratuito.",
+            "url": "https://pikobit.it/programmatore-ostuni.html",
+            "provider": {
+              "@id": "https://pikobit.it/#business"
+            },
+            "areaServed": {
+              "@type": "City",
+              "name": "Ostuni",
+              "addressCountry": "IT"
+            },
+            "serviceType": "Realizzazione siti web e sviluppo software su misura"
           }
         ]
       }
     </script>
 
-  <script defer src="scripts/consent.js?v=4.3.2.0"></script>
+  <script defer src="scripts/consent.js?v=4.3.3.0"></script>
   </head>
 
   <body>
@@ -156,10 +363,10 @@
             alt="Logo Pikobit - Programmatore e web designer"
             class="logo"
             width="120"
-            height="112"
+            height="112" fetchpriority="high"
           />
           <p class="tagline">Siti web, app e gestionali su misura</p>
-          <h1>Web designer e programmatore per Ostuni e la Valle d&#x27;Itria</h1>
+          <h1>Web designer e programmatore a Ostuni e in Valle d&#x27;Itria</h1>
           <p>
             Ostuni, la città bianca, accoglie ogni anno ospiti da tutta Italia e dall'estero. Sono Giuseppe, programmatore e web designer di Pikobit: lavoro da Monopoli e realizzo siti web e strumenti su misura per chi vive di accoglienza e ristorazione fra Ostuni e la Valle d'Itria.
           </p>
@@ -217,6 +424,72 @@
       </section>
 
       <section class="why-pikobit">
+        <h2>Siti web per B&amp;B e masserie di Ostuni</h2>
+        <div class="article-body">
+          <p>
+          Chi guarda il sito di una casa nel centro storico vuole sapere cose che
+          a Ostuni non sono scontate: se ci sono scalini per entrare, dove
+          lasciare l'auto rispetto ai vicoli, quanto si cammina fino alla piazza.
+          Chi valuta una masseria fra gli uliveti ha le domande opposte: a che
+          distanza è il mare, serve la macchina, cosa si trova nei dintorni.
+          </p>
+          <p>
+          Un ristorante ha bisogno di un menu aggiornato, di orari che cambiano
+          fra estate e inverno e di un modo semplice per chiedere un tavolo. Un
+          negozio del centro, di qualche foto dei prodotti e di indicazioni per
+          trovarlo fra le vie bianche. Mi occupo della <a href="websites.html" class="cta-link">creazione di siti web</a>
+          mettendo in fila proprio queste risposte; la grafica arriva dopo, e
+          serve a farle leggere meglio.
+          </p>
+          <p>
+          Un consiglio da web designer: la foto del panorama conquista, ma
+          l'ospite straniero sceglie sui dettagli pratici. Una pagina chiara in
+          più vale più di una galleria in più, e nei siti per l'accoglienza è spesso la differenza fra una richiesta diretta e
+          una prenotazione lasciata ai portali.
+          </p>
+        </div>
+      </section>
+
+      <section class="why-pikobit">
+        <h2>Sviluppo software e app per chi affitta a Ostuni</h2>
+        <div class="article-body">
+          <p>
+          Chi affitta più alloggi, magari uno in paese e due in campagna,
+          conosce bene le settimane di alta stagione con cambi continui. Sono i
+          momenti in cui un calendario su carta o un gruppo di messaggi non
+          bastano più, e servono pochi strumenti ma affidabili:
+          </p>
+          <ul>
+            <li>
+              <strong>Un quadro unico degli arrivi</strong>: chi entra, chi
+              esce, in quale casa e a che ora.
+            </li>
+            <li>
+              <strong>Le pulizie assegnate</strong>: chi le fa, dove e quando,
+              visibili a chi lavora senza doverlo chiamare.
+            </li>
+            <li>
+              <strong>Le note sugli ospiti</strong>: lingua, richieste
+              particolari, orario di arrivo, a portata di chi accoglie.
+            </li>
+          </ul>
+          <p>
+          Con lo <a href="custom-software.html" class="cta-link">sviluppo software</a> costruito
+          sul tuo modo di lavorare, lo strumento si adatta alle tue case e non
+          il contrario. Chi fa le pulizie o accoglie gli ospiti di solito ha in
+          mano solo il telefono: per questo propongo applicazioni web, che si
+          aprono dal browser senza installare nulla. Ne parlo nella pagina sullo
+          <a href="modern-apps.html" class="cta-link">sviluppo di app</a>.
+          </p>
+          <p>
+          Anche un'azienda agricola che vende olio ai propri clienti può
+          partire in piccolo, con un registro degli ordini condiviso. Preferisco un primo passo utile subito a un progetto
+          enorme che arriva tardi.
+          </p>
+        </div>
+      </section>
+
+      <section class="why-pikobit">
         <h2>Domande frequenti da Ostuni</h2>
         <div class="article-body">
           <h3>Possiamo fare tutto a distanza?</h3>
@@ -254,10 +527,10 @@
       <section class="goals">
         <h2>Zone vicine</h2>
         <ul class="city-grid">
-          <li class="card--link"><a href="programmatore-monopoli.html" class="cta-link-blue">Programmatore a Monopoli</a></li>
+          <li class="card--link"><a href="programmatore-monopoli.html" class="cta-link-blue">Siti web a Monopoli</a></li>
           <li class="card--link"><a href="programmatore-fasano.html" class="cta-link-blue">Fasano</a></li>
           <li class="card--link"><a href="programmatore-brindisi.html" class="cta-link-blue">Brindisi</a></li>
-          <li class="card--link"><a href="dove-lavoro.html" class="cta-link-blue">Tutte le zone in cui lavoro</a></li>
+          <li class="card--link"><a href="dove-lavoro.html" class="cta-link-blue">Tutte le zone</a></li>
         </ul>
       </section>
 
@@ -295,8 +568,8 @@
 
     <footer>
 <p class="nap">Pikobit · Programmatore e web designer · Monopoli (BA) · <a href="tel:+393518891903">351 889 1903</a> · <a href="mailto:piko.bit.00@gmail.com">piko.bit.00@gmail.com</a></p>
-<nav class="footer-zone" aria-label="Zone in cui lavoro"><p>Zone: <a href="programmatore-monopoli.html">Monopoli</a> · <a href="programmatore-bari.html">Bari</a> · <a href="programmatore-polignano-a-mare.html">Polignano a Mare</a> · <a href="programmatore-fasano.html">Fasano</a> · <a href="programmatore-conversano.html">Conversano</a> · <a href="programmatore-castellana-grotte.html">Castellana Grotte</a> · <a href="programmatore-putignano.html">Putignano</a> · <a href="programmatore-casamassima.html">Casamassima</a> · <a href="programmatore-ostuni.html">Ostuni</a> · <a href="programmatore-brindisi.html">Brindisi</a> · <a href="programmatore-taranto.html">Taranto</a> · <a href="programmatore-lecce.html">Lecce</a></p></nav>
-<p class="footer-legal"><a href="privacy.html">Privacy</a> · <a href="privacy.html#cookie" data-cookie-prefs>Preferenze cookie</a></p>
+<nav class="footer-zone" aria-label="Zone in cui lavoro"><p>Zone: <a href="programmatore-monopoli.html">Monopoli</a> · <a href="programmatore-bari.html">Bari</a> · <a href="programmatore-polignano-a-mare.html">Polignano a Mare</a> · <a href="programmatore-fasano.html">Fasano</a> · <a href="programmatore-conversano.html">Conversano</a> · <a href="programmatore-castellana-grotte.html">Castellana Grotte</a> · <a href="programmatore-putignano.html">Putignano</a> · <a href="programmatore-turi.html">Turi</a> · <a href="programmatore-casamassima.html">Casamassima</a> · <a href="programmatore-ostuni.html">Ostuni</a> · <a href="programmatore-brindisi.html">Brindisi</a> · <a href="programmatore-taranto.html">Taranto</a> · <a href="programmatore-lecce.html">Lecce</a></p></nav>
+<p class="footer-legal"><a href="privacy.html">Privacy</a> · <a href="privacy.html#cookie" data-cookie-prefs>Preferenze cookie</a> · <a href="https://www.google.com/maps?cid=16391512325002463359" target="_blank" rel="noopener">Trovami su Google Maps</a></p>
       <p>&copy; 2026 Pikobit. Tutti i diritti riservati.</p>
       <p>
         "Pikobit: Il tuo punto di partenza per creare, imparare e ispirare."

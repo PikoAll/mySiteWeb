@@ -90,7 +90,7 @@ NESTED_PAGE = """<html><body>
 MENU = ["Home", "Servizi ▼", "Dove lavoro", "Progetti &amp; idee", "Chi sono", "Blog", "Contatti"]
 CITY_ORDER = [
     "Monopoli", "Bari", "Polignano a Mare", "Fasano", "Conversano",
-    "Castellana Grotte", "Putignano", "Casamassima", "Ostuni",
+    "Castellana Grotte", "Putignano", "Turi", "Casamassima", "Ostuni",
     "Brindisi", "Taranto", "Lecce",
 ]
 
@@ -178,7 +178,8 @@ def test_links_use_the_page_relative_prefix(nested_page, tmp_path):
     site_chrome.process(nested_page, tmp_path)
     html = nested_page.read_text(encoding="utf-8")
     hrefs = re.findall(r'href="([^"#]+)"', header_of(html) + footer_of(html))
-    assert hrefs and all(h.startswith("../../") for h in hrefs)
+    local = [h for h in hrefs if not h.startswith("https://")]
+    assert local and all(h.startswith("../../") for h in local)
 
 
 def test_footer_lists_all_cities_in_order(root_page):
@@ -308,3 +309,12 @@ def test_wordmark_file_has_the_same_drawing_as_the_header():
     box = lambda s: re.search(r'viewBox="([^"]+)"', s).group(1)
     assert inner(kit) == inner(site_chrome.WORDMARK)
     assert box(kit) == box(site_chrome.WORDMARK)
+
+
+MAPS = "https://www.google.com/maps?cid=16391512325002463359"
+
+
+def test_footer_links_the_google_business_profile(root_page):
+    site_chrome.process(root_page, root_page.parent)
+    legal = re.search(r'<p class="footer-legal">.*?</p>', footer_of(root_page.read_text(encoding="utf-8")), re.S).group(0)
+    assert f'<a href="{MAPS}" target="_blank" rel="noopener">Trovami su Google Maps</a>' in legal

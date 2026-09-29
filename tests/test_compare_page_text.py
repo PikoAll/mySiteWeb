@@ -42,3 +42,9 @@ def test_a_changed_word_is_a_loss():
     before = "<main><p>Il preventivo è gratuito.</p></main>"
     after = "<main><p>Il preventivo è gratis.</p></main>"
     assert cpt.lost_sentences(before, after) == ["Il preventivo è gratuito."]
+
+
+def test_punctuation_only_sentence_is_never_lost():
+    # "informativa privacy. *": the split leaves a sentence "*" with no word.
+    html = "<main><p>Ho letto l'informativa privacy. *</p></main>"
+    assert cpt.lost_sentences(html, html) == []

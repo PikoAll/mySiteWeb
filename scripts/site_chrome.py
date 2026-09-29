@@ -10,7 +10,7 @@ Single source of the site chrome (it replaces add_nav_zone.py):
 - footer: after the NAP line, a <nav class="footer-zone"> linking the 12 city
   pages (they left the menu, the internal links stay on every page).
 - intro logo: <img class="logo" src=".../logo.webp"> becomes the vector mark
-  images/brand/pikobit-symbol.svg, same alt. Favicon and JSON-LD keep logo.webp.
+  images/brand/pikobit-symbol.svg, same alt. Favicon and JSON-LD are scripts/brand_head.py's job.
 - menu state: the page itself gets aria-current="page"; a child page (city
   page under "Dove lavoro", blog post under "Blog") marks its parent entry
   with class="nav-parent" (light style), never aria-current.
@@ -45,6 +45,7 @@ CITIES = [
     ("Conversano", "programmatore-conversano.html"),
     ("Castellana Grotte", "programmatore-castellana-grotte.html"),
     ("Putignano", "programmatore-putignano.html"),
+    ("Turi", "programmatore-turi.html"),
     ("Casamassima", "programmatore-casamassima.html"),
     ("Ostuni", "programmatore-ostuni.html"),
     ("Brindisi", "programmatore-brindisi.html"),
@@ -112,7 +113,7 @@ SCRIPT_VERSION_RE = re.compile(r'scripts/script\.js(\?v=[\d.]+)"')
 LEGAL_RE = re.compile(r'\n?<p class="footer-legal">.*?</p>', re.S)
 LOGO_RE = re.compile(r'<img\b(?=[^>]*\bclass="logo")(?=[^>]*logo\.webp)[^>]*>', re.S)
 REPO_ROOT = Path(__file__).resolve().parent.parent
-SKIP_DIRS = {".git", "tests", "node_modules"}
+SKIP_DIRS = {".git", "tests", "node_modules", "_site"}  # _site: built copy, see build_site.py
 
 
 def _current(rel):
@@ -166,10 +167,15 @@ def footer_zone(prefix):
     return f'\n<nav class="footer-zone" aria-label="Zone in cui lavoro"><p>Zone: {links}</p></nav>'
 
 
+# The Google Business profile: site and profile point at each other.
+MAPS = "https://www.google.com/maps?cid=16391512325002463359"
+
+
 def footer_legal(prefix):
     return (
         f'\n<p class="footer-legal"><a href="{prefix}privacy.html">Privacy</a> · '
-        f'<a href="{prefix}privacy.html#cookie" data-cookie-prefs>Preferenze cookie</a></p>'
+        f'<a href="{prefix}privacy.html#cookie" data-cookie-prefs>Preferenze cookie</a> · '
+        f'<a href="{MAPS}" target="_blank" rel="noopener">Trovami su Google Maps</a></p>'
     )
 
 
