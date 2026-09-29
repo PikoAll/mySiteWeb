@@ -21,7 +21,7 @@
     <meta property="og:image" content="https://pikobit.it/images/banner.webp" />
     <meta property="og:url" content="https://pikobit.it/privacy.html" />
 
-    <link rel="stylesheet" href="./styles/style.css?v=4.3.1.0" />
+    <link rel="stylesheet" href="./styles/style.css?v=4.3.2.0" />
     <link
       rel="preload"
       href="fonts/poppins/poppins-latin-400-normal.woff2"
@@ -31,22 +31,9 @@
     />
     <link rel="icon" href="./images/logo.webp" type="image/png" />
 
-    <script defer src="scripts/script.js?v=4.3.1.0"></script>
+    <script defer src="scripts/script.js?v=4.3.2.0"></script>
 
-    <!-- Google tag (gtag.js) -->
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=G-TVGN1XBX7H"
-    ></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
-
-      gtag("config", "G-TVGN1XBX7H");
-    </script>
+  <script defer src="scripts/consent.js?v=4.3.2.0"></script>
   </head>
 
   <body>
@@ -82,62 +69,141 @@
         <div class="intro-container">
           <h1>Informativa privacy</h1>
           <p>
-            Come tratto i tuoi dati quando visiti pikobit.it o mi contatti.
-            In breve: il sito non ha un database e non conserva quello che
-            scrivi nel modulo contatti.
+            Come tratto i tuoi dati quando visiti pikobit.it o mi contatti
+            (art. 13 del Regolamento UE 2016/679, GDPR). In breve: il sito non
+            ha un database e non conserva quello che scrivi nel modulo
+            contatti; le statistiche di Google Analytics partono solo se le
+            accetti.
           </p>
         </div>
       </section>
 
       <section class="block">
-        <div class="prose">
-          <h2>Titolare del trattamento</h2>
+        <div class="prose privacy">
+          <h2 id="titolare">Titolare del trattamento</h2>
           <p>
             Giuseppe Alaimo (Pikobit), Monopoli (BA). Contatti:
             <a href="mailto:piko.bit.00@gmail.com" class="cta-link">piko.bit.00@gmail.com</a>,
             <a href="tel:+393518891903" class="cta-link">351 889 1903</a>.
           </p>
 
-          <h2>Modulo contatti</h2>
+          <h2 id="contatti">Modulo contatti: quali dati e perché</h2>
           <p>
             Il modulo della pagina <a href="contact.html" class="cta-link">Contatti</a>
-            non invia nulla al sito: i pulsanti aprono WhatsApp oppure la tua
-            app di posta con il messaggio già scritto, e sei tu a inviarlo.
-            Ricevo quindi i dati che scegli di mandarmi (nome, telefono, email,
-            città, tipo di progetto, messaggio) tramite WhatsApp o email.
+            non invia nulla al sito e il sito non memorizza niente: i pulsanti
+            aprono WhatsApp oppure la tua app di posta con il messaggio già
+            scritto, e sei tu a inviarlo. Ricevo quindi i dati che scegli di
+            mandarmi (nome, telefono, email, città, tipo di progetto,
+            messaggio).
           </p>
           <p>
             Li uso solo per risponderti e, se lo chiedi, per preparare un
-            preventivo. La base giuridica è la tua richiesta (misure
-            precontrattuali). Non li cedo a terzi e non li uso per pubblicità.
-            Li conservo per il tempo necessario a gestire la richiesta e, se
-            nasce un incarico, per il tempo previsto dagli obblighi di legge.
+            preventivo. Base giuridica: l'esecuzione di misure precontrattuali
+            prese su tua richiesta (art. 6.1.b GDPR). Non li cedo a terzi e non
+            li uso per pubblicità.
           </p>
           <p>
-            WhatsApp e il tuo servizio di posta trattano i messaggi secondo le
-            loro informative.
+            Il messaggio viaggia sui canali che scegli tu: WhatsApp (Meta) o
+            email (il mio indirizzo è su Gmail, di Google). Questi servizi
+            trattano i messaggi secondo le loro informative.
           </p>
 
-          <h2>Statistiche di visita</h2>
+          <h2 id="conservazione">Per quanto tempo</h2>
           <p>
-            Il sito usa Google Analytics per contare le visite e capire quali
-            pagine sono utili.
+            Conservo i messaggi per il tempo necessario a gestire la tua
+            richiesta. Se nasce un incarico, i dati necessari restano per il
+            tempo previsto dagli obblighi di legge (ad esempio fiscali e
+            contabili).
           </p>
 
-          <h2>I tuoi diritti</h2>
+          <h2 id="navigazione">Dati di navigazione</h2>
           <p>
-            Puoi chiedere in ogni momento di vedere, correggere o cancellare i
-            tuoi dati, o di limitarne l'uso, scrivendo a
-            <a href="mailto:piko.bit.00@gmail.com" class="cta-link">piko.bit.00@gmail.com</a>.
-            Puoi anche presentare reclamo al Garante per la protezione dei dati
-            personali (garanteprivacy.it).
+            Il sito è ospitato su GitHub Pages (GitHub, Inc.). Come ogni server
+            web, registra per motivi di sicurezza dati tecnici delle visite,
+            come l'indirizzo IP. Io non ho accesso a questi registri. GitHub
+            aderisce al Data Privacy Framework UE-USA.
           </p>
+
+          <h2 id="statistiche">Statistiche di visita (Google Analytics)</h2>
+          <p>
+            Se accetti i cookie di statistica, il sito usa Google Analytics 4
+            (Google Ireland Ltd.) per contare le visite e capire quali pagine
+            sono utili. Base giuridica: il tuo consenso (art. 6.1.a GDPR).
+            Senza il tuo sì Google Analytics non viene nemmeno caricato.
+            I dati di Google Analytics sono conservati per 2 mesi.
+          </p>
+          <p>
+            Google Analytics 4 non registra né conserva gli indirizzi IP;
+            Google Signals e la personalizzazione degli annunci sono spenti.
+            I dati possono essere trasferiti negli Stati Uniti: Google aderisce
+            al Data Privacy Framework UE-USA. Dettagli:
+            <a href="https://policies.google.com/privacy?hl=it" class="cta-link" rel="noopener">informativa privacy di Google</a>.
+          </p>
+
+          <h2 id="cookie">Cookie usati</h2>
+          <div class="table-scroll">
+            <table class="cookie-table">
+              <caption>Cookie e dati salvati nel tuo browser da pikobit.it</caption>
+              <thead>
+                <tr>
+                  <th scope="col">Nome</th>
+                  <th scope="col">Tipo</th>
+                  <th scope="col">A cosa serve</th>
+                  <th scope="col">Durata</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>pikobit-consent (localStorage)</td>
+                  <td>Tecnico, sempre attivo</td>
+                  <td>Ricorda la tua scelta sui cookie, così il banner non ricompare a ogni pagina</td>
+                  <td>6 mesi, poi la scelta ti viene richiesta</td>
+                </tr>
+                <tr>
+                  <td>_ga</td>
+                  <td>Statistica, solo con consenso</td>
+                  <td>Google Analytics: distingue i visitatori in forma anonima</td>
+                  <td>fino a 2 anni</td>
+                </tr>
+                <tr>
+                  <td>_ga_&lt;ID&gt;</td>
+                  <td>Statistica, solo con consenso</td>
+                  <td>Google Analytics: mantiene lo stato della visita</td>
+                  <td>fino a 2 anni</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p>
+            Puoi cambiare idea quando vuoi dal link
+            <a href="privacy.html#cookie" class="cta-link" data-cookie-prefs>Preferenze cookie</a>,
+            che trovi anche in fondo a ogni pagina: se revochi il consenso,
+            Google Analytics si ferma e i cookie _ga vengono cancellati. Puoi
+            anche cancellare i cookie dalle impostazioni del browser.
+          </p>
+
+          <h2 id="diritti">I tuoi diritti</h2>
+          <p>
+            Puoi chiedere in ogni momento di accedere ai tuoi dati, correggerli
+            o cancellarli, limitarne l'uso o opporti al trattamento, e
+            revocare il consenso alle statistiche. Basta scrivere a
+            <a href="mailto:piko.bit.00@gmail.com" class="cta-link">piko.bit.00@gmail.com</a>:
+            rispondo entro un mese.
+          </p>
+          <p>
+            Se ritieni che il trattamento non sia corretto puoi presentare
+            reclamo al Garante per la protezione dei dati personali
+            (<a href="https://www.garanteprivacy.it" class="cta-link" rel="noopener">garanteprivacy.it</a>).
+          </p>
+
+          <p class="privacy-updated">Ultimo aggiornamento: 28 settembre 2026.</p>
         </div>
       </section>
     </main>
     <footer>
 <p class="nap">Pikobit · Programmatore e web designer · Monopoli (BA) · <a href="tel:+393518891903">351 889 1903</a> · <a href="mailto:piko.bit.00@gmail.com">piko.bit.00@gmail.com</a></p>
 <nav class="footer-zone" aria-label="Zone in cui lavoro"><p>Zone: <a href="programmatore-monopoli.html">Monopoli</a> · <a href="programmatore-bari.html">Bari</a> · <a href="programmatore-polignano-a-mare.html">Polignano a Mare</a> · <a href="programmatore-fasano.html">Fasano</a> · <a href="programmatore-conversano.html">Conversano</a> · <a href="programmatore-castellana-grotte.html">Castellana Grotte</a> · <a href="programmatore-putignano.html">Putignano</a> · <a href="programmatore-casamassima.html">Casamassima</a> · <a href="programmatore-ostuni.html">Ostuni</a> · <a href="programmatore-brindisi.html">Brindisi</a> · <a href="programmatore-taranto.html">Taranto</a> · <a href="programmatore-lecce.html">Lecce</a></p></nav>
+<p class="footer-legal"><a href="privacy.html">Privacy</a> · <a href="privacy.html#cookie" data-cookie-prefs>Preferenze cookie</a></p>
       <p>&copy; 2026 Pikobit. Tutti i diritti riservati.</p>
       <p>
         "Pikobit: Il tuo punto di partenza per creare, imparare e ispirare."
