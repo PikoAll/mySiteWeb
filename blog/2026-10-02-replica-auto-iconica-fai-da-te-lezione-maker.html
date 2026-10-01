@@ -1,0 +1,534 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
+<title>
+Niente budget da Lamborghini? La lezione di ingegneria di una replica
+fai-da-te - Blog Pikobit
+</title>
+<meta
+name="description"
+content="Un appassionato inglese ha costruito da zero la replica di una
+Lamborghini Miura con componenti di auto comuni e meno di 35.000 euro.
+La lezione pratica su scelta della base, riuso e priorità che vale
+anche per chi sviluppa software con budget limitato."
+/>
+<meta
+name="keywords"
+content="ingegneria fai da te, replica Lamborghini Miura, MVP
+sviluppo software, riuso componenti, progetti con budget limitato,
+lezione di ingegneria"
+/>
+<meta name="author" content="PikoBit" />
+
+<!-- Tag canonical -->
+<link
+rel="canonical"
+href="https://pikobit.it/blog/2026-10-02-replica-auto-iconica-fai-da-te-lezione-maker.html"
+/>
+
+<!-- Open Graph -->
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2026-10-02" />
+<meta property="article:modified_time" content="2026-10-02" />
+<meta
+property="og:title"
+content="Niente budget da Lamborghini? La lezione di ingegneria di una
+replica fai-da-te"
+/>
+<meta property="og:description" content="Un appassionato inglese ha costruito da zero la replica di una Lamborghini Miura con componenti di auto comuni e meno di 35.000 euro. La lezione pratica su scelta della base, riuso e priorità che vale anche per chi sviluppa software con budget limitato." />
+<meta property="og:image" content="https://pikobit.it/images/brand/og-pikobit-1200x630.jpg" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Pikobit - programmatore e web designer a Monopoli" />
+<meta property="og:locale" content="it_IT" />
+<meta property="og:site_name" content="Pikobit" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:description" content="Un appassionato inglese ha costruito da zero la replica di una Lamborghini Miura con componenti di auto comuni e meno di 35.000 euro. La lezione pratica su scelta della base, riuso e priorità che vale anche per chi sviluppa software con budget limitato." />
+<meta name="twitter:title" content="Niente budget da Lamborghini? La lezione di ingegneria di una replica fai-da-te" />
+<meta name="twitter:image" content="https://pikobit.it/images/brand/og-pikobit-1200x630.jpg" />
+<meta
+property="og:url"
+content="https://pikobit.it/blog/2026-10-02-replica-auto-iconica-fai-da-te-lezione-maker.html"
+/>
+
+<link rel="stylesheet" href="../styles/style.css?v=4.3.3.0" />
+<link
+  rel="preload"
+  href="../fonts/poppins/poppins-latin-400-normal.woff2"
+  as="font"
+  type="font/woff2"
+  crossorigin
+/>
+<link
+  rel="preload"
+  href="../fonts/poppins/poppins-latin-600-normal.woff2"
+  as="font"
+  type="font/woff2"
+  crossorigin
+/>
+<link rel="icon" href="/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="32x32" href="/images/brand/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="192x192" href="/images/brand/favicon-192.png" />
+<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+<link rel="manifest" href="/site.webmanifest" />
+<meta name="theme-color" content="#0d0f12" />
+
+<script defer src="../scripts/script.js?v=4.3.3.0"></script>
+
+<!-- Dati strutturati -->
+<!-- prettier-ignore -->
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "ProfessionalService",
+        "@id": "https://pikobit.it/#business",
+        "name": "Pikobit",
+        "url": "https://pikobit.it/",
+        "image": {
+          "@type": "ImageObject",
+          "url": "https://pikobit.it/images/brand/pikobit-logo-512.png",
+          "width": 512,
+          "height": 512
+        },
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://pikobit.it/images/brand/pikobit-logo-512.png",
+          "width": 512,
+          "height": 512
+        },
+        "description": "Programmatore e web designer a Monopoli: siti web, applicazioni e software gestionali su misura per aziende e professionisti.",
+        "telephone": "+39-351-889-1903",
+        "email": "piko.bit.00@gmail.com",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Monopoli",
+          "addressRegion": "BA",
+          "postalCode": "70043",
+          "addressCountry": "IT"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 40.95,
+          "longitude": 17.3
+        },
+        "hasMap": "https://www.google.com/maps?cid=16391512325002463359",
+        "openingHours": "Mo-Fr 09:00-17:00",
+        "sameAs": [
+          "https://www.google.com/maps?cid=16391512325002463359",
+          "https://www.instagram.com/pikobit_it/",
+          "https://www.youtube.com/@pikobit01"
+        ],
+        "founder": {
+          "@id": "https://pikobit.it/#giuseppe"
+        },
+        "employee": {
+          "@id": "https://pikobit.it/#giuseppe"
+        },
+        "areaServed": [
+          {
+            "@type": "City",
+            "name": "Monopoli",
+            "addressCountry": "IT"
+          },
+          {
+            "@type": "City",
+            "name": "Polignano a Mare",
+            "addressCountry": "IT"
+          },
+          {
+            "@type": "City",
+            "name": "Fasano",
+            "addressCountry": "IT"
+          },
+          {
+            "@type": "City",
+            "name": "Conversano",
+            "addressCountry": "IT"
+          },
+          {
+            "@type": "City",
+            "name": "Castellana Grotte",
+            "addressCountry": "IT"
+          },
+          {
+            "@type": "City",
+            "name": "Turi",
+            "addressCountry": "IT"
+          },
+          {
+            "@type": "City",
+            "name": "Casamassima",
+            "addressCountry": "IT"
+          },
+          {
+            "@type": "City",
+            "name": "Bari",
+            "addressCountry": "IT"
+          },
+          {
+            "@type": "City",
+            "name": "Brindisi",
+            "addressCountry": "IT"
+          },
+          {
+            "@type": "City",
+            "name": "Taranto",
+            "addressCountry": "IT"
+          },
+          {
+            "@type": "City",
+            "name": "Putignano",
+            "addressCountry": "IT"
+          },
+          {
+            "@type": "City",
+            "name": "Ostuni",
+            "addressCountry": "IT"
+          },
+          {
+            "@type": "City",
+            "name": "Lecce",
+            "addressCountry": "IT"
+          }
+        ],
+        "knowsAbout": [
+          "Siti web personalizzati",
+          "Applicazioni moderne",
+          "Software gestionali su misura",
+          "Lezioni e tutorial",
+          "Bigliettini da Visita con QR Code"
+        ],
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "Servizi",
+          "itemListElement": [
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@id": "https://pikobit.it/websites.html#service"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@id": "https://pikobit.it/modern-apps.html#service"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@id": "https://pikobit.it/custom-software.html#service"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@id": "https://pikobit.it/lessons.html#service"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@id": "https://pikobit.it/creative-services.html#service"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "@type": "Person",
+        "@id": "https://pikobit.it/#giuseppe",
+        "name": "Giuseppe Alaimo",
+        "jobTitle": "Software Engineer",
+        "description": "Software Engineer Senior specializzato in Java/Spring, sviluppa siti web, applicazioni e software su misura; crea anche tutorial e progetti di programmazione.",
+        "url": "https://pikobit.it/about.html",
+        "image": {
+          "@type": "ImageObject",
+          "url": "https://pikobit.it/images/brand/pikobit-logo-512.png",
+          "width": 512,
+          "height": 512
+        },
+        "worksFor": {
+          "@id": "https://pikobit.it/#business"
+        },
+        "knowsAbout": [
+          "Java",
+          "Spring Boot",
+          "Python",
+          "C",
+          "C++",
+          "Flutter",
+          "Dart",
+          "Kotlin",
+          "Android Studio",
+          "Angular",
+          "React",
+          "HTML",
+          "CSS",
+          "JavaScript",
+          "WordPress",
+          "PostgreSQL",
+          "MySQL",
+          "Clean Architecture",
+          "Design pattern",
+          "Test automatici"
+        ],
+        "sameAs": [
+          "https://www.linkedin.com/in/giuseppe-alaimo-aba40b226",
+          "https://www.superprof.it/laureato-informatica-lezioni-programmazione-web-per-creazione-sito-web-javascript-nodejs-html-css-python-flask.html"
+        ]
+      },
+      {
+        "@type": "BlogPosting",
+        "headline": "Niente budget da Lamborghini? La lezione di ingegneria di una replica fai-da-te",
+        "description": "Un appassionato inglese ha costruito da zero la replica di una Lamborghini Miura con componenti di auto comuni e meno di 35.000 euro. La lezione pratica su scelta della base, riuso e priorità che vale anche per chi sviluppa software con budget limitato.",
+        "datePublished": "2026-10-02",
+        "author": {
+          "@id": "https://pikobit.it/#giuseppe"
+        },
+        "@id": "https://pikobit.it/blog/2026-10-02-replica-auto-iconica-fai-da-te-lezione-maker.html#article",
+        "mainEntityOfPage": {
+          "@id": "https://pikobit.it/blog/2026-10-02-replica-auto-iconica-fai-da-te-lezione-maker.html"
+        },
+        "image": "https://pikobit.it/images/brand/og-pikobit-1200x630.jpg",
+        "publisher": {
+          "@id": "https://pikobit.it/#business"
+        },
+        "dateModified": "2026-10-02",
+        "inLanguage": "it"
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://pikobit.it/blog/2026-10-02-replica-auto-iconica-fai-da-te-lezione-maker.html#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://pikobit.it/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Blog",
+            "item": "https://pikobit.it/resources.html"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Niente budget da Lamborghini? La lezione di ingegneria di una replica fai-da-te",
+            "item": "https://pikobit.it/blog/2026-10-02-replica-auto-iconica-fai-da-te-lezione-maker.html"
+          }
+        ]
+      }
+    ]
+  }
+</script>
+
+<script defer src="../scripts/consent.js?v=4.3.3.0"></script>
+</head>
+
+<body>
+<header class="site-header" id="site-header">
+<div class="brand-band">
+<a class="brand" href="../index.html" aria-label="Pikobit, vai alla home"><svg class="wordmark" viewBox="-3 -4 553 109" aria-hidden="true" focusable="false"><g fill="#fff" stroke="#fff" stroke-width="3" stroke-linejoin="round"><path d="M0 0H50C68 0 82 14 82 33C82 52 68 66 50 66H21V100H0V44H50C55 44 60 40 60 33C60 26 55 22 50 22H21V30H0Z"/><path d="M96 0H117V100H96Z"/><path d="M134 0H155V35L188 0H217L178 45L220 100H192L162 58L155 65V100H134Z"/><path fill-rule="evenodd" d="M275.5-1.5a51.5 51.5 0 1 0 .01 0ZM275.5 19a31 31 0 1 1-.01 0Z"/><path fill-rule="evenodd" d="M341 0H389C405 0 417 9 417 21C417 30 413 36 407 40C417 45 423 54 423 68C423 86 411 100 393 100H341V40H388C393 40 396 36 396 31C396 26 393 22 388 22H362V30H341ZM362 60H393C399 60 402 64 402 69C402 74 399 78 393 78H362Z"/><path d="M437 0H458V100H437Z"/><path d="M473 0H547V22H520.5V100H499.5V22H473Z"/></g><circle cx="275.5" cy="50" r="11.5" fill="none" stroke="#9ad8f3" stroke-width="9"/></svg></a>
+<button class="hamburger" id="hamburger-menu" type="button" aria-label="Apri menu di navigazione" aria-expanded="false" aria-controls="navbar"><svg class="icon-svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 6h18M3 12h18M3 18h18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg></button>
+</div>
+<div class="overlay" id="overlay"></div>
+<nav id="navbar" aria-label="Menu principale">
+<ul class="nav-links">
+<li><a href="../index.html">Home</a></li>
+<li class="dropdown">
+<a href="#" id="dropdown-toggle" aria-haspopup="true" aria-expanded="false">Servizi ▼</a>
+<ul class="dropdown-menu">
+<li><a href="../websites.html">Siti web personalizzati</a></li>
+<li><a href="../modern-apps.html">Applicazioni moderne</a></li>
+<li><a href="../custom-software.html">Software gestionali su misura</a></li>
+<li><a href="../creative-services.html">Servizi Creativi e Soluzioni Complete</a></li>
+<li><a href="../lessons.html">Lezioni e tutorial</a></li>
+</ul>
+</li>
+<li><a href="../dove-lavoro.html">Dove lavoro</a></li>
+<li><a href="../ideas.html">Progetti &amp; idee</a></li>
+<li><a href="../about.html">Chi sono</a></li>
+<li><a href="../resources.html" class="nav-parent">Blog</a></li>
+<li class="nav-cta"><a href="../contact.html">Contatti</a></li>
+</ul>
+</nav>
+</header>
+
+<main>
+<section class="intro">
+<div class="intro-container">
+<img
+src="../images/brand/pikobit-symbol.svg"
+alt="Logo Pikobit - Tutorial e Progetti di Programmazione"
+class="logo" width="120" height="112" fetchpriority="high" />
+<p class="tagline">Tecnologia e Ingegneria</p>
+<h1>
+Niente budget da Lamborghini? La lezione di ingegneria dietro una
+replica fai-da-te
+</h1>
+<p>
+Un appassionato britannico ha deciso di costruire da solo la replica
+di una Lamborghini Miura, l'auto che nel 1966 reinventò il concetto di
+supercar. Niente budget da due milioni di euro: un telaio ispirato
+alla Ford GT40, un motore V6 Volkswagen, un cambio Porsche Boxster e
+pezzi presi in prestito da Fiat, MG, Mazda e Ford Granada. Il
+risultato non sarà una Miura vera, ma gli assomiglia abbastanza da
+insegnare qualcosa di utile anche a chi costruisce software invece
+che lamiera, con un budget altrettanto limitato.
+</p>
+</div>
+</section>
+
+<section class="why-pikobit">
+<h2>Il telaio prima della carrozzeria</h2>
+<div class="article-body">
+<p>
+La parte meno visibile della storia è anche la più istruttiva.
+Prima di arrivare al progetto definitivo, l'autore della replica ha
+provato a partire da una vecchia Lotus, poi da una base Porsche: in
+entrambi i casi le proporzioni non reggevano, e ha dovuto abbandonare
+il lavoro già fatto per ripartire da un telaio ispirato alla Ford
+GT40. È una decisione che costa, perché butta via ore di lavoro, ma
+che costa molto meno di quanto costerebbe scoprire lo stesso
+problema a carrozzeria già montata.
+</p>
+<p>
+Nello sviluppo software succede la stessa cosa con l'architettura o
+lo stack scelto all'inizio di un progetto: se la base non regge il
+peso di quello che vuoi costruirci sopra, conviene accorgersene
+subito e cambiarla, anche se significa ripartire da un punto
+precedente. Aspettare e sperare che "si sistemi da sé" più avanti
+quasi sempre peggiora soltanto il conto finale.
+</p>
+</div>
+</section>
+
+<section class="why-pikobit">
+<h2>Non reinventare quello che esiste già e funziona</h2>
+<div class="article-body">
+<p>
+Il dettaglio più interessante del progetto è dove è stato speso il
+lavoro su misura, e dove invece no. Il parabrezza è un pezzo
+originale di Miura, e la carrozzeria sarà verniciata di nero con
+cerchi e minigonne dorati: è lì, sulla silhouette e sui dettagli che
+si vedono, che si gioca la somiglianza con l'originale. Tutto il
+resto è componentistica già pronta, presa da auto comuni: il motore
+viene da una Volkswagen, il cambio da una Porsche Boxster, il piantone
+dello sterzo da una MG, i gruppi ottici da una Mazda MX-5, sospensioni
+e freni da una Ford Granada.
+</p>
+<p>
+È lo stesso criterio che separa un progetto software fatto bene da
+uno che si trascina in eterno: capire quali parti del prodotto sono
+davvero quelle che definiscono la sua identità, e meritano lavoro
+originale, e quali invece possono tranquillamente appoggiarsi a una
+libreria, un framework o un servizio già collaudato. La replica non
+avrà i 380 cavalli del V12 originale, probabilmente ne avrà circa 200
+su un peso di oltre una tonnellata: una prestazione più modesta, ma
+sufficiente per lo scopo. Spesso il prodotto che funziona davvero è
+quello che accetta un compromesso simile pur di arrivare in fondo,
+invece di inseguire la versione perfetta che non si finisce mai.
+</p>
+</div>
+</section>
+
+<section class="why-pikobit">
+<h2>Il budget come vincolo di progetto, non come scusa</h2>
+<div class="article-body">
+<p>
+La cifra dichiarata per il progetto è inferiore ai 35.000 euro, contro
+un valore di mercato della Miura originale che oggi supera
+regolarmente i due milioni. Non è un dettaglio folcloristico: è la
+prova che un vincolo stretto, invece di bloccare un progetto, spesso
+lo rende più lucido. Senza un budget illimitato non puoi permetterti
+di rifare ogni pezzo da zero "perché sarebbe più bello": devi
+decidere, componente per componente, cosa conta davvero e cosa puoi
+prendere così com'è.
+</p>
+<p>
+Anche i tempi raccontano la stessa logica: meccanica e abitacolo
+restano ancora da completare, con una consegna prevista per Natale
+2026. Il progetto avanza per parti visibili e funzionanti, non tutto
+insieme in un colpo solo — lo stesso principio per cui, in un progetto
+software con risorse limitate, conviene rilasciare prima la parte che
+si vede e si usa davvero, e completare il resto mentre quella parte è
+già in mano a chi la deve giudicare.
+</p>
+</div>
+</section>
+
+<section class="why-pikobit">
+<p>
+<strong>Fonte:</strong>
+<a
+href="https://www.hdmotori.it/lamborghini-miura-replica/"
+class="cta-link"
+target="_blank"
+rel="noopener noreferrer"
+>Sogna una Lamborghini Miura ma non può permettersela, con il fai da
+te se la costruisce, su HDmotori</a
+>
+</p>
+</section>
+<!-- pikobit-local-cta -->
+<section class="why-pikobit local-cta">
+<h2>Ti serve un sito o un software su misura a Monopoli?</h2>
+<p>
+Sono Giuseppe, programmatore e web designer a Monopoli. Realizzo
+<a href="../websites.html">siti web</a>,
+<a href="../custom-software.html">gestionali su misura</a> e
+<a href="../modern-apps.html">applicazioni</a> per attività e
+professionisti di Monopoli e di tutta la zona tra Bari, Brindisi e
+Taranto. Il preventivo è gratuito.
+</p>
+<p>
+<a href="../programmatore-monopoli.html" class="cta-link"
+>Scopri come lavoro e dove</a
+>
+</p>
+</section>
+</main>
+
+<footer>
+<p class="nap">Pikobit · Programmatore e web designer · Monopoli (BA) · <a href="tel:+393518891903">351 889 1903</a> · <a href="mailto:piko.bit.00@gmail.com">piko.bit.00@gmail.com</a></p>
+<nav class="footer-zone" aria-label="Zone in cui lavoro"><p>Zone: <a href="../programmatore-monopoli.html">Monopoli</a> · <a href="../programmatore-bari.html">Bari</a> · <a href="../programmatore-polignano-a-mare.html">Polignano a Mare</a> · <a href="../programmatore-fasano.html">Fasano</a> · <a href="../programmatore-conversano.html">Conversano</a> · <a href="../programmatore-castellana-grotte.html">Castellana Grotte</a> · <a href="../programmatore-putignano.html">Putignano</a> · <a href="../programmatore-turi.html">Turi</a> · <a href="../programmatore-casamassima.html">Casamassima</a> · <a href="../programmatore-ostuni.html">Ostuni</a> · <a href="../programmatore-brindisi.html">Brindisi</a> · <a href="../programmatore-taranto.html">Taranto</a> · <a href="../programmatore-lecce.html">Lecce</a></p></nav>
+<p class="footer-legal"><a href="../privacy.html">Privacy</a> · <a href="../privacy.html#cookie" data-cookie-prefs>Preferenze cookie</a> · <a href="https://www.google.com/maps?cid=16391512325002463359" target="_blank" rel="noopener">Trovami su Google Maps</a></p>
+<p>&copy; 2026 Pikobit. Tutti i diritti riservati.</p>
+<p>
+"Pikobit: Il tuo punto di partenza per creare, imparare e ispirare."
+</p>
+<div class="social-icons">
+<a
+href="
+https://www.youtube.com/@pikobit01
+"
+target="_blank"
+rel="noopener noreferrer"
+ aria-label="YouTube"><svg class="icon-svg" viewBox="0 0 576 512" aria-hidden="true"><path d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z"/></svg></a>
+<a
+href="
+https://www.linkedin.com/in/giuseppe-alaimo-aba40b226
+"
+target="_blank"
+rel="noopener noreferrer"
+ aria-label="LinkedIn"><svg class="icon-svg" viewBox="0 0 448 512" aria-hidden="true"><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg></a>
+<a
+href="
+https://www.instagram.com/pikobit_it/
+"
+target="_blank"
+rel="noopener noreferrer"
+ aria-label="Instagram"><svg class="icon-svg" viewBox="0 0 448 512" aria-hidden="true"><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg></a>
+</div>
+</footer>
+<button id="scrollToTop" title="Torna su">&#8679;</button>
+</body>
+</html>
