@@ -1,0 +1,84 @@
+name: CI (sito)
+
+# Rete di sicurezza del sito (2026-10-03, FASE 4 chiusura-totale): fino a oggi
+# l'unico workflow era il deploy su Pages, e test, controlli ed e2e giravano solo
+# a mano. Qui girano su ogni push e PR; il deploy resta in static.yml.
+# Cosa copre (categorie di ~/Scrivania/arsenale-ai/docs/regole/rete-di-sicurezza.md):
+#   unitari + regressione  pytest tests/ (script del sito e della pipeline del blog)
+#   sanity                 verify_jsonld.py, check_internal_links.py, similarita' pagine
+#   smoke di avvio         il sito COSTRUITO (_site, quello che va su Pages) servito
+#                          e aperto con curl: risponde e ha contenuto
+#   integrazione           Playwright headless su tutte le pagine (tests/e2e)
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  controlli:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: pytest
+        run: |
+          python -m pip install pytest
+          python -m pytest -q tests
+
+      - name: JSON-LD valido su ogni pagina
+        run: python3 scripts/verify_jsonld.py
+
+      - name: Link interni e sitemap
+        run: python3 scripts/check_internal_links.py
+
+      - name: Pagine citta' non troppo simili
+        run: python3 scripts/check_page_similarity.py --max 0.40
+
+      # Lo smoke guarda l'ARTEFATTO del deploy, non il sorgente: se build_site.py
+      # dimentica la home o i fogli di stile, qui e' rosso prima di Pages.
+      - name: Smoke di avvio (sito costruito, servito, letto)
+        run: |
+          python3 scripts/build_site.py
+          python3 scripts/check_internal_links.py --root _site
+          python3 -m http.server 8080 --directory _site >/dev/null 2>&1 &
+          for i in $(seq 1 20); do curl -sf http://127.0.0.1:8080/ >/dev/null && break; sleep 0.5; done
+          curl -sf http://127.0.0.1:8080/ | grep -q '<title>'
+          curl -sf http://127.0.0.1:8080/ | grep -q '<h1'
+          curl -sf http://127.0.0.1:8080/contact.html | grep -q '<form'
+
+  e2e:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    defaults:
+      run:
+        working-directory: tests/e2e
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: npm
+          cache-dependency-path: tests/e2e/package-lock.json
+
+      - name: Dipendenze
+        run: npm ci
+
+      - name: Browser di Playwright
+        run: npx playwright install --with-deps chromium
+
+      - name: E2E (Playwright, headless)
+        run: npx playwright test
