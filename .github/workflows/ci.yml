@@ -33,9 +33,10 @@ jobs:
         with:
           python-version: '3.12'
 
+      # Pillow: test_seo_head.py controlla le taglie dentro favicon.ico.
       - name: pytest
         run: |
-          python -m pip install pytest
+          python -m pip install pytest pillow
           python -m pytest -q tests
 
       - name: JSON-LD valido su ogni pagina
