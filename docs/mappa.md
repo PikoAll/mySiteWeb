@@ -1,171 +1,172 @@
 # Mappa del codice
-<!-- generata da scripts/azienda/genera-mappa.sh; righe vuote = da completare, rilancia lo script -->
+<!-- generata da scripts/azienda/mappa-sonnet.py (prima passata, Sonnet); la manutenzione la fa genera-mappa.sh (Ollama): riempie solo le righe vuote -->
 
-- `.github/workflows/ci.yml` —
-- `.github/workflows/static.yml` —
-- `.gitignore` —
-- `31c466aac1a3b67633d4d73d15396f0c.txt` —
-- `CLAUDE.md` —
-- `README.md` —
-- `about.html` —
-- `blog/2026-07-28-mcp-specifica-stateless.html` —
-- `blog/2026-07-28-multa-lusha-vendita-dati-personali.html` —
-- `blog/2026-07-28-passkey-spiegate-semplice.html` —
-- `blog/2026-07-28-phishing-finto-portale-automobilista.html` —
-- `blog/2026-07-28-strumenti-dev-della-settimana.html` —
-- `blog/2026-07-29-gemma-26b-2gb-ram-mac.html` —
-- `blog/2026-07-29-junior-developer-pipeline-rotta.html` —
-- `blog/2026-07-29-slopsquatting-pacchetti-ai-allucinati.html` —
-- `blog/2026-07-29-vibe-coding-fine-luna-di-miele.html` —
-- `blog/2026-07-30-junior-developer-ia.html` —
-- `blog/2026-07-30-slopsquatting-pacchetti-ai-fake.html` —
-- `blog/2026-07-30-turbofieldfare-ai-in-2gb-ram.html` —
-- `blog/2026-07-30-vibe-coding-dal-caos-alle-specifiche.html` —
-- `blog/2026-07-31-ferrari-ftm-aerodinamica-f1.html` —
-- `blog/2026-07-31-github-stacked-pull-requests.html` —
-- `blog/2026-07-31-skills-vs-mcp-differenze.html` —
-- `blog/2026-07-31-tv-box-android-frode-pubblicitaria.html` —
-- `blog/2026-08-07-google-maps-ask-maps-gemini-ai.html` —
-- `blog/2026-08-07-herdr-runtime-agenti-ai-yc.html` —
-- `blog/2026-08-07-microsoft-skillopt-skill-agenti-ai.html` —
-- `blog/2026-08-07-pareto-frontiera-scelte-tecniche.html` —
-- `blog/2026-08-14-ai-non-sostituisce-il-pensiero.html` —
-- `blog/2026-08-14-esphome-kit-domotica-fai-da-te.html` —
-- `blog/2026-08-14-np-hard-non-e-una-condanna.html` —
-- `blog/2026-08-14-quanto-costa-sito-web-professionale.html` —
-- `blog/2026-08-28-ai-reviewer-test-i-controlli.html` —
-- `blog/2026-08-28-cloudflare-dns-cache-ottimizzazione-memoria.html` —
-- `blog/2026-08-28-porsche-audio-nitruro-gallio.html` —
-- `blog/2026-08-28-sito-fatto-in-casa-vs-professionale.html` —
-- `blog/2026-09-04-agenti-ai-scelta-strumenti-terze-parti.html` —
-- `blog/2026-09-04-chrome-estensioni-malware-crypto.html` —
-- `blog/2026-09-04-cosa-chiedere-prima-di-firmare-sito-software.html` —
-- `blog/2026-09-04-costruire-con-ai-senza-sapere-architettura.html` —
-- `blog/2026-09-04-dominio-terzo-livello-dipendenza-rischio.html` —
-- `blog/2026-09-11-agenti-ai-o-pipeline-travestita.html` —
-- `blog/2026-09-11-cognition-swe-2-modello-coding-ai.html` —
-- `blog/2026-09-11-perche-attivita-non-si-trova-su-google.html` —
-- `blog/2026-09-11-scatola-cavi-elettronica-maker.html` —
-- `blog/2026-09-18-bend-linguaggio-prove-codice-ai.html` —
-- `blog/2026-09-18-gestionale-su-misura-o-software-pronto.html` —
-- `blog/2026-09-18-id3-gti-guida-definita-dal-software.html` —
-- `blog/2026-09-18-tapo-c200-falle-videocamere-domestiche.html` —
-- `blog/2026-09-18-test-generati-ai-verifica.html` —
-- `blog/2026-09-25-ai-giusta-per-il-compito-routing-modelli.html` —
-- `blog/2026-09-25-f-droid-2-0-redesign-kotlin-compose.html` —
-- `blog/2026-09-25-manutenzione-sito-web-costo-nascosto.html` —
-- `blog/2026-09-25-volkswagen-airconsole-tetris-auto.html` —
-- `blog/2026-09-26-prenotazioni-online-parrucchieri-estetisti-studi.html` —
-- `blog/2026-09-26-sito-artigiani-negozi-monopoli-cinque-pagine.html` —
-- `blog/2026-09-26-sito-web-o-pagina-facebook-attivita-monopoli.html` —
-- `blog/2026-09-26-sito-web-ristoranti-bb-case-vacanza-puglia.html` —
-- `blog/2026-10-02-5-segnali-gestionale-su-misura-vs-excel.html` —
-- `blog/2026-10-02-janus-eseguibile-ai-locale-senza-python-docker.html` —
-- `blog/2026-10-02-prompt-injection-nuovo-sql-injection.html` —
-- `blog/2026-10-02-replica-auto-iconica-fai-da-te-lezione-maker.html` —
-- `contact.html` —
-- `creative-services.html` —
-- `crucidev/privacy/index.html` —
-- `custom-software.html` —
-- `docs/1_vision_e_core.md` —
-- `docs/2_architettura_stack.md` —
-- `docs/3_roadmap_macro.md` —
-- `docs/4_sprint_corrente.md` —
-- `docs/5_stato_e_checkpoint.md` —
-- `docs/SEO.md` —
-- `docs/nota-di-rilascio.md` —
-- `dove-lavoro.html` —
-- `fix_gmail_links.py` —
-- `fonts/poppins/LICENSE` —
-- `ideas.html` —
-- `images/brand/header-circuit.svg` —
-- `images/brand/pikobit-symbol.svg` —
-- `images/brand/pikobit-wordmark.svg` —
-- `images/icons.svg` —
-- `index.html` —
-- `lessons.html` —
-- `modern-apps.html` —
-- `privacy.html` —
-- `programmatore-bari.html` —
-- `programmatore-brindisi.html` —
-- `programmatore-casamassima.html` —
-- `programmatore-castellana-grotte.html` —
-- `programmatore-conversano.html` —
-- `programmatore-fasano.html` —
-- `programmatore-lecce.html` —
-- `programmatore-monopoli.html` —
-- `programmatore-ostuni.html` —
-- `programmatore-polignano-a-mare.html` —
-- `programmatore-putignano.html` —
-- `programmatore-taranto.html` —
-- `programmatore-turi.html` —
-- `resources.html` —
-- `robots.txt` —
-- `scripts/add_blog_cta.py` —
-- `scripts/add_footer_nap.py` —
-- `scripts/add_image_dimensions.py` —
-- `scripts/blog-week.js` —
-- `scripts/brand_head.py` —
-- `scripts/build_brand_assets.py` —
-- `scripts/build_site.py` —
-- `scripts/check_internal_links.py` —
-- `scripts/check_page_similarity.py` —
-- `scripts/compare_page_text.py` —
-- `scripts/consent.js` —
-- `scripts/contact.js` —
-- `scripts/export_brand_png.mjs` —
-- `scripts/fix_footer_aria_labels.py` —
-- `scripts/fix_pagespeed_a11y.py` —
-- `scripts/fx/circuit.js` —
-- `scripts/fx/core.js` —
-- `scripts/fx/dashboard.js` —
-- `scripts/fx/neural.js` —
-- `scripts/fx/phones.js` —
-- `scripts/fx/puglia.js` —
-- `scripts/fx/qr.js` —
-- `scripts/fx/web.js` —
-- `scripts/gen_header_circuit.py` —
-- `scripts/indexnow_ping.py` —
-- `scripts/perf_hints.py` —
-- `scripts/remove_google_fonts.py` —
-- `scripts/script.js` —
-- `scripts/seo_head.py` —
-- `scripts/site_chrome.py` —
-- `scripts/sitemap_lastmod.py` —
-- `scripts/verify_jsonld.py` —
-- `site.webmanifest` —
-- `sitemap.xml` —
-- `styles/fx.css` —
-- `styles/style.css` —
-- `tests/e2e/brand.spec.mjs` —
-- `tests/e2e/cards.spec.mjs` —
-- `tests/e2e/cities.spec.mjs` —
-- `tests/e2e/consent-state.mjs` —
-- `tests/e2e/consent.spec.mjs` —
-- `tests/e2e/contact.spec.mjs` —
-- `tests/e2e/layout.spec.mjs` —
-- `tests/e2e/package-lock.json` —
-- `tests/e2e/package.json` —
-- `tests/e2e/pages.mjs` —
-- `tests/e2e/playwright.config.mjs` —
-- `tests/e2e/polish.spec.mjs` —
-- `tests/regression/test_gmail_redirect_links.py` —
-- `tests/test_add_blog_cta.py` —
-- `tests/test_add_footer_nap.py` —
-- `tests/test_blog_week.py` —
-- `tests/test_brand_head.py` —
-- `tests/test_build_site.py` —
-- `tests/test_card_link.py` —
-- `tests/test_check_internal_links.py` —
-- `tests/test_check_page_similarity.py` —
-- `tests/test_compare_page_text.py` —
-- `tests/test_consent_chrome.py` —
-- `tests/test_indexnow_ping.py` —
-- `tests/test_perf_hints.py` —
-- `tests/test_seo_head.py` —
-- `tests/test_site_chrome.py` —
-- `tests/test_sitemap_lastmod.py` —
-- `tests/test_skip_built_site.py` —
-- `tests/test_verify_jsonld.py` —
-- `update_versions.py` —
-- `websites.html` —
+- `.claude/settings.json` — Claude Code project permissions: allows gh and push commands, denies rm, force pushes and hard resets.
+- `.github/workflows/ci.yml` — CI workflow running pytest, JSON-LD and link checks, built-site smoke test and Playwright e2e on pushes and PRs.
+- `.github/workflows/static.yml` — GitHub Actions workflow deploying the static site to GitHub Pages on pushes to main.
+- `.gitignore` — Git ignore rules for local Claude settings, tool backup temp files and Python caches.
+- `31c466aac1a3b67633d4d73d15396f0c.txt` — IndexNow ownership key file served from the site root, containing its own name.
+- `CLAUDE.md` — Project instructions for Claude Code: static site rules, read-only main checkout and files not to edit by hand.
+- `README.md` — Project readme explaining the static Pikobit site, how to update it, test commands and PR flow.
+- `about.html` — About page presenting Giuseppe, software engineer in Monopoli, and his background.
+- `blog/2026-07-28-mcp-specifica-stateless.html` — Blog article on the stateless MCP specification for AI agents.
+- `blog/2026-07-28-multa-lusha-vendita-dati-personali.html` — Blog article on the fine against Lusha for selling personal data.
+- `blog/2026-07-28-passkey-spiegate-semplice.html` — Blog article explaining passkeys simply and whether they end passwords.
+- `blog/2026-07-28-phishing-finto-portale-automobilista.html` — Blog article warning about phishing through a fake Portale dell'Automobilista site.
+- `blog/2026-07-28-strumenti-dev-della-settimana.html` — Blog article roundup of developer tools of the week.
+- `blog/2026-07-29-gemma-26b-2gb-ram-mac.html` — Blog article on running a 26B Gemma model in 2GB of RAM on a Mac.
+- `blog/2026-07-29-junior-developer-pipeline-rotta.html` — Blog article on the broken junior developer hiring pipeline in the AI era.
+- `blog/2026-07-29-slopsquatting-pacchetti-ai-allucinati.html` — Blog article on slopsquatting with packages hallucinated by AI.
+- `blog/2026-07-29-vibe-coding-fine-luna-di-miele.html` — Blog article on vibe coding after the honeymoon phase ends.
+- `blog/2026-07-30-junior-developer-ia.html` — Blog article on how AI removes the training ground of junior developers.
+- `blog/2026-07-30-slopsquatting-pacchetti-ai-fake.html` — Blog article on fake packages invented by AI and slopsquatting attacks.
+- `blog/2026-07-30-turbofieldfare-ai-in-2gb-ram.html` — Blog article on TurboFieldfare running a 26B parameter model in 2GB of RAM.
+- `blog/2026-07-30-vibe-coding-dal-caos-alle-specifiche.html` — Blog article on moving from vibe coding chaos to specification-driven development.
+- `blog/2026-07-31-ferrari-ftm-aerodinamica-f1.html` — Blog article on Ferrari's FTM aerodynamics system and optimizing within F1 rules.
+- `blog/2026-07-31-github-stacked-pull-requests.html` — Blog article explaining how stacked pull requests work on GitHub.
+- `blog/2026-07-31-skills-vs-mcp-differenze.html` — Blog article on the differences between Skills and MCP for AI agents.
+- `blog/2026-07-31-tv-box-android-frode-pubblicitaria.html` — Blog article on cheap Android TV boxes spying on users through ad fraud.
+- `blog/2026-08-07-google-maps-ask-maps-gemini-ai.html` — Blog article on Ask Maps, Google Maps as a Gemini-powered assistant.
+- `blog/2026-08-07-herdr-runtime-agenti-ai-yc.html` — Blog article on Herdr, an open source runtime to manage multiple AI agents in a terminal.
+- `blog/2026-08-07-microsoft-skillopt-skill-agenti-ai.html` — Blog article on Microsoft SkillOpt for optimizing AI agent skills.
+- `blog/2026-08-07-pareto-frontiera-scelte-tecniche.html` — Blog article on the Pareto frontier applied to technical choices.
+- `blog/2026-08-14-ai-non-sostituisce-il-pensiero.html` — Blog article arguing that AI does not replace human thinking.
+- `blog/2026-08-14-esphome-kit-domotica-fai-da-te.html` — Blog article on ESPHome and DIY home automation kits.
+- `blog/2026-08-14-np-hard-non-e-una-condanna.html` — Blog article explaining that NP-hard problems are not a death sentence in practice.
+- `blog/2026-08-14-quanto-costa-sito-web-professionale.html` — Blog article on how much a professional website costs.
+- `blog/2026-08-28-ai-reviewer-test-i-controlli.html` — Blog article on AI reviewers and tests as controls over AI-written code.
+- `blog/2026-08-28-cloudflare-dns-cache-ottimizzazione-memoria.html` — Blog article on Cloudflare DNS cache memory optimization.
+- `blog/2026-08-28-porsche-audio-nitruro-gallio.html` — Blog article on Porsche audio technology using gallium nitride.
+- `blog/2026-08-28-sito-fatto-in-casa-vs-professionale.html` — Blog article comparing a DIY website with a professional one.
+- `blog/2026-09-04-agenti-ai-scelta-strumenti-terze-parti.html` — Blog article on how AI agents choose third-party tools.
+- `blog/2026-09-04-chrome-estensioni-malware-crypto.html` — Blog article on malicious Chrome extensions stealing crypto.
+- `blog/2026-09-04-cosa-chiedere-prima-di-firmare-sito-software.html` — Blog article on what to ask before signing for a website or software project.
+- `blog/2026-09-04-costruire-con-ai-senza-sapere-architettura.html` — Blog article on building with AI without knowing software architecture.
+- `blog/2026-09-04-dominio-terzo-livello-dipendenza-rischio.html` — Blog article on third-level domains as a dependency risk.
+- `blog/2026-09-11-agenti-ai-o-pipeline-travestita.html` — Blog article asking whether an AI agent is really a disguised pipeline.
+- `blog/2026-09-11-cognition-swe-2-modello-coding-ai.html` — Blog article on Cognition SWE-2, an AI coding model.
+- `blog/2026-09-11-perche-attivita-non-si-trova-su-google.html` — Blog article on why a local business cannot be found on Google.
+- `blog/2026-09-11-scatola-cavi-elettronica-maker.html` — Blog article on a maker electronics cable box project.
+- `blog/2026-09-18-bend-linguaggio-prove-codice-ai.html` — Blog article on the Bend language and proofs for AI-written code.
+- `blog/2026-09-18-gestionale-su-misura-o-software-pronto.html` — Blog article on custom management software versus off-the-shelf software.
+- `blog/2026-09-18-id3-gti-guida-definita-dal-software.html` — Blog article on the Golf GTI ID.3 and software-defined driving.
+- `blog/2026-09-18-tapo-c200-falle-videocamere-domestiche.html` — Blog article on security flaws in the Tapo C200 home camera.
+- `blog/2026-09-18-test-generati-ai-verifica.html` — Blog article on verifying AI-generated tests.
+- `blog/2026-09-25-ai-giusta-per-il-compito-routing-modelli.html` — Blog article on picking the right AI model per task through model routing.
+- `blog/2026-09-25-f-droid-2-0-redesign-kotlin-compose.html` — Blog article on the F-Droid 2.0 redesign in Kotlin and Compose.
+- `blog/2026-09-25-manutenzione-sito-web-costo-nascosto.html` — Blog article on website maintenance as a hidden cost.
+- `blog/2026-09-25-volkswagen-airconsole-tetris-auto.html` — Blog article on Volkswagen AirConsole games like Tetris in the car.
+- `blog/2026-09-26-prenotazioni-online-parrucchieri-estetisti-studi.html` — Blog article on choosing online booking for hairdressers, beauticians and professional studios.
+- `blog/2026-09-26-sito-artigiani-negozi-monopoli-cinque-pagine.html` — Blog article on the five pages a Monopoli craftsman or shop website needs.
+- `blog/2026-09-26-sito-web-o-pagina-facebook-attivita-monopoli.html` — Blog article on website versus Facebook page for Monopoli local businesses.
+- `blog/2026-09-26-sito-web-ristoranti-bb-case-vacanza-puglia.html` — Blog article on what restaurants, B&Bs and holiday homes in Puglia need from a website.
+- `blog/2026-10-02-5-segnali-gestionale-su-misura-vs-excel.html` — Blog article on five signs custom management software beats Excel.
+- `blog/2026-10-02-janus-eseguibile-ai-locale-senza-python-docker.html` — Blog article on Janus, a local AI executable without Python or Docker.
+- `blog/2026-10-02-prompt-injection-nuovo-sql-injection.html` — Blog article on prompt injection as the new SQL injection.
+- `blog/2026-10-02-replica-auto-iconica-fai-da-te-lezione-maker.html` — Blog article on a DIY iconic car replica and maker lessons.
+- `contact.html` — Contact page with WhatsApp and email form for Monopoli and Bari province customers.
+- `creative-services.html` — Service page for creative services and complete solutions such as branding and QR business cards.
+- `crucidev/privacy/index.html` — Bilingual privacy policy page for the Crucidev app.
+- `custom-software.html` — Service page for custom software and management systems development in Puglia.
+- `docs/1_vision_e_core.md` — Project brain doc: vision, goals and core of the Pikobit static site.
+- `docs/2_architettura_stack.md` — Project brain doc: architecture, build, deploy, scripts, tests and CI of the site.
+- `docs/3_roadmap_macro.md` — Project brain doc: macro roadmap with epics for SEO, quality and post-release.
+- `docs/4_sprint_corrente.md` — Project brain doc: current sprint and priority summary.
+- `docs/5_stato_e_checkpoint.md` — Project brain doc: state log and checkpoints.
+- `docs/SEO.md` — Plain-language explanation of the site's SEO setup, keyword per page and title limits.
+- `docs/nota-di-rilascio.md` — Release note describing the intended outcome when the SEO and quality work is finished.
+- `dove-lavoro.html` — Page listing the Puglia areas and cities served.
+- `fix_gmail_links.py` — One-off script that unwraps Gmail redirect links in listed blog articles.
+- `fonts/poppins/LICENSE` — License text for the self-hosted Poppins font.
+- `ideas.html` — Page with technology ideas and solutions for businesses.
+- `images/brand/header-circuit.svg` — Generated SVG circuit background for the site header.
+- `images/brand/pikobit-symbol.svg` — Pikobit brand symbol in SVG.
+- `images/brand/pikobit-wordmark.svg` — Pikobit wordmark in SVG.
+- `images/icons.svg` — SVG sprite of icons used across the site.
+- `index.html` — Home page of Pikobit presenting programmer and web designer services in Monopoli.
+- `lessons.html` — Page with lessons and tutorials.
+- `modern-apps.html` — Service page for app and web application development in Puglia.
+- `privacy.html` — Privacy policy page with cookie information.
+- `programmatore-bari.html` — Local SEO landing page for programmer and web design services in Bari.
+- `programmatore-brindisi.html` — Local SEO landing page for programmer and web design services in Brindisi.
+- `programmatore-casamassima.html` — Local SEO landing page for programmer and web design services in Casamassima.
+- `programmatore-castellana-grotte.html` — Local SEO landing page for programmer and web design services in Castellana Grotte.
+- `programmatore-conversano.html` — Local SEO landing page for programmer and web design services in Conversano.
+- `programmatore-fasano.html` — Local SEO landing page for programmer and web design services in Fasano.
+- `programmatore-lecce.html` — Local SEO landing page for programmer and web design services in Lecce.
+- `programmatore-monopoli.html` — Local SEO landing page for programmer and web design services in Monopoli.
+- `programmatore-ostuni.html` — Local SEO landing page for programmer and web design services in Ostuni.
+- `programmatore-polignano-a-mare.html` — Local SEO landing page for programmer and web design services in Polignano a Mare.
+- `programmatore-putignano.html` — Local SEO landing page for programmer and web design services in Putignano.
+- `programmatore-taranto.html` — Local SEO landing page for programmer and web design services in Taranto.
+- `programmatore-turi.html` — Local SEO landing page for programmer and web design services in Turi.
+- `resources.html` — Blog index listing articles and recommended resources, updated weekly with new article cards.
+- `robots.txt` — Crawler rules allowing all and pointing to the sitemap.
+- `scripts/add_blog_cta.py` — Idempotent script appending the local-services call-to-action box to every blog article.
+- `scripts/add_footer_nap.py` — Idempotent script putting the same name, city and phone line in every page footer.
+- `scripts/add_image_dimensions.py` — Script adding native width and height to img tags to reduce layout shift.
+- `scripts/blog-week.js` — Front-end script showing only the last week of blog articles with a show-older button.
+- `scripts/brand_head.py` — Idempotent script writing the approved favicon, manifest and og:image brand tags in every page head.
+- `scripts/build_brand_assets.py` — Builds favicons, logo and og image assets from the approved brand folder.
+- `scripts/build_site.py` — Builds _site with only the public files that GitHub Pages publishes, excluding docs, tests and tooling.
+- `scripts/check_internal_links.py` — Checks that internal links, sitemap entries and referenced assets point to existing files.
+- `scripts/check_page_similarity.py` — Measures text similarity between city pages and fails above a threshold to avoid doorway pages.
+- `scripts/compare_page_text.py` — Checks that a restyling lost no sentence of visible text in main between two versions.
+- `scripts/consent.js` — Cookie consent banner that loads Google Analytics only after the visitor accepts.
+- `scripts/contact.js` — Contact form logic validating fields and opening WhatsApp or the mail app with a prefilled message.
+- `scripts/export_brand_png.mjs` — Playwright script exporting brand kit PNG images from the SVG files.
+- `scripts/fix_footer_aria_labels.py` — Script adding aria-labels to footer social icon links for accessibility.
+- `scripts/fix_pagespeed_a11y.py` — Script applying PageSpeed and accessibility fixes such as deferred script and ARIA on the menu.
+- `scripts/fx/circuit.js` — Animated canvas scene of PCB circuit traces and light pulses.
+- `scripts/fx/core.js` — Engine mounting animated canvas scenes with DPR cap, resize, pause and pointer handling.
+- `scripts/fx/dashboard.js` — Animated canvas scene of live charts and scrolling rows for the custom software page.
+- `scripts/fx/neural.js` — Animated canvas scene of signals crossing a small neural network.
+- `scripts/fx/phones.js` — Animated canvas scene of floating phones with a scrolling app feed.
+- `scripts/fx/puglia.js` — Animated canvas map of Puglia with city dots linking to city pages.
+- `scripts/fx/qr.js` — Animated canvas scene of business cards whose decorative QR draws itself.
+- `scripts/fx/web.js` — Animated canvas scene of browser wireframes building a web page block by block.
+- `scripts/gen_header_circuit.py` — Deterministic generator of the header circuit SVG background.
+- `scripts/indexnow_ping.py` — Notifies IndexNow search engines about changed or removed pages.
+- `scripts/perf_hints.py` — Idempotent script adding font preloads and hero logo fetch priority to every page.
+- `scripts/remove_google_fonts.py` — Replaces Google Fonts requests with a preload of the self-hosted Poppins font.
+- `scripts/script.js` — Main site script handling the mobile menu, scroll-to-top and loading of animated scenes.
+- `scripts/seo_head.py` — Idempotent script writing JSON-LD structured data and SEO meta tags in every page head.
+- `scripts/site_chrome.py` — Writes the same header, menu and footer city links on every page from one template.
+- `scripts/sitemap_lastmod.py` — Sets sitemap lastmod dates to when each page's content last really changed.
+- `scripts/verify_jsonld.py` — Validates JSON-LD structured data syntax and schema sanity on every page.
+- `site.webmanifest` — Web app manifest with Pikobit name, colors and icons.
+- `sitemap.xml` — XML sitemap of site pages with lastmod dates for search engines.
+- `styles/fx.css` — Styles for the live animated scenes, loaded lazily by the site script.
+- `styles/style.css` — Main stylesheet of the site with colors, fonts, layout and components.
+- `tests/e2e/brand.spec.mjs` — Playwright test checking brand assets, favicon, manifest and og:image on every page.
+- `tests/e2e/cards.spec.mjs` — Playwright test that only clickable cards show the orange hover and arrow.
+- `tests/e2e/cities.spec.mjs` — Playwright test navigating from home to every city page via list and map dots.
+- `tests/e2e/consent-state.mjs` — Helper storing a saved cookie refusal so other e2e tests are not covered by the banner.
+- `tests/e2e/consent.spec.mjs` — Playwright test that nothing reaches Google before the visitor accepts cookies.
+- `tests/e2e/contact.spec.mjs` — Playwright test of contact form layout, validation and WhatsApp and email messages.
+- `tests/e2e/layout.spec.mjs` — Playwright test of card grids, hero overflow and no sideways scroll at many widths.
+- `tests/e2e/package-lock.json` — Lockfile for the e2e test dependencies.
+- `tests/e2e/package.json` — Node package manifest for the Playwright e2e tests.
+- `tests/e2e/pages.mjs` — Helper listing the root HTML pages and cities used by the e2e tests.
+- `tests/e2e/playwright.config.mjs` — Playwright headless configuration serving the site on a local port.
+- `tests/e2e/polish.spec.mjs` — Playwright test of visual details such as headings, pills and footer link consistency.
+- `tests/regression/test_gmail_redirect_links.py` — Regression test that blog articles contain no Gmail redirect-wrapped links.
+- `tests/test_add_blog_cta.py` — Tests for add_blog_cta.py covering insertion, idempotency and untouched JSON-LD.
+- `tests/test_add_footer_nap.py` — Tests for add_footer_nap.py covering one identical footer line and idempotency.
+- `tests/test_blog_week.py` — Tests blog-week.js grouping of last-week articles against the real resources page.
+- `tests/test_brand_head.py` — Tests for brand_head.py and a site-wide check of brand head tags.
+- `tests/test_build_site.py` — Tests that build_site.py publishes only the public site.
+- `tests/test_card_link.py` — Guard test that only cards that are links carry the card--link class.
+- `tests/test_check_internal_links.py` — Tests for check_internal_links.py.
+- `tests/test_check_page_similarity.py` — Tests for check_page_similarity.py.
+- `tests/test_compare_page_text.py` — Tests that compare_page_text.py detects lost sentences in main.
+- `tests/test_consent_chrome.py` — Tests that pages load consent.js instead of Google Analytics and footers link privacy and cookie preferences.
+- `tests/test_indexnow_ping.py` — Tests for indexnow_ping.py with an injected sender and no network.
+- `tests/test_perf_hints.py` — Tests for perf_hints.py covering font preloads, hero priority and idempotency.
+- `tests/test_seo_head.py` — Tests for seo_head.py and site-wide checks of structured data and SEO meta tags.
+- `tests/test_site_chrome.py` — Tests for site_chrome.py covering one header, menu and footer zone and idempotency.
+- `tests/test_sitemap_lastmod.py` — Tests that sitemap lastmod follows the last commit changing page content.
+- `tests/test_skip_built_site.py` — Guard test that page-scanning scripts never touch the built _site folder.
+- `tests/test_verify_jsonld.py` — Tests for verify_jsonld.py covering syntax, schema sanity and @id coherence.
+- `update_versions.py` — Script that bumps the cache-busting version query on CSS and JS links in all HTML files.
+- `websites.html` — Service page for website design and creation in Puglia.
