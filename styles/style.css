@@ -431,14 +431,17 @@ main section {
   font-size: 0.95rem;
   font-weight: 600;
   margin: 0 auto 5px;
+  text-wrap: balance;
 }
 
 .intro-container h1 {
   /* 2.5rem on desktop, smaller on phones: long Italian words
      ("programmatore") must fit a 390px screen */
-  font-size: clamp(1.7rem, 1rem + 4vw, 2.5rem);
+  font-size: clamp(1.5rem, 0.9rem + 4vw, 2.5rem);
   overflow-wrap: break-word;
-  hyphens: auto;
+  hyphens: manual;
+  text-wrap: balance;
+  line-height: 1.2;
   color: var(--color-accent);
   margin-bottom: 20px;
 }
@@ -2176,4 +2179,24 @@ section {
 .privacy-updated {
   color: #ccc;
   font-size: 0.95rem;
+}
+
+/* Leggibilita' su telefono: paragrafi lunghi dell'intro a sinistra e un po'
+   meno grandi (centrato su 8-10 righe stanca), titoli bilanciati. */
+@media screen and (max-width: 600px) {
+  .intro-container p {
+    font-size: 1.05rem;
+    line-height: 1.7;
+  }
+  .intro-container .prose p,
+  .prose p {
+    text-align: left;
+  }
+}
+h1, h2, h3 {
+  text-wrap: balance;
+}
+.card h3,
+.steps h3 {
+  line-height: 1.3;
 }
