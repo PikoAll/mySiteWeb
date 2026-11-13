@@ -27,7 +27,22 @@
     return times.map(function (t) { return t !== null && t > newest - 7 * DAY; });
   }
 
-  if (typeof module === "object" && module.exports) module.exports = { recentFlags: recentFlags };
+  // How many of the LAST visible cards must be wide (3 of 6 tracks instead of 2)
+  // so the last row never holds a single card: 3k+1 -> 4 (2+2), 3k+2 -> 2.
+  function wideCount(visible) {
+    if (visible >= 4 && visible % 3 === 1) return 4;
+    return visible % 3 === 2 ? 2 : 0;
+  }
+
+  function markWide(cards) {
+    var shown = cards.filter(function (c) { return !c.hidden; });
+    var wide = wideCount(shown.length);
+    shown.forEach(function (c, i) {
+      c.classList.toggle("is-wide", i >= shown.length - wide);
+    });
+  }
+
+  if (typeof module === "object" && module.exports) module.exports = { recentFlags: recentFlags, wideCount: wideCount };
   if (typeof document === "undefined") return;
 
   function init() {
@@ -39,8 +54,9 @@
       return a ? a.getAttribute("href") : "";
     }));
     var older = cards.filter(function (c, i) { return !flags[i]; });
-    if (!older.length) return;
+    if (!older.length) { markWide(cards); return; }
     older.forEach(function (c) { c.hidden = true; });
+    markWide(cards);
     var btn = document.createElement("button");
     btn.type = "button";
     btn.className = "show-older";
@@ -48,6 +64,7 @@
     btn.textContent = "Mostra articoli precedenti (" + older.length + ")";
     btn.addEventListener("click", function () {
       older.forEach(function (c) { c.hidden = false; });
+      markWide(cards);
       btn.hidden = true;
       btn.setAttribute("aria-expanded", "true");
       var first = older[0].querySelector("a");

@@ -61,7 +61,7 @@ def process(path):
 
 def main(argv):
     check = "--check" in argv
-    files = [Path(a) for a in argv if a != "--check"] or sorted(REPO_BLOG_DIR.glob("*.html"))
+    files = [Path(a) for a in argv if a != "--check"] or sorted(p for p in REPO_BLOG_DIR.glob("*.html") if p.name != "index.html")
     missing, changed, errors = [], [], []
     for f in files:
         try:

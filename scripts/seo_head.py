@@ -158,6 +158,12 @@ SERVICE_PAGES = {page for _, page in _chrome.SERVICES}
 CITY_PAGES = {page: label for label, page in _chrome.CITIES}
 LABELS = {page: htmllib.unescape(label) for label, page, *_ in _chrome.SERVICES + _chrome.MENU}
 LABELS["privacy.html"] = "Privacy"
+LABELS["blog/index.html"] = "Archivio del blog"
+
+
+def is_post(rel):
+    """An article, not the archive page blog/index.html (see build_blog_index.py)."""
+    return rel.startswith("blog/") and rel != "blog/index.html"
 
 BLOCK_RE = re.compile(r'([ \t]*)<script type="application/ld\+json">(.*?)</script>', re.S)
 EXTRA_BLOCK_RE = re.compile(
@@ -297,7 +303,7 @@ def build_graph(nodes, rel, url, head, body):
         _link_entities(node)
     types = [n.get("@type") for n in kept]
 
-    if rel.startswith("blog/"):
+    if is_post(rel):
         post = next((n for n in kept if n.get("@type") == "BlogPosting"), None)
         if post is None or "datePublished" not in post or "headline" not in post:
             raise PageError("no BlogPosting with headline and datePublished in the JSON-LD")
@@ -333,7 +339,7 @@ def build_graph(nodes, rel, url, head, body):
         )
 
     if rel != "index.html" and "BreadcrumbList" not in types:
-        if rel.startswith("blog/"):
+        if is_post(rel):
             leaf = next(n for n in kept if n.get("@type") == "BlogPosting")["headline"]
             trail = [("Home", SITE), ("Blog", SITE + "resources.html"), (_collapse(leaf), url)]
         elif rel in CITY_PAGES:
@@ -410,7 +416,7 @@ def update_page(html, rel):
     if robots is None or "noindex" not in robots:
         head = _set_meta(head, "name", "robots", ROBOTS_CONTENT, VIEWPORT_RE)
 
-    blog = rel.startswith("blog/")
+    blog = is_post(rel)
     head = _brand_name(head, blog)
     head = _set_meta(head, "property", "og:type", "article" if blog else "website", VIEWPORT_RE)
     # The social preview says what the search result says.
@@ -485,20 +491,19 @@ def verify_page(html, rel):
         if og is not None and _meta(head, "name", f"twitter:{field}") != _collapse(og):
             problems.append(f"twitter:{field} missing or different from og:{field}")
 
-    blog = rel.startswith("blog/")
+    blog = is_post(rel)
     title = TITLE_RE.search(head)
     title = title.group(2) if title else ""
     if (BLOG_SUFFIX_RE.search(title) if blog else "PikoBit" in title + (_meta(head, "property", "og:title") or "")):
         problems.append('brand written "PikoBit" in the title (use "Pikobit")')
-    if not blog:
-        text = _text(title)
-        if not text.endswith(TITLE_SUFFIX):
-            problems.append(f'title does not end with "{TITLE_SUFFIX}"')
-        if len(text) > TITLE_MAX:
-            problems.append(f"title longer than {TITLE_MAX} characters ({len(text)})")
-        desc = _text(_meta(head, "name", "description") or "")
-        if len(desc) > DESCRIPTION_MAX:
-            problems.append(f"description longer than {DESCRIPTION_MAX} characters ({len(desc)})")
+    text = _text(title)
+    if not blog and not text.endswith(TITLE_SUFFIX):
+        problems.append(f'title does not end with "{TITLE_SUFFIX}"')
+    if len(text) > TITLE_MAX:
+        problems.append(f"title longer than {TITLE_MAX} characters ({len(text)})")
+    desc = _text(_meta(head, "name", "description") or "")
+    if len(desc) > DESCRIPTION_MAX:
+        problems.append(f"description longer than {DESCRIPTION_MAX} characters ({len(desc)})")
     if _meta(head, "property", "og:type") != ("article" if blog else "website"):
         problems.append("wrong og:type")
     if blog:
