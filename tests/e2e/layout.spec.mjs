@@ -69,3 +69,40 @@ test.describe("home, wide screens", () => {
     });
   }
 });
+
+// The blog adds articles every week: whatever the number of visible cards,
+// the last row of the "Articoli Consigliati" grid never holds a single card.
+test.describe("resources, any number of recent articles", () => {
+  for (const width of [1024, 1280, 1920]) {
+    for (const count of [1, 2, 3, 4, 5, 6, 7, 8, 61, 62, 63, 64]) {
+      test(`${count} cards at ${width}px: no orphan on the last row`, async ({ page }) => {
+        await page.setViewportSize({ width, height: 900 });
+        await page.route("**/resources.html", async (route) => {
+          const body = (await (await route.fetch()).text()).replace(
+            /(<section class="articles-section">)[\s\S]*?(<\/section>)/,
+            (_, open, close) =>
+              open +
+              Array.from(
+                { length: count },
+                (_, i) =>
+                  `<div class="article-box"><h3>T${i}</h3><p>x</p><a href="blog/2026-11-13-a${i}.html" class="cta-link">L</a></div>`,
+              ).join("") +
+              close,
+          );
+          await route.fulfill({ body, contentType: "text/html" });
+        });
+        await page.goto("resources.html");
+        const rows = await page.evaluate(() => {
+          const tops = new Map();
+          for (const c of document.querySelector(".articles-section").children) {
+            if (!c.getClientRects().length) continue;
+            const t = Math.round(c.getBoundingClientRect().top);
+            tops.set(t, (tops.get(t) || 0) + 1);
+          }
+          return [...tops.values()];
+        });
+        if (count > 1) expect(rows.at(-1), `rows ${rows.slice(-3).join("+")}`).toBeGreaterThan(1);
+      });
+    }
+  }
+});

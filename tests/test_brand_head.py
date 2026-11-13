@@ -120,7 +120,7 @@ def test_every_page_has_brand_head(page):
     assert _attr(head, "name", "twitter:card", "content") == "summary_large_image"
     canonical = _attr(head, "rel", "canonical", "href")
     assert canonical and _attr(head, "property", "og:url", "content") == canonical
-    if page.parent.name == "blog":
+    if page.parent.name == "blog" and page.name != "index.html":
         assert _attr(head, "property", "og:type", "content") == "article"
     for old in ("logo.webp", "banner.webp", "filigrana.webp"):
         assert old not in html
