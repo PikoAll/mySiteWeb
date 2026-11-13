@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
         <loc>https://pikobit.it/</loc>
-        <lastmod>2026-09-29</lastmod>
+        <lastmod>2026-11-13</lastmod>
         <priority>1.0</priority>
     </url>
     <url>
@@ -364,7 +364,7 @@
     </url>
     <url>
         <loc>https://pikobit.it/dove-lavoro.html</loc>
-        <lastmod>2026-09-29</lastmod>
+        <lastmod>2026-11-13</lastmod>
         <priority>0.8</priority>
     </url>
     <url>
@@ -425,6 +425,16 @@
     <url>
         <loc>https://pikobit.it/programmatore-turi.html</loc>
         <lastmod>2026-09-29</lastmod>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://pikobit.it/web-designer-monopoli.html</loc>
+        <lastmod>2026-11-13</lastmod>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://pikobit.it/gestionali-monopoli.html</loc>
+        <lastmod>2026-11-13</lastmod>
         <priority>0.8</priority>
     </url>
 </urlset>

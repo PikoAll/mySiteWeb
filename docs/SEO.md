@@ -28,6 +28,8 @@ bersaglio:
 |---|---|---|
 | Home (`index.html`) | programmatore e web designer a Monopoli | title, testo |
 | `programmatore-monopoli.html` | realizzazione / creazione siti web a Monopoli | title, h1 |
+| `web-designer-monopoli.html` | web designer a Monopoli (siti su misura) | title, h1 |
+| `gestionali-monopoli.html` | gestionali su misura a Monopoli | title, h1 |
 | `websites.html` | realizzazione e creazione siti web **in Puglia** | title, h1 |
 | `custom-software.html` | sviluppo software e gestionali su misura **in Puglia** | title, h1 |
 | `modern-apps.html` | sviluppatore app e applicazioni web **in Puglia** | title, h1 |
@@ -37,6 +39,11 @@ Regole che ne derivano:
 
 - La pagina Monopoli **non** usa "programmatore" o "web designer" nell'h1:
   quelle parole, per Monopoli, sono della home.
+- Le due pagine di servizio per Monopoli (`web-designer-monopoli.html`,
+  `gestionali-monopoli.html`) hanno title e h1 propri e non ripetono quelli
+  della home né della pagina Monopoli; linkano la home con "programmatore a
+  Monopoli". Il title della home contiene ancora "Web Designer a Monopoli":
+  la sovrapposizione è parziale e va tenuta d'occhio in Search Console.
 - Le pagine servizio dicono "in Puglia", mai "a Monopoli e in Puglia", così
   non competono con la pagina Monopoli.
 - Chi linka la pagina Monopoli usa il testo "Siti web a Monopoli"; chi vuole
