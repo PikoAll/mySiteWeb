@@ -42,7 +42,7 @@
     </url>
     <url>
         <loc>https://pikobit.it/resources.html</loc>
-        <lastmod>2026-10-02</lastmod>
+        <lastmod>2026-11-13</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
@@ -334,6 +334,26 @@
     <url>
         <loc>https://pikobit.it/blog/2026-10-02-5-segnali-gestionale-su-misura-vs-excel.html</loc>
         <lastmod>2026-10-02</lastmod>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://pikobit.it/blog/2026-11-13-rust-1-100-never-type-stabile.html</loc>
+        <lastmod>2026-11-13</lastmod>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://pikobit.it/blog/2026-11-13-dev-to-agenti-ai-in-loop-performance.html</loc>
+        <lastmod>2026-11-13</lastmod>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://pikobit.it/blog/2026-11-13-grok-build-app-esposte-senza-login.html</loc>
+        <lastmod>2026-11-13</lastmod>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://pikobit.it/blog/2026-11-13-sito-fatto-in-casa-test-15-minuti.html</loc>
+        <lastmod>2026-11-13</lastmod>
         <priority>0.6</priority>
     </url>
     <url>
