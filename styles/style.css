@@ -878,8 +878,8 @@ strong {
 
 .articles-section {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  /* Tre colonne */
+  grid-template-columns: repeat(4, 1fr);
+  /* Quattro colonne: il blog pubblica 4 articoli a settimana, nessun orfano sull'ultima riga */
   gap: 20px;
   /* Spazio uniforme tra i riquadri */
   padding: 0 20px;
