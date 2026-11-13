@@ -400,7 +400,13 @@ def test_verify_description_length(dates):
     out = seo_head.update_page(SERVICE, "websites.html").replace('content="Siti vetrina su misura."', f'content="{long}"', 1)
     assert any("155" in p for p in seo_head.verify_page(out, "websites.html"))
     blog = seo_head.update_page(BLOG.replace("Descrizione &amp; altro", long, 1), "blog/2026-09-04-prova.html")
-    assert not any("155" in p for p in seo_head.verify_page(blog, "blog/2026-09-04-prova.html"))
+    assert any("155" in p for p in seo_head.verify_page(blog, "blog/2026-09-04-prova.html"))
+
+
+def test_verify_blog_title_length(dates):
+    long = BLOG.replace("Titolo - Blog PikoBit", "T" * 50 + " - Blog Pikobit")
+    out = seo_head.update_page(long, "blog/2026-09-04-prova.html")
+    assert any("60" in p for p in seo_head.verify_page(out, "blog/2026-09-04-prova.html"))
 
 
 def test_og_and_twitter_description_follow_the_meta_description(dates):
@@ -419,3 +425,21 @@ def test_person_knows_the_confirmed_technologies_only():
         "Android Studio", "Angular", "React", "HTML", "CSS", "JavaScript", "WordPress",
         "PostgreSQL", "MySQL", "Clean Architecture", "Design pattern", "Test automatici",
     ]
+
+
+def test_blog_archive_page_is_up_to_date_and_lists_every_article():
+    """/blog/ must exist and link every article (a new bot article makes it stale)."""
+    spec = importlib.util.spec_from_file_location("build_blog_index", ROOT / "scripts" / "build_blog_index.py")
+    mod = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(mod)
+    index = (ROOT / "blog" / "index.html").read_text(encoding="utf-8")
+    for path in (ROOT / "blog").glob("*.html"):
+        if path.name != "index.html":
+            assert f'href="{path.name}"' in index, f"{path.name} missing from blog/index.html (run scripts/build_blog_index.py)"
+    assert mod.build() == index
+
+
+def test_every_blog_article_respects_title_and_description_limits():
+    for path in sorted((ROOT / "blog").glob("*.html")):
+        problems = [p for p in seo_head.verify_page(path.read_text(encoding="utf-8"), f"blog/{path.name}") if "longer than" in p]
+        assert not problems, f"{path.name}: {problems}"
