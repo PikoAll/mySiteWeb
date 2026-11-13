@@ -878,8 +878,9 @@ strong {
 
 .articles-section {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  /* Quattro colonne: il blog pubblica 4 articoli a settimana, nessun orfano sull'ultima riga */
+  grid-template-columns: repeat(6, 1fr);
+  /* Sei tracce: ogni card ne occupa 2 (tre per riga); .is-wide ne occupa 3, cosi' qualsiasi
+     numero di card visibili chiude con almeno 2 card sull'ultima riga */
   gap: 20px;
   /* Spazio uniforme tra i riquadri */
   padding: 0 20px;
@@ -892,6 +893,15 @@ strong {
   /* Imposta una larghezza massima */
   margin: 0 auto;
   /* Centrare rispetto alla pagina */
+}
+
+.articles-section > .article-box {
+  grid-column: span 2;
+}
+
+/* blog-week.js marca .is-wide le ultime 2 o 4 card visibili (n = 3k+2 o 3k+1) */
+.articles-section > .article-box.is-wide {
+  grid-column: span 3;
 }
 
 .article-box {
