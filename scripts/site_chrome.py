@@ -97,6 +97,7 @@ HAMBURGER_ICON = (
 HEADER_RE = re.compile(r"<header\b[^>]*>.*?</header>", re.S)
 FOOTER_RE = re.compile(r"<footer\b[^>]*>.*?</footer>", re.S)
 ZONE_RE = re.compile(r'\n?<nav class="footer-zone".*?</nav>', re.S)
+SITI_RE = re.compile(r'\n?<nav class="footer-siti".*?</nav>', re.S)
 NAP_RE = re.compile(r'<p class="nap">.*?</p>', re.S)
 BREADCRUMB_RE = re.compile(r'\s*<nav class="breadcrumb"[^>]*>.*?</nav>', re.S)
 MAIN_RE = re.compile(r"<main\b[^>]*>")
@@ -167,6 +168,18 @@ def footer_zone(prefix):
     return f'\n<nav class="footer-zone" aria-label="Zone in cui lavoro"><p>Zone: {links}</p></nav>'
 
 
+# Sister sites on sub-domains: plain (dofollow) links, descriptive anchors.
+SITI = [
+    ("https://lezioni.pikobit.it/", "Lezioni private e ripetizioni a Monopoli e paesi vicini"),
+    ("https://portfolio.pikobit.it/", "Portfolio sviluppatore Java Spring"),
+]
+
+
+def footer_siti():
+    links = " · ".join(f'<a href="{url}">{label}</a>' for url, label in SITI)
+    return f'\n<nav class="footer-siti" aria-label="I miei siti"><p>I miei siti: {links}</p></nav>'
+
+
 # The Google Business profile: site and profile point at each other.
 MAPS = "https://www.google.com/maps?cid=16391512325002463359"
 
@@ -235,10 +248,10 @@ def render(path, root):
     html = HEADER_RE.sub(lambda m: header(prefix, rel), html, count=1)
 
     def fix_footer(m):
-        foot = LEGAL_RE.sub("", ZONE_RE.sub("", m.group(0)))
+        foot = LEGAL_RE.sub("", SITI_RE.sub("", ZONE_RE.sub("", m.group(0))))
         nap = NAP_RE.search(foot)
         at = nap.end() if nap else foot.index(">") + 1
-        return foot[:at] + footer_zone(prefix) + footer_legal(prefix) + foot[at:]
+        return foot[:at] + footer_zone(prefix) + footer_siti() + footer_legal(prefix) + foot[at:]
 
     html = FOOTER_RE.sub(fix_footer, html, count=1)
     html = _city_breadcrumb(html, rel)

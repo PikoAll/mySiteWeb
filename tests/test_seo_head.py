@@ -191,6 +191,8 @@ def test_business_entity_content():
         "https://www.google.com/maps?cid=16391512325002463359",
         "https://www.instagram.com/pikobit_it/",
         "https://www.youtube.com/@pikobit01",
+        "https://lezioni.pikobit.it/",
+        "https://portfolio.pikobit.it/",
     ]
     assert b["hasMap"] == "https://www.google.com/maps?cid=16391512325002463359"
     assert set(b["address"]) == {"@type", "addressLocality", "addressRegion", "postalCode", "addressCountry"}
