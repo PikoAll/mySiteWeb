@@ -193,6 +193,17 @@ def test_footer_lists_all_cities_in_order(root_page):
     assert footer.index('class="nap"') < footer.index('class="footer-zone"')
 
 
+def test_footer_links_the_two_sister_sites_once(root_page):
+    site_chrome.process(root_page, root_page.parent)
+    site_chrome.process(root_page, root_page.parent)  # idempotent: still one block
+    footer = footer_of(root_page.read_text(encoding="utf-8"))
+    assert footer.count('class="footer-siti"') == 1
+    assert 'href="https://lezioni.pikobit.it/"' in footer
+    assert 'href="https://portfolio.pikobit.it/"' in footer
+    assert "nofollow" not in footer.split('class="footer-siti"')[1].split("</nav>")[0]
+    assert footer.index("footer-zone") < footer.index("footer-siti") < footer.index("footer-legal")
+
+
 def test_intro_logo_becomes_the_vector_mark_with_the_same_alt(root_page):
     site_chrome.process(root_page, root_page.parent)
     html = root_page.read_text(encoding="utf-8")

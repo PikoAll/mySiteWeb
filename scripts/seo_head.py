@@ -106,6 +106,8 @@ BUSINESS_NODE = {
         MAPS,
         "https://www.instagram.com/pikobit_it/",
         "https://www.youtube.com/@pikobit01",
+        "https://lezioni.pikobit.it/",
+        "https://portfolio.pikobit.it/",
     ],
     "founder": {"@id": PERSON_ID},
     "employee": {"@id": PERSON_ID},
@@ -138,6 +140,7 @@ PERSON_NODE = {
     ],
     "sameAs": [
         "https://www.linkedin.com/in/giuseppe-alaimo-aba40b226",
+        "https://portfolio.pikobit.it/",
         "https://www.superprof.it/laureato-informatica-lezioni-programmazione-web-per-creazione-sito-web-javascript-nodejs-html-css-python-flask.html",
     ],
 }
