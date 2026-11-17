@@ -9,7 +9,9 @@ ROOT = Path(__file__).resolve().parent.parent
 PAGES = {
     "web-designer-monopoli.html": "Web Designer",
     "gestionali-monopoli.html": "Gestionali",
+    "sviluppatore-app-monopoli.html": "Sviluppatore App",
 }
+APP_PAGE = "sviluppatore-app-monopoli.html"
 
 
 def read(name):
@@ -58,9 +60,30 @@ def test_in_sitemap(page):
 
 
 @pytest.mark.parametrize("page", PAGES)
-@pytest.mark.parametrize("source", ["dove-lavoro.html", "index.html"])
-def test_linked_from(source, page):
-    assert f'href="{page}"' in read(source)
+def test_linked_from_dove_lavoro(page):
+    assert f'href="{page}"' in read("dove-lavoro.html")
+
+
+@pytest.mark.parametrize("page", ["web-designer-monopoli.html", "gestionali-monopoli.html"])
+def test_linked_from_index(page):
+    assert f'href="{page}"' in read("index.html")
+
+
+def test_app_page_linked_from_modern_apps():
+    assert f'href="{APP_PAGE}"' in read("modern-apps.html")
+
+
+def test_app_page_links_services_and_contact():
+    main = re.search(r"<main>(.*?)</main>", read(APP_PAGE), re.S).group(1)
+    for target in ("modern-apps.html", "contact.html"):
+        assert f'href="{target}"' in main
+
+
+def test_app_page_cites_only_apps_with_a_page():
+    main = re.search(r"<main>(.*?)</main>", read(APP_PAGE), re.S).group(1)
+    for app in ("Crucidev", "MentalLoad", "PienoGiusto"):
+        if app in main:
+            assert f'href="{app.lower()}/' in main, app
 
 
 def test_titles_differ_from_home_and_monopoli():
