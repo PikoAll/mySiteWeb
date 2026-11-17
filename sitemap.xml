@@ -7,7 +7,12 @@
     </url>
     <url>
         <loc>https://pikobit.it/about.html</loc>
-        <lastmod>2026-11-14</lastmod>
+        <lastmod>2026-11-17</lastmod>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://pikobit.it/lavori.html</loc>
+        <lastmod>2026-11-17</lastmod>
         <priority>0.8</priority>
     </url>
     <url>
@@ -22,7 +27,7 @@
     </url>
      <url>
         <loc>https://pikobit.it/modern-apps.html</loc>
-        <lastmod>2026-11-13</lastmod>
+        <lastmod>2026-11-17</lastmod>
         <priority>0.8</priority>
     </url>
      <url>

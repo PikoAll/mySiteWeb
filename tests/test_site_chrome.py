@@ -87,7 +87,7 @@ NESTED_PAGE = """<html><body>
 </body></html>
 """
 
-MENU = ["Home", "Servizi ▼", "Dove lavoro", "Progetti &amp; idee", "Chi sono", "Blog", "Contatti"]
+MENU = ["Home", "Servizi ▼", "Dove lavoro", "Progetti &amp; idee", "Lavori", "Chi sono", "Blog", "Contatti"]
 CITY_ORDER = [
     "Monopoli", "Bari", "Polignano a Mare", "Fasano", "Conversano",
     "Castellana Grotte", "Putignano", "Turi", "Casamassima", "Ostuni",
