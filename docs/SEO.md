@@ -30,6 +30,7 @@ bersaglio:
 | `programmatore-monopoli.html` | realizzazione / creazione siti web a Monopoli | title, h1 |
 | `web-designer-monopoli.html` | web designer a Monopoli (siti su misura) | title, h1 |
 | `gestionali-monopoli.html` | gestionali su misura a Monopoli | title, h1 |
+| `sviluppo-software-monopoli.html` | sviluppo software a Monopoli (software su misura, automazioni, integrazioni, backend Java) | title, h1 |
 | `websites.html` | realizzazione e creazione siti web **in Puglia** | title, h1 |
 | `custom-software.html` | sviluppo software e gestionali su misura **in Puglia** | title, h1 |
 | `modern-apps.html` | sviluppatore app e applicazioni web **in Puglia** | title, h1 |
