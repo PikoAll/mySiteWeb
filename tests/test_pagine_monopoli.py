@@ -9,6 +9,7 @@ ROOT = Path(__file__).resolve().parent.parent
 PAGES = {
     "web-designer-monopoli.html": "Web Designer",
     "gestionali-monopoli.html": "Gestionali",
+    "sviluppo-software-monopoli.html": "Sviluppo Software",
 }
 
 
