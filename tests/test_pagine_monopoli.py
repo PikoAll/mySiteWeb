@@ -10,7 +10,9 @@ PAGES = {
     "web-designer-monopoli.html": "Web Designer",
     "gestionali-monopoli.html": "Gestionali",
     "sviluppo-software-monopoli.html": "Sviluppo Software",
+    "sviluppatore-app-monopoli.html": "Sviluppatore App",
 }
+APP_PAGE = "sviluppatore-app-monopoli.html"
 
 
 def read(name):
@@ -61,7 +63,19 @@ def test_in_sitemap(page):
 @pytest.mark.parametrize("page", PAGES)
 @pytest.mark.parametrize("source", ["dove-lavoro.html", "index.html"])
 def test_linked_from(source, page):
+    if source == "index.html" and page == APP_PAGE:
+        pytest.skip("la pagina app è linkata da modern-apps e dove-lavoro")
     assert f'href="{page}"' in read(source)
+
+
+def test_app_page_linked_from_modern_apps():
+    assert f'href="{APP_PAGE}"' in read("modern-apps.html")
+
+
+def test_app_page_links():
+    main = re.search(r"<main>(.*?)</main>", read(APP_PAGE), re.S).group(1)
+    assert 'href="modern-apps.html"' in main
+    assert 'href="contact.html"' in main
 
 
 def test_titles_differ_from_home_and_monopoli():
