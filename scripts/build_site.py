@@ -26,7 +26,7 @@ EXCLUDED_DIRS = {"docs", "tests", ".github", ".git", "node_modules", "__pycache_
                  ".pytest_cache", ".claude", "_site", "test-results", "playwright-report"}
 EXCLUDED_PATHS = {"images/_archivio"}
 EXCLUDED_FILES = ["*.md", "*.py", "*.pyc", "*.mjs", "*.backup*", "package.json",
-                  "package-lock.json", "playwright.config.*", "pytest.ini", "conftest.py", ".*"]
+                  "package-lock.json", "playwright.config.*", "page_weight_budget.json", "pytest.ini", "conftest.py", ".*"]
 
 
 def excluded(rel):
