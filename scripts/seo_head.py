@@ -161,6 +161,7 @@ SERVICE_PAGES = {page for _, page in _chrome.SERVICES}
 CITY_PAGES = {page: label for label, page in _chrome.CITIES}
 LABELS = {page: htmllib.unescape(label) for label, page, *_ in _chrome.SERVICES + _chrome.MENU}
 LABELS["privacy.html"] = "Privacy"
+LABELS["404.html"] = "Pagina non trovata"
 LABELS["blog/index.html"] = "Archivio del blog"
 
 
