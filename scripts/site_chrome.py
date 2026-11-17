@@ -65,10 +65,14 @@ SERVICES = [
 MENU = [
     ("Dove lavoro", "dove-lavoro.html", ""),
     ("Progetti &amp; idee", "ideas.html", ""),
+    ("Lavori", "lavori.html", ""),
     ("Chi sono", "about.html", ""),
     ("Blog", "resources.html", ""),
     ("Contatti", "contact.html", "nav-cta"),
 ]
+
+# Menu entries that blog/ articles do not carry (those files are not rewritten here).
+NOT_IN_BLOG_MENU = {"lavori.html"}
 
 # PIKOBIT lettering of the round logo, redrawn as vector over a trace of
 # images/logo.webp. Letters white, the dot in the O is the logo light blue.
@@ -139,6 +143,8 @@ def header(prefix, rel):
     entries = "\n".join(
         (f'<li class="{cls}">' if cls else "<li>") + _link(prefix, page, label, cur) + "</li>"
         for label, page, cls in MENU
+        # blog/ is written by the weekly blog flow, not by this script's release
+        if not (rel.startswith("blog/") and page in NOT_IN_BLOG_MENU)
     )
     return (
         '<header class="site-header" id="site-header">\n'

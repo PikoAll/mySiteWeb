@@ -35,6 +35,7 @@ bersaglio:
 | `websites.html` | realizzazione e creazione siti web **in Puglia** | title, h1 |
 | `custom-software.html` | sviluppo software e gestionali su misura **in Puglia** | title, h1 |
 | `modern-apps.html` | sviluppatore app e applicazioni web **in Puglia** | title, h1 |
+| `lavori.html` | lavori reali di Giuseppe (traslochimalusardi.it, Crucidev, portfolio, lezioni) | title, h1 |
 | `programmatore-<città>.html` (13 città, Turi compresa) | programmatore e web designer a *città* | title, h1 |
 
 Regole che ne derivano:
