@@ -9,7 +9,7 @@ the Jaccard index. Prints every pair sorted by similarity and the worst one.
 Usage:
     python3 scripts/check_page_similarity.py              # programmatore-*.html
     python3 scripts/check_page_similarity.py FILE...
-    python3 scripts/check_page_similarity.py --max 0.40   # exit 1 above the threshold (default 0.40)
+    python3 scripts/check_page_similarity.py --max 0.30   # exit 1 above the threshold (default 0.30)
 """
 import itertools
 import re
@@ -18,6 +18,7 @@ from html.parser import HTMLParser
 from pathlib import Path
 
 SHINGLE = 4
+DEFAULT_LIMIT = 0.30
 REPO_ROOT = Path(__file__).resolve().parent.parent
 
 
@@ -70,7 +71,7 @@ def pairs(files):
 
 
 def main(argv):
-    limit = 0.40
+    limit = DEFAULT_LIMIT
     if "--max" in argv:
         i = argv.index("--max")
         limit = float(argv[i + 1])
