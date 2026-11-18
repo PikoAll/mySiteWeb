@@ -48,6 +48,21 @@ python3 scripts/build_site.py && python3 scripts/check_internal_links.py --root 
 (cd tests/e2e && npm ci && npx playwright test)   # e2e Playwright headless su tutte le pagine
 ```
 
+### Link esterni (a richiesta)
+
+I link verso altri siti si possono rompere nel tempo. Lo script elenca i link
+esterni delle pagine fisse (esclusi gli articoli in `blog/`) con lo stato HTTP,
+rispetta il `robots.txt` dei siti controllati e usa un timeout breve:
+
+```bash
+python3 scripts/check_external_links.py --report rapporto-link.txt
+```
+
+I link rotti compaiono nel rapporto come `ROTTO`; l'uscita è sempre 0 (con
+`--strict` è 1 se ce ne sono). **Non gira nella CI né a ogni modifica**: solo a
+richiesta. Frequenza consigliata: **una volta al mese**, e dopo ogni modifica
+grossa ai link esterni.
+
 ---
 
 ## Passaggi di consegne
