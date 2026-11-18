@@ -1,5 +1,6 @@
 """Tests for scripts/check_page_similarity.py."""
 import importlib.util
+import re
 from pathlib import Path
 
 SCRIPT = Path(__file__).resolve().parent.parent / "scripts" / "check_page_similarity.py"
@@ -28,6 +29,28 @@ def test_clone_pages_are_identical_and_different_pages_are_not(tmp_path):
     result = {(x, y): s for s, x, y in cps.pairs([a, b, c])}
     assert result[("a.html", "b.html")] > 0.8
     assert result[("a.html", "c.html")] == 0.0
+
+
+def _paragraphs(html):
+    main = html.split("<main", 1)[1].split("</main>", 1)[0]
+    return {" ".join(re.sub(r"<[^>]+>", " ", p).lower().split())
+            for p in re.findall(r"<p[ >].*?</p>", main, re.S)}
+
+
+def test_every_city_page_has_a_paragraph_unique_to_it():
+    files = sorted(cps.REPO_ROOT.glob("programmatore-*.html"))
+    paras = {f.name: _paragraphs(f.read_text(encoding="utf-8")) for f in files}
+    for name, mine in paras.items():
+        others = set().union(*(p for n, p in paras.items() if n != name))
+        assert mine - others, f"{name} has no paragraph that is absent from the other city pages"
+
+
+def test_default_limit_is_030():
+    assert cps.DEFAULT_LIMIT == 0.30
+
+
+def test_real_city_pages_are_under_030():
+    assert cps.main(["--max", "0.30"]) == 0
 
 
 def test_exit_code_respects_limit(tmp_path):
