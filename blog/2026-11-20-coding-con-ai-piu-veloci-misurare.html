@@ -1,0 +1,603 @@
+<!doctype html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
+    <title>Coding con l'AI: più veloci davvero? Misuralo - Blog Pikobit</title>
+    <meta
+      name="description"
+      content="Con l'AI si fanno molti più commit, ma non molto più software. Cosa dicono gli studi e come misurare il guadagno reale sul tuo lavoro."
+    />
+    <meta
+      name="keywords"
+      content="produttività AI programmazione, coding con AI più veloce, studio METR sviluppatori, misurare produttività sviluppatori, AI per lo sviluppo software"
+    />
+    <meta name="author" content="PikoBit" />
+
+    <!-- Tag canonical -->
+    <link
+      rel="canonical"
+      href="https://pikobit.it/blog/2026-11-20-coding-con-ai-piu-veloci-misurare.html"
+    />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="article" />
+    <meta property="article:published_time" content="2026-11-20" />
+    <meta property="article:modified_time" content="2026-11-20" />
+    <meta
+      property="og:title"
+      content="Coding con l'AI: più veloci davvero? Misuralo"
+    />
+    <meta property="og:description" content="Con l'AI si fanno molti più commit, ma non molto più software. Cosa dicono gli studi e come misurare il guadagno reale sul tuo lavoro." />
+    <meta
+      property="og:image"
+      content="https://pikobit.it/images/brand/og-pikobit-1200x630.jpg"
+    />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta
+      property="og:image:alt"
+      content="Pikobit - programmatore e web designer a Monopoli"
+    />
+    <meta property="og:locale" content="it_IT" />
+    <meta property="og:site_name" content="Pikobit" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:description" content="Con l'AI si fanno molti più commit, ma non molto più software. Cosa dicono gli studi e come misurare il guadagno reale sul tuo lavoro." />
+    <meta name="twitter:title" content="Coding con l'AI: più veloci davvero? Misuralo" />
+    <meta
+      name="twitter:image"
+      content="https://pikobit.it/images/brand/og-pikobit-1200x630.jpg"
+    />
+    <meta
+      property="og:url"
+      content="https://pikobit.it/blog/2026-11-20-coding-con-ai-piu-veloci-misurare.html"
+    />
+
+    <link rel="stylesheet" href="../styles/style.css?v=4.3.3.0" />
+    <link
+      rel="preload"
+      href="../fonts/poppins/poppins-latin-400-normal.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="../fonts/poppins/poppins-latin-600-normal.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/images/brand/favicon-32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="192x192"
+      href="/images/brand/favicon-192.png"
+    />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <meta name="theme-color" content="#0d0f12" />
+
+    <script defer src="../scripts/script.js?v=4.3.3.0"></script>
+
+    <!-- Dati strutturati -->
+    <!-- prettier-ignore -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "ProfessionalService",
+            "@id": "https://pikobit.it/#business",
+            "name": "Pikobit",
+            "url": "https://pikobit.it/",
+            "image": {
+              "@type": "ImageObject",
+              "url": "https://pikobit.it/images/brand/pikobit-logo-512.png",
+              "width": 512,
+              "height": 512
+            },
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://pikobit.it/images/brand/pikobit-logo-512.png",
+              "width": 512,
+              "height": 512
+            },
+            "description": "Programmatore e web designer a Monopoli: siti web, applicazioni e software gestionali su misura per aziende e professionisti.",
+            "telephone": "+39-351-889-1903",
+            "email": "piko.bit.00@gmail.com",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Monopoli",
+              "addressRegion": "BA",
+              "postalCode": "70043",
+              "addressCountry": "IT"
+            },
+            "geo": {
+              "@type": "GeoCoordinates",
+              "latitude": 40.95,
+              "longitude": 17.3
+            },
+            "hasMap": "https://www.google.com/maps?cid=16391512325002463359",
+            "openingHours": "Mo-Fr 09:00-17:00",
+            "sameAs": [
+              "https://www.google.com/maps?cid=16391512325002463359",
+              "https://www.instagram.com/pikobit_it/",
+              "https://www.youtube.com/@pikobit01",
+              "https://lezioni.pikobit.it/",
+              "https://portfolio.pikobit.it/"
+            ],
+            "founder": {
+              "@id": "https://pikobit.it/#giuseppe"
+            },
+            "employee": {
+              "@id": "https://pikobit.it/#giuseppe"
+            },
+            "areaServed": [
+              {
+                "@type": "City",
+                "name": "Monopoli",
+                "addressCountry": "IT"
+              },
+              {
+                "@type": "City",
+                "name": "Polignano a Mare",
+                "addressCountry": "IT"
+              },
+              {
+                "@type": "City",
+                "name": "Fasano",
+                "addressCountry": "IT"
+              },
+              {
+                "@type": "City",
+                "name": "Conversano",
+                "addressCountry": "IT"
+              },
+              {
+                "@type": "City",
+                "name": "Castellana Grotte",
+                "addressCountry": "IT"
+              },
+              {
+                "@type": "City",
+                "name": "Turi",
+                "addressCountry": "IT"
+              },
+              {
+                "@type": "City",
+                "name": "Casamassima",
+                "addressCountry": "IT"
+              },
+              {
+                "@type": "City",
+                "name": "Bari",
+                "addressCountry": "IT"
+              },
+              {
+                "@type": "City",
+                "name": "Brindisi",
+                "addressCountry": "IT"
+              },
+              {
+                "@type": "City",
+                "name": "Taranto",
+                "addressCountry": "IT"
+              },
+              {
+                "@type": "City",
+                "name": "Putignano",
+                "addressCountry": "IT"
+              },
+              {
+                "@type": "City",
+                "name": "Ostuni",
+                "addressCountry": "IT"
+              },
+              {
+                "@type": "City",
+                "name": "Lecce",
+                "addressCountry": "IT"
+              }
+            ],
+            "knowsAbout": [
+              "Siti web personalizzati",
+              "Applicazioni moderne",
+              "Software gestionali su misura",
+              "Lezioni e tutorial",
+              "Bigliettini da Visita con QR Code"
+            ],
+            "hasOfferCatalog": {
+              "@type": "OfferCatalog",
+              "name": "Servizi",
+              "itemListElement": [
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@id": "https://pikobit.it/websites.html#service"
+                  }
+                },
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@id": "https://pikobit.it/modern-apps.html#service"
+                  }
+                },
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@id": "https://pikobit.it/custom-software.html#service"
+                  }
+                },
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@id": "https://pikobit.it/lessons.html#service"
+                  }
+                },
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@id": "https://pikobit.it/creative-services.html#service"
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "@type": "Person",
+            "@id": "https://pikobit.it/#giuseppe",
+            "name": "Giuseppe Alaimo",
+            "jobTitle": "Software Engineer",
+            "description": "Software Engineer Senior specializzato in Java/Spring, sviluppa siti web, applicazioni e software su misura; crea anche tutorial e progetti di programmazione.",
+            "url": "https://pikobit.it/about.html",
+            "image": {
+              "@type": "ImageObject",
+              "url": "https://pikobit.it/images/brand/pikobit-logo-512.png",
+              "width": 512,
+              "height": 512
+            },
+            "worksFor": {
+              "@id": "https://pikobit.it/#business"
+            },
+            "knowsAbout": [
+              "Java",
+              "Spring Boot",
+              "Python",
+              "C",
+              "C++",
+              "Flutter",
+              "Dart",
+              "Kotlin",
+              "Android Studio",
+              "Angular",
+              "React",
+              "HTML",
+              "CSS",
+              "JavaScript",
+              "WordPress",
+              "PostgreSQL",
+              "MySQL",
+              "Clean Architecture",
+              "Design pattern",
+              "Test automatici"
+            ],
+            "sameAs": [
+              "https://www.linkedin.com/in/giuseppe-alaimo-aba40b226",
+              "https://portfolio.pikobit.it/",
+              "https://www.superprof.it/laureato-informatica-lezioni-programmazione-web-per-creazione-sito-web-javascript-nodejs-html-css-python-flask.html"
+            ]
+          },
+          {
+            "@type": "BlogPosting",
+            "headline": "Coding con l'AI: più veloci davvero? Misuralo",
+            "description": "Con l'AI si fanno molti più commit, ma non molto più software. Cosa dicono gli studi e come misurare il guadagno reale sul tuo lavoro.",
+            "datePublished": "2026-11-20",
+            "author": {
+              "@id": "https://pikobit.it/#giuseppe"
+            },
+            "@id": "https://pikobit.it/blog/2026-11-20-coding-con-ai-piu-veloci-misurare.html#article",
+            "mainEntityOfPage": {
+              "@id": "https://pikobit.it/blog/2026-11-20-coding-con-ai-piu-veloci-misurare.html"
+            },
+            "image": "https://pikobit.it/images/brand/og-pikobit-1200x630.jpg",
+            "publisher": {
+              "@id": "https://pikobit.it/#business"
+            },
+            "dateModified": "2026-11-20",
+            "inLanguage": "it"
+          },
+          {
+            "@type": "BreadcrumbList",
+            "@id": "https://pikobit.it/blog/2026-11-20-coding-con-ai-piu-veloci-misurare.html#breadcrumb",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://pikobit.it/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Blog",
+                "item": "https://pikobit.it/resources.html"
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Coding con l'AI: più veloci davvero? Misuralo",
+                "item": "https://pikobit.it/blog/2026-11-20-coding-con-ai-piu-veloci-misurare.html"
+              }
+            ]
+          }
+        ]
+      }
+    </script>
+
+    <script defer src="../scripts/consent.js?v=4.3.3.0"></script>
+  </head>
+
+  <body>
+    <header class="site-header" id="site-header">
+<div class="brand-band">
+<a class="brand" href="../index.html" aria-label="Pikobit, vai alla home"><svg class="wordmark" viewBox="-3 -4 553 109" aria-hidden="true" focusable="false"><g fill="#fff" stroke="#fff" stroke-width="3" stroke-linejoin="round"><path d="M0 0H50C68 0 82 14 82 33C82 52 68 66 50 66H21V100H0V44H50C55 44 60 40 60 33C60 26 55 22 50 22H21V30H0Z"/><path d="M96 0H117V100H96Z"/><path d="M134 0H155V35L188 0H217L178 45L220 100H192L162 58L155 65V100H134Z"/><path fill-rule="evenodd" d="M275.5-1.5a51.5 51.5 0 1 0 .01 0ZM275.5 19a31 31 0 1 1-.01 0Z"/><path fill-rule="evenodd" d="M341 0H389C405 0 417 9 417 21C417 30 413 36 407 40C417 45 423 54 423 68C423 86 411 100 393 100H341V40H388C393 40 396 36 396 31C396 26 393 22 388 22H362V30H341ZM362 60H393C399 60 402 64 402 69C402 74 399 78 393 78H362Z"/><path d="M437 0H458V100H437Z"/><path d="M473 0H547V22H520.5V100H499.5V22H473Z"/></g><circle cx="275.5" cy="50" r="11.5" fill="none" stroke="#9ad8f3" stroke-width="9"/></svg></a>
+<button class="hamburger" id="hamburger-menu" type="button" aria-label="Apri menu di navigazione" aria-expanded="false" aria-controls="navbar"><svg class="icon-svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 6h18M3 12h18M3 18h18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg></button>
+</div>
+<div class="overlay" id="overlay"></div>
+<nav id="navbar" aria-label="Menu principale">
+<ul class="nav-links">
+<li><a href="../index.html">Home</a></li>
+<li class="dropdown">
+<a href="#" id="dropdown-toggle" aria-haspopup="true" aria-expanded="false">Servizi ▼</a>
+<ul class="dropdown-menu">
+<li><a href="../websites.html">Siti web personalizzati</a></li>
+<li><a href="../modern-apps.html">Applicazioni moderne</a></li>
+<li><a href="../custom-software.html">Software gestionali su misura</a></li>
+<li><a href="../creative-services.html">Servizi Creativi e Soluzioni Complete</a></li>
+<li><a href="../lessons.html">Lezioni e tutorial</a></li>
+</ul>
+</li>
+<li><a href="../dove-lavoro.html">Dove lavoro</a></li>
+<li><a href="../ideas.html">Progetti &amp; idee</a></li>
+<li><a href="../about.html">Chi sono</a></li>
+<li><a href="../resources.html" class="nav-parent">Blog</a></li>
+<li class="nav-cta"><a href="../contact.html">Contatti</a></li>
+</ul>
+</nav>
+</header>
+
+    <main>
+      <section class="intro">
+        <div class="intro-container">
+          <img
+            src="../images/brand/pikobit-symbol.svg"
+            alt="Logo Pikobit - Tutorial e Progetti di Programmazione"
+            class="logo"
+            width="120"
+            height="112"
+            fetchpriority="high"
+          />
+          <p class="tagline">AI per lo sviluppo software</p>
+          <h1>
+            Programmare con l'AI è davvero più veloce? Cosa dicono gli studi e
+            come misurarlo sul tuo lavoro
+          </h1>
+          <p>
+            Sylwia Laskowska, preparando un intervento all'AI Coding Summit di
+            Berlino, ha raccolto su DEV le ricerche più serie sulla domanda che
+            tutti si fanno: con l'AI programmiamo più in fretta e spendiamo
+            meno? La risposta onesta è "dipende da cosa misuri". E la parte
+            utile per chi programma è proprio questa: imparare a misurarlo sul
+            proprio lavoro, invece di fidarsi della sensazione.
+          </p>
+        </div>
+      </section>
+
+      <section class="why-pikobit">
+        <h2>Più commit non vuol dire più software</h2>
+        <div class="article-body">
+          <p>
+            Uno studio di ricercatori del MIT e di Wharton, rivisto a settembre
+            2026, ha osservato oltre 500.000 sviluppatori su GitHub. Il quadro:
+            con gli assistenti AI i <em>commit</em>, cioè i salvataggi di
+            modifiche, crescono molto. Le <em>release</em>, cioè le versioni che
+            arrivano davvero agli utenti, crescono molto meno.
+          </p>
+          <p>
+            È uno studio osservazionale, quindi non dimostra una causa. Ma
+            racconta una cosa che chi lavora in squadra vede ogni giorno:
+            scrivere codice non era l'unico collo di bottiglia. Se il codice
+            arriva più in fretta, la coda si sposta su revisione, test e
+            correzioni. Se quelle fasi non accelerano, il prodotto finito esce
+            più o meno con il ritmo di prima.
+          </p>
+        </div>
+      </section>
+
+      <section class="why-pikobit">
+        <h2>Sentirsi veloci non è essere veloci</h2>
+        <div class="article-body">
+          <p>
+            Lo studio più citato resta quello di METR del 2025. Sviluppatori
+            esperti, al lavoro sui propri progetti open source, si aspettavano
+            di andare il 24% più veloci con l'AI. Misurati sul serio, ci hanno
+            messo il 19% di tempo in più. E anche dopo, continuavano a credere
+            di essere stati più rapidi.
+          </p>
+          <p>
+            Attenzione a non trasformarlo nello slogan opposto, "l'AI rallenta".
+            Nell'aggiornamento di febbraio 2026 la stessa METR ha scritto di non
+            riuscire più a stimare l'effetto in modo affidabile: strumenti e
+            abitudini cambiano troppo in fretta. La lezione che resta è più
+            semplice: la percezione non è una misura.
+          </p>
+        </div>
+      </section>
+
+      <section class="why-pikobit">
+        <h2>Un esperimento di una settimana</h2>
+        <div class="article-body">
+          <p>
+            Non serve un laboratorio. Scegli una decina di compiti simili per
+            dimensione: piccole funzionalità, correzioni, test da scrivere.
+            Alternali: uno con l'assistente AI, uno senza. Per ciascuno annota
+            tre numeri:
+          </p>
+          <ul>
+            <li>
+              il tempo fino a "finito davvero", cioè revisionato, testato e in
+              produzione, non fino al primo codice che compila;
+            </li>
+            <li>quanti giri di revisione sono serviti;</li>
+            <li>quanti difetti sono emersi nelle due settimane successive.</li>
+          </ul>
+          <p>
+            Dieci compiti non fanno una statistica, ma bastano per capire dove
+            l'AI ti aiuta e dove ti fa solo produrre più righe da rileggere.
+          </p>
+          <p>
+            Se lavori con un repository, puoi anche guardare i numeri che hai
+            già. Questo script conta, mese per mese, i commit e le modifiche
+            arrivate davvero nel ramo principale:
+          </p>
+          <pre><code>import subprocess
+from collections import Counter
+
+def monthly_counts(rev_args: list[str]) -&gt; Counter:
+    out = subprocess.run(
+        ["git", "log", "--date=format:%Y-%m", "--pretty=%ad", *rev_args],
+        capture_output=True, text=True, check=True,
+    ).stdout
+    return Counter(out.split())
+
+commits = monthly_counts(["--no-merges"])
+merges = monthly_counts(["--merges", "--first-parent", "main"])
+for month in sorted(commits):
+    print(f"{month}  commits={commits[month]:4d}  merged={merges.get(month, 0):3d}")</code></pre>
+          <p>
+            Se dal mese in cui hai iniziato a usare l'AI i commit salgono e le
+            modifiche integrate restano ferme, hai trovato il tuo collo di
+            bottiglia: non è la scrittura.
+          </p>
+        </div>
+      </section>
+
+      <section class="why-pikobit">
+        <h2>Dove l'AI aiuta davvero, e dove no</h2>
+        <div class="article-body">
+          <p>
+            Nella nostra esperienza il guadagno è netto sul lavoro ripetitivo e
+            ben definito: codice di contorno, conversioni, primi test, script da
+            usare una volta. Cala, o si inverte, quando il compito richiede di
+            capire un sistema grande, decidere un'architettura o trovare un bug
+            sottile: lì il tempo risparmiato a scrivere si perde a verificare. È
+            il motivo per cui
+            <a href="2026-08-14-ai-non-sostituisce-il-pensiero.html"
+              >l'AI non sostituisce il pensiero</a
+            >: lo sposta sulla revisione.
+          </p>
+          <p>
+            Il consiglio pratico: usa l'AI dove il risultato è facile da
+            controllare, investi il tempo risparmiato in test e revisione, e
+            misura ogni tanto. I numeri sul tuo lavoro valgono più di qualsiasi
+            classifica.
+          </p>
+          <p>
+            Fonte:
+            <a
+              href="https://dev.to/sylwia-lask/is-coding-with-ai-actually-faster-and-cheaper-2810"
+              target="_blank"
+              rel="noopener"
+              >Sylwia Laskowska su DEV, "Is coding with AI actually faster and
+              cheaper?"</a
+            >.
+          </p>
+        </div>
+      </section>
+      <!-- pikobit-local-cta -->
+      <section class="why-pikobit local-cta">
+        <h2>Ti serve un sito o un software su misura a Monopoli?</h2>
+        <p>
+          Sono Giuseppe, programmatore e web designer a Monopoli. Realizzo
+          <a href="../websites.html">siti web</a>,
+          <a href="../custom-software.html">gestionali su misura</a> e
+          <a href="../modern-apps.html">applicazioni</a> per attività e
+          professionisti di Monopoli e di tutta la zona tra Bari, Brindisi e
+          Taranto. Il preventivo è gratuito.
+        </p>
+        <p>
+          <a href="../programmatore-monopoli.html" class="cta-link"
+            >Scopri come lavoro e dove</a
+          >
+        </p>
+      </section>
+    </main>
+
+    <footer>
+      <p class="nap">
+        Pikobit · Programmatore e web designer · Monopoli (BA) ·
+        <a href="tel:+393518891903">351 889 1903</a> ·
+        <a href="mailto:piko.bit.00@gmail.com">piko.bit.00@gmail.com</a>
+      </p>
+<nav class="footer-zone" aria-label="Zone in cui lavoro"><p>Zone: <a href="../programmatore-monopoli.html">Monopoli</a> · <a href="../programmatore-bari.html">Bari</a> · <a href="../programmatore-polignano-a-mare.html">Polignano a Mare</a> · <a href="../programmatore-fasano.html">Fasano</a> · <a href="../programmatore-conversano.html">Conversano</a> · <a href="../programmatore-castellana-grotte.html">Castellana Grotte</a> · <a href="../programmatore-putignano.html">Putignano</a> · <a href="../programmatore-turi.html">Turi</a> · <a href="../programmatore-casamassima.html">Casamassima</a> · <a href="../programmatore-ostuni.html">Ostuni</a> · <a href="../programmatore-brindisi.html">Brindisi</a> · <a href="../programmatore-taranto.html">Taranto</a> · <a href="../programmatore-lecce.html">Lecce</a></p></nav>
+<nav class="footer-siti" aria-label="I miei siti"><p>I miei siti: <a href="https://lezioni.pikobit.it/">Lezioni private e ripetizioni a Monopoli e paesi vicini</a> · <a href="https://portfolio.pikobit.it/">Portfolio sviluppatore Java Spring</a></p></nav>
+<p class="footer-legal"><a href="../privacy.html">Privacy</a> · <a href="../privacy.html#cookie" data-cookie-prefs>Preferenze cookie</a> · <a href="https://www.google.com/maps?cid=16391512325002463359" target="_blank" rel="noopener">Trovami su Google Maps</a></p>
+      
+      
+      
+
+      <p>&copy; 2026 Pikobit. Tutti i diritti riservati.</p>
+      <p>
+        "Pikobit: Il tuo punto di partenza per creare, imparare e ispirare."
+      </p>
+      <div class="social-icons">
+        <a
+          href="
+https://www.youtube.com/@pikobit01
+"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="YouTube"
+          ><svg class="icon-svg" viewBox="0 0 576 512" aria-hidden="true">
+            <path
+              d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z"
+            /></svg
+        ></a>
+        <a
+          href="
+https://www.linkedin.com/in/giuseppe-alaimo-aba40b226
+"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="LinkedIn"
+          ><svg class="icon-svg" viewBox="0 0 448 512" aria-hidden="true">
+            <path
+              d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"
+            /></svg
+        ></a>
+        <a
+          href="
+https://www.instagram.com/pikobit_it/
+"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Instagram"
+          ><svg class="icon-svg" viewBox="0 0 448 512" aria-hidden="true">
+            <path
+              d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"
+            /></svg
+        ></a>
+      </div>
+    </footer>
+    <button id="scrollToTop" title="Torna su">&#8679;</button>
+  </body>
+</html>

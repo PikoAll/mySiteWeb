@@ -22,17 +22,17 @@
     </url>
      <url>
         <loc>https://pikobit.it/websites.html</loc>
-        <lastmod>2026-11-13</lastmod>
+        <lastmod>2026-11-18</lastmod>
         <priority>0.8</priority>
     </url>
      <url>
         <loc>https://pikobit.it/modern-apps.html</loc>
-        <lastmod>2026-11-17</lastmod>
+        <lastmod>2026-11-18</lastmod>
         <priority>0.8</priority>
     </url>
      <url>
         <loc>https://pikobit.it/custom-software.html</loc>
-        <lastmod>2026-11-17</lastmod>
+        <lastmod>2026-11-18</lastmod>
         <priority>0.8</priority>
     </url>
      <url>
@@ -47,7 +47,7 @@
     </url>
     <url>
         <loc>https://pikobit.it/resources.html</loc>
-        <lastmod>2026-11-13</lastmod>
+        <lastmod>2026-11-20</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
@@ -365,6 +365,26 @@
     <url>
         <loc>https://pikobit.it/blog/2026-11-13-sito-fatto-in-casa-test-15-minuti.html</loc>
         <lastmod>2026-11-13</lastmod>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://pikobit.it/blog/2026-11-20-password-123456-login-sicuro.html</loc>
+        <lastmod>2026-11-20</lastmod>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://pikobit.it/blog/2026-11-20-synology-cve-argument-injection.html</loc>
+        <lastmod>2026-11-20</lastmod>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://pikobit.it/blog/2026-11-20-coding-con-ai-piu-veloci-misurare.html</loc>
+        <lastmod>2026-11-20</lastmod>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://pikobit.it/blog/2026-11-20-preventivo-sito-software-cosa-deve-esserci.html</loc>
+        <lastmod>2026-11-20</lastmod>
         <priority>0.6</priority>
     </url>
     <url>
