@@ -1,0 +1,138 @@
+/* Pagine scheda delle app (app-*.html). Usa i colori del sito. */
+.app-hero {
+  max-width: 1200px;
+  margin: 0 auto 48px;
+  padding: 24px 4px 0;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 24px;
+  align-items: center;
+  text-align: left;
+}
+
+.app-hero .app-id {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.app-hero .app-id img {
+  width: 72px;
+  height: 72px;
+  border-radius: 16px;
+  flex: none;
+}
+
+.app-hero h1 {
+  margin: 0;
+  font-size: clamp(2rem, 1.4rem + 3vw, 3.2rem);
+  line-height: 1.1;
+  text-wrap: balance;
+}
+
+.app-hero .app-lead {
+  margin: 0;
+  max-width: 62ch;
+  color: #ddd;
+  font-size: 1.1rem;
+}
+
+.store-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 16px 24px;
+  margin-top: 8px;
+}
+
+.store-row .badge-ios {
+  display: inline-block;
+  line-height: 0;
+}
+
+.store-row .badge-ios img {
+  height: 48px;
+  width: auto;
+}
+
+.store-row .badge-ios:focus-visible {
+  outline: 3px solid var(--color-accent);
+  outline-offset: 4px;
+  border-radius: 8px;
+}
+
+.store-row .soon {
+  margin: 0;
+  color: #ddd;
+  font-size: 0.95rem;
+}
+
+.shots {
+  display: flex;
+  gap: 16px;
+  list-style: none;
+  margin: 0;
+  padding: 4px 4px 16px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+}
+
+.shots li {
+  flex: 0 0 min(62vw, 240px);
+  scroll-snap-align: start;
+  margin: 0;
+}
+
+.shots img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 20px;
+  border: 1px solid rgba(0, 191, 255, 0.35);
+  background: var(--color-bg-panel);
+}
+
+.shots figcaption {
+  margin-top: 8px;
+  color: #ddd;
+  font-size: 0.9rem;
+  text-align: left;
+}
+
+.shots figure {
+  margin: 0;
+}
+
+.app-facts {
+  list-style: none;
+  margin: 24px auto 0;
+  padding: 0;
+  max-width: 760px;
+  text-align: left;
+  display: grid;
+  gap: 14px;
+}
+
+.app-facts li {
+  padding-left: 0;
+  color: #ddd;
+}
+
+.app-facts strong {
+  color: white;
+}
+
+@media (min-width: 900px) {
+  .app-hero {
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+    gap: 48px;
+  }
+  .shots {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    overflow: visible;
+  }
+  .shots li {
+    flex: initial;
+  }
+}

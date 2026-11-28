@@ -14,6 +14,8 @@ PAGE = ROOT / "lavori.html"
 WORKS = {
     "traslochimalusardi.it": "traslochimalusardi.it",
     "Crucidev": "play.google.com",
+    "PienoGiusto": "apps.apple.com",
+    "MentalLoad": "apps.apple.com",
     "portfolio.pikobit.it": "portfolio.pikobit.it",
     "lezioni.pikobit.it": "lezioni.pikobit.it",
 }
