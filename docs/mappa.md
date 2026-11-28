@@ -1,7 +1,7 @@
 # Mappa del codice
-<!-- generata da scripts/azienda/mappa-sonnet.py (prima passata, Sonnet); la manutenzione la fa genera-mappa.sh (Ollama): riempie solo le righe vuote -->
+<!-- generata da scripts/azienda/genera-mappa.sh; righe vuote = da completare, rilancia lo script -->
 
-- `.claude/settings.json` — Claude Code project permissions: allows gh and push commands, denies rm, force pushes and hard resets.
+- `.claude/settings.json` — file dati
 - `.github/workflows/ci.yml` — CI workflow running pytest, JSON-LD and link checks, built-site smoke test and Playwright e2e on pushes and PRs.
 - `.github/workflows/static.yml` — GitHub Actions workflow deploying the static site to GitHub Pages on pushes to main.
 - `.gitignore` — Git ignore rules for local Claude settings, tool backup temp files and Python caches.
@@ -64,6 +64,11 @@
 - `blog/2026-10-02-janus-eseguibile-ai-locale-senza-python-docker.html` — Blog article on Janus, a local AI executable without Python or Docker.
 - `blog/2026-10-02-prompt-injection-nuovo-sql-injection.html` — Blog article on prompt injection as the new SQL injection.
 - `blog/2026-10-02-replica-auto-iconica-fai-da-te-lezione-maker.html` — Blog article on a DIY iconic car replica and maker lessons.
+- `blog/2026-11-13-dev-to-agenti-ai-in-loop-performance.html` —
+- `blog/2026-11-13-grok-build-app-esposte-senza-login.html` —
+- `blog/2026-11-13-rust-1-100-never-type-stabile.html` —
+- `blog/2026-11-13-sito-fatto-in-casa-test-15-minuti.html` —
+- `blog/index.html` —
 - `contact.html` — Contact page with WhatsApp and email form for Monopoli and Bari province customers.
 - `creative-services.html` — Service page for creative services and complete solutions such as branding and QR business cards.
 - `crucidev/privacy/index.html` — Bilingual privacy policy page for the Crucidev app.
@@ -78,6 +83,7 @@
 - `dove-lavoro.html` — Page listing the Puglia areas and cities served.
 - `fix_gmail_links.py` — One-off script that unwraps Gmail redirect links in listed blog articles.
 - `fonts/poppins/LICENSE` — License text for the self-hosted Poppins font.
+- `gestionali-monopoli.html` —
 - `ideas.html` — Page with technology ideas and solutions for businesses.
 - `images/brand/header-circuit.svg` — Generated SVG circuit background for the site header.
 - `images/brand/pikobit-symbol.svg` — Pikobit brand symbol in SVG.
@@ -107,6 +113,7 @@
 - `scripts/add_image_dimensions.py` — Script adding native width and height to img tags to reduce layout shift.
 - `scripts/blog-week.js` — Front-end script showing only the last week of blog articles with a show-older button.
 - `scripts/brand_head.py` — Idempotent script writing the approved favicon, manifest and og:image brand tags in every page head.
+- `scripts/build_blog_index.py` —
 - `scripts/build_brand_assets.py` — Builds favicons, logo and og image assets from the approved brand folder.
 - `scripts/build_site.py` — Builds _site with only the public files that GitHub Pages publishes, excluding docs, tests and tooling.
 - `scripts/check_internal_links.py` — Checks that internal links, sitemap entries and referenced assets point to existing files.
@@ -145,8 +152,8 @@
 - `tests/e2e/consent.spec.mjs` — Playwright test that nothing reaches Google before the visitor accepts cookies.
 - `tests/e2e/contact.spec.mjs` — Playwright test of contact form layout, validation and WhatsApp and email messages.
 - `tests/e2e/layout.spec.mjs` — Playwright test of card grids, hero overflow and no sideways scroll at many widths.
-- `tests/e2e/package-lock.json` — Lockfile for the e2e test dependencies.
-- `tests/e2e/package.json` — Node package manifest for the Playwright e2e tests.
+- `tests/e2e/package-lock.json` — file dati
+- `tests/e2e/package.json` — file dati
 - `tests/e2e/pages.mjs` — Helper listing the root HTML pages and cities used by the e2e tests.
 - `tests/e2e/playwright.config.mjs` — Playwright headless configuration serving the site on a local port.
 - `tests/e2e/polish.spec.mjs` — Playwright test of visual details such as headings, pills and footer link consistency.
@@ -162,6 +169,7 @@
 - `tests/test_compare_page_text.py` — Tests that compare_page_text.py detects lost sentences in main.
 - `tests/test_consent_chrome.py` — Tests that pages load consent.js instead of Google Analytics and footers link privacy and cookie preferences.
 - `tests/test_indexnow_ping.py` — Tests for indexnow_ping.py with an injected sender and no network.
+- `tests/test_pagine_monopoli.py` —
 - `tests/test_perf_hints.py` — Tests for perf_hints.py covering font preloads, hero priority and idempotency.
 - `tests/test_seo_head.py` — Tests for seo_head.py and site-wide checks of structured data and SEO meta tags.
 - `tests/test_site_chrome.py` — Tests for site_chrome.py covering one header, menu and footer zone and idempotency.
@@ -169,4 +177,5 @@
 - `tests/test_skip_built_site.py` — Guard test that page-scanning scripts never touch the built _site folder.
 - `tests/test_verify_jsonld.py` — Tests for verify_jsonld.py covering syntax, schema sanity and @id coherence.
 - `update_versions.py` — Script that bumps the cache-busting version query on CSS and JS links in all HTML files.
+- `web-designer-monopoli.html` —
 - `websites.html` — Service page for website design and creation in Puglia.
