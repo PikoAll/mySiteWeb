@@ -136,3 +136,53 @@
     flex: initial;
   }
 }
+
+/* Home: sezione «Le nostre app». Righe piatte, niente card dentro altre card. */
+.home-apps .home-apps-intro {
+  max-width: 62ch;
+  margin: 0 auto 32px;
+  color: #ddd;
+}
+
+.home-app {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 20px;
+  align-items: center;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 32px 4px;
+  text-align: left;
+  border-top: 1px solid rgba(0, 191, 255, 0.25);
+}
+
+.home-app h3 {
+  margin: 0 0 8px;
+  font-size: clamp(1.5rem, 1.2rem + 1.5vw, 2rem);
+}
+
+.home-app p {
+  margin: 0 0 12px;
+  color: #ddd;
+}
+
+.home-app .shots {
+  padding-bottom: 8px;
+}
+
+.home-app .shots li {
+  flex: 0 0 min(42vw, 170px);
+}
+
+@media (min-width: 900px) {
+  .home-app {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr);
+    gap: 48px;
+  }
+  .home-app-solo {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .home-app .shots {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
