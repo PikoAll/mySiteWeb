@@ -52,3 +52,11 @@ def test_app_pages_are_in_sitemap_and_linked_from_lavori():
     for page in APPS:
         assert f"<loc>https://pikobit.it/{page}</loc>" in sm, page
         assert f'href="{page}"' in lav, page
+
+
+def test_pagine_app_og_description_e_lazy():
+    import pathlib
+    for f in ("app-mentalload.html", "app-pienogiusto.html"):
+        s = (pathlib.Path(__file__).resolve().parent.parent / f).read_text()
+        assert 'property="og:description"' in s
+        assert s.count('loading="lazy"') == 4
