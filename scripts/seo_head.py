@@ -163,6 +163,8 @@ LABELS = {page: htmllib.unescape(label) for label, page, *_ in _chrome.SERVICES 
 LABELS["privacy.html"] = "Privacy"
 LABELS["404.html"] = "Pagina non trovata"
 LABELS["blog/index.html"] = "Archivio del blog"
+# App pages: Home > Lavori > the app (the card lives under "Lavori")
+APP_PAGES = {"app-pienogiusto.html": "PienoGiusto", "app-mentalload.html": "MentalLoad"}
 
 
 def is_post(rel):
@@ -346,6 +348,8 @@ def build_graph(nodes, rel, url, head, body):
         if is_post(rel):
             leaf = next(n for n in kept if n.get("@type") == "BlogPosting")["headline"]
             trail = [("Home", SITE), ("Blog", SITE + "resources.html"), (_collapse(leaf), url)]
+        elif rel in APP_PAGES:
+            trail = [("Home", SITE), ("Lavori", SITE + "lavori.html"), (APP_PAGES[rel], url)]
         elif rel in CITY_PAGES:
             trail = [("Home", SITE), ("Dove lavoro", SITE + "dove-lavoro.html"), (CITY_PAGES[rel], url)]
         else:

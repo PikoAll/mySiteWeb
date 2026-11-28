@@ -35,7 +35,9 @@ bersaglio:
 | `websites.html` | realizzazione e creazione siti web **in Puglia** | title, h1 |
 | `custom-software.html` | sviluppo software e gestionali su misura **in Puglia** | title, h1 |
 | `modern-apps.html` | sviluppatore app e applicazioni web **in Puglia** | title, h1 |
-| `lavori.html` | lavori reali di Giuseppe (traslochimalusardi.it, Crucidev, portfolio, lezioni) | title, h1 |
+| `lavori.html` | lavori reali di Giuseppe (traslochimalusardi.it, Crucidev, PienoGiusto, MentalLoad, portfolio, lezioni) | title, h1 |
+| `app-pienogiusto.html` | scheda app PienoGiusto (App Store, presto Google Play) | PienoGiusto app prezzi carburante |
+| `app-mentalload.html` | scheda app MentalLoad (App Store, presto Google Play) | MentalLoad app scadenze casa e auto |
 | `programmatore-<città>.html` (13 città, Turi compresa) | programmatore e web designer a *città* | title, h1 |
 
 Regole che ne derivano:
@@ -141,7 +143,7 @@ con posizione, nome e URL.)
   Monopoli, dove le domande si leggono nella pagina.
 - **Niente promesse non confermate** da Giuseppe (tempi, prezzi, garanzie,
   servizi inclusi) e **niente fatti inventati** (clienti, numeri, lavori). I
-  lavori citabili sono traslochimalusardi.it e Crucidev.
+  lavori citabili sono traslochimalusardi.it, Crucidev, PienoGiusto e MentalLoad.
 - **Niente parole chiave infilate** a forza nel testo.
 
 ## 6. Gli script e come lanciarli

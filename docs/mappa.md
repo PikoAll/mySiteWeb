@@ -81,8 +81,11 @@
 - `ideas.html` — Page with technology ideas and solutions for businesses.
 - `images/brand/header-circuit.svg` — Generated SVG circuit background for the site header.
 - `images/brand/pikobit-symbol.svg` — Pikobit brand symbol in SVG.
+- `images/apps/` — Screenshots, icons and the App Store badge for the app pages.
 - `images/brand/pikobit-wordmark.svg` — Pikobit wordmark in SVG.
 - `images/icons.svg` — SVG sprite of icons used across the site.
+- `app-mentalload.html` — Page of the MentalLoad app (App Store link, soon on Google Play).
+- `app-pienogiusto.html` — Page of the PienoGiusto app (App Store link, soon on Google Play).
 - `index.html` — Home page of Pikobit presenting programmer and web designer services in Monopoli.
 - `lessons.html` — Page with lessons and tutorials.
 - `modern-apps.html` — Service page for app and web application development in Puglia.
@@ -136,6 +139,7 @@
 - `scripts/verify_jsonld.py` — Validates JSON-LD structured data syntax and schema sanity on every page.
 - `site.webmanifest` — Web app manifest with Pikobit name, colors and icons.
 - `sitemap.xml` — XML sitemap of site pages with lastmod dates for search engines.
+- `styles/app.css` — Styles of the app pages (hero, screenshots).
 - `styles/fx.css` — Styles for the live animated scenes, loaded lazily by the site script.
 - `styles/style.css` — Main stylesheet of the site with colors, fonts, layout and components.
 - `tests/e2e/brand.spec.mjs` — Playwright test checking brand assets, favicon, manifest and og:image on every page.
